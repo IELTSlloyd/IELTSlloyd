@@ -1,0 +1,1002 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>IELTS 7.0 Speaking · Cultural Values &amp; Heritage</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;0,9..144,900;1,9..144,500&family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#161220;
+    --panel:#211C2E;
+    --panel-2:#2A2438;
+    --paper:#F5F1EA;
+    --paper-dim:#E3DCCE;
+    --coral:#D9822B;
+    --coral-dim:#B5691E;
+    --mint:#6B5B95;
+    --gold:#6B5B95;
+    --third:#C97B5F;
+    --fourth:#6B9080;
+    --fifth:#A8637A;
+    --line:rgba(245,241,234,0.12);
+    --text-dim:rgba(245,241,234,0.62);
+    --text-faint:rgba(245,241,234,0.38);
+    --radius:14px;
+  }
+  *{box-sizing:border-box;}
+  html,body{margin:0;padding:0;}
+  body{background:var(--ink);color:var(--paper);font-family:'Inter',sans-serif;-webkit-font-smoothing:antialiased;min-height:100vh;}
+  ::selection{background:var(--coral);color:var(--ink);}
+  a{color:inherit;}
+  button{font-family:inherit;}
+  .app{display:grid;grid-template-columns:340px 1fr;min-height:100vh;}
+
+  /* RAIL */
+  .rail{background:var(--panel);border-right:1px solid var(--line);padding:24px 18px 18px;display:flex;flex-direction:column;gap:18px;position:sticky;top:0;height:100vh;overflow-y:auto;}
+  .brand{display:flex;flex-direction:column;gap:2px;padding:0 6px 14px;border-bottom:1px solid var(--line);}
+  .brand .tag{font-family:'JetBrains Mono',monospace;font-size:14.5px;letter-spacing:.14em;color:var(--coral);text-transform:uppercase;font-weight:700;}
+  .brand h1{font-family:'Fraunces',serif;font-size:25px;font-weight:700;margin:4px 0 0;line-height:1.15;}
+  .brand .sub{font-size:16px;color:var(--text-dim);margin-top:4px;}
+  .onair{display:flex;align-items:center;gap:8px;background:var(--panel-2);border:1px solid var(--line);border-radius:10px;padding:10px 12px;}
+  .onair .dot{width:8px;height:8px;border-radius:50%;background:var(--coral);box-shadow:0 0 0 0 rgba(217,130,43,.6);animation:pulse 1.8s infinite;}
+  @keyframes pulse{0%{box-shadow:0 0 0 0 rgba(217,130,43,.55);}70%{box-shadow:0 0 0 6px rgba(217,130,43,0);}100%{box-shadow:0 0 0 0 rgba(217,130,43,0);}}
+  .onair .label{font-family:'JetBrains Mono',monospace;font-size:14.5px;letter-spacing:.1em;color:var(--text-dim);text-transform:uppercase;}
+  .onair .score{margin-left:auto;font-family:'JetBrains Mono',monospace;font-weight:700;font-size:20.5px;color:var(--gold);}
+  nav{display:flex;flex-direction:column;gap:2px;flex:1;}
+  .nav-item{display:flex;align-items:center;gap:10px;padding:9px 10px;border-radius:9px;cursor:pointer;font-size:17.5px;color:var(--text-dim);border:1px solid transparent;transition:background .15s,color .15s;user-select:none;}
+  .nav-item .n{font-family:'JetBrains Mono',monospace;font-size:15px;width:20px;color:var(--text-faint);flex-shrink:0;}
+  .nav-item:hover{background:rgba(245,241,234,0.05);color:var(--paper);}
+  .nav-item.active{background:rgba(217,130,43,0.16);border-color:rgba(217,130,43,0.4);color:var(--paper);}
+  .nav-item.active .n{color:var(--coral);}
+  .nav-item .done-mark{margin-left:auto;color:var(--gold);font-size:17.5px;opacity:0;}
+  .nav-item.done .done-mark{opacity:1;}
+  .rail-foot{font-size:15px;color:var(--text-faint);border-top:1px solid var(--line);padding-top:12px;line-height:1.5;}
+
+  /* MAIN */
+  main{padding:48px 64px 100px;max-width:1180px;width:100%;}
+  .eyebrow{font-family:'JetBrains Mono',monospace;font-size:16px;letter-spacing:.16em;text-transform:uppercase;color:var(--coral);font-weight:700;margin-bottom:10px;}
+  h2.title{font-family:'Fraunces',serif;font-size:50px;font-weight:700;line-height:1.05;margin:0 0 10px;}
+  .deck{font-size:22px;color:var(--text-dim);margin:0 0 36px;max-width:700px;}
+  .card{background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);padding:22px 24px;}
+
+  /* TIMER */
+  .timer-wrap{display:flex;align-items:center;gap:22px;background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);padding:18px 22px;margin-bottom:28px;}
+  .ring{position:relative;width:92px;height:92px;flex-shrink:0;}
+  .ring svg{transform:rotate(-90deg);}
+  .ring circle{fill:none;stroke-width:6;}
+  .ring .bg{stroke:var(--line);}
+  .ring .fg{stroke:var(--coral);stroke-linecap:round;transition:stroke-dashoffset .25s linear;}
+  .ring .num{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-family:'JetBrains Mono',monospace;font-weight:700;font-size:20px;}
+  .timer-meta{flex:1;}
+  .timer-meta .t-label{font-size:19px;color:var(--text-dim);margin-bottom:4px;}
+  .timer-btns{display:flex;gap:8px;flex-wrap:wrap;}
+  .btn{font-family:'Inter',sans-serif;font-size:18px;font-weight:600;padding:8px 14px;border-radius:8px;border:1px solid var(--line);background:var(--panel-2);color:var(--paper);cursor:pointer;transition:background .15s,border-color .15s,transform .1s;}
+  .btn:hover{background:rgba(245,241,234,0.08);}
+  .btn:active{transform:scale(.97);}
+  .btn.primary{background:var(--coral);border-color:var(--coral);color:var(--ink);}
+  .btn.primary:hover{background:#E8973F;}
+  .btn.ghost{background:transparent;}
+
+  /* PROMPTS */
+  .prompt-current{display:flex;gap:16px;align-items:flex-start;background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);padding:22px 24px;}
+  .prompt-current .pn{font-family:'JetBrains Mono',monospace;font-weight:700;font-size:19px;color:var(--coral);flex-shrink:0;padding-top:1px;}
+  .prompt-current p{margin:0;font-size:24px;line-height:1.5;}
+
+  /* FLIP CARDS */
+  .grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;}
+  .flip{perspective:1000px;height:220px;cursor:pointer;}
+  .flip-inner{position:relative;width:100%;height:100%;transition:transform .5s cubic-bezier(.4,.2,.2,1);transform-style:preserve-3d;}
+  .flip.flipped .flip-inner{transform:rotateY(180deg);}
+  .flip-face{position:absolute;inset:0;backface-visibility:hidden;border-radius:var(--radius);border:1px solid var(--line);padding:18px;display:flex;flex-direction:column;justify-content:center;}
+  .flip-front{background:var(--panel);}
+  .flip-front .def-prompt{font-family:'Inter',sans-serif;font-weight:600;font-size:18px;line-height:1.35;}
+  .flip-front .hint{font-size:16px;color:var(--text-faint);margin-top:10px;}
+  .flip-back{background:var(--coral);color:var(--ink);transform:rotateY(180deg);}
+  .flip-back .word-reveal{font-family:'Fraunces',serif;font-weight:700;font-style:italic;font-size:22px;margin-bottom:8px;}
+  .flip-back .ex{font-size:16px;font-style:italic;line-height:1.4;opacity:.85;}
+
+  /* MATCHING */
+  .match-wrap{display:grid;grid-template-columns:1fr 1fr;gap:30px;}
+  .match-col h4{font-family:'JetBrains Mono',monospace;font-size:16px;letter-spacing:.1em;color:var(--text-faint);text-transform:uppercase;margin:0 0 12px;}
+  .match-item,.match-item2{display:flex;align-items:center;gap:10px;background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:11px 14px;margin-bottom:8px;cursor:pointer;font-size:18.5px;transition:border-color .15s,background .15s;}
+  .match-item .tag,.match-item2 .tag{font-family:'JetBrains Mono',monospace;font-size:16px;color:var(--text-faint);width:18px;flex-shrink:0;}
+  .match-item.selected,.match-item2.selected{border-color:var(--gold);background:rgba(107,91,149,0.18);}
+  .match-item.correct,.match-item2.correct{border-color:var(--coral);background:rgba(217,130,43,0.16);}
+  .match-item.wrong,.match-item2.wrong{border-color:#E67E5B;background:rgba(230,126,91,0.12);}
+  .match-item.locked,.match-item2.locked{cursor:default;opacity:.85;}
+
+  /* IDIOMS */
+  .idiom-list{display:flex;flex-direction:column;gap:10px;}
+  .idiom{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:16px 18px;cursor:pointer;transition:border-color .15s;}
+  .idiom:hover{border-color:rgba(217,130,43,.4);}
+  .idiom-head{display:flex;align-items:center;justify-content:space-between;}
+  .idiom-head .phrase{font-family:'Fraunces',serif;font-weight:600;font-size:22px;}
+  .idiom-head .chev{color:var(--text-faint);transition:transform .2s;font-size:19px;}
+  .idiom.open .chev{transform:rotate(90deg);}
+  .idiom-body{max-height:0;overflow:hidden;transition:max-height .3s ease;}
+  .idiom.open .idiom-body{max-height:110px;}
+  .idiom-mean{font-size:19px;color:var(--text-dim);margin-top:8px;}
+  .idiom-ex{font-size:17px;font-style:italic;color:var(--text-faint);margin-top:4px;padding-bottom:4px;}
+
+  /* GAP FILL */
+  .gapfill-list{display:flex;flex-direction:column;gap:16px;}
+  .gap-item{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:16px 18px;}
+  .gap-item p{margin:0 0 10px;font-size:20px;line-height:1.6;}
+  .gap-blank{font-family:'JetBrains Mono',monospace;display:inline-block;min-width:230px;text-align:center;background:var(--panel-2);border:1px solid var(--line);border-radius:7px;color:var(--gold);padding:6px 12px;font-weight:700;cursor:pointer;}
+  .gap-blank.selected{border-color:var(--gold);box-shadow:0 0 0 2px rgba(107,91,149,.32);}
+  .gap-blank.filled{color:var(--coral);border-color:var(--coral);}
+  .wordbank{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:18px;}
+  .wb-chip{font-family:'JetBrains Mono',monospace;font-size:16.5px;background:var(--panel-2);border:1px solid var(--line);border-radius:20px;padding:8px 15px;color:var(--text-dim);cursor:pointer;transition:border-color .15s,color .15s,opacity .15s;}
+  .wb-chip:hover{border-color:var(--coral);color:var(--paper);}
+  .wb-chip.used{opacity:.3;pointer-events:none;text-decoration:line-through;}
+  .quiz-feedback{font-size:19px;color:var(--text-dim);min-height:18px;}
+  .quiz-feedback.good{color:var(--coral);}
+  .quiz-feedback.bad{color:#E67E5B;}
+
+  /* QUIZ */
+  .quiz-progress{display:flex;gap:6px;margin-bottom:24px;}
+  .quiz-dot{flex:1;height:4px;border-radius:3px;background:var(--line);}
+  .quiz-dot.active{background:var(--coral);}
+  .quiz-dot.answered{background:var(--gold);}
+  .quiz-card{background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);padding:28px;}
+  .quiz-q{font-size:25px;font-weight:600;margin:0 0 20px;line-height:1.4;}
+  .quiz-opts{display:flex;flex-direction:column;gap:10px;}
+  .quiz-opt{display:flex;gap:12px;align-items:center;background:var(--panel-2);border:1px solid var(--line);border-radius:10px;padding:13px 16px;cursor:pointer;font-size:19.5px;transition:border-color .15s,background .15s;}
+  .quiz-opt:hover{border-color:rgba(217,130,43,.45);}
+  .quiz-opt .letter{font-family:'JetBrains Mono',monospace;font-weight:700;font-size:18px;width:32px;height:32px;border-radius:50%;background:var(--ink);display:flex;align-items:center;justify-content:center;flex-shrink:0;color:var(--text-dim);}
+  .quiz-opt.correct{border-color:var(--coral);background:rgba(217,130,43,0.18);}
+  .quiz-opt.correct .letter{background:var(--coral);color:var(--ink);}
+  .quiz-opt.wrong{border-color:#E67E5B;background:rgba(230,126,91,0.14);animation:shake .3s;}
+  .quiz-opt.locked{cursor:default;}
+  @keyframes shake{0%,100%{transform:translateX(0);}25%{transform:translateX(-5px);}75%{transform:translateX(5px);}}
+  .quiz-foot{display:flex;justify-content:space-between;align-items:center;margin-top:22px;}
+  .roundtab{display:flex;gap:8px;margin-bottom:22px;}
+  .roundtab button{font-family:'JetBrains Mono',monospace;font-size:16px;padding:7px 13px;border-radius:8px;border:1px solid var(--line);background:transparent;color:var(--text-dim);cursor:pointer;}
+  .roundtab button.on{background:var(--coral);color:var(--ink);border-color:var(--coral);}
+
+  /* WARM-UP TABS */
+  .warmup-tabs{display:flex;gap:8px;margin-bottom:20px;flex-wrap:wrap;}
+  .warmup-tab{font-family:'JetBrains Mono',monospace;font-size:18px;font-weight:700;width:42px;height:42px;border-radius:10px;border:1px solid var(--line);background:var(--panel);color:var(--text-dim);cursor:pointer;display:flex;align-items:center;justify-content:center;transition:border-color .15s,background .15s,color .15s;}
+  .warmup-tab:hover{border-color:rgba(217,130,43,.45);color:var(--paper);}
+  .warmup-tab.on{border-color:var(--coral);background:rgba(217,130,43,.2);color:var(--paper);}
+
+  /* SORTERS */
+  .sort-intro{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:14px;margin-bottom:22px;}
+  .sort-intro-item{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:16px 18px;}
+  .sort-intro-item .k{font-family:'JetBrains Mono',monospace;font-weight:700;font-size:15.5px;margin-bottom:6px;display:block;}
+  .sort-intro-item[data-k="A"] .k{color:var(--gold);}
+  .sort-intro-item[data-k="B"] .k{color:var(--coral);}
+  .sort-intro-item[data-k="C"] .k{color:var(--third);}
+  .sort-intro-item[data-k="D"] .k{color:var(--fourth);}
+  .sort-intro-item[data-k="O1"] .k{color:var(--coral);}
+  .sort-intro-item[data-k="R"] .k{color:var(--gold);}
+  .sort-intro-item[data-k="E"] .k{color:var(--third);}
+  .sort-intro-item[data-k="O2"] .k{color:var(--fourth);}
+  .sort-intro-item[data-k="P"] .k{color:var(--fifth);}
+  .sort-intro-item p{margin:0;font-size:15.5px;color:var(--text-dim);line-height:1.4;}
+  .focus-list{display:flex;flex-direction:column;gap:14px;}
+  .focus-item{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:18px 20px;}
+  .focus-item p{margin:0 0 14px;font-size:20.5px;line-height:1.5;}
+  .focus-btns{display:flex;gap:10px;flex-wrap:wrap;}
+  .focus-btn{font-family:'Inter',sans-serif;font-size:16.5px;font-weight:600;padding:10px 16px;border-radius:9px;border:1px solid var(--line);background:var(--panel-2);color:var(--text-dim);cursor:pointer;transition:border-color .15s,background .15s;}
+  .focus-btn:hover{border-color:rgba(217,130,43,.45);color:var(--paper);}
+  .focus-btn.correct{border-color:var(--coral);background:rgba(217,130,43,0.2);color:var(--paper);}
+  .focus-btn.wrong{border-color:#E67E5B;background:rgba(230,126,91,0.16);animation:shake .3s;}
+  .focus-btn.locked{cursor:default;}
+  .focus-result{font-size:17px;color:var(--text-faint);margin-top:10px;min-height:16px;}
+  .focus-result.good{color:var(--coral);}
+
+  /* DISCUSSION CARD */
+  .cuecard{background:linear-gradient(155deg,var(--panel-2),var(--panel));border:1px solid var(--line);border-radius:18px;padding:30px 32px;margin-bottom:24px;}
+  .cuecard .label{font-family:'JetBrains Mono',monospace;font-size:16px;color:var(--coral);letter-spacing:.1em;text-transform:uppercase;margin-bottom:10px;}
+  .cuecard h3{font-family:'Fraunces',serif;font-size:28px;margin:0 0 14px;line-height:1.3;}
+  .cuecard .followup{margin:0;font-size:18.5px;color:var(--text-dim);border-top:1px solid var(--line);padding-top:14px;}
+  .cuecard .followup b{color:var(--paper);}
+  .notepad{width:100%;min-height:130px;background:var(--ink);border:1px solid var(--line);border-radius:10px;color:var(--paper);font-family:'Inter',sans-serif;font-size:20px;padding:14px;resize:vertical;margin-top:6px;}
+  .notepad:focus{outline:none;border-color:var(--coral);}
+
+  /* MODEL ANSWER */
+  .ade-key{display:flex;gap:10px;margin-bottom:18px;flex-wrap:wrap;}
+  .ade-chip{font-family:'JetBrains Mono',monospace;font-size:15.5px;padding:6px 12px;border-radius:7px;border:1px solid var(--line);cursor:pointer;transition:transform .12s;}
+  .ade-chip[data-k="O1"]{color:var(--coral);}
+  .ade-chip[data-k="R"]{color:var(--gold);}
+  .ade-chip[data-k="E"]{color:var(--third);}
+  .ade-chip[data-k="O2"]{color:var(--fourth);}
+  .ade-chip[data-k="P"]{color:var(--fifth);}
+  .ade-chip.active{transform:scale(1.05);border-color:currentColor;}
+  .ade-block{padding:16px 18px;border-radius:11px;margin-bottom:10px;border:1px solid var(--line);background:var(--panel);transition:opacity .2s,border-color .2s;line-height:1.65;font-size:19.5px;}
+  .ade-block .tag2{font-family:'JetBrains Mono',monospace;font-size:15px;font-weight:700;margin-bottom:8px;display:block;}
+  .ade-block.dim{opacity:.3;}
+  .ade-block[data-k="O1"] .tag2{color:var(--coral);}
+  .ade-block[data-k="R"] .tag2{color:var(--gold);}
+  .ade-block[data-k="E"] .tag2{color:var(--third);}
+  .ade-block[data-k="O2"] .tag2{color:var(--fourth);}
+  .ade-block[data-k="P"] .tag2{color:var(--fifth);}
+  .ade-block.highlight[data-k="O1"]{border-color:var(--coral);}
+  .ade-block.highlight[data-k="R"]{border-color:var(--gold);}
+  .ade-block.highlight[data-k="E"]{border-color:var(--third);}
+  .ade-block.highlight[data-k="O2"]{border-color:var(--fourth);}
+  .ade-block.highlight[data-k="P"]{border-color:var(--fifth);}
+
+  /* TOOLKIT */
+  .grid-2{display:grid;grid-template-columns:1fr 1fr;gap:16px;}
+  .tool-card{background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);padding:18px 20px;}
+  .tool-card h4{margin:0 0 12px;font-size:18.5px;font-family:'Fraunces',serif;font-weight:600;}
+  .tool-card .phrase-btn{display:inline-block;font-size:16.5px;background:var(--panel-2);border:1px solid var(--line);border-radius:7px;padding:6px 11px;margin:0 6px 6px 0;cursor:pointer;color:var(--text-dim);transition:color .15s,border-color .15s;}
+  .tool-card .phrase-btn:hover{color:var(--paper);border-color:var(--gold);}
+  .scratch{margin-top:24px;}
+  .scratch textarea{width:100%;min-height:90px;background:var(--panel);border:1px solid var(--line);border-radius:10px;color:var(--paper);font-family:'Inter',sans-serif;font-size:20px;padding:14px;}
+  .scratch textarea:focus{outline:none;border-color:var(--coral);}
+
+  /* PEER SCORE */
+  .scorecard{display:flex;flex-direction:column;gap:10px;}
+  .score-row{display:flex;align-items:center;gap:14px;background:var(--panel);border:1px solid var(--line);border-radius:11px;padding:13px 16px;}
+  .score-row .letter2{font-family:'JetBrains Mono',monospace;font-weight:700;font-size:16px;width:36px;height:36px;border-radius:50%;background:var(--panel-2);display:flex;align-items:center;justify-content:center;flex-shrink:0;color:var(--coral);}
+  .score-row .si-main{flex:1;min-width:0;}
+  .score-row .si-title{font-weight:600;font-size:18.5px;}
+  .score-row .si-sub{font-size:15.5px;color:var(--text-faint);}
+  .pips{display:flex;gap:5px;}
+  .pip{width:36px;height:36px;border-radius:7px;border:1px solid var(--line);background:var(--panel-2);cursor:pointer;color:var(--text-dim);font-size:17px;font-family:'JetBrains Mono',monospace;display:flex;align-items:center;justify-content:center;}
+  .pip.on{background:var(--gold);border-color:var(--gold);color:var(--paper);}
+  .score-total{margin-top:8px;display:flex;align-items:center;justify-content:space-between;background:var(--panel-2);border:1px solid var(--line);border-radius:11px;padding:16px 18px;}
+  .score-total .tot-num{font-family:'JetBrains Mono',monospace;font-weight:700;font-size:37px;color:var(--gold);}
+  .feedback-fields{display:flex;flex-direction:column;gap:10px;margin-top:18px;}
+  .feedback-fields input{background:var(--panel);border:1px solid var(--line);border-radius:9px;color:var(--paper);padding:11px 14px;font-size:19px;font-family:'Inter',sans-serif;}
+  .feedback-fields input:focus{outline:none;border-color:var(--coral);}
+
+  /* EXAM PRACTICE */
+  .cue-tabs{display:grid;grid-template-columns:repeat(6,1fr);gap:10px;margin-bottom:20px;}
+  .cue-tab{text-align:center;padding:12px 6px;border-radius:11px;border:1px solid var(--line);background:var(--panel);cursor:pointer;font-size:14.5px;font-weight:600;}
+  .cue-tab.on{border-color:var(--coral);background:rgba(217,130,43,.2);}
+  .cue-tab .emo{font-size:22px;display:block;margin-bottom:4px;}
+  .cue-tab .foc{display:block;font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--text-faint);margin-top:2px;}
+  .assign-note{font-size:17px;color:var(--text-faint);margin:-12px 0 20px;}
+
+  /* WRAP UP */
+  .takeaway-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;}
+  .tk{background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);padding:20px 22px;}
+  .tk .tk-icon{font-size:32px;margin-bottom:10px;display:block;}
+  .tk h4{margin:0 0 8px;font-family:'Fraunces',serif;font-size:21px;}
+  .tk p{margin:0;font-size:18px;color:var(--text-dim);line-height:1.55;}
+  .final-score{margin-top:32px;text-align:center;padding:36px;border-radius:18px;background:linear-gradient(155deg,var(--panel-2),var(--panel));border:1px solid var(--line);}
+  .final-score .fs-num{font-family:'JetBrains Mono',monospace;font-weight:700;font-size:70px;color:var(--gold);}
+  .final-score .fs-label{font-size:19px;color:var(--text-dim);margin-top:4px;}
+
+  .nav-arrows{display:flex;justify-content:space-between;margin-top:44px;padding-top:24px;border-top:1px solid var(--line);}
+  .mobile-progress,.mobile-jump{display:none;}
+
+  @media(max-width:880px){
+    .app{grid-template-columns:1fr;}
+    .rail{position:relative;height:auto;flex-direction:row;align-items:center;gap:12px;padding:14px 16px;}
+    .brand{border-bottom:none;padding:0;flex-shrink:0;}
+    .brand h1{font-size:18px;}
+    .brand .sub{display:none;}
+    .onair{flex-shrink:0;padding:8px 12px;}
+    .onair .label{display:none;}
+    nav{display:none;}
+    .rail-foot{display:none;}
+    main{padding:18px 18px 70px;}
+    .grid-3{grid-template-columns:1fr 1fr;}
+    .match-wrap,.grid-2,.takeaway-grid{grid-template-columns:1fr;}
+    .sort-intro{grid-template-columns:1fr;}
+    .warmup-tab{width:38px;height:38px;font-size:16px;}
+    .cue-tabs{grid-template-columns:repeat(3,1fr);}
+    h2.title{font-size:36px;}
+    .mobile-progress,.mobile-jump{display:flex;}
+    .mobile-progress{gap:4px;margin-bottom:18px;}
+    .mobile-progress .seg{flex:1;height:3px;border-radius:2px;background:var(--line);}
+    .mobile-progress .seg.done{background:var(--coral);}
+    .mobile-progress .seg.now{background:#E67E5B;}
+    .mobile-jump{align-items:center;margin-bottom:4px;}
+    .mobile-jump select{background:var(--panel);color:var(--paper);border:1px solid var(--line);border-radius:8px;padding:7px 10px;font-size:17px;font-family:'JetBrains Mono',monospace;width:100%;}
+  }
+  @media(prefers-reduced-motion:reduce){*{animation-duration:.001s!important;transition-duration:.001s!important;}}
+</style>
+</head>
+<body>
+<div class="app">
+  <aside class="rail">
+    <div class="brand">
+      <span class="tag">IELTS 7.0 · Speaking</span>
+      <h1>Cultural Values &amp; Heritage</h1>
+      <div class="sub">Part 3 Masterclass · 60 min</div>
+    </div>
+    <div class="onair">
+      <div class="dot"></div>
+      <div class="label">On Air</div>
+      <div class="score" id="railScore">0 pts</div>
+    </div>
+    <nav id="navList"></nav>
+    <div class="rail-foot">Click any item to jump. Progress is tracked as you complete each exercise.</div>
+  </aside>
+  <main id="main"></main>
+</div>
+
+<script>
+/* ===== DATA ===== */
+const sections = [
+  {id:'objectives', n:'00', label:'Lesson Objectives'},
+  {id:'warmup',   n:'01', label:'Warm-Up'},
+  {id:'qtype',    n:'02', label:'What\'s the Question Really Asking?'},
+  {id:'vocab',    n:'03', label:'Vocabulary'},
+  {id:'collocation', n:'04', label:'Collocations'},
+  {id:'idioms',   n:'05', label:'Idioms & Phrases'},
+  {id:'gapfill',  n:'06', label:'Gap Fill'},
+  {id:'oreo',     n:'07', label:'Opinion, Reason, Example or Plus?'},
+  {id:'quiz',     n:'08', label:'Quiz Challenge'},
+  {id:'model',    n:'09', label:'Model Answer'},
+  {id:'toolkit',  n:'10', label:'Language Toolkit'},
+  {id:'connectives', n:'11', label:'Cause-Effect, Contrast & Paraphrase'},
+  {id:'peer',     n:'12', label:'Peer Score Card'},
+  {id:'practice', n:'13', label:'Exam Practice'},
+  {id:'wrapup',   n:'14', label:'Wrap-Up'}
+];
+
+const objectives = [
+  {icon:'🧭', h:'Interpret Part 3 Questions',            d:'Understand what examiner questions on cultural values and heritage are really asking for.'},
+  {icon:'🗺️', h:'Map Ideas with O.R.E.O. Plus',          d:'Organise ideas using the model plus cause-effect and contrast linking devices.'},
+  {icon:'📚', h:'Apply Topic Vocabulary',                 d:'Use cultural heritage vocabulary accurately and evaluate your own answers for structure and fluency.'}
+];
+
+function shuffleArr(arr){
+  const a = arr.slice();
+  for(let i=a.length-1;i>0;i--){
+    const j = Math.floor(Math.random()*(i+1));
+    [a[i],a[j]]=[a[j],a[i]];
+  }
+  return a;
+}
+
+const warmupQs = [
+  'What\'s a tradition from your country that you love?',
+  'Do you think your generation values tradition as much as your parents\' generation did?',
+  'Have you ever attended a traditional festival? What was it like?',
+  'Is there a historical building or site you\'re proud of in your country?',
+  'Do you think globalisation is a threat to local culture, or does it help spread it?',
+  'What\'s a custom from another culture that you find interesting?',
+  'Do you think schools teach enough about your country\'s traditions?',
+  'If you could preserve one cultural tradition forever, what would it be?'
+];
+
+const qtypeIntro = [
+  {k:'A', label:'Reason + Example',       d:'why or how something is true, backed with an example'},
+  {k:'B', label:'Effect of Change',       d:'how something has changed and what caused it'},
+  {k:'C', label:'Opinion + Justification',d:'your view on a "should" or "do you think" question, and why'},
+  {k:'D', label:'Prediction',             d:'a likely future development or trend'}
+];
+
+const qtypeQs = shuffleArr([
+  {q:'"Why is it important to preserve cultural heritage?"',                                          cat:'A'},
+  {q:'"How do traditional festivals reflect a country\'s cultural values?"',                           cat:'A'},
+  {q:'"In what ways has globalisation changed cultural values in your country?"',                      cat:'B'},
+  {q:'"Should governments invest more in preserving heritage sites?"',                                 cat:'C'},
+  {q:'"How might cultural values change in the next 50 years?"',                                       cat:'D'},
+  {q:'"Do you think cultural exchange between countries strengthens or weakens local traditions?"',    cat:'C'},
+  {q:'"How might technology change the way traditions are passed down?"',                              cat:'D'}
+]);
+qtypeQs.forEach(q=>{ q.order = ['A','B','C','D']; });
+const qtypeLabels = {A:'Reason + Example', B:'Effect of Change', C:'Opinion + Justification', D:'Prediction'};
+
+const vocab = [
+  {w:'intangible heritage',      d:'cultural practices, knowledge or skills passed down that aren\'t physical objects, like music, dance or rituals', ex:'"Traditional weaving techniques are considered part of the region\'s intangible heritage."'},
+  {w:'cultural erosion',         d:'the gradual loss of traditional customs and values, often due to outside influence',                              ex:'"Fast fashion and global media have contributed to cultural erosion in many small communities."'},
+  {w:'ethnic minority',          d:'a group within a country that has a different cultural or ancestral background from the majority',                ex:'"The festival celebrates the traditions of an ethnic minority living in the mountains."'},
+  {w:'heritage site',            d:'a place recognised for its historical, cultural or natural significance',                                         ex:'"The temple complex became a heritage site in the 1990s."'},
+  {w:'revitalisation',           d:'the process of bringing new life or energy back into something that was declining',                                ex:'"The revitalisation of the old town square brought traditional craft markets back to life."'},
+  {w:'ancestral customs',        d:'traditions and practices passed down from earlier generations of a family or community',                          ex:'"Many young people are rediscovering their ancestral customs through community workshops."'},
+  {w:'communal rituals',         d:'shared ceremonies or practices that bring a community together',                                                   ex:'"The harvest festival includes communal rituals like shared meals and group dances."'},
+  {w:'craftsmanship',            d:'skill and artistry in making something by hand',                                                                   ex:'"The temple\'s woodwork is famous for its incredible craftsmanship."'},
+  {w:'oral tradition',           d:'stories, history or knowledge passed down by speaking rather than writing',                                        ex:'"Much of the region\'s early history survives only through oral tradition."'},
+  {w:'folklore',                 d:'traditional stories, beliefs and customs of a community, often passed down informally',                            ex:'"Local folklore is full of legends about spirits living in the forest."'}
+];
+
+const verbs   = shuffleArr(['preserve','pass down','celebrate','embrace','erode','revive','showcase','blend']);
+const nouns   = shuffleArr(['cultural heritage','traditions','a festival','modern values','traditional customs','a dying tradition','local craftsmanship','old and new traditions']);
+const matchKey = {
+  'preserve':    'cultural heritage',
+  'pass down':   'traditions',
+  'celebrate':   'a festival',
+  'embrace':     'modern values',
+  'erode':       'traditional customs',
+  'revive':      'a dying tradition',
+  'showcase':    'local craftsmanship',
+  'blend':       'old and new traditions'
+};
+
+const idioms = [
+  {p:'in the blood',                      m:'a trait or tradition that feels natural because it has been part of a family or culture for generations', ex:'"Storytelling is in the blood for many families in this region."'},
+  {p:'keep alive',                        m:'to make sure a tradition, memory or practice continues rather than disappearing',                          ex:'"Local schools are working hard to keep the language alive."'},
+  {p:'a melting pot',                     m:'a place where many different cultures mix together and influence one another',                             ex:'"The city is a melting pot of cuisines, languages and traditions."'},
+  {p:'lose touch with',                   m:'to gradually stop being connected to something, such as one\'s roots or culture',                          ex:'"Some worry that young people are losing touch with their heritage."'},
+  {p:'stand the test of time',            m:'to remain valued or relevant even after a long period',                                                    ex:'"These weaving techniques have stood the test of time for centuries."'},
+  {p:'cut from the same cloth',           m:'to have very similar character or values, often used of people sharing cultural background',               ex:'"The two communities are cut from the same cloth when it comes to hospitality."'},
+  {p:'carry the torch',                   m:'to continue an important tradition or cause, especially by passing it to a new generation',                ex:'"Young artisans are carrying the torch for traditional pottery-making."'},
+  {p:'a sign of the times',               m:'something that shows how much things have changed, often used about modern trends replacing older customs', ex:'"Fewer people wearing traditional dress day-to-day is a sign of the times."'}
+];
+
+const gapfills = [
+  {text:'Storytelling is ___ for many families in this region.',                                                 ans:'in the blood'},
+  {text:'Local schools are working hard to ___ the language.',                                                   ans:'keep alive'},
+  {text:'The city is ___ of cuisines, languages and traditions.',                                                ans:'a melting pot'},
+  {text:'Some worry that young people are ___ their heritage.',                                                  ans:'losing touch with'},
+  {text:'These weaving techniques have ___ for centuries.',                                                      ans:'stood the test of time'},
+  {text:'Young artisans are ___ for traditional pottery-making.',                                                ans:'carrying the torch'}
+];
+const wordbank = shuffleArr(['in the blood','keep alive','a melting pot','losing touch with','stood the test of time','carrying the torch','cut from the same cloth','a sign of the times']);
+
+const oreoIntro = [
+  {k:'O1', label:'Opinion',          d:'make your position clear from the start'},
+  {k:'R',  label:'Reason',           d:'explain why you think so'},
+  {k:'E',  label:'Example',          d:'support it with a specific cultural reference'},
+  {k:'O2', label:'Refined Opinion',  d:'restate or add nuance to your opinion'},
+  {k:'P',  label:'Plus',             d:'add a threat, solution or prediction of future change'}
+];
+
+const oreoQs = shuffleArr([
+  {q:'"In my opinion, cultural values and heritage are essential for shaping a country\'s identity."',                                    cat:'O1'},
+  {q:'"This is mainly because they teach people shared traditions and history."',                                                          cat:'R'},
+  {q:'"For example, traditional festivals like Lunar New Year in Asia bring families together and strengthen community ties."',            cat:'E'},
+  {q:'"That\'s why I believe protecting cultural traditions is the key to maintaining who we are as a nation."',                            cat:'O2'},
+  {q:'"If this trend continues, people will feel less connected to their cultural roots, so governments and schools should promote heritage education."', cat:'P'},
+  {q:'"I believe festivals are one of the clearest reflections of a country\'s cultural values."',                                          cat:'O1'},
+  {q:'"They show what society respects, such as family and ancestors."',                                                                   cat:'R'},
+  {q:'"Lunar New Year, for example, centres on family reunion and respect for elders."',                                                    cat:'E'},
+  {q:'"Festivals are essentially a mirror of a nation\'s traditions and beliefs."',                                                         cat:'O2'},
+  {q:'"They help pass these values on to younger generations."',                                                                            cat:'P'}
+]);
+oreoQs.forEach(q=>{ q.order = shuffleArr(['O1','R','E','O2','P']); });
+const oreoLabels = {O1:'Opinion', R:'Reason', E:'Example', O2:'Refined Opinion', P:'Plus'};
+
+const quizRounds = {
+  1:{title:'Vocabulary Rapid Fire', qs:[
+    {q:"What is 'intangible heritage'?",                                                                opts:['a historic building','cultural practices or skills passed down that aren\'t physical objects','a museum entrance fee','a type of festival food'], ans:1},
+    {q:"What does 'cultural erosion' mean?",                                                             opts:['the gradual loss of traditional customs, often due to outside influence','building a new heritage site','a type of traditional dance','protecting a language'], ans:0},
+    {q:"What is 'oral tradition'?",                                                                       opts:['written history books','stories or knowledge passed down by speaking rather than writing','a formal education system','a type of government policy'], ans:1},
+    {q:"What does 'craftsmanship' refer to?",                                                             opts:['mass factory production','skill and artistry in making something by hand','a type of festival','a government department'], ans:1}
+  ]},
+  2:{title:'Idiom Challenge', qs:[
+    {q:'"Storytelling is in the blood for this family."',                                                 opts:['they dislike storytelling','it feels natural because it\'s been part of their culture for generations','they only tell scary stories','it is a paid profession'], ans:1},
+    {q:'"The city is a melting pot of cultures."',                                                        opts:['a place where many different cultures mix together','a place with only one culture','a very hot climate','a type of cooking pot'], ans:0},
+    {q:'"Some fear young people are losing touch with their heritage."',                                  opts:['becoming experts in their heritage','gradually becoming disconnected from their roots','travelling more often','learning a new language'], ans:1},
+    {q:'"These techniques have stood the test of time."',                                                 opts:['they failed an exam','they remain valued even after a long period','they were recently invented','they are no longer used'], ans:1}
+  ]}
+};
+
+const oreoModel = [
+  {k:'O1', label:'Opinion — Direct answer',        text:'In my opinion, preserving cultural heritage is essential because it\'s how a community holds on to its identity.'},
+  {k:'R',  label:'Reason — Why you think so',       text:'This is mainly because heritage — whether it\'s a historic site or an ancestral custom — connects people to where they came from and to each other.'},
+  {k:'E',  label:'Example — Real situation',        text:'For instance, when a small town restores an old heritage site or revives a traditional craft, it often brings the whole community together in a way modern developments rarely do.'},
+  {k:'O2', label:'Refined Opinion — Add nuance',    text:'That\'s why I believe protecting these traditions matters just as much as building new infrastructure.'},
+  {k:'P',  label:'Plus — Prediction',               text:'If we don\'t invest in this now, I think we\'ll see more cultural erosion, and future generations may lose touch with customs that took centuries to build.'}
+];
+
+const toolkit = [
+  {h:'💬 Giving Opinions',           items:['I believe that one important value in my culture is…','Our society strongly believes in…','Personally, I think in my country, it is customary to…']},
+  {h:'🧠 Giving Reasons',            items:['Preserving heritage is important because…','This is vital since…','It plays a crucial role in…']},
+  {h:'📌 Giving Examples',           items:['For instance, traditional festivals like… reflect these values.','A good example of this is…','One clear illustration is…']},
+  {h:'🔁 Restating Opinions',        items:['That\'s why I believe cultural identity gives people a sense of…','Overall, it still seems to me that…','And in the end, I would still argue that…']},
+  {h:'🛡️ Threats & Solutions',      items:['Globalisation can affect…, but we can protect it by…','One threat to our heritage is…, which could be solved by…','A possible solution is to…']},
+  {h:'🔮 Reflecting on Change',      items:['Cultural practices have changed over time, but the core values remain.','In the past…, whereas now…','If this trend continues, …']}
+];
+
+const connectives = [
+  {h:'🔗 Cause & Effect',                 items:['owing to…','thanks to…','as a consequence of…','which has led to…','consequently, …']},
+  {h:'➡️ Result Phrases',                 items:['as a result of…','hence, …','this means that…','thus, …']},
+  {h:'⚖️ Contrast',                       items:['whereas…','while…','although…','in contrast, …']},
+  {h:'🔄 Paraphrasing the Question',      items:['You mean, …?','So what you\'re asking is…','In other words, you want to know…']}
+];
+
+const peerCriteria = [
+  {k:'🧩', t:'Used the O.R.E.O. Plus model?',              s:'Opinion → Reason → Example → Refined Opinion → Plus'},
+  {k:'🎭', t:'Included specific cultural references?',      s:'Named festivals, customs, or heritage sites'},
+  {k:'🔗', t:'Used cause-effect or contrast linking?',       s:'e.g. as a result of, whereas, although'},
+  {k:'📚', t:'3+ topic vocab or collocations used?',         s:'From today\'s word list, used naturally'},
+  {k:'🔄', t:'Paraphrased the question before answering?',   s:'Restated it in their own words'},
+  {k:'🧭', t:'Answer flowed logically & stayed on topic?',   s:'No unrelated tangents'},
+  {k:'💭', t:'Included a threat, solution or prediction?',   s:'The "Plus" stage was genuinely developed'},
+  {k:'🗣️', t:'Spoke fluently and confidently?',              s:'Few hesitations, natural pace'}
+];
+
+const examCards = [
+  {emo:'🧗', foc:'Challenges',      title:'Q1',  prompt:'What challenges do countries face in trying to preserve their cultural heritage?',           followUp:'Which of these challenges do you think is hardest to solve?'},
+  {emo:'🏫', foc:'Education',       title:'Q2',  prompt:'How can schools help young people learn more about their cultural traditions?',              followUp:'Should this be a separate subject or part of other classes?'},
+  {emo:'🔄', foc:'Exchange',        title:'Q3',  prompt:'Do you think cultural exchange between countries strengthens or weakens local traditions?',   followUp:'Can you think of an example that supports your view?'},
+  {emo:'🏙️', foc:'Architecture',   title:'Q4',  prompt:'Should modern architecture reflect a country\'s traditional styles? Why or why not?',          followUp:'Can you think of a building that blends old and new well?'},
+  {emo:'⚖️', foc:'Responsibility',  title:'Q5',  prompt:'In your opinion, who has more responsibility for protecting culture: the government or individuals?', followUp:'What could each side realistically do?'},
+  {emo:'💻', foc:'Technology',      title:'Q6',  prompt:'How can technology be used to help preserve cultural heritage?',                              followUp:'Can you think of an app or platform already doing this?'},
+  {emo:'🔀', foc:'Modernisation',   title:'Q7',  prompt:'Do you think cultural traditions should change to fit modern lifestyles? Why or why not?',     followUp:'Is there a tradition you think should never change?'},
+  {emo:'🧳', foc:'Tourism',         title:'Q8',  prompt:'What impact does tourism have on a country\'s cultural values?',                              followUp:'Can tourism ever help preserve culture rather than harm it?'},
+  {emo:'🌐', foc:'Promotion',       title:'Q9',  prompt:'How can countries promote their culture to the rest of the world?',                           followUp:'Which country do you think does this particularly well?'},
+  {emo:'🧵', foc:'Minority Culture', title:'Q10', prompt:'Do you think preserving minority cultures is as important as preserving the national culture? Why?', followUp:'What might be lost if a minority culture disappeared?'},
+  {emo:'🌏', foc:'Globalisation',   title:'Q11', prompt:'In what ways has globalisation changed cultural values in your country?',                     followUp:'Would you say the changes are mostly positive or negative?'},
+  {emo:'👥', foc:'Generations',     title:'Q12', prompt:'Do you think that young people today value traditions as much as older generations?',         followUp:'What might explain any difference between the generations?'},
+  {emo:'🏛️', foc:'Government Role', title:'Q13', prompt:'What role should the government play in protecting cultural heritage?',                      followUp:'Should there be limits on that role?'},
+  {emo:'💰', foc:'Trade-offs',      title:'Q14', prompt:'Should cultural heritage be preserved even if it means limiting economic development?',       followUp:'Can you think of a real case where this trade-off came up?'}
+];
+
+/* ===== STATE ===== */
+let state = {
+  current:'objectives', score:0, done:new Set(),
+  matchSel:{verb:null,noun:null}, matchSolved:new Set(),
+  quizRound:1, quizIdx:0, quizAnswered:{},
+  qtypeAnswered:{}, oreoAnswered:{},
+  adeActive:null, cueTab:0, peerScores:{},
+  gapSelected:null, gapFilled:{}, gapScored:{},
+  warmupTab:0,
+  timerInterval:null, timerRunning:false,
+  timerRemaining:20, timerTotal:20
+};
+
+function addScore(pts){ state.score+=pts; document.getElementById('railScore').textContent=state.score+' pts'; }
+function markDone(id){ state.done.add(id); renderNav(); }
+
+/* ===== NAV ===== */
+function renderNav(){
+  const nav=document.getElementById('navList');
+  nav.innerHTML=sections.map(s=>`
+    <div class="nav-item ${s.id===state.current?'active':''} ${state.done.has(s.id)?'done':''}" data-id="${s.id}">
+      <span class="n">${s.n}</span><span>${s.label}</span><span class="done-mark">✓</span>
+    </div>`).join('');
+  nav.querySelectorAll('.nav-item').forEach(el=>el.addEventListener('click',()=>goTo(el.dataset.id)));
+}
+
+function goTo(id){ state.current=id; renderNav(); renderMain(); window.scrollTo({top:0,behavior:'smooth'}); }
+
+/* ===== RENDER MAIN ===== */
+function renderMain(){
+  const main=document.getElementById('main');
+  const idx=sections.findIndex(s=>s.id===state.current);
+  const prev=sections[idx-1]; const next=sections[idx+1];
+  let body='';
+  switch(state.current){
+    case 'objectives':  body=renderObjectives(); break;
+    case 'warmup':      body=renderWarmup(); break;
+    case 'qtype':       body=renderQtype(); break;
+    case 'vocab':       body=renderVocab(); break;
+    case 'collocation': body=renderCollocation(); break;
+    case 'idioms':      body=renderIdioms(); break;
+    case 'gapfill':     body=renderGapfill(); break;
+    case 'oreo':        body=renderOreo(); break;
+    case 'quiz':        body=renderQuiz(); break;
+    case 'model':       body=renderModel(); break;
+    case 'toolkit':     body=renderToolkit(); break;
+    case 'connectives': body=renderConnectives(); break;
+    case 'peer':        body=renderPeer(); break;
+    case 'practice':    body=renderPractice(); break;
+    case 'wrapup':      body=renderWrapup(); break;
+  }
+  main.innerHTML=`
+    <div class="mobile-jump">
+      <select id="mobileSelect">
+        ${sections.map(s=>`<option value="${s.id}" ${s.id===state.current?'selected':''}>${s.n} · ${s.label}${state.done.has(s.id)?' ✓':''}</option>`).join('')}
+      </select>
+    </div>
+    <div class="mobile-progress">
+      ${sections.map(s=>`<div class="seg ${state.done.has(s.id)?'done':''} ${s.id===state.current?'now':''}"></div>`).join('')}
+    </div>`+body+`
+    <div class="nav-arrows">
+      ${prev?`<button class="btn" id="prevBtn">← ${prev.label}</button>`:'<span></span>'}
+      ${next?`<button class="btn primary" id="nextBtn">${next.label} →</button>`:'<span></span>'}
+    </div>`;
+  if(prev) document.getElementById('prevBtn').onclick=()=>goTo(prev.id);
+  if(next) document.getElementById('nextBtn').onclick=()=>goTo(next.id);
+  const ms=document.getElementById('mobileSelect');
+  if(ms) ms.onchange=e=>goTo(e.target.value);
+  attachHandlers();
+}
+
+/* ===== TIMER ===== */
+function setupTimer(s){ clearInterval(state.timerInterval); state.timerRunning=false; state.timerTotal=s; state.timerRemaining=s; updateRing(); }
+function updateRing(){
+  const fg=document.getElementById('ringFg'); const num=document.getElementById('ringNum');
+  if(!fg) return;
+  fg.style.strokeDashoffset=238.8*(1-state.timerRemaining/state.timerTotal);
+  num.textContent=state.timerRemaining;
+  if(state.timerRemaining<=6&&state.timerRemaining>0) fg.style.stroke='var(--gold)'; else fg.style.stroke='var(--coral)';
+}
+function startTimer(){
+  if(state.timerRunning) return;
+  state.timerRunning=true;
+  state.timerInterval=setInterval(()=>{
+    state.timerRemaining--;
+    updateRing();
+    if(state.timerRemaining<=0){ clearInterval(state.timerInterval); state.timerRunning=false; }
+  },1000);
+}
+function timerHTML(seconds, label){
+  seconds=seconds||20; label=label||('Thinking time — '+seconds+' seconds');
+  return `<div class="timer-wrap"><div class="ring"><svg width="92" height="92"><circle class="bg" cx="46" cy="46" r="38"/><circle class="fg" id="ringFg" cx="46" cy="46" r="38" stroke-dasharray="238.8" stroke-dashoffset="0"/></svg><div class="num" id="ringNum">${seconds}</div></div><div class="timer-meta"><div class="t-label" id="timerLabel">${label}</div><div class="timer-btns"><button class="btn primary" id="timerStart">Start</button><button class="btn ghost" id="timerReset">Reset</button></div></div></div>`;
+}
+
+/* ===== SECTIONS ===== */
+function renderObjectives(){ return `
+  <div class="eyebrow">Lesson Objectives</div>
+  <h2 class="title">What You\'ll Learn Today 🎯</h2>
+  <p class="deck">By the end of this lesson, you will be able to:</p>
+  <div class="takeaway-grid">
+    ${objectives.map(o=>`<div class="tk"><span class="tk-icon">${o.icon}</span><h4>${o.h}</h4><p>${o.d}</p></div>`).join('')}
+  </div>
+  <p style="font-size:19px;color:var(--text-faint);margin-top:24px;">Let\'s get started — click "Warm-Up" below to begin.</p>`; }
+
+function renderWarmup(){
+  const i=state.warmupTab;
+  return `
+  <div class="eyebrow">Warm-Up · 0–10 min</div>
+  <h2 class="title">Culture Talk 🏺</h2>
+  <p class="deck">Discuss each question with a partner. Click a number to move to that question and start the timer.</p>
+  <div class="warmup-tabs">
+    ${warmupQs.map((_,idx)=>`<div class="warmup-tab ${state.warmupTab===idx?'on':''}" data-i="${idx}">${idx+1}</div>`).join('')}
+  </div>
+  ${timerHTML(20,'Discussion time — 20 seconds')}
+  <div class="prompt-current"><div class="pn">${i+1}</div><p>${warmupQs[i]}</p></div>
+  <p style="font-size:19px;color:var(--text-faint);margin-top:18px;">Tip: Try paraphrasing the question back before you answer — "You mean, …?" — it buys you thinking time and shows strong Lexical Resource.</p>`; }
+
+function renderQtype(){
+  const answeredCount=Object.keys(state.qtypeAnswered).length;
+  return `
+  <div class="eyebrow">CORE Comprehension · Reading Beyond the Question</div>
+  <h2 class="title">What's the Question Really Asking?</h2>
+  <p class="deck">Identifying a question's focus tells you what the examiner really wants — a reason, a change, an opinion, or a prediction. Skim the quick guide, then sort each question.</p>
+  <div class="sort-intro">
+    ${qtypeIntro.map(c=>`<div class="sort-intro-item" data-k="${c.k}"><span class="k">${c.k} — ${c.label}</span><p>${c.d}</p></div>`).join('')}
+  </div>
+  <p style="font-size:19px;color:var(--text-dim);margin:0 0 16px;">Read each question and click the type of response it needs. ${answeredCount}/${qtypeQs.length} sorted.</p>
+  <div class="focus-list">
+    ${qtypeQs.map((f,i)=>{
+      const a=state.qtypeAnswered[i];
+      return `<div class="focus-item">
+        <p>${i+1}. ${f.q}</p>
+        <div class="focus-btns">
+          ${f.order.map(cat=>{
+            let cls='focus-btn';
+            if(a){ if(cat===f.cat) cls+=' correct locked'; else if(cat===a.picked && !a.correct) cls+=' wrong'; else cls+=' locked'; }
+            return `<button class="${cls}" data-i="${i}" data-cat="${cat}" data-group="qtype">${qtypeLabels[cat]}</button>`;
+          }).join('')}
+        </div>
+        <div class="focus-result ${a&&a.correct?'good':''}">${a?(a.correct?'✓ Correct — '+qtypeLabels[f.cat]:'Try another type'):''}</div>
+      </div>`;
+    }).join('')}
+  </div>`; }
+
+function renderVocab(){ return `
+  <div class="eyebrow">Vocabulary Power-Up · 10–22 min</div>
+  <h2 class="title">10 Words for Culture Talk</h2>
+  <p class="deck">Read the meaning, guess the word or phrase, then click to reveal the answer and example sentence.</p>
+  <div class="grid-3">
+    ${vocab.map((v,i)=>`<div class="flip" data-i="${i}"><div class="flip-inner"><div class="flip-face flip-front"><div class="def-prompt">${v.d}</div><div class="hint">Tap to reveal →</div></div><div class="flip-face flip-back"><div class="word-reveal">${v.w}</div><div class="ex">${v.ex}</div></div></div></div>`).join('')}
+  </div>`; }
+
+function renderCollocation(){
+  const sc=state.matchSolved.size;
+  const solvedVerbs=verbs.filter(v=>state.matchSolved.has(v));
+  const unsolvedVerbs=verbs.filter(v=>!state.matchSolved.has(v));
+  const unsolvedNouns=nouns.filter(n=>!solvedVerbs.some(v=>matchKey[v]===n));
+  const verbOrder=solvedVerbs.concat(unsolvedVerbs);
+  const nounOrder=solvedVerbs.map(v=>matchKey[v]).concat(unsolvedNouns);
+  return `
+  <div class="eyebrow">Vocabulary Power-Up · Collocation Match-Up ⚡</div>
+  <h2 class="title">Match the Pairs</h2>
+  <p class="deck">Click a verb, then click the phrase it goes with. Everything starts jumbled — correct pairs lock in and line up across from each other. ${sc}/${verbs.length} matched so far.</p>
+  <div class="match-wrap">
+    <div class="match-col"><h4>Verbs</h4>
+      ${verbOrder.map((v,i)=>`<div class="match-item ${state.matchSolved.has(v)?'correct locked':''} ${state.matchSel.verb===v?'selected':''}" data-side="verb" data-val="${v}"><span class="tag">${i+1}</span>${v}</div>`).join('')}
+    </div>
+    <div class="match-col"><h4>Phrases</h4>
+      ${nounOrder.map((n,i)=>`<div class="match-item ${solvedVerbs.some(v=>matchKey[v]===n)?'correct locked':''} ${state.matchSel.noun===n?'selected':''}" data-side="noun" data-val="${n}"><span class="tag">${String.fromCharCode(65+i)}</span>${n}</div>`).join('')}
+    </div>
+  </div>`; }
+
+function renderIdioms(){ return `
+  <div class="eyebrow">Idioms & Phrases · 25–40 min</div>
+  <h2 class="title">Culture Talk: 8 Expressions 💡</h2>
+  <p class="deck">Click each phrase to expand its meaning and an example sentence. Use these to make your Part 3 answers sound natural and fluent.</p>
+  <div class="idiom-list">
+    ${idioms.map((it,i)=>`<div class="idiom" data-i="${i}"><div class="idiom-head"><span class="phrase">${it.p}</span><span class="chev">▸</span></div><div class="idiom-body"><div class="idiom-mean">— ${it.m}</div><div class="idiom-ex">${it.ex}</div></div></div>`).join('')}
+  </div>`; }
+
+function renderGapfill(){
+  return `
+  <div class="eyebrow">Idioms & Expressions · Gap Fill ✏️</div>
+  <h2 class="title">Use the Right Expression</h2>
+  <p class="deck">Click a blank, then click the matching phrase from the word bank below. No typing — just click!</p>
+  <div class="gapfill-list">
+    ${gapfills.map((g,i)=>{
+      const parts=g.text.split('___');
+      const filled=state.gapFilled[i];
+      return `<div class="gap-item"><p>${i+1}. ${parts[0]}<span class="gap-blank ${state.gapSelected===i?'selected':''} ${filled?'filled':''}" data-i="${i}">${filled?filled:'click blank'}</span>${parts[1]}</p></div>`;
+    }).join('')}
+  </div>
+  <div class="wordbank" style="margin-top:20px;">
+    ${wordbank.map(w=>`<span class="wb-chip ${Object.values(state.gapFilled).includes(w)?'used':''}" data-word="${w}">${w}</span>`).join('')}
+  </div>
+  <div class="quiz-feedback" id="gapFeedback">${Object.keys(state.gapFilled).length} / ${gapfills.length} filled</div>`; }
+
+function renderOreo(){
+  const answeredCount=Object.keys(state.oreoAnswered).length;
+  return `
+  <div class="eyebrow">CORE Organisation · Core Skill 🎯</div>
+  <h2 class="title">Opinion, Reason, Example or Plus?</h2>
+  <p class="deck">The O.R.E.O. Plus model turns a bare opinion into a full, coherent answer. Skim the quick guide below, then sort each sentence into the stage it belongs to.</p>
+  <div class="sort-intro">
+    ${oreoIntro.map(c=>`<div class="sort-intro-item" data-k="${c.k}"><span class="k">${c.k} — ${c.label}</span><p>${c.d}</p></div>`).join('')}
+  </div>
+  <p style="font-size:19px;color:var(--text-dim);margin:0 0 16px;">Read each sentence and click the correct stage. ${answeredCount}/${oreoQs.length} sorted.</p>
+  <div class="focus-list">
+    ${oreoQs.map((f,i)=>{
+      const a=state.oreoAnswered[i];
+      return `<div class="focus-item">
+        <p>${i+1}. ${f.q}</p>
+        <div class="focus-btns">
+          ${f.order.map(cat=>{
+            let cls='focus-btn';
+            if(a){ if(cat===f.cat) cls+=' correct locked'; else if(cat===a.picked && !a.correct) cls+=' wrong'; else cls+=' locked'; }
+            return `<button class="${cls}" data-i="${i}" data-cat="${cat}" data-group="oreo">${oreoLabels[cat]}</button>`;
+          }).join('')}
+        </div>
+        <div class="focus-result ${a&&a.correct?'good':''}">${a?(a.correct?'✓ Correct — '+oreoLabels[f.cat]:'Try another stage'):''}</div>
+      </div>`;
+    }).join('')}
+  </div>`; }
+
+function renderQuiz(){
+  const round=quizRounds[state.quizRound];
+  const q=round.qs[state.quizIdx];
+  const key=`${state.quizRound}-${state.quizIdx}`;
+  const answered=state.quizAnswered[key];
+  return `
+  <div class="eyebrow">Quiz Challenge · Test Yourself 🧠</div>
+  <h2 class="title">${round.title}</h2>
+  <p class="deck">Click an answer. If it\'s wrong, try again — you can keep guessing until you find the right one.</p>
+  <div class="roundtab">
+    <button data-r="1" class="${state.quizRound===1?'on':''}">Round 1 · Vocabulary</button>
+    <button data-r="2" class="${state.quizRound===2?'on':''}">Round 2 · Idioms</button>
+  </div>
+  <div class="quiz-progress">
+    ${round.qs.map((_,i)=>{const k=`${state.quizRound}-${i}`;return `<div class="quiz-dot ${i===state.quizIdx?'active':''} ${state.quizAnswered[k]?'answered':''}"></div>`;}).join('')}
+  </div>
+  <div class="quiz-card">
+    <p class="quiz-q">${state.quizIdx+1}. ${q.q}</p>
+    <div class="quiz-opts">
+      ${q.opts.map((o,i)=>{let cls='quiz-opt';if(answered&&i===q.ans){cls+=' correct locked';}return `<div class="${cls}" data-i="${i}"><span class="letter">${String.fromCharCode(65+i)}</span>${o}</div>`;}).join('')}
+    </div>
+    <div class="quiz-foot">
+      <span class="quiz-feedback ${answered?'good':''}" id="quizFeedbackMsg">${answered?'✓ Correct! +1 point':'Select an answer'}</span>
+      <div style="display:flex;gap:8px;">
+        <button class="btn" id="quizPrev" ${state.quizIdx===0?'disabled style="opacity:.4"':''}>← Prev</button>
+        <button class="btn" id="quizNext" ${state.quizIdx===round.qs.length-1?'disabled style="opacity:.4"':''}>Next →</button>
+      </div>
+    </div>
+  </div>`; }
+
+function renderModel(){ return `
+  <div class="eyebrow">Model Answer</div>
+  <h2 class="title">Analyse a Band 7+ Answer 🔍</h2>
+  <p class="deck">Question: "Why is it important to preserve cultural heritage?" Click a stage chip to highlight that part of the answer. See how Opinion → Reason → Example → Refined Opinion → Plus builds a full, structured response.</p>
+  <div class="ade-key">
+    ${oreoModel.map(a=>`<div class="ade-chip ${state.adeActive===a.k?'active':''}" data-k="${a.k}">${a.k} — ${a.label.split('—')[0].trim()}</div>`).join('')}
+  </div>
+  <div class="card">
+    ${oreoModel.map(a=>`<div class="ade-block ${state.adeActive&&state.adeActive!==a.k?'dim':''} ${state.adeActive===a.k?'highlight':''}" data-k="${a.k}"><span class="tag2">${a.label}</span>${a.text}</div>`).join('')}
+  </div>`; }
+
+function renderToolkit(){ return `
+  <div class="eyebrow">Language Toolkit</div>
+  <h2 class="title">Upgrade Your Culture Talk 🔗</h2>
+  <p class="deck">Click any phrase to drop it into your scratchpad — then build a sentence using that starter.</p>
+  <div class="grid-2">
+    ${toolkit.map(t=>`<div class="tool-card"><h4>${t.h}</h4>${t.items.map(i=>`<span class="phrase-btn" data-phrase="${i}">${i}</span>`).join('')}</div>`).join('')}
+  </div>
+  <div class="scratch">
+    <p style="font-size:19px;color:var(--text-dim);margin-bottom:8px;">Scratchpad — practise a sentence using the phrases above:</p>
+    <textarea id="scratchArea" placeholder="e.g. I believe that one important value in my culture is respect for elders…"></textarea>
+  </div>`; }
+
+function renderConnectives(){ return `
+  <div class="eyebrow">Cause-Effect, Contrast &amp; Paraphrase · Level Up 🔗</div>
+  <h2 class="title">Link Ideas and Buy Yourself Time</h2>
+  <p class="deck">Cause-effect structure shows analytical thinking, contrast shows balance, and paraphrasing shows Lexical Resource — all Band 7+ features. Click any phrase to drop it into your scratchpad.</p>
+  <div class="grid-2">
+    ${connectives.map(t=>`<div class="tool-card"><h4>${t.h}</h4>${t.items.map(i=>`<span class="phrase-btn" data-phrase="${i}">${i}</span>`).join('')}</div>`).join('')}
+  </div>
+  <div class="scratch">
+    <p style="font-size:19px;color:var(--text-dim);margin-bottom:8px;">Scratchpad — practise linking or paraphrasing using a structure above:</p>
+    <textarea id="scratchArea" placeholder="e.g. Owing to globalisation, younger generations are embracing Western clothing styles…"></textarea>
+  </div>`; }
+
+function renderPeer(){
+  const total=peerCriteria.reduce((s,c)=>s+(state.peerScores[c.t]||0),0);
+  const maxTotal=peerCriteria.length*3;
+  return `
+  <div class="eyebrow">Peer Performance · 75–90 min</div>
+  <h2 class="title">You Speak, We Listen 🌟</h2>
+  <p class="deck">Answer spontaneously — Part 3 has no prep time. Aim for a clear, well-organised, culturally specific answer. Your partner scores your performance below.</p>
+  <div class="scorecard">
+    ${peerCriteria.map(c=>`<div class="score-row"><div class="letter2">${c.k}</div><div class="si-main"><div class="si-title">${c.t}</div><div class="si-sub">${c.s}</div></div><div class="pips">${[1,2,3].map(n=>`<div class="pip ${state.peerScores[c.t]===n?'on':''}" data-crit="${c.t}" data-n="${n}">${n}</div>`).join('')}</div></div>`).join('')}
+  </div>
+  <div class="score-total">
+    <span style="font-size:19px;color:var(--text-dim);">Total score (1=needs work · 2=ok · 3=great)</span>
+    <span class="tot-num">${total}/${maxTotal}</span>
+  </div>
+  <div class="feedback-fields">
+    <input type="text" id="fbStrength" placeholder="📝 One strength — something they did really well…">
+    <input type="text" id="fbTip" placeholder="🎯 One tip — one specific thing to improve next time…">
+  </div>`; }
+
+function renderPractice(){
+  const c=examCards[state.cueTab];
+  return `
+  <div class="eyebrow">Exam Practice</div>
+  <h2 class="title">14 Part 3 Discussion Questions 🃏</h2>
+  <p class="deck">Part 3 has no prep time in the real exam, but take a quick moment to map your ideas in O.R.E.O. Plus order before you answer. Create 1–2 follow-up questions of your own once you hear your partner\'s answer.</p>
+  <p class="assign-note">💡 Teacher tip: assign one question per student, or let each student click their own tab.</p>
+  <div class="cue-tabs">
+    ${examCards.map((e,i)=>`<div class="cue-tab ${state.cueTab===i?'on':''}" data-i="${i}"><span class="emo">${e.emo}</span>${e.title}<span class="foc">${e.foc}</span></div>`).join('')}
+  </div>
+  <div class="cuecard">
+    <div class="label">${c.title} · ${c.foc}</div>
+    <h3>${c.prompt}</h3>
+    <p class="followup"><b>Possible follow-up:</b> ${c.followUp}</p>
+  </div>
+  ${timerHTML(20,'Thinking time — 20 seconds')}
+  <textarea class="notepad" placeholder="Keyword notes only — O / R / E / O / Plus…"></textarea>`; }
+
+function renderWrapup(){ return `
+  <div class="eyebrow">Lesson Wrap-Up</div>
+  <h2 class="title">Today\'s Key Takeaways ⭐</h2>
+  <p class="deck">Excellent work. Here is everything you covered today — take it with you!</p>
+  <div class="takeaway-grid">
+    <div class="tk"><span class="tk-icon">📚</span><h4>10 Advanced Words</h4><p>intangible heritage · cultural erosion · ethnic minority · heritage site · revitalisation · ancestral customs · communal rituals · craftsmanship · oral tradition · folklore</p></div>
+    <div class="tk"><span class="tk-icon">💡</span><h4>8 Idioms & Phrases</h4><p>in the blood · keep alive · a melting pot · lose touch with · stand the test of time · cut from the same cloth · carry the torch…</p></div>
+    <div class="tk"><span class="tk-icon">🎯</span><h4>The O.R.E.O. Plus Model</h4><p>Opinion → Reason → Example → Refined Opinion → Plus: the structure behind every strong, balanced Part 3 answer.</p></div>
+    <div class="tk"><span class="tk-icon">🔗</span><h4>Paraphrasing Starters</h4><p>You mean, …? · So what you're asking is… · In other words, you want to know…</p></div>
+  </div>
+  <div class="final-score">
+    <div class="fs-num">${state.score}</div>
+    <div class="fs-label">points earned across today\'s exercises</div>
+  </div>
+  <p style="margin-top:28px;font-size:20px;color:var(--text-dim);">🎙 <strong>Homework:</strong> Record yourself responding to these questions: "How can technology be used to help preserve cultural heritage?", "Do you think cultural traditions should change to fit modern lifestyles?", "What impact does tourism have on a country's cultural values?", "How can countries promote their culture to the rest of the world?", and "Do you think preserving minority cultures is as important as preserving the national culture?" Listen back and check: did you use the O.R.E.O. Plus model, topic-specific vocabulary, and appropriate functional phrases?</p>`; }
+
+/* ===== HANDLERS ===== */
+function attachHandlers(){
+  const start=document.getElementById('timerStart');
+  const reset=document.getElementById('timerReset');
+  if(start){
+    const initSeconds = 20;
+    setupTimer(initSeconds);
+    updateRing();
+    start.onclick=()=>startTimer();
+    reset.onclick=()=>{ setupTimer(initSeconds); };
+  }
+
+  document.querySelectorAll('.warmup-tab').forEach(el=>el.addEventListener('click',()=>{ state.warmupTab=+el.dataset.i; markDone('warmup'); renderMain(); startTimer(); }));
+
+  document.querySelectorAll('.focus-btn[data-group="qtype"]').forEach(el=>{
+    if(el.classList.contains('locked')) return;
+    el.addEventListener('click',()=>{
+      const i=+el.dataset.i; const cat=el.dataset.cat;
+      if(state.qtypeAnswered[i]) return;
+      const correct=cat===qtypeQs[i].cat;
+      if(correct){
+        state.qtypeAnswered[i]={picked:cat,correct:true}; addScore(1);
+        if(Object.keys(state.qtypeAnswered).length===qtypeQs.length) markDone('qtype');
+        renderMain();
+      } else {
+        el.classList.add('wrong');
+        setTimeout(()=>el.classList.remove('wrong'),500);
+      }
+    });
+  });
+
+  document.querySelectorAll('.flip').forEach(el=>el.addEventListener('click',()=>{ el.classList.toggle('flipped'); markDone('vocab'); }));
+
+  document.querySelectorAll('#main .match-item').forEach(el=>{
+    if(el.classList.contains('locked')) return;
+    el.addEventListener('click',()=>{
+      const side=el.dataset.side; const val=el.dataset.val;
+      state.matchSel[side]=(state.matchSel[side]===val)?null:val;
+      if(state.matchSel.verb&&state.matchSel.noun){
+        if(matchKey[state.matchSel.verb]===state.matchSel.noun){
+          state.matchSolved.add(state.matchSel.verb); addScore(1);
+          if(state.matchSolved.size===verbs.length) markDone('collocation');
+          state.matchSel={verb:null,noun:null}; renderMain();
+        } else {
+          renderMain();
+          setTimeout(()=>{ document.querySelectorAll('#main .match-item.selected').forEach(x=>x.classList.add('wrong')); setTimeout(()=>{ state.matchSel={verb:null,noun:null}; renderMain(); },500); },30);
+        }
+      } else renderMain();
+    });
+  });
+
+  document.querySelectorAll('.idiom').forEach(el=>el.addEventListener('click',()=>{ el.classList.toggle('open'); markDone('idioms'); }));
+
+  document.querySelectorAll('.gap-blank').forEach(el=>{
+    el.addEventListener('click',()=>{
+      const i=+el.dataset.i;
+      state.gapSelected=(state.gapSelected===i)?null:i;
+      renderMain();
+    });
+  });
+  document.querySelectorAll('.wb-chip').forEach(chip=>{
+    chip.addEventListener('click',()=>{
+      if(state.gapSelected===null) return;
+      const i=state.gapSelected;
+      const word=chip.dataset.word;
+      const correctAns=gapfills[i].ans;
+      const fb=document.getElementById('gapFeedback');
+      if(word===correctAns){
+        state.gapFilled[i]=word;
+        state.gapSelected=null;
+        if(!state.gapScored[i]){ addScore(1); state.gapScored[i]=true; }
+        const doneCount=Object.keys(state.gapFilled).length;
+        if(doneCount===gapfills.length) markDone('gapfill');
+        renderMain();
+        setTimeout(()=>{ const f=document.getElementById('gapFeedback'); if(f){ f.textContent=doneCount+' / '+gapfills.length+' correct!'; f.className='quiz-feedback good'; } },10);
+      } else {
+        if(fb){ fb.textContent='That doesn\'t fit this blank — try another phrase.'; fb.className='quiz-feedback bad'; }
+        chip.style.animation='shake .3s'; setTimeout(()=>chip.style.animation='',300);
+      }
+    });
+  });
+
+  document.querySelectorAll('.roundtab button').forEach(b=>b.addEventListener('click',()=>{ state.quizRound=+b.dataset.r; state.quizIdx=0; renderMain(); }));
+
+  document.querySelectorAll('.quiz-opt').forEach(el=>el.addEventListener('click',()=>{
+    if(el.classList.contains('locked')) return;
+    const key=`${state.quizRound}-${state.quizIdx}`;
+    if(state.quizAnswered[key]) return;
+    const picked=+el.dataset.i; const q=quizRounds[state.quizRound].qs[state.quizIdx]; const correct=picked===q.ans;
+    const totalQs=Object.values(quizRounds).reduce((s,r)=>s+r.qs.length,0);
+    if(correct){
+      state.quizAnswered[key]={picked,correct:true}; addScore(1);
+      if(Object.keys(state.quizAnswered).length===totalQs) markDone('quiz');
+      renderMain();
+    } else {
+      el.classList.add('wrong');
+      const fb=document.getElementById('quizFeedbackMsg');
+      if(fb){ fb.textContent='✗ Not quite — click another option to try again'; fb.className='quiz-feedback bad'; }
+      setTimeout(()=>{
+        el.classList.remove('wrong');
+        const fb2=document.getElementById('quizFeedbackMsg');
+        if(fb2 && !state.quizAnswered[key]){ fb2.textContent='Select an answer'; fb2.className='quiz-feedback'; }
+      },700);
+    }
+  }));
+
+  const qPrev=document.getElementById('quizPrev'); const qNext=document.getElementById('quizNext');
+  if(qPrev) qPrev.onclick=()=>{ if(state.quizIdx>0){ state.quizIdx--; renderMain(); } };
+  if(qNext) qNext.onclick=()=>{ const r=quizRounds[state.quizRound]; if(state.quizIdx<r.qs.length-1){ state.quizIdx++; renderMain(); } };
+
+  document.querySelectorAll('.focus-btn[data-group="oreo"]').forEach(el=>{
+    if(el.classList.contains('locked')) return;
+    el.addEventListener('click',()=>{
+      const i=+el.dataset.i; const cat=el.dataset.cat;
+      if(state.oreoAnswered[i]) return;
+      const correct=cat===oreoQs[i].cat;
+      if(correct){
+        state.oreoAnswered[i]={picked:cat,correct:true}; addScore(1);
+        if(Object.keys(state.oreoAnswered).length===oreoQs.length) markDone('oreo');
+        renderMain();
+      } else {
+        el.classList.add('wrong');
+        setTimeout(()=>el.classList.remove('wrong'),500);
+      }
+    });
+  });
+
+  document.querySelectorAll('.ade-chip').forEach(el=>el.addEventListener('click',()=>{ const k=el.dataset.k; state.adeActive=(state.adeActive===k)?null:k; markDone('model'); renderMain(); }));
+
+  document.querySelectorAll('.phrase-btn').forEach(el=>el.addEventListener('click',()=>{ const area=document.getElementById('scratchArea'); area.value=(area.value?area.value+' ':'')+el.dataset.phrase+' '; area.focus(); markDone(state.current); }));
+
+  document.querySelectorAll('.pip').forEach(el=>el.addEventListener('click',()=>{ const crit=el.dataset.crit; const n=+el.dataset.n; state.peerScores[crit]=(state.peerScores[crit]===n)?null:n; if(Object.keys(state.peerScores).filter(k=>state.peerScores[k]).length===peerCriteria.length) markDone('peer'); renderMain(); }));
+
+  document.querySelectorAll('.cue-tab').forEach(el=>el.addEventListener('click',()=>{ state.cueTab=+el.dataset.i; markDone('practice'); renderMain(); }));
+}
+
+/* ===== INIT ===== */
+renderNav();
+renderMain();
+</script>
+</body>
+</html>

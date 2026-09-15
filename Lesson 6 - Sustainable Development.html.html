@@ -1,0 +1,1000 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>IELTS 7.0 Speaking · Sustainable Development</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;0,9..144,900;1,9..144,500&family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#10160F;
+    --panel:#1A2318;
+    --panel-2:#222D1F;
+    --paper:#F1F3EE;
+    --paper-dim:#DEE3D6;
+    --coral:#3E8A5E;
+    --coral-dim:#2F6B48;
+    --mint:#D98E3D;
+    --gold:#D98E3D;
+    --third:#5B8FA8;
+    --fourth:#A3A047;
+    --fifth:#8A7CA8;
+    --line:rgba(241,243,238,0.12);
+    --text-dim:rgba(241,243,238,0.62);
+    --text-faint:rgba(241,243,238,0.38);
+    --radius:14px;
+  }
+  *{box-sizing:border-box;}
+  html,body{margin:0;padding:0;}
+  body{background:var(--ink);color:var(--paper);font-family:'Inter',sans-serif;-webkit-font-smoothing:antialiased;min-height:100vh;}
+  ::selection{background:var(--coral);color:var(--paper);}
+  a{color:inherit;}
+  button{font-family:inherit;}
+  .app{display:grid;grid-template-columns:340px 1fr;min-height:100vh;}
+
+  /* RAIL */
+  .rail{background:var(--panel);border-right:1px solid var(--line);padding:24px 18px 18px;display:flex;flex-direction:column;gap:18px;position:sticky;top:0;height:100vh;overflow-y:auto;}
+  .brand{display:flex;flex-direction:column;gap:2px;padding:0 6px 14px;border-bottom:1px solid var(--line);}
+  .brand .tag{font-family:'JetBrains Mono',monospace;font-size:14.5px;letter-spacing:.14em;color:var(--gold);text-transform:uppercase;font-weight:700;}
+  .brand h1{font-family:'Fraunces',serif;font-size:25px;font-weight:700;margin:4px 0 0;line-height:1.15;}
+  .brand .sub{font-size:16px;color:var(--text-dim);margin-top:4px;}
+  .onair{display:flex;align-items:center;gap:8px;background:var(--panel-2);border:1px solid var(--line);border-radius:10px;padding:10px 12px;}
+  .onair .dot{width:8px;height:8px;border-radius:50%;background:var(--coral);box-shadow:0 0 0 0 rgba(62,138,94,.6);animation:pulse 1.8s infinite;}
+  @keyframes pulse{0%{box-shadow:0 0 0 0 rgba(62,138,94,.55);}70%{box-shadow:0 0 0 6px rgba(62,138,94,0);}100%{box-shadow:0 0 0 0 rgba(62,138,94,0);}}
+  .onair .label{font-family:'JetBrains Mono',monospace;font-size:14.5px;letter-spacing:.1em;color:var(--text-dim);text-transform:uppercase;}
+  .onair .score{margin-left:auto;font-family:'JetBrains Mono',monospace;font-weight:700;font-size:20.5px;color:var(--gold);}
+  nav{display:flex;flex-direction:column;gap:2px;flex:1;}
+  .nav-item{display:flex;align-items:center;gap:10px;padding:9px 10px;border-radius:9px;cursor:pointer;font-size:17.5px;color:var(--text-dim);border:1px solid transparent;transition:background .15s,color .15s;user-select:none;}
+  .nav-item .n{font-family:'JetBrains Mono',monospace;font-size:15px;width:20px;color:var(--text-faint);flex-shrink:0;}
+  .nav-item:hover{background:rgba(241,243,238,0.05);color:var(--paper);}
+  .nav-item.active{background:rgba(62,138,94,0.18);border-color:rgba(62,138,94,0.4);color:var(--paper);}
+  .nav-item.active .n{color:var(--coral);}
+  .nav-item .done-mark{margin-left:auto;color:var(--gold);font-size:17.5px;opacity:0;}
+  .nav-item.done .done-mark{opacity:1;}
+  .rail-foot{font-size:15px;color:var(--text-faint);border-top:1px solid var(--line);padding-top:12px;line-height:1.5;}
+
+  /* MAIN */
+  main{padding:48px 64px 100px;max-width:1180px;width:100%;}
+  .eyebrow{font-family:'JetBrains Mono',monospace;font-size:16px;letter-spacing:.16em;text-transform:uppercase;color:var(--coral);font-weight:700;margin-bottom:10px;}
+  h2.title{font-family:'Fraunces',serif;font-size:50px;font-weight:700;line-height:1.05;margin:0 0 10px;}
+  .deck{font-size:22px;color:var(--text-dim);margin:0 0 36px;max-width:700px;}
+  .card{background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);padding:22px 24px;}
+
+  /* TIMER */
+  .timer-wrap{display:flex;align-items:center;gap:22px;background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);padding:18px 22px;margin-bottom:28px;}
+  .ring{position:relative;width:92px;height:92px;flex-shrink:0;}
+  .ring svg{transform:rotate(-90deg);}
+  .ring circle{fill:none;stroke-width:6;}
+  .ring .bg{stroke:var(--line);}
+  .ring .fg{stroke:var(--coral);stroke-linecap:round;transition:stroke-dashoffset .25s linear;}
+  .ring .num{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-family:'JetBrains Mono',monospace;font-weight:700;font-size:20px;}
+  .timer-meta{flex:1;}
+  .timer-meta .t-label{font-size:19px;color:var(--text-dim);margin-bottom:4px;}
+  .timer-btns{display:flex;gap:8px;flex-wrap:wrap;}
+  .btn{font-family:'Inter',sans-serif;font-size:18px;font-weight:600;padding:8px 14px;border-radius:8px;border:1px solid var(--line);background:var(--panel-2);color:var(--paper);cursor:pointer;transition:background .15s,border-color .15s,transform .1s;}
+  .btn:hover{background:rgba(241,243,238,0.08);}
+  .btn:active{transform:scale(.97);}
+  .btn.primary{background:var(--coral);border-color:var(--coral);color:var(--paper);}
+  .btn.primary:hover{background:#4CA271;}
+  .btn.ghost{background:transparent;}
+
+  /* PROMPTS */
+  .prompt-current{display:flex;gap:16px;align-items:flex-start;background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);padding:22px 24px;}
+  .prompt-current .pn{font-family:'JetBrains Mono',monospace;font-weight:700;font-size:19px;color:var(--coral);flex-shrink:0;padding-top:1px;}
+  .prompt-current p{margin:0;font-size:24px;line-height:1.5;}
+
+  /* FLIP CARDS */
+  .grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;}
+  .flip{perspective:1000px;height:220px;cursor:pointer;}
+  .flip-inner{position:relative;width:100%;height:100%;transition:transform .5s cubic-bezier(.4,.2,.2,1);transform-style:preserve-3d;}
+  .flip.flipped .flip-inner{transform:rotateY(180deg);}
+  .flip-face{position:absolute;inset:0;backface-visibility:hidden;border-radius:var(--radius);border:1px solid var(--line);padding:18px;display:flex;flex-direction:column;justify-content:center;}
+  .flip-front{background:var(--panel);}
+  .flip-front .def-prompt{font-family:'Inter',sans-serif;font-weight:600;font-size:18.5px;line-height:1.35;}
+  .flip-front .hint{font-size:16px;color:var(--text-faint);margin-top:10px;}
+  .flip-back{background:var(--coral);color:var(--paper);transform:rotateY(180deg);}
+  .flip-back .word-reveal{font-family:'Fraunces',serif;font-weight:700;font-style:italic;font-size:23px;margin-bottom:8px;}
+  .flip-back .ex{font-size:16px;font-style:italic;line-height:1.4;opacity:.9;}
+
+  /* MATCHING */
+  .match-wrap{display:grid;grid-template-columns:1fr 1fr;gap:30px;}
+  .match-col h4{font-family:'JetBrains Mono',monospace;font-size:16px;letter-spacing:.1em;color:var(--text-faint);text-transform:uppercase;margin:0 0 12px;}
+  .match-item,.match-item2{display:flex;align-items:center;gap:10px;background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:11px 14px;margin-bottom:8px;cursor:pointer;font-size:18.5px;transition:border-color .15s,background .15s;}
+  .match-item .tag,.match-item2 .tag{font-family:'JetBrains Mono',monospace;font-size:16px;color:var(--text-faint);width:18px;flex-shrink:0;}
+  .match-item.selected,.match-item2.selected{border-color:var(--gold);background:rgba(217,142,61,0.16);}
+  .match-item.correct,.match-item2.correct{border-color:var(--coral);background:rgba(62,138,94,0.16);}
+  .match-item.wrong,.match-item2.wrong{border-color:#E67E5B;background:rgba(230,126,91,0.12);}
+  .match-item.locked,.match-item2.locked{cursor:default;opacity:.85;}
+
+  /* IDIOMS */
+  .idiom-list{display:flex;flex-direction:column;gap:10px;}
+  .idiom{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:16px 18px;cursor:pointer;transition:border-color .15s;}
+  .idiom:hover{border-color:rgba(62,138,94,.4);}
+  .idiom-head{display:flex;align-items:center;justify-content:space-between;}
+  .idiom-head .phrase{font-family:'Fraunces',serif;font-weight:600;font-size:22px;}
+  .idiom-head .chev{color:var(--text-faint);transition:transform .2s;font-size:19px;}
+  .idiom.open .chev{transform:rotate(90deg);}
+  .idiom-body{max-height:0;overflow:hidden;transition:max-height .3s ease;}
+  .idiom.open .idiom-body{max-height:110px;}
+  .idiom-mean{font-size:19px;color:var(--text-dim);margin-top:8px;}
+  .idiom-ex{font-size:17px;font-style:italic;color:var(--text-faint);margin-top:4px;padding-bottom:4px;}
+
+  /* GAP FILL */
+  .gapfill-list{display:flex;flex-direction:column;gap:16px;}
+  .gap-item{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:16px 18px;}
+  .gap-item p{margin:0 0 10px;font-size:20px;line-height:1.6;}
+  .gap-blank{font-family:'JetBrains Mono',monospace;display:inline-block;min-width:230px;text-align:center;background:var(--panel-2);border:1px solid var(--line);border-radius:7px;color:var(--gold);padding:6px 12px;font-weight:700;cursor:pointer;}
+  .gap-blank.selected{border-color:var(--gold);box-shadow:0 0 0 2px rgba(217,142,61,.3);}
+  .gap-blank.filled{color:var(--coral);border-color:var(--coral);}
+  .wordbank{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:18px;}
+  .wb-chip{font-family:'JetBrains Mono',monospace;font-size:16.5px;background:var(--panel-2);border:1px solid var(--line);border-radius:20px;padding:8px 15px;color:var(--text-dim);cursor:pointer;transition:border-color .15s,color .15s,opacity .15s;}
+  .wb-chip:hover{border-color:var(--coral);color:var(--paper);}
+  .wb-chip.used{opacity:.3;pointer-events:none;text-decoration:line-through;}
+  .quiz-feedback{font-size:19px;color:var(--text-dim);min-height:18px;}
+  .quiz-feedback.good{color:var(--coral);}
+  .quiz-feedback.bad{color:#E67E5B;}
+
+  /* QUIZ */
+  .quiz-progress{display:flex;gap:6px;margin-bottom:24px;}
+  .quiz-dot{flex:1;height:4px;border-radius:3px;background:var(--line);}
+  .quiz-dot.active{background:var(--coral);}
+  .quiz-dot.answered{background:var(--gold);}
+  .quiz-card{background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);padding:28px;}
+  .quiz-q{font-size:25px;font-weight:600;margin:0 0 20px;line-height:1.4;}
+  .quiz-opts{display:flex;flex-direction:column;gap:10px;}
+  .quiz-opt{display:flex;gap:12px;align-items:center;background:var(--panel-2);border:1px solid var(--line);border-radius:10px;padding:13px 16px;cursor:pointer;font-size:19.5px;transition:border-color .15s,background .15s;}
+  .quiz-opt:hover{border-color:rgba(62,138,94,.45);}
+  .quiz-opt .letter{font-family:'JetBrains Mono',monospace;font-weight:700;font-size:18px;width:32px;height:32px;border-radius:50%;background:var(--ink);display:flex;align-items:center;justify-content:center;flex-shrink:0;color:var(--text-dim);}
+  .quiz-opt.correct{border-color:var(--coral);background:rgba(62,138,94,0.18);}
+  .quiz-opt.correct .letter{background:var(--coral);color:var(--paper);}
+  .quiz-opt.wrong{border-color:#E67E5B;background:rgba(230,126,91,0.14);animation:shake .3s;}
+  .quiz-opt.locked{cursor:default;}
+  @keyframes shake{0%,100%{transform:translateX(0);}25%{transform:translateX(-5px);}75%{transform:translateX(5px);}}
+  .quiz-foot{display:flex;justify-content:space-between;align-items:center;margin-top:22px;}
+  .roundtab{display:flex;gap:8px;margin-bottom:22px;}
+  .roundtab button{font-family:'JetBrains Mono',monospace;font-size:16px;padding:7px 13px;border-radius:8px;border:1px solid var(--line);background:transparent;color:var(--text-dim);cursor:pointer;}
+  .roundtab button.on{background:var(--coral);color:var(--paper);border-color:var(--coral);}
+
+  /* WARM-UP TABS */
+  .warmup-tabs{display:flex;gap:8px;margin-bottom:20px;flex-wrap:wrap;}
+  .warmup-tab{font-family:'JetBrains Mono',monospace;font-size:18px;font-weight:700;width:42px;height:42px;border-radius:10px;border:1px solid var(--line);background:var(--panel);color:var(--text-dim);cursor:pointer;display:flex;align-items:center;justify-content:center;transition:border-color .15s,background .15s,color .15s;}
+  .warmup-tab:hover{border-color:rgba(62,138,94,.45);color:var(--paper);}
+  .warmup-tab.on{border-color:var(--coral);background:rgba(62,138,94,.2);color:var(--paper);}
+
+  /* SORTERS */
+  .sort-intro{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:14px;margin-bottom:22px;}
+  .sort-intro-item{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:16px 18px;}
+  .sort-intro-item .k{font-family:'JetBrains Mono',monospace;font-weight:700;font-size:15.5px;margin-bottom:6px;display:block;}
+  .sort-intro-item[data-k="A"] .k{color:var(--gold);}
+  .sort-intro-item[data-k="B"] .k{color:var(--coral);}
+  .sort-intro-item[data-k="C"] .k{color:var(--third);}
+  .sort-intro-item[data-k="O1"] .k{color:var(--coral);}
+  .sort-intro-item[data-k="R"] .k{color:var(--gold);}
+  .sort-intro-item[data-k="E"] .k{color:var(--third);}
+  .sort-intro-item[data-k="O2"] .k{color:var(--fourth);}
+  .sort-intro-item[data-k="P"] .k{color:var(--fifth);}
+  .sort-intro-item p{margin:0;font-size:15.5px;color:var(--text-dim);line-height:1.4;}
+  .focus-list{display:flex;flex-direction:column;gap:14px;}
+  .focus-item{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:18px 20px;}
+  .focus-item p{margin:0 0 14px;font-size:20.5px;line-height:1.5;}
+  .focus-btns{display:flex;gap:10px;flex-wrap:wrap;}
+  .focus-btn{font-family:'Inter',sans-serif;font-size:16.5px;font-weight:600;padding:10px 16px;border-radius:9px;border:1px solid var(--line);background:var(--panel-2);color:var(--text-dim);cursor:pointer;transition:border-color .15s,background .15s;}
+  .focus-btn:hover{border-color:rgba(62,138,94,.45);color:var(--paper);}
+  .focus-btn.correct{border-color:var(--coral);background:rgba(62,138,94,0.2);color:var(--paper);}
+  .focus-btn.wrong{border-color:#E67E5B;background:rgba(230,126,91,0.16);animation:shake .3s;}
+  .focus-btn.locked{cursor:default;}
+  .focus-result{font-size:17px;color:var(--text-faint);margin-top:10px;min-height:16px;}
+  .focus-result.good{color:var(--coral);}
+
+  /* DISCUSSION CARD */
+  .cuecard{background:linear-gradient(155deg,var(--panel-2),var(--panel));border:1px solid var(--line);border-radius:18px;padding:30px 32px;margin-bottom:24px;}
+  .cuecard .label{font-family:'JetBrains Mono',monospace;font-size:16px;color:var(--coral);letter-spacing:.1em;text-transform:uppercase;margin-bottom:10px;}
+  .cuecard h3{font-family:'Fraunces',serif;font-size:28px;margin:0 0 14px;line-height:1.3;}
+  .cuecard .followup{margin:0;font-size:18.5px;color:var(--text-dim);border-top:1px solid var(--line);padding-top:14px;}
+  .cuecard .followup b{color:var(--paper);}
+  .notepad{width:100%;min-height:130px;background:var(--ink);border:1px solid var(--line);border-radius:10px;color:var(--paper);font-family:'Inter',sans-serif;font-size:20px;padding:14px;resize:vertical;margin-top:6px;}
+  .notepad:focus{outline:none;border-color:var(--coral);}
+
+  /* MODEL ANSWER */
+  .ade-key{display:flex;gap:10px;margin-bottom:18px;flex-wrap:wrap;}
+  .ade-chip{font-family:'JetBrains Mono',monospace;font-size:15.5px;padding:6px 12px;border-radius:7px;border:1px solid var(--line);cursor:pointer;transition:transform .12s;}
+  .ade-chip[data-k="O1"]{color:var(--coral);}
+  .ade-chip[data-k="R"]{color:var(--gold);}
+  .ade-chip[data-k="E"]{color:var(--third);}
+  .ade-chip[data-k="O2"]{color:var(--fourth);}
+  .ade-chip[data-k="P"]{color:var(--fifth);}
+  .ade-chip.active{transform:scale(1.05);border-color:currentColor;}
+  .ade-block{padding:16px 18px;border-radius:11px;margin-bottom:10px;border:1px solid var(--line);background:var(--panel);transition:opacity .2s,border-color .2s;line-height:1.65;font-size:19.5px;}
+  .ade-block .tag2{font-family:'JetBrains Mono',monospace;font-size:15px;font-weight:700;margin-bottom:8px;display:block;}
+  .ade-block.dim{opacity:.3;}
+  .ade-block[data-k="O1"] .tag2{color:var(--coral);}
+  .ade-block[data-k="R"] .tag2{color:var(--gold);}
+  .ade-block[data-k="E"] .tag2{color:var(--third);}
+  .ade-block[data-k="O2"] .tag2{color:var(--fourth);}
+  .ade-block[data-k="P"] .tag2{color:var(--fifth);}
+  .ade-block.highlight[data-k="O1"]{border-color:var(--coral);}
+  .ade-block.highlight[data-k="R"]{border-color:var(--gold);}
+  .ade-block.highlight[data-k="E"]{border-color:var(--third);}
+  .ade-block.highlight[data-k="O2"]{border-color:var(--fourth);}
+  .ade-block.highlight[data-k="P"]{border-color:var(--fifth);}
+
+  /* TOOLKIT */
+  .grid-2{display:grid;grid-template-columns:1fr 1fr;gap:16px;}
+  .tool-card{background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);padding:18px 20px;}
+  .tool-card h4{margin:0 0 12px;font-size:18.5px;font-family:'Fraunces',serif;font-weight:600;}
+  .tool-card .phrase-btn{display:inline-block;font-size:16.5px;background:var(--panel-2);border:1px solid var(--line);border-radius:7px;padding:6px 11px;margin:0 6px 6px 0;cursor:pointer;color:var(--text-dim);transition:color .15s,border-color .15s;}
+  .tool-card .phrase-btn:hover{color:var(--paper);border-color:var(--gold);}
+  .scratch{margin-top:24px;}
+  .scratch textarea{width:100%;min-height:90px;background:var(--panel);border:1px solid var(--line);border-radius:10px;color:var(--paper);font-family:'Inter',sans-serif;font-size:20px;padding:14px;}
+  .scratch textarea:focus{outline:none;border-color:var(--coral);}
+
+  /* PEER SCORE */
+  .scorecard{display:flex;flex-direction:column;gap:10px;}
+  .score-row{display:flex;align-items:center;gap:14px;background:var(--panel);border:1px solid var(--line);border-radius:11px;padding:13px 16px;}
+  .score-row .letter2{font-family:'JetBrains Mono',monospace;font-weight:700;font-size:16px;width:36px;height:36px;border-radius:50%;background:var(--panel-2);display:flex;align-items:center;justify-content:center;flex-shrink:0;color:var(--coral);}
+  .score-row .si-main{flex:1;min-width:0;}
+  .score-row .si-title{font-weight:600;font-size:18.5px;}
+  .score-row .si-sub{font-size:15.5px;color:var(--text-faint);}
+  .pips{display:flex;gap:5px;}
+  .pip{width:36px;height:36px;border-radius:7px;border:1px solid var(--line);background:var(--panel-2);cursor:pointer;color:var(--text-dim);font-size:17px;font-family:'JetBrains Mono',monospace;display:flex;align-items:center;justify-content:center;}
+  .pip.on{background:var(--gold);border-color:var(--gold);color:var(--ink);}
+  .score-total{margin-top:8px;display:flex;align-items:center;justify-content:space-between;background:var(--panel-2);border:1px solid var(--line);border-radius:11px;padding:16px 18px;}
+  .score-total .tot-num{font-family:'JetBrains Mono',monospace;font-weight:700;font-size:37px;color:var(--gold);}
+  .feedback-fields{display:flex;flex-direction:column;gap:10px;margin-top:18px;}
+  .feedback-fields input{background:var(--panel);border:1px solid var(--line);border-radius:9px;color:var(--paper);padding:11px 14px;font-size:19px;font-family:'Inter',sans-serif;}
+  .feedback-fields input:focus{outline:none;border-color:var(--coral);}
+
+  /* EXAM PRACTICE */
+  .cue-tabs{display:grid;grid-template-columns:repeat(6,1fr);gap:10px;margin-bottom:20px;}
+  .cue-tab{text-align:center;padding:12px 6px;border-radius:11px;border:1px solid var(--line);background:var(--panel);cursor:pointer;font-size:14.5px;font-weight:600;}
+  .cue-tab.on{border-color:var(--coral);background:rgba(62,138,94,.2);}
+  .cue-tab .emo{font-size:22px;display:block;margin-bottom:4px;}
+  .cue-tab .foc{display:block;font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--text-faint);margin-top:2px;}
+  .assign-note{font-size:17px;color:var(--text-faint);margin:-12px 0 20px;}
+
+  /* WRAP UP */
+  .takeaway-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;}
+  .tk{background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);padding:20px 22px;}
+  .tk .tk-icon{font-size:32px;margin-bottom:10px;display:block;}
+  .tk h4{margin:0 0 8px;font-family:'Fraunces',serif;font-size:21px;}
+  .tk p{margin:0;font-size:18px;color:var(--text-dim);line-height:1.55;}
+  .final-score{margin-top:32px;text-align:center;padding:36px;border-radius:18px;background:linear-gradient(155deg,var(--panel-2),var(--panel));border:1px solid var(--line);}
+  .final-score .fs-num{font-family:'JetBrains Mono',monospace;font-weight:700;font-size:70px;color:var(--gold);}
+  .final-score .fs-label{font-size:19px;color:var(--text-dim);margin-top:4px;}
+
+  .nav-arrows{display:flex;justify-content:space-between;margin-top:44px;padding-top:24px;border-top:1px solid var(--line);}
+  .mobile-progress,.mobile-jump{display:none;}
+
+  @media(max-width:880px){
+    .app{grid-template-columns:1fr;}
+    .rail{position:relative;height:auto;flex-direction:row;align-items:center;gap:12px;padding:14px 16px;}
+    .brand{border-bottom:none;padding:0;flex-shrink:0;}
+    .brand h1{font-size:18px;}
+    .brand .sub{display:none;}
+    .onair{flex-shrink:0;padding:8px 12px;}
+    .onair .label{display:none;}
+    nav{display:none;}
+    .rail-foot{display:none;}
+    main{padding:18px 18px 70px;}
+    .grid-3{grid-template-columns:1fr 1fr;}
+    .match-wrap,.grid-2,.takeaway-grid{grid-template-columns:1fr;}
+    .sort-intro{grid-template-columns:1fr;}
+    .warmup-tab{width:38px;height:38px;font-size:16px;}
+    .cue-tabs{grid-template-columns:repeat(3,1fr);}
+    h2.title{font-size:36px;}
+    .mobile-progress,.mobile-jump{display:flex;}
+    .mobile-progress{gap:4px;margin-bottom:18px;}
+    .mobile-progress .seg{flex:1;height:3px;border-radius:2px;background:var(--line);}
+    .mobile-progress .seg.done{background:var(--coral);}
+    .mobile-progress .seg.now{background:#E67E5B;}
+    .mobile-jump{align-items:center;margin-bottom:4px;}
+    .mobile-jump select{background:var(--panel);color:var(--paper);border:1px solid var(--line);border-radius:8px;padding:7px 10px;font-size:17px;font-family:'JetBrains Mono',monospace;width:100%;}
+  }
+  @media(prefers-reduced-motion:reduce){*{animation-duration:.001s!important;transition-duration:.001s!important;}}
+</style>
+</head>
+<body>
+<div class="app">
+  <aside class="rail">
+    <div class="brand">
+      <span class="tag">IELTS 7.0 · Speaking</span>
+      <h1>Sustainable Development</h1>
+      <div class="sub">Part 3 Masterclass · 60 min</div>
+    </div>
+    <div class="onair">
+      <div class="dot"></div>
+      <div class="label">On Air</div>
+      <div class="score" id="railScore">0 pts</div>
+    </div>
+    <nav id="navList"></nav>
+    <div class="rail-foot">Click any item to jump. Progress is tracked as you complete each exercise.</div>
+  </aside>
+  <main id="main"></main>
+</div>
+
+<script>
+/* ===== DATA ===== */
+const sections = [
+  {id:'objectives', n:'00', label:'Lesson Objectives'},
+  {id:'warmup',   n:'01', label:'Warm-Up'},
+  {id:'qtype',    n:'02', label:'What\'s the Examiner Asking?'},
+  {id:'vocab',    n:'03', label:'Vocabulary'},
+  {id:'collocation', n:'04', label:'Collocations'},
+  {id:'idioms',   n:'05', label:'Idioms & Phrases'},
+  {id:'gapfill',  n:'06', label:'Gap Fill'},
+  {id:'oreo',     n:'07', label:'Opinion, Reason, Example or Plus?'},
+  {id:'quiz',     n:'08', label:'Quiz Challenge'},
+  {id:'model',    n:'09', label:'Model Answer'},
+  {id:'toolkit',  n:'10', label:'Language Toolkit'},
+  {id:'connectives', n:'11', label:'Conditionals & Linking'},
+  {id:'peer',     n:'12', label:'Peer Score Card'},
+  {id:'practice', n:'13', label:'Exam Practice'},
+  {id:'wrapup',   n:'14', label:'Wrap-Up'}
+];
+
+const objectives = [
+  {icon:'🧭', h:'Understand What\'s Expected',           d:'Recognise whether a Part 3 question on sustainability wants a consequence, solution or prediction.'},
+  {icon:'🔄', h:'Apply O.R.E.O. Plus + Conditionals',     d:'Structure answers using the model plus first and second conditionals to sound Band 7+.'},
+  {icon:'🌱', h:'Use Topic Vocabulary Fluently',          d:'Speak for about a minute using sustainability vocabulary and clear linking devices.'}
+];
+
+function shuffleArr(arr){
+  const a = arr.slice();
+  for(let i=a.length-1;i>0;i--){
+    const j = Math.floor(Math.random()*(i+1));
+    [a[i],a[j]]=[a[j],a[i]];
+  }
+  return a;
+}
+
+const warmupQs = [
+  'Do you try to live in an environmentally friendly way?',
+  'Do you recycle at home?',
+  'Have you ever taken part in an environmental campaign or clean-up?',
+  'Do you think your country cares enough about the environment?',
+  'Do you use public transport, or do you prefer driving?',
+  'Have you noticed any effects of climate change where you live?',
+  'Do you think young people care more about the environment than older generations?',
+  'What\'s one small change you could make to live more sustainably?'
+];
+
+const qtypeIntro = [
+  {k:'A', label:'Consequence',  d:'the result of current behaviour if nothing changes'},
+  {k:'B', label:'Solution',     d:'a practical action or policy that solves the problem'},
+  {k:'C', label:'Prediction',   d:'a likely future development or trend'}
+];
+
+const qtypeQs = shuffleArr([
+  {q:'"What can individuals do to help protect the environment?"',                                     cat:'B'},
+  {q:'"What might happen if governments don\'t act soon on climate change?"',                           cat:'A'},
+  {q:'"Do you think it\'s more effective to use laws or education to promote sustainable habits?"',     cat:'B'},
+  {q:'"How might cities change in the future to become more sustainable?"',                             cat:'C'},
+  {q:'"What practical steps can governments take to reduce pollution?"',                                cat:'B'},
+  {q:'"What will happen to coastal cities if sea levels continue to rise?"',                             cat:'A'},
+  {q:'"How might renewable energy technology develop over the next decade?"',                           cat:'C'}
+]);
+qtypeQs.forEach(q=>{ q.order = ['A','B','C']; });
+const qtypeLabels = {A:'Consequence', B:'Solution', C:'Prediction'};
+
+const vocab = [
+  {w:'renewable energy',        d:'energy that comes from natural sources like wind, sun, or water',                                        ex:'"Many countries are investing heavily in renewable energy like solar and wind power."'},
+  {w:'enforce regulations',     d:'to make sure that rules or laws are actually followed',                                                   ex:'"Without enforcing regulations, companies have little reason to reduce their emissions."'},
+  {w:'waste management',        d:'the process of collecting, treating and disposing of garbage',                                            ex:'"Poor waste management is a major cause of pollution in fast-growing cities."'},
+  {w:'green initiative',        d:'a program or plan designed to promote sustainability',                                                    ex:'"The city launched a green initiative to plant a million trees by 2030."'},
+  {w:'implement a policy',      d:'to begin officially using a rule or law',                                                                  ex:'"The government plans to implement a policy that bans single-use plastics."'},
+  {w:'restore ecosystems',      d:'to help a natural environment return to a healthy state',                                                  ex:'"Volunteers are working to restore ecosystems damaged by years of overfishing."'},
+  {w:'climate resilience',      d:'the ability to adapt to and recover from climate-related events',                                          ex:'"Building climate resilience means preparing cities for floods and heatwaves before they happen."'},
+  {w:'eco-conscious',           d:'aware and careful about protecting the environment',                                                      ex:'"More eco-conscious shoppers are choosing products with less packaging."'},
+  {w:'carbon footprint',        d:'the amount of carbon dioxide a person or organisation produces',                                           ex:'"Flying less is one of the easiest ways to reduce your carbon footprint."'},
+  {w:'subsidise',               d:'to support something financially, often used for eco-friendly practices',                                  ex:'"The government subsidises solar panel installation to encourage households to switch."'}
+];
+
+const verbs   = shuffleArr(['reduce','invest in','cut down on','switch to','tackle','protect','adopt','combat']);
+const nouns   = shuffleArr(['carbon emissions','clean energy','single-use plastic','renewable sources','climate change','natural habitats','eco-friendly habits','deforestation']);
+const matchKey = {
+  'reduce':        'carbon emissions',
+  'invest in':     'clean energy',
+  'cut down on':   'single-use plastic',
+  'switch to':     'renewable sources',
+  'tackle':        'climate change',
+  'protect':       'natural habitats',
+  'adopt':         'eco-friendly habits',
+  'combat':        'deforestation'
+};
+
+const idioms = [
+  {p:'go green',                          m:'to start living or operating in a more environmentally friendly way',                             ex:'"The company decided to go green by switching to recycled packaging."'},
+  {p:'a drop in the ocean',               m:'a small amount that has little effect on a much bigger problem',                                   ex:'"One person recycling is a drop in the ocean unless everyone joins in."'},
+  {p:'the writing is on the wall',        m:'there are clear signs that something bad is going to happen',                                      ex:'"With ice caps melting faster every year, the writing is on the wall for coastal cities."'},
+  {p:'turn the tide',                     m:'to reverse a negative trend and start making progress',                                            ex:'"New investment in clean energy could help turn the tide on emissions."'},
+  {p:'at a crossroads',                   m:'at a point where an important decision must be made',                                              ex:'"Many governments feel they\'re at a crossroads between economic growth and environmental protection."'},
+  {p:'kick the can down the road',        m:'to delay dealing with a problem instead of solving it now',                                        ex:'"Critics say politicians keep kicking the can down the road on climate policy."'},
+  {p:'leave no stone unturned',           m:'to try every possible method to solve a problem',                                                  ex:'"The city left no stone unturned in its search for a sustainable water solution."'},
+  {p:'the eleventh hour',                 m:'at the last possible moment, just before it\'s too late',                                          ex:'"Some fear real climate action will only happen at the eleventh hour."'}
+];
+
+const gapfills = [
+  {text:'The company decided to ___ by switching to recycled packaging.',                                        ans:'go green'},
+  {text:'One person recycling is ___ unless everyone joins in.',                                                 ans:'a drop in the ocean'},
+  {text:'With ice caps melting faster every year, ___ for coastal cities.',                                      ans:'the writing is on the wall'},
+  {text:'New investment in clean energy could help ___ on emissions.',                                           ans:'turn the tide'},
+  {text:'Many governments feel they\'re ___ between economic growth and environmental protection.',              ans:'at a crossroads'},
+  {text:'Critics say politicians keep ___ on climate policy.',                                                   ans:'kicking the can down the road'}
+];
+const wordbank = shuffleArr(['go green','a drop in the ocean','the writing is on the wall','turn the tide','at a crossroads','kicking the can down the road','leave no stone unturned','the eleventh hour']);
+
+const oreoIntro = [
+  {k:'O1', label:'Opinion',          d:'make your position clear from the start'},
+  {k:'R',  label:'Reason',           d:'give depth with a reason or consequence'},
+  {k:'E',  label:'Example',          d:'support your position with a real example'},
+  {k:'O2', label:'Refined Opinion',  d:'restate or add nuance to your opinion'},
+  {k:'P',  label:'Plus',             d:'offer a solution or a prediction of a future trend'}
+];
+
+const oreoQs = shuffleArr([
+  {q:'"Personally, I believe cities should focus on innovation and green infrastructure to become more sustainable."',                        cat:'O1'},
+  {q:'"This is because urban areas are major contributors to pollution, but they also have the resources to implement eco-friendly changes."', cat:'R'},
+  {q:'"In fact, Singapore has created vertical gardens and smart waste systems that other cities can learn from."',                             cat:'E'},
+  {q:'"That\'s why I support investment in technology-driven solutions."',                                                                      cat:'O2'},
+  {q:'"If these approaches become common, cities in the future could become models of sustainability."',                                        cat:'P'},
+  {q:'"I believe individuals can make a big difference by reducing waste in their daily lives."',                                                cat:'O1'},
+  {q:'"This is due to the fact that our personal habits directly influence the amount of pollution we produce."',                                cat:'R'},
+  {q:'"For instance, recycling materials like paper, glass, and plastic can significantly cut down landfill waste."',                            cat:'E'},
+  {q:'"That\'s why I think personal responsibility is essential for environmental protection."',                                                 cat:'O2'},
+  {q:'"If more people became eco-conscious, we would see cleaner cities and less pressure on natural resources."',                               cat:'P'}
+]);
+oreoQs.forEach(q=>{ q.order = shuffleArr(['O1','R','E','O2','P']); });
+const oreoLabels = {O1:'Opinion', R:'Reason', E:'Example', O2:'Refined Opinion', P:'Plus'};
+
+const quizRounds = {
+  1:{title:'Vocabulary Rapid Fire', qs:[
+    {q:"What does 'eco-conscious' mean?",                                                              opts:['unaware of environmental issues','aware and careful about protecting the environment','a type of renewable energy','a government policy'], ans:1},
+    {q:"What is a 'carbon footprint'?",                                                                 opts:['a type of shoe','the amount of carbon dioxide a person or organisation produces','a walking trail','a recycling symbol'], ans:1},
+    {q:"What does it mean to 'subsidise' something?",                                                    opts:['to ban it completely','to support it financially','to ignore it','to study it in school'], ans:1},
+    {q:"What does 'waste management' refer to?",                                                        opts:['wasting time at work','the process of collecting, treating and disposing of garbage','a type of renewable energy','a government department name only'], ans:1}
+  ]},
+  2:{title:'Idiom Challenge', qs:[
+    {q:'"One person recycling is a drop in the ocean."',                                                 opts:['it solves the whole problem','a small amount with little effect on a much bigger problem','it is very expensive','it happens at sea'], ans:1},
+    {q:'"The writing is on the wall for coastal cities."',                                                opts:['there are clear signs something bad is coming','the cities have new murals','everything is fine and stable','a new law was just passed'], ans:0},
+    {q:'"Politicians keep kicking the can down the road."',                                               opts:['solving problems quickly','delaying a problem instead of dealing with it now','playing football during breaks','improving recycling programs'], ans:1},
+    {q:'"They left no stone unturned in their search for a solution."',                                   opts:['they gave up quickly','they tried every possible method','they only tried one approach','they searched underground'], ans:1}
+  ]}
+};
+
+const oreoModel = [
+  {k:'O1', label:'Opinion — Direct answer',        text:'Personally, I think governments have more power to create real change, even though individual actions matter too.'},
+  {k:'R',  label:'Reason — Why you think so',       text:'This is mainly because governments can pass laws and fund large-scale projects that no single person could manage alone.'},
+  {k:'E',  label:'Example — Real situation',        text:'For instance, when a government subsidises renewable energy or enforces stricter emissions regulations, the impact reaches an entire country, not just one household.'},
+  {k:'O2', label:'Refined Opinion — Add nuance',    text:'That said, I don\'t think individual responsibility should be ignored — small everyday choices still add up over time.'},
+  {k:'P',  label:'Plus — Prediction',               text:'If governments and individuals worked together more closely, I think we\'d see much faster progress toward a sustainable future.'}
+];
+
+const toolkit = [
+  {h:'💬 Giving Opinions',          items:['I believe sustainable development is essential because…','I firmly believe…','From my perspective, …','It seems to me that…']},
+  {h:'⚠️ Giving Consequences',      items:['As a result of this, …','This leads to…','Consequently, …','If we don\'t act now, future generations will…']},
+  {h:'📌 Giving Examples',          items:['For instance, …','For example, …','A good example is…','Such as…']},
+  {h:'🔁 Restating Opinions',       items:['That\'s why I believe…','So, my main point is that…','This shows that…','Overall, I still think…']},
+  {h:'🔮 Making Predictions',       items:['In the future, I think more people will…','It\'s likely that…','I expect that…','We might see…']},
+  {h:'🛠️ Suggesting Solutions',     items:['One way to promote sustainability is to…','A practical solution is…','One possible measure is…','Governments should consider…']}
+];
+
+const connectives = [
+  {h:'1️⃣ First Conditional',              items:['If the government doesn\'t take action soon, we\'ll face more climate disasters.','If people don\'t reduce waste, the environment will suffer serious damage.','If we don\'t change our habits now, things will get worse.']},
+  {h:'2️⃣ Second Conditional',             items:['If more people used public transport, cities would have less traffic and pollution.','If public transport were cheaper, more people would use it.','If governments invested more in clean energy, it would become the norm.']},
+  {h:'🔗 Extra Linking Devices',           items:['Because…','As a result, …','One effective way to… is…','I strongly believe…']},
+  {h:'🎯 More Cause & Effect',             items:['Given that…','Provided that…','Unless we act, …']}
+];
+
+const peerCriteria = [
+  {k:'🧩', t:'Used the O.R.E.O. Plus model?',              s:'Opinion → Reason → Example → Refined Opinion → Plus'},
+  {k:'🔍', t:'Identified the right response type?',        s:'Consequence, solution, or prediction — as the question needed'},
+  {k:'1️⃣', t:'Used at least one conditional sentence?',    s:'First or second conditional'},
+  {k:'📚', t:'3+ topic vocab or collocations used?',        s:'From today\'s word list, used naturally'},
+  {k:'🔗', t:'Functional phrases used?',                    s:'Opinions, consequences, examples, predictions'},
+  {k:'🧭', t:'Answer flowed logically & stayed on topic?',  s:'No unrelated tangents'},
+  {k:'⚖️', t:'Considered both individuals and governments?', s:'Where relevant to the question'},
+  {k:'🗣️', t:'Spoke fluently for about a minute?',          s:'Few hesitations, natural pace'}
+];
+
+const examCards = [
+  {emo:'🤝', foc:'Power',            title:'Q1',  prompt:'Do you think individuals or governments have more power to create change?',              followUp:'Can you think of an example where individual action made a real difference?'},
+  {emo:'⚠️', foc:'Consequence',      title:'Q2',  prompt:'What might happen if we continue to ignore environmental problems?',                      followUp:'Is there a point of no return, in your opinion?'},
+  {emo:'🏛️', foc:'Policy',          title:'Q3',  prompt:'What should governments do to promote sustainability?',                                   followUp:'Should these be laws, incentives, or a mix of both?'},
+  {emo:'🏙️', foc:'Future Cities',   title:'Q4',  prompt:'What will cities look like in 20 years if we don\'t take action?',                        followUp:'What would need to happen for that vision to change?'},
+  {emo:'🏫', foc:'Education',        title:'Q5',  prompt:'How can schools help young people become more eco-conscious?',                            followUp:'Should this start at primary school or later?'},
+  {emo:'💡', foc:'Technology',       title:'Q6',  prompt:'Do you think technological innovation will solve most environmental problems?',           followUp:'Can you think of a technology that\'s already making a difference?'},
+  {emo:'🙋', foc:'Motivation',       title:'Q7',  prompt:'How can individuals be encouraged to adopt more eco-friendly lifestyles?',                 followUp:'Would financial incentives work better than awareness campaigns?'},
+  {emo:'💰', foc:'Growth vs Green',  title:'Q8',  prompt:'Is economic growth always in conflict with environmental protection?',                     followUp:'Can you think of a country that manages to balance both well?'},
+  {emo:'🏢', foc:'Business',         title:'Q9',  prompt:'What role should big businesses play in promoting sustainability?',                        followUp:'Should smaller businesses be held to the same standard?'},
+  {emo:'👶', foc:'Future Generations', title:'Q10', prompt:'How might climate change affect future generations?',                                    followUp:'How might this affect where people choose to live?'},
+  {emo:'⚖️', foc:'Priorities',       title:'Q11', prompt:'Should governments prioritise environmental issues over economic development?',            followUp:'Is that a realistic trade-off for most governments?'},
+  {emo:'🚌', foc:'Transport',        title:'Q12', prompt:'How can public transport systems contribute to sustainability?',                           followUp:'What would make you personally use public transport more?'},
+  {emo:'📢', foc:'Awareness',        title:'Q13', prompt:'Do you think environmental awareness campaigns are effective?',                            followUp:'What would make a campaign like that more memorable?'},
+  {emo:'🌍', foc:'Cooperation',      title:'Q14', prompt:'How can international cooperation help address global environmental problems?',            followUp:'Which countries do you think are leading on this currently?'}
+];
+
+/* ===== STATE ===== */
+let state = {
+  current:'objectives', score:0, done:new Set(),
+  matchSel:{verb:null,noun:null}, matchSolved:new Set(),
+  quizRound:1, quizIdx:0, quizAnswered:{},
+  qtypeAnswered:{}, oreoAnswered:{},
+  adeActive:null, cueTab:0, peerScores:{},
+  gapSelected:null, gapFilled:{}, gapScored:{},
+  warmupTab:0,
+  timerInterval:null, timerRunning:false,
+  timerRemaining:20, timerTotal:20
+};
+
+function addScore(pts){ state.score+=pts; document.getElementById('railScore').textContent=state.score+' pts'; }
+function markDone(id){ state.done.add(id); renderNav(); }
+
+/* ===== NAV ===== */
+function renderNav(){
+  const nav=document.getElementById('navList');
+  nav.innerHTML=sections.map(s=>`
+    <div class="nav-item ${s.id===state.current?'active':''} ${state.done.has(s.id)?'done':''}" data-id="${s.id}">
+      <span class="n">${s.n}</span><span>${s.label}</span><span class="done-mark">✓</span>
+    </div>`).join('');
+  nav.querySelectorAll('.nav-item').forEach(el=>el.addEventListener('click',()=>goTo(el.dataset.id)));
+}
+
+function goTo(id){ state.current=id; renderNav(); renderMain(); window.scrollTo({top:0,behavior:'smooth'}); }
+
+/* ===== RENDER MAIN ===== */
+function renderMain(){
+  const main=document.getElementById('main');
+  const idx=sections.findIndex(s=>s.id===state.current);
+  const prev=sections[idx-1]; const next=sections[idx+1];
+  let body='';
+  switch(state.current){
+    case 'objectives':  body=renderObjectives(); break;
+    case 'warmup':      body=renderWarmup(); break;
+    case 'qtype':       body=renderQtype(); break;
+    case 'vocab':       body=renderVocab(); break;
+    case 'collocation': body=renderCollocation(); break;
+    case 'idioms':      body=renderIdioms(); break;
+    case 'gapfill':     body=renderGapfill(); break;
+    case 'oreo':        body=renderOreo(); break;
+    case 'quiz':        body=renderQuiz(); break;
+    case 'model':       body=renderModel(); break;
+    case 'toolkit':     body=renderToolkit(); break;
+    case 'connectives': body=renderConnectives(); break;
+    case 'peer':        body=renderPeer(); break;
+    case 'practice':    body=renderPractice(); break;
+    case 'wrapup':      body=renderWrapup(); break;
+  }
+  main.innerHTML=`
+    <div class="mobile-jump">
+      <select id="mobileSelect">
+        ${sections.map(s=>`<option value="${s.id}" ${s.id===state.current?'selected':''}>${s.n} · ${s.label}${state.done.has(s.id)?' ✓':''}</option>`).join('')}
+      </select>
+    </div>
+    <div class="mobile-progress">
+      ${sections.map(s=>`<div class="seg ${state.done.has(s.id)?'done':''} ${s.id===state.current?'now':''}"></div>`).join('')}
+    </div>`+body+`
+    <div class="nav-arrows">
+      ${prev?`<button class="btn" id="prevBtn">← ${prev.label}</button>`:'<span></span>'}
+      ${next?`<button class="btn primary" id="nextBtn">${next.label} →</button>`:'<span></span>'}
+    </div>`;
+  if(prev) document.getElementById('prevBtn').onclick=()=>goTo(prev.id);
+  if(next) document.getElementById('nextBtn').onclick=()=>goTo(next.id);
+  const ms=document.getElementById('mobileSelect');
+  if(ms) ms.onchange=e=>goTo(e.target.value);
+  attachHandlers();
+}
+
+/* ===== TIMER ===== */
+function setupTimer(s){ clearInterval(state.timerInterval); state.timerRunning=false; state.timerTotal=s; state.timerRemaining=s; updateRing(); }
+function updateRing(){
+  const fg=document.getElementById('ringFg'); const num=document.getElementById('ringNum');
+  if(!fg) return;
+  fg.style.strokeDashoffset=238.8*(1-state.timerRemaining/state.timerTotal);
+  num.textContent=state.timerRemaining;
+  if(state.timerRemaining<=6&&state.timerRemaining>0) fg.style.stroke='var(--gold)'; else fg.style.stroke='var(--coral)';
+}
+function startTimer(){
+  if(state.timerRunning) return;
+  state.timerRunning=true;
+  state.timerInterval=setInterval(()=>{
+    state.timerRemaining--;
+    updateRing();
+    if(state.timerRemaining<=0){ clearInterval(state.timerInterval); state.timerRunning=false; }
+  },1000);
+}
+function timerHTML(seconds, label){
+  seconds=seconds||20; label=label||('Thinking time — '+seconds+' seconds');
+  return `<div class="timer-wrap"><div class="ring"><svg width="92" height="92"><circle class="bg" cx="46" cy="46" r="38"/><circle class="fg" id="ringFg" cx="46" cy="46" r="38" stroke-dasharray="238.8" stroke-dashoffset="0"/></svg><div class="num" id="ringNum">${seconds}</div></div><div class="timer-meta"><div class="t-label" id="timerLabel">${label}</div><div class="timer-btns"><button class="btn primary" id="timerStart">Start</button><button class="btn ghost" id="timerReset">Reset</button></div></div></div>`;
+}
+
+/* ===== SECTIONS ===== */
+function renderObjectives(){ return `
+  <div class="eyebrow">Lesson Objectives</div>
+  <h2 class="title">What You\'ll Learn Today 🎯</h2>
+  <p class="deck">By the end of this lesson, you will be able to:</p>
+  <div class="takeaway-grid">
+    ${objectives.map(o=>`<div class="tk"><span class="tk-icon">${o.icon}</span><h4>${o.h}</h4><p>${o.d}</p></div>`).join('')}
+  </div>
+  <p style="font-size:19px;color:var(--text-faint);margin-top:24px;">Let\'s get started — click "Warm-Up" below to begin.</p>`; }
+
+function renderWarmup(){
+  const i=state.warmupTab;
+  return `
+  <div class="eyebrow">Warm-Up · 0–10 min</div>
+  <h2 class="title">Green Talk 🌱</h2>
+  <p class="deck">Discuss each question with a partner. Click a number to move to that question and start the timer.</p>
+  <div class="warmup-tabs">
+    ${warmupQs.map((_,idx)=>`<div class="warmup-tab ${state.warmupTab===idx?'on':''}" data-i="${idx}">${idx+1}</div>`).join('')}
+  </div>
+  ${timerHTML(20,'Discussion time — 20 seconds')}
+  <div class="prompt-current"><div class="pn">${i+1}</div><p>${warmupQs[i]}</p></div>
+  <p style="font-size:19px;color:var(--text-faint);margin-top:18px;">Tip: Part 3 rewards spontaneity — try opening with "Honestly, I\'d say…" or "That\'s an interesting question…" to buy yourself a second to think.</p>`; }
+
+function renderQtype(){
+  const answeredCount=Object.keys(state.qtypeAnswered).length;
+  return `
+  <div class="eyebrow">CORE Comprehension · Reading Beyond the Question</div>
+  <h2 class="title">What's the Examiner Really Asking?</h2>
+  <p class="deck">Many Part 3 questions look simple but expect more than a short answer. Skim the quick guide, then sort each question into the type of response it needs.</p>
+  <div class="sort-intro">
+    ${qtypeIntro.map(c=>`<div class="sort-intro-item" data-k="${c.k}"><span class="k">${c.k} — ${c.label}</span><p>${c.d}</p></div>`).join('')}
+  </div>
+  <p style="font-size:19px;color:var(--text-dim);margin:0 0 16px;">Read each question and click the type of response it needs. ${answeredCount}/${qtypeQs.length} sorted.</p>
+  <div class="focus-list">
+    ${qtypeQs.map((f,i)=>{
+      const a=state.qtypeAnswered[i];
+      return `<div class="focus-item">
+        <p>${i+1}. ${f.q}</p>
+        <div class="focus-btns">
+          ${f.order.map(cat=>{
+            let cls='focus-btn';
+            if(a){ if(cat===f.cat) cls+=' correct locked'; else if(cat===a.picked && !a.correct) cls+=' wrong'; else cls+=' locked'; }
+            return `<button class="${cls}" data-i="${i}" data-cat="${cat}" data-group="qtype">${qtypeLabels[cat]}</button>`;
+          }).join('')}
+        </div>
+        <div class="focus-result ${a&&a.correct?'good':''}">${a?(a.correct?'✓ Correct — '+qtypeLabels[f.cat]:'Try another type'):''}</div>
+      </div>`;
+    }).join('')}
+  </div>`; }
+
+function renderVocab(){ return `
+  <div class="eyebrow">Vocabulary Power-Up · 10–22 min</div>
+  <h2 class="title">10 Words for Green Talk</h2>
+  <p class="deck">Read the meaning, guess the word or phrase, then click to reveal the answer and example sentence.</p>
+  <div class="grid-3">
+    ${vocab.map((v,i)=>`<div class="flip" data-i="${i}"><div class="flip-inner"><div class="flip-face flip-front"><div class="def-prompt">${v.d}</div><div class="hint">Tap to reveal →</div></div><div class="flip-face flip-back"><div class="word-reveal">${v.w}</div><div class="ex">${v.ex}</div></div></div></div>`).join('')}
+  </div>`; }
+
+function renderCollocation(){
+  const sc=state.matchSolved.size;
+  const solvedVerbs=verbs.filter(v=>state.matchSolved.has(v));
+  const unsolvedVerbs=verbs.filter(v=>!state.matchSolved.has(v));
+  const unsolvedNouns=nouns.filter(n=>!solvedVerbs.some(v=>matchKey[v]===n));
+  const verbOrder=solvedVerbs.concat(unsolvedVerbs);
+  const nounOrder=solvedVerbs.map(v=>matchKey[v]).concat(unsolvedNouns);
+  return `
+  <div class="eyebrow">Vocabulary Power-Up · Collocation Match-Up ⚡</div>
+  <h2 class="title">Match the Pairs</h2>
+  <p class="deck">Click a verb, then click the phrase it goes with. Everything starts jumbled — correct pairs lock in and line up across from each other. ${sc}/${verbs.length} matched so far.</p>
+  <div class="match-wrap">
+    <div class="match-col"><h4>Verbs</h4>
+      ${verbOrder.map((v,i)=>`<div class="match-item ${state.matchSolved.has(v)?'correct locked':''} ${state.matchSel.verb===v?'selected':''}" data-side="verb" data-val="${v}"><span class="tag">${i+1}</span>${v}</div>`).join('')}
+    </div>
+    <div class="match-col"><h4>Phrases</h4>
+      ${nounOrder.map((n,i)=>`<div class="match-item ${solvedVerbs.some(v=>matchKey[v]===n)?'correct locked':''} ${state.matchSel.noun===n?'selected':''}" data-side="noun" data-val="${n}"><span class="tag">${String.fromCharCode(65+i)}</span>${n}</div>`).join('')}
+    </div>
+  </div>`; }
+
+function renderIdioms(){ return `
+  <div class="eyebrow">Idioms & Phrases · 25–40 min</div>
+  <h2 class="title">Green Talk: 8 Expressions 💡</h2>
+  <p class="deck">Click each phrase to expand its meaning and an example sentence. Use these to make your Part 3 answers sound natural and fluent.</p>
+  <div class="idiom-list">
+    ${idioms.map((it,i)=>`<div class="idiom" data-i="${i}"><div class="idiom-head"><span class="phrase">${it.p}</span><span class="chev">▸</span></div><div class="idiom-body"><div class="idiom-mean">— ${it.m}</div><div class="idiom-ex">${it.ex}</div></div></div>`).join('')}
+  </div>`; }
+
+function renderGapfill(){
+  return `
+  <div class="eyebrow">Idioms & Expressions · Gap Fill ✏️</div>
+  <h2 class="title">Use the Right Expression</h2>
+  <p class="deck">Click a blank, then click the matching phrase from the word bank below. No typing — just click!</p>
+  <div class="gapfill-list">
+    ${gapfills.map((g,i)=>{
+      const parts=g.text.split('___');
+      const filled=state.gapFilled[i];
+      return `<div class="gap-item"><p>${i+1}. ${parts[0]}<span class="gap-blank ${state.gapSelected===i?'selected':''} ${filled?'filled':''}" data-i="${i}">${filled?filled:'click blank'}</span>${parts[1]}</p></div>`;
+    }).join('')}
+  </div>
+  <div class="wordbank" style="margin-top:20px;">
+    ${wordbank.map(w=>`<span class="wb-chip ${Object.values(state.gapFilled).includes(w)?'used':''}" data-word="${w}">${w}</span>`).join('')}
+  </div>
+  <div class="quiz-feedback" id="gapFeedback">${Object.keys(state.gapFilled).length} / ${gapfills.length} filled</div>`; }
+
+function renderOreo(){
+  const answeredCount=Object.keys(state.oreoAnswered).length;
+  return `
+  <div class="eyebrow">CORE Organisation · Core Skill 🎯</div>
+  <h2 class="title">Opinion, Reason, Example or Plus?</h2>
+  <p class="deck">The O.R.E.O. Plus model turns a bare opinion into a full, coherent answer. Skim the quick guide below, then sort each sentence into the stage it belongs to.</p>
+  <div class="sort-intro">
+    ${oreoIntro.map(c=>`<div class="sort-intro-item" data-k="${c.k}"><span class="k">${c.k} — ${c.label}</span><p>${c.d}</p></div>`).join('')}
+  </div>
+  <p style="font-size:19px;color:var(--text-dim);margin:0 0 16px;">Read each sentence and click the correct stage. ${answeredCount}/${oreoQs.length} sorted.</p>
+  <div class="focus-list">
+    ${oreoQs.map((f,i)=>{
+      const a=state.oreoAnswered[i];
+      return `<div class="focus-item">
+        <p>${i+1}. ${f.q}</p>
+        <div class="focus-btns">
+          ${f.order.map(cat=>{
+            let cls='focus-btn';
+            if(a){ if(cat===f.cat) cls+=' correct locked'; else if(cat===a.picked && !a.correct) cls+=' wrong'; else cls+=' locked'; }
+            return `<button class="${cls}" data-i="${i}" data-cat="${cat}" data-group="oreo">${oreoLabels[cat]}</button>`;
+          }).join('')}
+        </div>
+        <div class="focus-result ${a&&a.correct?'good':''}">${a?(a.correct?'✓ Correct — '+oreoLabels[f.cat]:'Try another stage'):''}</div>
+      </div>`;
+    }).join('')}
+  </div>`; }
+
+function renderQuiz(){
+  const round=quizRounds[state.quizRound];
+  const q=round.qs[state.quizIdx];
+  const key=`${state.quizRound}-${state.quizIdx}`;
+  const answered=state.quizAnswered[key];
+  return `
+  <div class="eyebrow">Quiz Challenge · Test Yourself 🧠</div>
+  <h2 class="title">${round.title}</h2>
+  <p class="deck">Click an answer. If it\'s wrong, try again — you can keep guessing until you find the right one.</p>
+  <div class="roundtab">
+    <button data-r="1" class="${state.quizRound===1?'on':''}">Round 1 · Vocabulary</button>
+    <button data-r="2" class="${state.quizRound===2?'on':''}">Round 2 · Idioms</button>
+  </div>
+  <div class="quiz-progress">
+    ${round.qs.map((_,i)=>{const k=`${state.quizRound}-${i}`;return `<div class="quiz-dot ${i===state.quizIdx?'active':''} ${state.quizAnswered[k]?'answered':''}"></div>`;}).join('')}
+  </div>
+  <div class="quiz-card">
+    <p class="quiz-q">${state.quizIdx+1}. ${q.q}</p>
+    <div class="quiz-opts">
+      ${q.opts.map((o,i)=>{let cls='quiz-opt';if(answered&&i===q.ans){cls+=' correct locked';}return `<div class="${cls}" data-i="${i}"><span class="letter">${String.fromCharCode(65+i)}</span>${o}</div>`;}).join('')}
+    </div>
+    <div class="quiz-foot">
+      <span class="quiz-feedback ${answered?'good':''}" id="quizFeedbackMsg">${answered?'✓ Correct! +1 point':'Select an answer'}</span>
+      <div style="display:flex;gap:8px;">
+        <button class="btn" id="quizPrev" ${state.quizIdx===0?'disabled style="opacity:.4"':''}>← Prev</button>
+        <button class="btn" id="quizNext" ${state.quizIdx===round.qs.length-1?'disabled style="opacity:.4"':''}>Next →</button>
+      </div>
+    </div>
+  </div>`; }
+
+function renderModel(){ return `
+  <div class="eyebrow">Model Answer</div>
+  <h2 class="title">Analyse a Band 7+ Answer 🔍</h2>
+  <p class="deck">Question: "Do you think individuals or governments have more power to create change?" Click a stage chip to highlight that part of the answer. See how Opinion → Reason → Example → Refined Opinion → Plus builds a full, structured response.</p>
+  <div class="ade-key">
+    ${oreoModel.map(a=>`<div class="ade-chip ${state.adeActive===a.k?'active':''}" data-k="${a.k}">${a.k} — ${a.label.split('—')[0].trim()}</div>`).join('')}
+  </div>
+  <div class="card">
+    ${oreoModel.map(a=>`<div class="ade-block ${state.adeActive&&state.adeActive!==a.k?'dim':''} ${state.adeActive===a.k?'highlight':''}" data-k="${a.k}"><span class="tag2">${a.label}</span>${a.text}</div>`).join('')}
+  </div>`; }
+
+function renderToolkit(){ return `
+  <div class="eyebrow">Language Toolkit</div>
+  <h2 class="title">Upgrade Your Green Talk 🔗</h2>
+  <p class="deck">Click any phrase to drop it into your scratchpad — then build a sentence using that starter.</p>
+  <div class="grid-2">
+    ${toolkit.map(t=>`<div class="tool-card"><h4>${t.h}</h4>${t.items.map(i=>`<span class="phrase-btn" data-phrase="${i}">${i}</span>`).join('')}</div>`).join('')}
+  </div>
+  <div class="scratch">
+    <p style="font-size:19px;color:var(--text-dim);margin-bottom:8px;">Scratchpad — practise a sentence using the phrases above:</p>
+    <textarea id="scratchArea" placeholder="e.g. I believe sustainable development is essential because…"></textarea>
+  </div>`; }
+
+function renderConnectives(){ return `
+  <div class="eyebrow">Conditionals & Linking · Level Up 🔗</div>
+  <h2 class="title">Show Consequences and Predictions Like a Band 7+</h2>
+  <p class="deck">Conditionals show awareness of consequences and future possibilities — a key Band 7 feature. Click any phrase to drop it into your scratchpad, then build a sentence around it.</p>
+  <div class="grid-2">
+    ${connectives.map(t=>`<div class="tool-card"><h4>${t.h}</h4>${t.items.map(i=>`<span class="phrase-btn" data-phrase="${i}">${i}</span>`).join('')}</div>`).join('')}
+  </div>
+  <div class="scratch">
+    <p style="font-size:19px;color:var(--text-dim);margin-bottom:8px;">Scratchpad — practise a conditional sentence using a structure above:</p>
+    <textarea id="scratchArea" placeholder="e.g. If the government doesn't take action soon, we'll face more climate disasters…"></textarea>
+  </div>`; }
+
+function renderPeer(){
+  const total=peerCriteria.reduce((s,c)=>s+(state.peerScores[c.t]||0),0);
+  const maxTotal=peerCriteria.length*3;
+  return `
+  <div class="eyebrow">Peer Performance · 75–90 min</div>
+  <h2 class="title">You Speak, We Listen 🌟</h2>
+  <p class="deck">Answer spontaneously — Part 3 has no prep time. Aim for a clear, well-organised answer of about a minute. Your partner scores your performance below.</p>
+  <div class="scorecard">
+    ${peerCriteria.map(c=>`<div class="score-row"><div class="letter2">${c.k}</div><div class="si-main"><div class="si-title">${c.t}</div><div class="si-sub">${c.s}</div></div><div class="pips">${[1,2,3].map(n=>`<div class="pip ${state.peerScores[c.t]===n?'on':''}" data-crit="${c.t}" data-n="${n}">${n}</div>`).join('')}</div></div>`).join('')}
+  </div>
+  <div class="score-total">
+    <span style="font-size:19px;color:var(--text-dim);">Total score (1=needs work · 2=ok · 3=great)</span>
+    <span class="tot-num">${total}/${maxTotal}</span>
+  </div>
+  <div class="feedback-fields">
+    <input type="text" id="fbStrength" placeholder="📝 One strength — something they did really well…">
+    <input type="text" id="fbTip" placeholder="🎯 One tip — one specific thing to improve next time…">
+  </div>`; }
+
+function renderPractice(){
+  const c=examCards[state.cueTab];
+  return `
+  <div class="eyebrow">Exam Practice</div>
+  <h2 class="title">14 Part 3 Discussion Questions 🃏</h2>
+  <p class="deck">Part 3 has no prep time in the real exam, but take a quick moment to think in O.R.E.O. Plus order before you answer. Create 1–2 follow-up questions of your own once you hear your partner\'s answer.</p>
+  <p class="assign-note">💡 Teacher tip: assign one question per student, or let each student click their own tab.</p>
+  <div class="cue-tabs">
+    ${examCards.map((e,i)=>`<div class="cue-tab ${state.cueTab===i?'on':''}" data-i="${i}"><span class="emo">${e.emo}</span>${e.title}<span class="foc">${e.foc}</span></div>`).join('')}
+  </div>
+  <div class="cuecard">
+    <div class="label">${c.title} · ${c.foc}</div>
+    <h3>${c.prompt}</h3>
+    <p class="followup"><b>Possible follow-up:</b> ${c.followUp}</p>
+  </div>
+  ${timerHTML(20,'Thinking time — 20 seconds')}
+  <textarea class="notepad" placeholder="Keyword notes only — O / R / E / O / Plus…"></textarea>`; }
+
+function renderWrapup(){ return `
+  <div class="eyebrow">Lesson Wrap-Up</div>
+  <h2 class="title">Today\'s Key Takeaways ⭐</h2>
+  <p class="deck">Excellent work. Here is everything you covered today — take it with you!</p>
+  <div class="takeaway-grid">
+    <div class="tk"><span class="tk-icon">📚</span><h4>10 Advanced Words</h4><p>renewable energy · enforce regulations · waste management · green initiative · implement a policy · restore ecosystems · climate resilience · eco-conscious · carbon footprint · subsidise</p></div>
+    <div class="tk"><span class="tk-icon">💡</span><h4>8 Idioms & Phrases</h4><p>go green · a drop in the ocean · the writing is on the wall · turn the tide · at a crossroads · kick the can down the road…</p></div>
+    <div class="tk"><span class="tk-icon">🎯</span><h4>The O.R.E.O. Plus Model</h4><p>Opinion → Reason → Example → Refined Opinion → Plus: the structure behind every strong, balanced Part 3 answer.</p></div>
+    <div class="tk"><span class="tk-icon">🔗</span><h4>Conditionals</h4><p>First: "If we don't act, we'll face consequences." Second: "If more people used public transport, cities would have less pollution."</p></div>
+  </div>
+  <div class="final-score">
+    <div class="fs-num">${state.score}</div>
+    <div class="fs-label">points earned across today\'s exercises</div>
+  </div>
+  <p style="margin-top:28px;font-size:20px;color:var(--text-dim);">🎙 <strong>Homework:</strong> Record yourself responding to these questions: "Should governments prioritise environmental issues over economic development?", "How can public transport systems contribute to sustainability?", "What are the challenges of enforcing environmental laws?", "Do you think environmental awareness campaigns are effective?", and "How can international cooperation help address global environmental problems?" Listen back and check: did you use the O.R.E.O. Plus model, at least one conditional sentence, and 3 topic-specific vocabulary items?</p>`; }
+
+/* ===== HANDLERS ===== */
+function attachHandlers(){
+  const start=document.getElementById('timerStart');
+  const reset=document.getElementById('timerReset');
+  if(start){
+    const initSeconds = 20;
+    setupTimer(initSeconds);
+    updateRing();
+    start.onclick=()=>startTimer();
+    reset.onclick=()=>{ setupTimer(initSeconds); };
+  }
+
+  document.querySelectorAll('.warmup-tab').forEach(el=>el.addEventListener('click',()=>{ state.warmupTab=+el.dataset.i; markDone('warmup'); renderMain(); startTimer(); }));
+
+  document.querySelectorAll('.focus-btn[data-group="qtype"]').forEach(el=>{
+    if(el.classList.contains('locked')) return;
+    el.addEventListener('click',()=>{
+      const i=+el.dataset.i; const cat=el.dataset.cat;
+      if(state.qtypeAnswered[i]) return;
+      const correct=cat===qtypeQs[i].cat;
+      if(correct){
+        state.qtypeAnswered[i]={picked:cat,correct:true}; addScore(1);
+        if(Object.keys(state.qtypeAnswered).length===qtypeQs.length) markDone('qtype');
+        renderMain();
+      } else {
+        el.classList.add('wrong');
+        setTimeout(()=>el.classList.remove('wrong'),500);
+      }
+    });
+  });
+
+  document.querySelectorAll('.flip').forEach(el=>el.addEventListener('click',()=>{ el.classList.toggle('flipped'); markDone('vocab'); }));
+
+  document.querySelectorAll('#main .match-item').forEach(el=>{
+    if(el.classList.contains('locked')) return;
+    el.addEventListener('click',()=>{
+      const side=el.dataset.side; const val=el.dataset.val;
+      state.matchSel[side]=(state.matchSel[side]===val)?null:val;
+      if(state.matchSel.verb&&state.matchSel.noun){
+        if(matchKey[state.matchSel.verb]===state.matchSel.noun){
+          state.matchSolved.add(state.matchSel.verb); addScore(1);
+          if(state.matchSolved.size===verbs.length) markDone('collocation');
+          state.matchSel={verb:null,noun:null}; renderMain();
+        } else {
+          renderMain();
+          setTimeout(()=>{ document.querySelectorAll('#main .match-item.selected').forEach(x=>x.classList.add('wrong')); setTimeout(()=>{ state.matchSel={verb:null,noun:null}; renderMain(); },500); },30);
+        }
+      } else renderMain();
+    });
+  });
+
+  document.querySelectorAll('.idiom').forEach(el=>el.addEventListener('click',()=>{ el.classList.toggle('open'); markDone('idioms'); }));
+
+  document.querySelectorAll('.gap-blank').forEach(el=>{
+    el.addEventListener('click',()=>{
+      const i=+el.dataset.i;
+      state.gapSelected=(state.gapSelected===i)?null:i;
+      renderMain();
+    });
+  });
+  document.querySelectorAll('.wb-chip').forEach(chip=>{
+    chip.addEventListener('click',()=>{
+      if(state.gapSelected===null) return;
+      const i=state.gapSelected;
+      const word=chip.dataset.word;
+      const correctAns=gapfills[i].ans;
+      const fb=document.getElementById('gapFeedback');
+      if(word===correctAns){
+        state.gapFilled[i]=word;
+        state.gapSelected=null;
+        if(!state.gapScored[i]){ addScore(1); state.gapScored[i]=true; }
+        const doneCount=Object.keys(state.gapFilled).length;
+        if(doneCount===gapfills.length) markDone('gapfill');
+        renderMain();
+        setTimeout(()=>{ const f=document.getElementById('gapFeedback'); if(f){ f.textContent=doneCount+' / '+gapfills.length+' correct!'; f.className='quiz-feedback good'; } },10);
+      } else {
+        if(fb){ fb.textContent='That doesn\'t fit this blank — try another phrase.'; fb.className='quiz-feedback bad'; }
+        chip.style.animation='shake .3s'; setTimeout(()=>chip.style.animation='',300);
+      }
+    });
+  });
+
+  document.querySelectorAll('.roundtab button').forEach(b=>b.addEventListener('click',()=>{ state.quizRound=+b.dataset.r; state.quizIdx=0; renderMain(); }));
+
+  document.querySelectorAll('.quiz-opt').forEach(el=>el.addEventListener('click',()=>{
+    if(el.classList.contains('locked')) return;
+    const key=`${state.quizRound}-${state.quizIdx}`;
+    if(state.quizAnswered[key]) return;
+    const picked=+el.dataset.i; const q=quizRounds[state.quizRound].qs[state.quizIdx]; const correct=picked===q.ans;
+    const totalQs=Object.values(quizRounds).reduce((s,r)=>s+r.qs.length,0);
+    if(correct){
+      state.quizAnswered[key]={picked,correct:true}; addScore(1);
+      if(Object.keys(state.quizAnswered).length===totalQs) markDone('quiz');
+      renderMain();
+    } else {
+      el.classList.add('wrong');
+      const fb=document.getElementById('quizFeedbackMsg');
+      if(fb){ fb.textContent='✗ Not quite — click another option to try again'; fb.className='quiz-feedback bad'; }
+      setTimeout(()=>{
+        el.classList.remove('wrong');
+        const fb2=document.getElementById('quizFeedbackMsg');
+        if(fb2 && !state.quizAnswered[key]){ fb2.textContent='Select an answer'; fb2.className='quiz-feedback'; }
+      },700);
+    }
+  }));
+
+  const qPrev=document.getElementById('quizPrev'); const qNext=document.getElementById('quizNext');
+  if(qPrev) qPrev.onclick=()=>{ if(state.quizIdx>0){ state.quizIdx--; renderMain(); } };
+  if(qNext) qNext.onclick=()=>{ const r=quizRounds[state.quizRound]; if(state.quizIdx<r.qs.length-1){ state.quizIdx++; renderMain(); } };
+
+  document.querySelectorAll('.focus-btn[data-group="oreo"]').forEach(el=>{
+    if(el.classList.contains('locked')) return;
+    el.addEventListener('click',()=>{
+      const i=+el.dataset.i; const cat=el.dataset.cat;
+      if(state.oreoAnswered[i]) return;
+      const correct=cat===oreoQs[i].cat;
+      if(correct){
+        state.oreoAnswered[i]={picked:cat,correct:true}; addScore(1);
+        if(Object.keys(state.oreoAnswered).length===oreoQs.length) markDone('oreo');
+        renderMain();
+      } else {
+        el.classList.add('wrong');
+        setTimeout(()=>el.classList.remove('wrong'),500);
+      }
+    });
+  });
+
+  document.querySelectorAll('.ade-chip').forEach(el=>el.addEventListener('click',()=>{ const k=el.dataset.k; state.adeActive=(state.adeActive===k)?null:k; markDone('model'); renderMain(); }));
+
+  document.querySelectorAll('.phrase-btn').forEach(el=>el.addEventListener('click',()=>{ const area=document.getElementById('scratchArea'); area.value=(area.value?area.value+' ':'')+el.dataset.phrase+' '; area.focus(); markDone(state.current); }));
+
+  document.querySelectorAll('.pip').forEach(el=>el.addEventListener('click',()=>{ const crit=el.dataset.crit; const n=+el.dataset.n; state.peerScores[crit]=(state.peerScores[crit]===n)?null:n; if(Object.keys(state.peerScores).filter(k=>state.peerScores[k]).length===peerCriteria.length) markDone('peer'); renderMain(); }));
+
+  document.querySelectorAll('.cue-tab').forEach(el=>el.addEventListener('click',()=>{ state.cueTab=+el.dataset.i; markDone('practice'); renderMain(); }));
+}
+
+/* ===== INIT ===== */
+renderNav();
+renderMain();
+</script>
+</body>
+</html>

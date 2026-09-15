@@ -1,0 +1,989 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>IELTS 7.0 Speaking · Leadership &amp; Management</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;0,9..144,900;1,9..144,500&family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#10151B;
+    --panel:#1B242E;
+    --panel-2:#232F3B;
+    --paper:#F3F5F1;
+    --paper-dim:#DCE1DC;
+    --coral:#C98A3C;
+    --coral-dim:#A76F2C;
+    --mint:#3F8E8C;
+    --gold:#3F8E8C;
+    --line:rgba(243,245,241,0.12);
+    --text-dim:rgba(243,245,241,0.62);
+    --text-faint:rgba(243,245,241,0.38);
+    --radius:14px;
+  }
+  *{box-sizing:border-box;}
+  html,body{margin:0;padding:0;}
+  body{background:var(--ink);color:var(--paper);font-family:'Inter',sans-serif;-webkit-font-smoothing:antialiased;min-height:100vh;}
+  ::selection{background:var(--coral);color:var(--ink);}
+  a{color:inherit;}
+  button{font-family:inherit;}
+  .app{display:grid;grid-template-columns:340px 1fr;min-height:100vh;}
+
+  /* RAIL */
+  .rail{background:var(--panel);border-right:1px solid var(--line);padding:24px 18px 18px;display:flex;flex-direction:column;gap:18px;position:sticky;top:0;height:100vh;overflow-y:auto;}
+  .brand{display:flex;flex-direction:column;gap:2px;padding:0 6px 14px;border-bottom:1px solid var(--line);}
+  .brand .tag{font-family:'JetBrains Mono',monospace;font-size:14.5px;letter-spacing:.14em;color:var(--coral);text-transform:uppercase;font-weight:700;}
+  .brand h1{font-family:'Fraunces',serif;font-size:26px;font-weight:700;margin:4px 0 0;line-height:1.15;}
+  .brand .sub{font-size:16px;color:var(--text-dim);margin-top:4px;}
+  .onair{display:flex;align-items:center;gap:8px;background:var(--panel-2);border:1px solid var(--line);border-radius:10px;padding:10px 12px;}
+  .onair .dot{width:8px;height:8px;border-radius:50%;background:var(--coral);box-shadow:0 0 0 0 rgba(201,138,60,.6);animation:pulse 1.8s infinite;}
+  @keyframes pulse{0%{box-shadow:0 0 0 0 rgba(201,138,60,.55);}70%{box-shadow:0 0 0 6px rgba(201,138,60,0);}100%{box-shadow:0 0 0 0 rgba(201,138,60,0);}}
+  .onair .label{font-family:'JetBrains Mono',monospace;font-size:14.5px;letter-spacing:.1em;color:var(--text-dim);text-transform:uppercase;}
+  .onair .score{margin-left:auto;font-family:'JetBrains Mono',monospace;font-weight:700;font-size:20.5px;color:var(--gold);}
+  nav{display:flex;flex-direction:column;gap:2px;flex:1;}
+  .nav-item{display:flex;align-items:center;gap:10px;padding:9px 10px;border-radius:9px;cursor:pointer;font-size:18px;color:var(--text-dim);border:1px solid transparent;transition:background .15s,color .15s;user-select:none;}
+  .nav-item .n{font-family:'JetBrains Mono',monospace;font-size:15px;width:20px;color:var(--text-faint);flex-shrink:0;}
+  .nav-item:hover{background:rgba(243,245,241,0.05);color:var(--paper);}
+  .nav-item.active{background:rgba(201,138,60,0.14);border-color:rgba(201,138,60,0.35);color:var(--paper);}
+  .nav-item.active .n{color:var(--coral);}
+  .nav-item .done-mark{margin-left:auto;color:var(--mint);font-size:17.5px;opacity:0;}
+  .nav-item.done .done-mark{opacity:1;}
+  .rail-foot{font-size:15px;color:var(--text-faint);border-top:1px solid var(--line);padding-top:12px;line-height:1.5;}
+
+  /* MAIN */
+  main{padding:48px 64px 100px;max-width:1180px;width:100%;}
+  .eyebrow{font-family:'JetBrains Mono',monospace;font-size:16px;letter-spacing:.16em;text-transform:uppercase;color:var(--coral);font-weight:700;margin-bottom:10px;}
+  h2.title{font-family:'Fraunces',serif;font-size:52px;font-weight:700;line-height:1.05;margin:0 0 10px;}
+  .deck{font-size:22px;color:var(--text-dim);margin:0 0 36px;max-width:680px;}
+  .card{background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);padding:22px 24px;}
+
+  /* TIMER */
+  .timer-wrap{display:flex;align-items:center;gap:22px;background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);padding:18px 22px;margin-bottom:28px;}
+  .ring{position:relative;width:92px;height:92px;flex-shrink:0;}
+  .ring svg{transform:rotate(-90deg);}
+  .ring circle{fill:none;stroke-width:6;}
+  .ring .bg{stroke:var(--line);}
+  .ring .fg{stroke:var(--coral);stroke-linecap:round;transition:stroke-dashoffset .25s linear;}
+  .ring .num{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-family:'JetBrains Mono',monospace;font-weight:700;font-size:20px;}
+  .timer-meta{flex:1;}
+  .timer-meta .t-label{font-size:19px;color:var(--text-dim);margin-bottom:4px;}
+  .timer-btns{display:flex;gap:8px;flex-wrap:wrap;}
+  .btn{font-family:'Inter',sans-serif;font-size:18px;font-weight:600;padding:8px 14px;border-radius:8px;border:1px solid var(--line);background:var(--panel-2);color:var(--paper);cursor:pointer;transition:background .15s,border-color .15s,transform .1s;}
+  .btn:hover{background:rgba(243,245,241,0.08);}
+  .btn:active{transform:scale(.97);}
+  .btn.primary{background:var(--coral);border-color:var(--coral);color:var(--ink);}
+  .btn.primary:hover{background:#E0A458;}
+  .btn.ghost{background:transparent;}
+
+  /* PROMPTS */
+  .prompt-current{display:flex;gap:16px;align-items:flex-start;background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);padding:22px 24px;}
+  .prompt-current .pn{font-family:'JetBrains Mono',monospace;font-weight:700;font-size:19px;color:var(--coral);flex-shrink:0;padding-top:1px;}
+  .prompt-current p{margin:0;font-size:24px;line-height:1.5;}
+
+  /* FLIP CARDS */
+  .grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;}
+  .flip{perspective:1000px;height:220px;cursor:pointer;}
+  .flip-inner{position:relative;width:100%;height:100%;transition:transform .5s cubic-bezier(.4,.2,.2,1);transform-style:preserve-3d;}
+  .flip.flipped .flip-inner{transform:rotateY(180deg);}
+  .flip-face{position:absolute;inset:0;backface-visibility:hidden;border-radius:var(--radius);border:1px solid var(--line);padding:18px;display:flex;flex-direction:column;justify-content:center;}
+  .flip-front{background:var(--panel);}
+  .flip-front .def-prompt{font-family:'Inter',sans-serif;font-weight:600;font-size:20px;line-height:1.35;}
+  .flip-front .hint{font-size:16px;color:var(--text-faint);margin-top:10px;}
+  .flip-back{background:var(--coral);color:var(--ink);transform:rotateY(180deg);}
+  .flip-back .word-reveal{font-family:'Fraunces',serif;font-weight:700;font-style:italic;font-size:27px;margin-bottom:8px;}
+  .flip-back .ex{font-size:17px;font-style:italic;line-height:1.4;opacity:.85;}
+
+  /* MATCHING */
+  .match-wrap{display:grid;grid-template-columns:1fr 1fr;gap:30px;}
+  .match-col h4{font-family:'JetBrains Mono',monospace;font-size:16px;letter-spacing:.1em;color:var(--text-faint);text-transform:uppercase;margin:0 0 12px;}
+  .match-item,.match-item2{display:flex;align-items:center;gap:10px;background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:11px 14px;margin-bottom:8px;cursor:pointer;font-size:19px;transition:border-color .15s,background .15s;}
+  .match-item .tag,.match-item2 .tag{font-family:'JetBrains Mono',monospace;font-size:16px;color:var(--text-faint);width:18px;flex-shrink:0;}
+  .match-item.selected,.match-item2.selected{border-color:var(--gold);background:rgba(63,142,140,0.12);}
+  .match-item.correct,.match-item2.correct{border-color:var(--coral);background:rgba(201,138,60,0.12);}
+  .match-item.wrong,.match-item2.wrong{border-color:#E67E5B;background:rgba(230,126,91,0.12);}
+  .match-item.locked,.match-item2.locked{cursor:default;opacity:.85;}
+
+  /* IDIOMS */
+  .idiom-list{display:flex;flex-direction:column;gap:10px;}
+  .idiom{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:16px 18px;cursor:pointer;transition:border-color .15s;}
+  .idiom:hover{border-color:rgba(201,138,60,.3);}
+  .idiom-head{display:flex;align-items:center;justify-content:space-between;}
+  .idiom-head .phrase{font-family:'Fraunces',serif;font-weight:600;font-size:23px;}
+  .idiom-head .chev{color:var(--text-faint);transition:transform .2s;font-size:19px;}
+  .idiom.open .chev{transform:rotate(90deg);}
+  .idiom-body{max-height:0;overflow:hidden;transition:max-height .3s ease;}
+  .idiom.open .idiom-body{max-height:110px;}
+  .idiom-mean{font-size:19px;color:var(--text-dim);margin-top:8px;}
+  .idiom-ex{font-size:17px;font-style:italic;color:var(--text-faint);margin-top:4px;padding-bottom:4px;}
+
+  /* GAP FILL */
+  .gapfill-list{display:flex;flex-direction:column;gap:16px;}
+  .gap-item{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:16px 18px;}
+  .gap-item p{margin:0 0 10px;font-size:20px;line-height:1.6;}
+  .gap-blank{font-family:'JetBrains Mono',monospace;display:inline-block;min-width:230px;text-align:center;background:var(--panel-2);border:1px solid var(--line);border-radius:7px;color:var(--gold);padding:6px 12px;font-weight:700;cursor:pointer;}
+  .gap-blank.selected{border-color:var(--gold);box-shadow:0 0 0 2px rgba(63,142,140,.25);}
+  .gap-blank.filled{color:var(--coral);border-color:var(--coral);}
+  .wordbank{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:18px;}
+  .wb-chip{font-family:'JetBrains Mono',monospace;font-size:16.5px;background:var(--panel-2);border:1px solid var(--line);border-radius:20px;padding:8px 15px;color:var(--text-dim);cursor:pointer;transition:border-color .15s,color .15s,opacity .15s;}
+  .wb-chip:hover{border-color:var(--coral);color:var(--paper);}
+  .wb-chip.used{opacity:.3;pointer-events:none;text-decoration:line-through;}
+  .quiz-feedback{font-size:19px;color:var(--text-dim);min-height:18px;}
+  .quiz-feedback.good{color:var(--coral);}
+  .quiz-feedback.bad{color:#E67E5B;}
+
+  /* QUIZ */
+  .quiz-progress{display:flex;gap:6px;margin-bottom:24px;}
+  .quiz-dot{flex:1;height:4px;border-radius:3px;background:var(--line);}
+  .quiz-dot.active{background:var(--coral);}
+  .quiz-dot.answered{background:var(--gold);}
+  .quiz-card{background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);padding:28px;}
+  .quiz-q{font-size:26px;font-weight:600;margin:0 0 20px;line-height:1.4;}
+  .quiz-opts{display:flex;flex-direction:column;gap:10px;}
+  .quiz-opt{display:flex;gap:12px;align-items:center;background:var(--panel-2);border:1px solid var(--line);border-radius:10px;padding:13px 16px;cursor:pointer;font-size:20px;transition:border-color .15s,background .15s;}
+  .quiz-opt:hover{border-color:rgba(201,138,60,.4);}
+  .quiz-opt .letter{font-family:'JetBrains Mono',monospace;font-weight:700;font-size:18px;width:32px;height:32px;border-radius:50%;background:var(--ink);display:flex;align-items:center;justify-content:center;flex-shrink:0;color:var(--text-dim);}
+  .quiz-opt.correct{border-color:var(--coral);background:rgba(201,138,60,0.14);}
+  .quiz-opt.correct .letter{background:var(--coral);color:var(--ink);}
+  .quiz-opt.wrong{border-color:#E67E5B;background:rgba(230,126,91,0.14);animation:shake .3s;}
+  .quiz-opt.locked{cursor:default;}
+  @keyframes shake{0%,100%{transform:translateX(0);}25%{transform:translateX(-5px);}75%{transform:translateX(5px);}}
+  .quiz-foot{display:flex;justify-content:space-between;align-items:center;margin-top:22px;}
+  .roundtab{display:flex;gap:8px;margin-bottom:22px;}
+  .roundtab button{font-family:'JetBrains Mono',monospace;font-size:16px;padding:7px 13px;border-radius:8px;border:1px solid var(--line);background:transparent;color:var(--text-dim);cursor:pointer;}
+  .roundtab button.on{background:var(--coral);color:var(--ink);border-color:var(--coral);}
+
+  /* WARM-UP TABS */
+  .warmup-tabs{display:flex;gap:8px;margin-bottom:20px;flex-wrap:wrap;}
+  .warmup-tab{font-family:'JetBrains Mono',monospace;font-size:18px;font-weight:700;width:42px;height:42px;border-radius:10px;border:1px solid var(--line);background:var(--panel);color:var(--text-dim);cursor:pointer;display:flex;align-items:center;justify-content:center;transition:border-color .15s,background .15s,color .15s;}
+  .warmup-tab:hover{border-color:rgba(201,138,60,.4);color:var(--paper);}
+  .warmup-tab.on{border-color:var(--coral);background:rgba(201,138,60,.16);color:var(--paper);}
+
+  /* S.T.A.R SORTER */
+  .sort-intro{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-bottom:22px;}
+  .sort-intro-item{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:16px 18px;}
+  .sort-intro-item .k{font-family:'JetBrains Mono',monospace;font-weight:700;font-size:16px;margin-bottom:6px;display:block;}
+  .sort-intro-item[data-k="S"] .k{color:#85C1E9;}
+  .sort-intro-item[data-k="T"] .k{color:var(--gold);}
+  .sort-intro-item[data-k="A"] .k{color:var(--coral);}
+  .sort-intro-item[data-k="R"] .k{color:#F0B27A;}
+  .sort-intro-item p{margin:0;font-size:16px;color:var(--text-dim);line-height:1.4;}
+  .focus-list{display:flex;flex-direction:column;gap:14px;}
+  .focus-item{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:18px 20px;}
+  .focus-item p{margin:0 0 14px;font-size:21px;line-height:1.5;}
+  .focus-btns{display:flex;gap:10px;flex-wrap:wrap;}
+  .focus-btn{font-family:'Inter',sans-serif;font-size:17px;font-weight:600;padding:10px 16px;border-radius:9px;border:1px solid var(--line);background:var(--panel-2);color:var(--text-dim);cursor:pointer;transition:border-color .15s,background .15s;}
+  .focus-btn:hover{border-color:rgba(201,138,60,.4);color:var(--paper);}
+  .focus-btn.correct{border-color:var(--coral);background:rgba(201,138,60,0.16);color:var(--paper);}
+  .focus-btn.wrong{border-color:#E67E5B;background:rgba(230,126,91,0.16);animation:shake .3s;}
+  .focus-btn.locked{cursor:default;}
+  .focus-result{font-size:17px;color:var(--text-faint);margin-top:10px;min-height:16px;}
+  .focus-result.good{color:var(--coral);}
+
+  /* CUE CARD */
+  .cuecard{background:linear-gradient(155deg,var(--panel-2),var(--panel));border:1px solid var(--line);border-radius:18px;padding:30px 32px;margin-bottom:24px;}
+  .cuecard .label{font-family:'JetBrains Mono',monospace;font-size:16px;color:var(--coral);letter-spacing:.1em;text-transform:uppercase;margin-bottom:10px;}
+  .cuecard h3{font-family:'Fraunces',serif;font-size:29px;margin:0 0 16px;line-height:1.3;}
+  .cuecard ul{margin:0;padding-left:20px;line-height:1.8;font-size:20px;color:var(--text-dim);}
+  .notepad{width:100%;min-height:130px;background:var(--ink);border:1px solid var(--line);border-radius:10px;color:var(--paper);font-family:'Inter',sans-serif;font-size:20px;padding:14px;resize:vertical;margin-top:6px;}
+  .notepad:focus{outline:none;border-color:var(--coral);}
+
+  /* S.T.A.R MODEL ANSWER */
+  .ade-key{display:flex;gap:10px;margin-bottom:18px;flex-wrap:wrap;}
+  .ade-chip{font-family:'JetBrains Mono',monospace;font-size:16px;padding:6px 12px;border-radius:7px;border:1px solid var(--line);cursor:pointer;transition:transform .12s;}
+  .ade-chip[data-k="S"]{color:#85C1E9;}
+  .ade-chip[data-k="T"]{color:var(--gold);}
+  .ade-chip[data-k="A"]{color:var(--coral);}
+  .ade-chip[data-k="R"]{color:#F0B27A;}
+  .ade-chip.active{transform:scale(1.05);border-color:currentColor;}
+  .ade-block{padding:16px 18px;border-radius:11px;margin-bottom:10px;border:1px solid var(--line);background:var(--panel);transition:opacity .2s,border-color .2s;line-height:1.65;font-size:20px;}
+  .ade-block .tag2{font-family:'JetBrains Mono',monospace;font-size:15px;font-weight:700;margin-bottom:8px;display:block;}
+  .ade-block.dim{opacity:.3;}
+  .ade-block[data-k="S"] .tag2{color:#85C1E9;}
+  .ade-block[data-k="T"] .tag2{color:var(--gold);}
+  .ade-block[data-k="A"] .tag2{color:var(--coral);}
+  .ade-block[data-k="R"] .tag2{color:#F0B27A;}
+  .ade-block.highlight[data-k="S"]{border-color:#85C1E9;}
+  .ade-block.highlight[data-k="T"]{border-color:var(--gold);}
+  .ade-block.highlight[data-k="A"]{border-color:var(--coral);}
+  .ade-block.highlight[data-k="R"]{border-color:#F0B27A;}
+
+  /* TOOLKIT */
+  .grid-2{display:grid;grid-template-columns:1fr 1fr;gap:16px;}
+  .tool-card{background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);padding:18px 20px;}
+  .tool-card h4{margin:0 0 12px;font-size:19px;font-family:'Fraunces',serif;font-weight:600;}
+  .tool-card .phrase-btn{display:inline-block;font-size:17.5px;background:var(--panel-2);border:1px solid var(--line);border-radius:7px;padding:6px 11px;margin:0 6px 6px 0;cursor:pointer;color:var(--text-dim);transition:color .15s,border-color .15s;}
+  .tool-card .phrase-btn:hover{color:var(--paper);border-color:var(--gold);}
+  .scratch{margin-top:24px;}
+  .scratch textarea{width:100%;min-height:90px;background:var(--panel);border:1px solid var(--line);border-radius:10px;color:var(--paper);font-family:'Inter',sans-serif;font-size:20px;padding:14px;}
+  .scratch textarea:focus{outline:none;border-color:var(--coral);}
+
+  /* PEER SCORE */
+  .scorecard{display:flex;flex-direction:column;gap:10px;}
+  .score-row{display:flex;align-items:center;gap:14px;background:var(--panel);border:1px solid var(--line);border-radius:11px;padding:13px 16px;}
+  .score-row .letter2{font-family:'JetBrains Mono',monospace;font-weight:700;font-size:17px;width:36px;height:36px;border-radius:50%;background:var(--panel-2);display:flex;align-items:center;justify-content:center;flex-shrink:0;color:var(--coral);}
+  .score-row .si-main{flex:1;min-width:0;}
+  .score-row .si-title{font-weight:600;font-size:19px;}
+  .score-row .si-sub{font-size:16px;color:var(--text-faint);}
+  .pips{display:flex;gap:5px;}
+  .pip{width:36px;height:36px;border-radius:7px;border:1px solid var(--line);background:var(--panel-2);cursor:pointer;color:var(--text-dim);font-size:17px;font-family:'JetBrains Mono',monospace;display:flex;align-items:center;justify-content:center;}
+  .pip.on{background:var(--gold);border-color:var(--gold);color:var(--ink);}
+  .score-total{margin-top:8px;display:flex;align-items:center;justify-content:space-between;background:var(--panel-2);border:1px solid var(--line);border-radius:11px;padding:16px 18px;}
+  .score-total .tot-num{font-family:'JetBrains Mono',monospace;font-weight:700;font-size:37px;color:var(--gold);}
+  .feedback-fields{display:flex;flex-direction:column;gap:10px;margin-top:18px;}
+  .feedback-fields input{background:var(--panel);border:1px solid var(--line);border-radius:9px;color:var(--paper);padding:11px 14px;font-size:19px;font-family:'Inter',sans-serif;}
+  .feedback-fields input:focus{outline:none;border-color:var(--coral);}
+
+  /* EXAM PRACTICE */
+  .cue-tabs{display:grid;grid-template-columns:repeat(6,1fr);gap:10px;margin-bottom:20px;}
+  .cue-tab{text-align:center;padding:12px 6px;border-radius:11px;border:1px solid var(--line);background:var(--panel);cursor:pointer;font-size:15px;font-weight:600;}
+  .cue-tab.on{border-color:var(--coral);background:rgba(201,138,60,.14);}
+  .cue-tab .emo{font-size:23px;display:block;margin-bottom:4px;}
+  .cue-tab .foc{display:block;font-family:'JetBrains Mono',monospace;font-size:11.5px;letter-spacing:.06em;text-transform:uppercase;color:var(--text-faint);margin-top:2px;}
+  .assign-note{font-size:17px;color:var(--text-faint);margin:-12px 0 20px;}
+
+  /* WRAP UP */
+  .takeaway-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;}
+  .tk{background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);padding:20px 22px;}
+  .tk .tk-icon{font-size:32px;margin-bottom:10px;display:block;}
+  .tk h4{margin:0 0 8px;font-family:'Fraunces',serif;font-size:22px;}
+  .tk p{margin:0;font-size:18.5px;color:var(--text-dim);line-height:1.55;}
+  .final-score{margin-top:32px;text-align:center;padding:36px;border-radius:18px;background:linear-gradient(155deg,var(--panel-2),var(--panel));border:1px solid var(--line);}
+  .final-score .fs-num{font-family:'JetBrains Mono',monospace;font-weight:700;font-size:70px;color:var(--gold);}
+  .final-score .fs-label{font-size:19px;color:var(--text-dim);margin-top:4px;}
+
+  .nav-arrows{display:flex;justify-content:space-between;margin-top:44px;padding-top:24px;border-top:1px solid var(--line);}
+  .mobile-progress,.mobile-jump{display:none;}
+
+  @media(max-width:880px){
+    .app{grid-template-columns:1fr;}
+    .rail{position:relative;height:auto;flex-direction:row;align-items:center;gap:12px;padding:14px 16px;}
+    .brand{border-bottom:none;padding:0;flex-shrink:0;}
+    .brand h1{font-size:19px;}
+    .brand .sub{display:none;}
+    .onair{flex-shrink:0;padding:8px 12px;}
+    .onair .label{display:none;}
+    nav{display:none;}
+    .rail-foot{display:none;}
+    main{padding:18px 18px 70px;}
+    .grid-3{grid-template-columns:1fr 1fr;}
+    .match-wrap,.grid-2,.takeaway-grid{grid-template-columns:1fr;}
+    .sort-intro{grid-template-columns:1fr 1fr;}
+    .warmup-tab{width:38px;height:38px;font-size:16px;}
+    .cue-tabs{grid-template-columns:repeat(3,1fr);}
+    h2.title{font-size:38px;}
+    .mobile-progress,.mobile-jump{display:flex;}
+    .mobile-progress{gap:4px;margin-bottom:18px;}
+    .mobile-progress .seg{flex:1;height:3px;border-radius:2px;background:var(--line);}
+    .mobile-progress .seg.done{background:var(--coral);}
+    .mobile-progress .seg.now{background:#E67E5B;}
+    .mobile-jump{align-items:center;margin-bottom:4px;}
+    .mobile-jump select{background:var(--panel);color:var(--paper);border:1px solid var(--line);border-radius:8px;padding:7px 10px;font-size:17px;font-family:'JetBrains Mono',monospace;width:100%;}
+  }
+  @media(prefers-reduced-motion:reduce){*{animation-duration:.001s!important;transition-duration:.001s!important;}}
+</style>
+</head>
+<body>
+<div class="app">
+  <aside class="rail">
+    <div class="brand">
+      <span class="tag">IELTS 7.0 · Speaking</span>
+      <h1>Leadership &amp; Management</h1>
+      <div class="sub">Part 2 Masterclass · 60 min</div>
+    </div>
+    <div class="onair">
+      <div class="dot"></div>
+      <div class="label">On Air</div>
+      <div class="score" id="railScore">0 pts</div>
+    </div>
+    <nav id="navList"></nav>
+    <div class="rail-foot">Click any item to jump. Progress is tracked as you complete each exercise.</div>
+  </aside>
+  <main id="main"></main>
+</div>
+
+<script>
+/* ===== DATA ===== */
+const sections = [
+  {id:'objectives', n:'00', label:'Lesson Objectives'},
+  {id:'warmup',   n:'01', label:'Warm-Up'},
+  {id:'cuematch', n:'02', label:'Cue Card Comprehension'},
+  {id:'vocab',    n:'03', label:'Vocabulary'},
+  {id:'collocation', n:'04', label:'Collocations'},
+  {id:'idioms',   n:'05', label:'Idioms & Phrases'},
+  {id:'gapfill',  n:'06', label:'Gap Fill'},
+  {id:'star',     n:'07', label:'Situation, Task, Action or Result?'},
+  {id:'quiz',     n:'08', label:'Quiz Challenge'},
+  {id:'model',    n:'09', label:'Model Answer'},
+  {id:'toolkit',  n:'10', label:'Language Toolkit'},
+  {id:'connectives', n:'11', label:'Advanced Connectives'},
+  {id:'peer',     n:'12', label:'Peer Score Card'},
+  {id:'practice', n:'13', label:'Exam Practice'},
+  {id:'wrapup',   n:'14', label:'Wrap-Up'}
+];
+
+const objectives = [
+  {icon:'🧭', h:'Interpret a Part 2 Cue Card',              d:'Read a cue card about a leadership or management experience and quickly identify what each bullet point is really asking for.'},
+  {icon:'⭐', h:'Apply the S.T.A.R. Model',                  d:'Use Situation → Task → Action → Result to build an organised, coherent story out of your own experience.'},
+  {icon:'🔗', h:'Use Advanced Grammar & Linking',            d:'Apply a range of complex grammar structures and cohesive expressions to sound more natural and fluent.'}
+];
+
+function shuffleArr(arr){
+  const a = arr.slice();
+  for(let i=a.length-1;i>0;i--){
+    const j = Math.floor(Math.random()*(i+1));
+    [a[i],a[j]]=[a[j],a[i]];
+  }
+  return a;
+}
+
+const warmupQs = [
+  'Have you ever been in charge of a group project or task?',
+  'Do you think good leaders are born, or can leadership be learned?',
+  'What makes someone a good team player?',
+  'Have you ever had to settle a disagreement between two people?',
+  'Do you prefer working alone or leading a team?',
+  'What\'s one quality you really admire in a leader you know?',
+  'Have you ever had to take charge in an unexpected situation?',
+  'Do you think leadership skills should be taught at school?'
+];
+
+/* cue card comprehension matching */
+const cuePrompts = shuffleArr(['what the situation was','what your role was','what you did','what you learned']);
+const cueMeanings = shuffleArr([
+  'briefly describe the context and what needed to be done',
+  'state your position or responsibility in that situation',
+  'describe the key actions you took as a leader or manager',
+  'reflect on the most important insight or lesson you gained'
+]);
+const cueMatchKey = {
+  'what the situation was':    'briefly describe the context and what needed to be done',
+  'what your role was':        'state your position or responsibility in that situation',
+  'what you did':               'describe the key actions you took as a leader or manager',
+  'what you learned':           'reflect on the most important insight or lesson you gained'
+};
+const cueCard1 = {
+  title:'Describe a leadership or management experience that taught you something important.',
+  bullets:['what the situation was','what your role was','what you did','and explain what you learned from this experience.']
+};
+
+const vocab = [
+  {w:'delegate',            d:'to assign a task or responsibility to another person',                                       ex:'"A good manager knows when to delegate tasks instead of doing everything alone."'},
+  {w:'initiate',             d:'to start something, especially by taking the first step yourself',                          ex:'"I initiated a weekly check-in so the team could flag problems early."'},
+  {w:'conflict resolution',  d:'the process of settling a disagreement so that everyone reaches a fair outcome',            ex:'"Conflict resolution became a big part of my role once two teammates stopped speaking to each other."'},
+  {w:'composed',             d:'calm, controlled and not visibly anxious, especially under pressure',                       ex:'"Even when the plan fell apart, she stayed composed and calmly worked out a solution."'},
+  {w:'motivate',             d:'to give someone a reason or the enthusiasm to take action',                                  ex:'"I tried to motivate the team by reminding them how far we\'d already come."'},
+  {w:'coordinate',           d:'to organise different people or parts of a task so they work together smoothly',           ex:'"My main job was to coordinate the volunteers so nobody\'s schedules clashed."'},
+  {w:'accountability',       d:'being answerable for your own actions, decisions and their outcomes',                       ex:'"I learned that accountability matters more than authority — you have to own your mistakes."'},
+  {w:'communication',        d:'the exchange of clear information and ideas between people',                                ex:'"Poor communication was the real reason the first attempt failed."'},
+  {w:'decision-making',      d:'the process of choosing the best option among several possibilities',                       ex:'"As the deadline got closer, decision-making had to happen much faster."'},
+  {w:'adaptability',         d:'the ability to adjust quickly and effectively when a situation changes',                    ex:'"That experience really tested my adaptability, since the plan changed twice in one day."'}
+];
+
+const verbs   = shuffleArr(['delegate','resolve','meet','take','build','boost','make','handle']);
+const nouns   = shuffleArr(['tasks','a conflict','a deadline','the initiative','trust','team morale','tough decisions','pressure']);
+const matchKey = {
+  'delegate':   'tasks',
+  'resolve':    'a conflict',
+  'meet':       'a deadline',
+  'take':       'the initiative',
+  'build':      'trust',
+  'boost':      'team morale',
+  'make':       'tough decisions',
+  'handle':     'pressure'
+};
+
+const idioms = [
+  {p:'step up to the plate',              m:'to take responsibility and act when it\'s needed most',                                       ex:'"When our manager quit unexpectedly, I had to step up to the plate."'},
+  {p:'lead by example',                   m:'to show others how to behave through your own actions, not just instructions',                ex:'"She never asked us to do anything she wasn\'t willing to do herself — she really led by example."'},
+  {p:'call the shots',                    m:'to be the person who makes the important decisions',                                          ex:'"As team leader, I was the one calling the shots on the final design."'},
+  {p:'keep a level head',                 m:'to stay calm and think clearly, especially in a stressful situation',                          ex:'"Even when the event nearly fell apart, he kept a level head and found a solution."'},
+  {p:'think on your feet',                m:'to react quickly and effectively to an unexpected problem',                                   ex:'"When the venue cancelled at the last minute, we had to think on our feet."'},
+  {p:'rally the troops',                  m:'to encourage and motivate a group of people to work together',                                ex:'"Morale was low, so I called a quick meeting to rally the troops before the deadline."'},
+  {p:'hit the ground running',            m:'to start something with a lot of energy and be immediately productive',                       ex:'"As the new team leader, I hit the ground running and reorganised the schedule in the first week."'},
+  {p:'take someone under your wing',      m:'to look after and guide someone who is less experienced',                                     ex:'"I took the newer volunteers under my wing and showed them how things worked."'}
+];
+
+const gapfills = [
+  {text:'When our manager quit unexpectedly, I had to ___.',                                                     ans:'step up to the plate'},
+  {text:'She never asked us to do anything she wasn\'t willing to do herself — she really ___.',                 ans:'lead by example'},
+  {text:'As team leader, I was the one ___ on the final design.',                                                ans:'calling the shots'},
+  {text:'Even when the event nearly fell apart, he ___ and found a solution.',                                   ans:'kept a level head'},
+  {text:'When the venue cancelled at the last minute, we had to ___.',                                           ans:'think on our feet'},
+  {text:'Morale was low, so I called a quick meeting to ___ before the deadline.',                               ans:'rally the troops'}
+];
+const wordbank = shuffleArr(['step up to the plate','lead by example','calling the shots','kept a level head','think on our feet','rally the troops','hit the ground running','take someone under your wing']);
+
+const starIntro = [
+  {k:'S', label:'Situation',  d:'set the stage — where, when, and what was happening'},
+  {k:'T', label:'Task',       d:'your specific responsibility or role in that situation'},
+  {k:'A', label:'Action',     d:'the concrete steps you personally took'},
+  {k:'R', label:'Result',     d:'the outcome, what you achieved, or what you learned'}
+];
+
+const starQs = shuffleArr([
+  {q:'"During university, I joined a student club that was organising a charity event for underprivileged children."',           cat:'S'},
+  {q:'"It was our first time organising such a large-scale event, so there was a lot of pressure to make it successful."',        cat:'S'},
+  {q:'"I was chosen to lead the logistics team and make sure everything ran smoothly on the event day."',                         cat:'T'},
+  {q:'"As the most experienced member, I was responsible for training three new volunteers before the launch."',                  cat:'T'},
+  {q:'"I divided the work among members, created a timeline, and communicated regularly to avoid last-minute problems."',         cat:'A'},
+  {q:'"I stayed composed and quickly reassigned tasks so we could still meet the deadline."',                                     cat:'A'},
+  {q:'"The event was a success, attracting over 200 participants, and I realised that clear communication is the key to leadership."', cat:'R'},
+  {q:'"It also boosted my confidence in managing teams and solving problems under pressure."',                                    cat:'R'}
+]);
+starQs.forEach(q=>{ q.order = shuffleArr(['S','T','A','R']); });
+const starLabels = {S:'Situation', T:'Task', A:'Action', R:'Result'};
+
+const quizRounds = {
+  1:{title:'Vocabulary Rapid Fire', qs:[
+    {q:"What does 'delegate' mean?",                                                                opts:['to assign a task to someone else','to refuse a task','to complete a task alone','to forget a task'], ans:0},
+    {q:"What does 'composed' mean, as in 'she stayed composed'?",                                    opts:['confused and panicked','calm and controlled under pressure','extremely angry','completely exhausted'], ans:1},
+    {q:"What does 'accountability' mean?",                                                           opts:['avoiding blame','being answerable for your actions and decisions','being the most senior person','working faster than others'], ans:1},
+    {q:"What does 'adaptability' mean?",                                                             opts:['following a fixed plan no matter what','the ability to adjust quickly to new situations','being stubborn under pressure','a fear of change'], ans:1}
+  ]},
+  2:{title:'Idiom Challenge', qs:[
+    {q:'"I had to step up to the plate."',                                                           opts:['to avoid a difficult task','to take responsibility and act when needed','to ask someone else for help','to give up on a task'], ans:1},
+    {q:'"She really led by example."',                                                               opts:['she gave orders and nothing else','she showed others how to behave through her own actions','she worked alone the whole time','she copied someone else\'s ideas'], ans:1},
+    {q:'"We had to think on our feet."',                                                             opts:['to plan everything weeks in advance','to react quickly to an unexpected problem','to stand up during a meeting','to ask for more time'], ans:1},
+    {q:'"I called a meeting to rally the troops."',                                                  opts:['to punish the team for mistakes','to encourage and motivate the group','to cancel the project','to replace team members'], ans:1}
+  ]}
+};
+
+const starModel = [
+  {k:'S', label:'Situation — Set the stage',        text:'One leadership experience that really taught me something important was when I was chosen to coordinate a charity fundraiser during my final year of university.'},
+  {k:'T', label:'Task — Your responsibility',        text:'My role was to lead a team of six volunteers and make sure every part of the event — from the venue booking to the schedule — came together in just two weeks.'},
+  {k:'A', label:'Action — What you did',             text:'To stay on top of everything, I delegated specific tasks based on each person\'s strengths, created a shared timeline, and held quick daily check-ins so we could catch problems early. When two volunteers dropped out three days before the event, I had to think on my feet and redistribute their responsibilities without losing momentum.'},
+  {k:'R', label:'Result — Outcome and reflection',   text:'In the end, the event raised more money than we\'d expected and ran smoothly from start to finish. Looking back, what I learned is that good leadership isn\'t about doing everything yourself — it\'s about trusting your team and staying flexible when plans change.'}
+];
+
+const toolkit = [
+  {h:'🎬 Starting & Sequencing',       items:['One leadership experience I had was…','To begin with, …','First of all, …']},
+  {h:'🕰️ Time & Context',              items:['At that time, …','Back then, …','During that period, …']},
+  {h:'⚡ Challenges & Solutions',       items:['One challenge was…','One issue we faced was…','To deal with this, …','We decided to…']},
+  {h:'🎯 Cause & Effect',               items:['As a result, …','Because of that, …','That led to…','So…']},
+  {h:'💭 Reflection & Insight',         items:['I realised that…','I came to understand that…','It taught me that…','What stood out to me was…']},
+  {h:'🏁 Summarising & Closing',        items:['Overall, …','In the end, …','Looking back, …','That experience showed me…']}
+];
+
+const connectives = [
+  {h:'🔸 Because / Since / As',                   items:['Because I didn\'t communicate clearly, …','Since no one had done this before, …','As we were short on time, …']},
+  {h:'🔹 Due to / Owing to',                       items:['Due to poor planning, …','Owing to a lack of resources, …']},
+  {h:'➰ …, which + verb',                          items:['…, which helped the team work faster.','…, which boosted everyone\'s confidence.','…, which nearly caused a delay.']},
+  {h:'➡️ As a result / Therefore',                 items:['As a result, …','Therefore, …','That led to…']},
+  {h:'🎭 Had it not been for…',                    items:['Had it not been for her support, …','Had it not been for our backup plan, …']}
+];
+
+const peerCriteria = [
+  {k:'S',  t:'Situation clearly described?',        s:'Context and background were easy to picture'},
+  {k:'T',  t:'Task or role clearly stated?',         s:'Their specific responsibility was obvious'},
+  {k:'A',  t:'Actions explained in detail?',         s:'What they actually did, step by step'},
+  {k:'R',  t:'Result or lesson included?',           s:'The outcome and what they learned'},
+  {k:'🗣️', t:'Spoke fluently for 1.5–2 minutes?',    s:'Not too short, not too long, few hesitations'},
+  {k:'📚', t:'Topic vocab or idioms used?',          s:'From today\'s word list, used naturally'},
+  {k:'🔗', t:'Varied grammar structures used?',      s:'e.g. because/since, due to, which, had it not been for'},
+  {k:'💡', t:'Linking phrases & time markers used?', s:'e.g. at that time, as a result, looking back'}
+];
+
+const examCards = [
+  {emo:'🏆', foc:'Team Project',   title:'Q1',  prompt:'Describe a time when you led a team to complete a project.',                        bullets:['what the project was','what your role was','how you led the team','and explain what you learned from the experience.']},
+  {emo:'🧩', foc:'Problem',        title:'Q2',  prompt:'Describe a situation when you had to take the lead to solve a problem.',              bullets:['what the problem was','what your role or responsibility was','how you handled the situation','and explain what the outcome was and what you learned.']},
+  {emo:'🎤', foc:'Presentation',   title:'Q3',  prompt:'Describe a time when you had to manage a group project or team presentation.',        bullets:['what the project or topic was','what your role in the team was','how you managed the team and tasks','and explain what you learned from managing this experience.']},
+  {emo:'🤝', foc:'Conflict',       title:'Q4',  prompt:'Describe a time when you helped resolve a conflict as a leader.',                     bullets:['what the conflict was','who was involved','what you did to help solve it','and explain what this experience taught you about leadership.']},
+  {emo:'🎉', foc:'Event',          title:'Q5',  prompt:'Describe an event that you helped organise or manage.',                               bullets:['what the event was','what your responsibilities were','how you and your team prepared for it','and explain how you felt about the result.']},
+  {emo:'📚', foc:'Mentoring',      title:'Q6',  prompt:'Describe a time when you helped train or guide someone new.',                         bullets:['who you helped','what they needed to learn','how you helped them','and explain what you learned from the experience.']},
+  {emo:'⏱️', foc:'Deadline',       title:'Q7',  prompt:'Describe a situation when you had to manage a team under a tight deadline.',           bullets:['what the deadline was','what your role in the team was','how you organised the work','and explain what happened in the end.']},
+  {emo:'💡', foc:'Decision',       title:'Q8',  prompt:'Describe an important decision you made as a leader.',                                bullets:['what the decision was','why you had to make it','how you made the decision','and explain what the result was.']},
+  {emo:'🧭', foc:'New Role',       title:'Q9',  prompt:'Describe a time when you took on a leadership role for the first time.',               bullets:['what the role was','how you felt about it at first','what you did to prepare','and explain what you learned from the experience.']},
+  {emo:'🌟', foc:'Motivation',     title:'Q10', prompt:'Describe a time when you had to motivate a team that had low morale.',                 bullets:['what the situation was','what your role was','what you did to motivate them','and explain what the result was.']},
+  {emo:'🚧', foc:'Setback',        title:'Q11', prompt:'Describe a time when a plan you were leading didn\'t go as expected.',                 bullets:['what the plan was','what went wrong','how you responded as a leader','and explain what you learned from it.']},
+  {emo:'🏫', foc:'School/Club',    title:'Q12', prompt:'Describe a leadership experience you had in a school or club activity.',               bullets:['what the activity was','what your role was','what you did','and explain what you learned from this experience.']},
+  {emo:'💼', foc:'Workplace',      title:'Q13', prompt:'Describe a time when you managed a task or project at work.',                          bullets:['what the task or project was','who you worked with','how you organised the work','and explain what the outcome was.']},
+  {emo:'🔄', foc:'Change',         title:'Q14', prompt:'Describe a time when you had to lead a team through a change or new process.',         bullets:['what the change was','what your role was','how you helped the team adjust','and explain what you learned from the experience.']}
+];
+
+/* ===== STATE ===== */
+let state = {
+  current:'objectives', score:0, done:new Set(),
+  cueSel:{a:null,b:null}, cueSolved:new Set(),
+  matchSel:{verb:null,noun:null}, matchSolved:new Set(),
+  quizRound:1, quizIdx:0, quizAnswered:{},
+  starAnswered:{},
+  adeActive:null, cueTab:0, peerScores:{},
+  gapSelected:null, gapFilled:{}, gapScored:{},
+  warmupTab:0,
+  timerInterval:null, timerRunning:false,
+  timerRemaining:60, timerTotal:60
+};
+
+function addScore(pts){ state.score+=pts; document.getElementById('railScore').textContent=state.score+' pts'; }
+function markDone(id){ state.done.add(id); renderNav(); }
+
+/* ===== NAV ===== */
+function renderNav(){
+  const nav=document.getElementById('navList');
+  nav.innerHTML=sections.map(s=>`
+    <div class="nav-item ${s.id===state.current?'active':''} ${state.done.has(s.id)?'done':''}" data-id="${s.id}">
+      <span class="n">${s.n}</span><span>${s.label}</span><span class="done-mark">✓</span>
+    </div>`).join('');
+  nav.querySelectorAll('.nav-item').forEach(el=>el.addEventListener('click',()=>goTo(el.dataset.id)));
+}
+
+function goTo(id){ state.current=id; renderNav(); renderMain(); window.scrollTo({top:0,behavior:'smooth'}); }
+
+/* ===== RENDER MAIN ===== */
+function renderMain(){
+  const main=document.getElementById('main');
+  const idx=sections.findIndex(s=>s.id===state.current);
+  const prev=sections[idx-1]; const next=sections[idx+1];
+  let body='';
+  switch(state.current){
+    case 'objectives':  body=renderObjectives(); break;
+    case 'warmup':      body=renderWarmup(); break;
+    case 'cuematch':    body=renderCueMatch(); break;
+    case 'vocab':       body=renderVocab(); break;
+    case 'collocation': body=renderCollocation(); break;
+    case 'idioms':      body=renderIdioms(); break;
+    case 'gapfill':     body=renderGapfill(); break;
+    case 'star':        body=renderStar(); break;
+    case 'quiz':        body=renderQuiz(); break;
+    case 'model':       body=renderModel(); break;
+    case 'toolkit':     body=renderToolkit(); break;
+    case 'connectives': body=renderConnectives(); break;
+    case 'peer':        body=renderPeer(); break;
+    case 'practice':    body=renderPractice(); break;
+    case 'wrapup':      body=renderWrapup(); break;
+  }
+  main.innerHTML=`
+    <div class="mobile-jump">
+      <select id="mobileSelect">
+        ${sections.map(s=>`<option value="${s.id}" ${s.id===state.current?'selected':''}>${s.n} · ${s.label}${state.done.has(s.id)?' ✓':''}</option>`).join('')}
+      </select>
+    </div>
+    <div class="mobile-progress">
+      ${sections.map(s=>`<div class="seg ${state.done.has(s.id)?'done':''} ${s.id===state.current?'now':''}"></div>`).join('')}
+    </div>`+body+`
+    <div class="nav-arrows">
+      ${prev?`<button class="btn" id="prevBtn">← ${prev.label}</button>`:'<span></span>'}
+      ${next?`<button class="btn primary" id="nextBtn">${next.label} →</button>`:'<span></span>'}
+    </div>`;
+  if(prev) document.getElementById('prevBtn').onclick=()=>goTo(prev.id);
+  if(next) document.getElementById('nextBtn').onclick=()=>goTo(next.id);
+  const ms=document.getElementById('mobileSelect');
+  if(ms) ms.onchange=e=>goTo(e.target.value);
+  attachHandlers();
+}
+
+/* ===== TIMER ===== */
+function setupTimer(s){ clearInterval(state.timerInterval); state.timerRunning=false; state.timerTotal=s; state.timerRemaining=s; updateRing(); }
+function updateRing(){
+  const fg=document.getElementById('ringFg'); const num=document.getElementById('ringNum');
+  if(!fg) return;
+  fg.style.strokeDashoffset=238.8*(1-state.timerRemaining/state.timerTotal);
+  num.textContent=state.timerRemaining;
+  if(state.timerRemaining<=10&&state.timerRemaining>0) fg.style.stroke='var(--gold)'; else fg.style.stroke='var(--coral)';
+}
+function startTimer(){
+  if(state.timerRunning) return;
+  state.timerRunning=true;
+  state.timerInterval=setInterval(()=>{
+    state.timerRemaining--;
+    updateRing();
+    if(state.timerRemaining<=0){ clearInterval(state.timerInterval); state.timerRunning=false; }
+  },1000);
+}
+function timerHTML(seconds, label){
+  seconds=seconds||60; label=label||('Prep time — '+seconds+' seconds');
+  return `<div class="timer-wrap"><div class="ring"><svg width="92" height="92"><circle class="bg" cx="46" cy="46" r="38"/><circle class="fg" id="ringFg" cx="46" cy="46" r="38" stroke-dasharray="238.8" stroke-dashoffset="0"/></svg><div class="num" id="ringNum">${seconds}</div></div><div class="timer-meta"><div class="t-label" id="timerLabel">${label}</div><div class="timer-btns"><button class="btn primary" id="timerStart">Start</button><button class="btn ghost" id="timerReset">Reset</button></div></div></div>`;
+}
+
+/* ===== SECTIONS ===== */
+function renderObjectives(){ return `
+  <div class="eyebrow">Lesson Objectives</div>
+  <h2 class="title">What You\'ll Learn Today 🎯</h2>
+  <p class="deck">By the end of this lesson, you will be able to:</p>
+  <div class="takeaway-grid">
+    ${objectives.map(o=>`<div class="tk"><span class="tk-icon">${o.icon}</span><h4>${o.h}</h4><p>${o.d}</p></div>`).join('')}
+  </div>
+  <p style="font-size:19px;color:var(--text-faint);margin-top:24px;">Let\'s get started — click "Warm-Up" below to begin.</p>`; }
+
+function renderWarmup(){
+  const i=state.warmupTab;
+  return `
+  <div class="eyebrow">Warm-Up · 0–10 min</div>
+  <h2 class="title">Leadership Talk 🧑‍🤝‍🧑</h2>
+  <p class="deck">Discuss each question with a partner. Click a number to move to that question and start the timer.</p>
+  <div class="warmup-tabs">
+    ${warmupQs.map((_,idx)=>`<div class="warmup-tab ${state.warmupTab===idx?'on':''}" data-i="${idx}">${idx+1}</div>`).join('')}
+  </div>
+  ${timerHTML(30,'Discussion time — 30 seconds')}
+  <div class="prompt-current"><div class="pn">${i+1}</div><p>${warmupQs[i]}</p></div>
+  <p style="font-size:19px;color:var(--text-faint);margin-top:18px;">Tip: Try opening with "Honestly, I\'d say…" or "That\'s an interesting question — I think…" to buy yourself a second to think.</p>`; }
+
+function renderCueMatch(){
+  const sc=state.cueSolved.size;
+  const solvedA=cuePrompts.filter(p=>state.cueSolved.has(p));
+  const unsolvedA=cuePrompts.filter(p=>!state.cueSolved.has(p));
+  const unsolvedB=cueMeanings.filter(m=>!solvedA.some(p=>cueMatchKey[p]===m));
+  const aOrder=solvedA.concat(unsolvedA);
+  const bOrder=solvedA.map(p=>cueMatchKey[p]).concat(unsolvedB);
+  return `
+  <div class="eyebrow">CORE Comprehension · Reading the Cue Card</div>
+  <h2 class="title">What Is Each Bullet Point Asking?</h2>
+  <p class="deck">Here is the cue card you\'ll be working with today. Click a bullet point on the left, then click the meaning it matches on the right.</p>
+  <div class="cuecard">
+    <div class="label">Part 2 · Cue Card</div>
+    <h3>${cueCard1.title}</h3>
+    <ul>${cueCard1.bullets.map(b=>`<li>${b}</li>`).join('')}</ul>
+  </div>
+  <p style="font-size:19px;color:var(--text-dim);margin-bottom:16px;">${sc}/${cuePrompts.length} matched so far.</p>
+  <div class="match-wrap">
+    <div class="match-col"><h4>Bullet Point</h4>
+      ${aOrder.map((p,i)=>`<div class="match-item2 ${state.cueSolved.has(p)?'correct locked':''} ${state.cueSel.a===p?'selected':''}" data-side="a" data-val="${p}"><span class="tag">${i+1}</span>${p}</div>`).join('')}
+    </div>
+    <div class="match-col"><h4>Meaning</h4>
+      ${bOrder.map((m,i)=>`<div class="match-item2 ${solvedA.some(p=>cueMatchKey[p]===m)?'correct locked':''} ${state.cueSel.b===m?'selected':''}" data-side="b" data-val="${m}"><span class="tag">${String.fromCharCode(65+i)}</span>${m}</div>`).join('')}
+    </div>
+  </div>`; }
+
+function renderVocab(){ return `
+  <div class="eyebrow">Vocabulary Power-Up · 10–22 min</div>
+  <h2 class="title">10 Words for Leadership Talk</h2>
+  <p class="deck">Read the meaning, guess the word, then click to reveal the answer and example sentence.</p>
+  <div class="grid-3">
+    ${vocab.map((v,i)=>`<div class="flip" data-i="${i}"><div class="flip-inner"><div class="flip-face flip-front"><div class="def-prompt">${v.d}</div><div class="hint">Tap to reveal →</div></div><div class="flip-face flip-back"><div class="word-reveal">${v.w}</div><div class="ex">${v.ex}</div></div></div></div>`).join('')}
+  </div>`; }
+
+function renderCollocation(){
+  const sc=state.matchSolved.size;
+  const solvedVerbs=verbs.filter(v=>state.matchSolved.has(v));
+  const unsolvedVerbs=verbs.filter(v=>!state.matchSolved.has(v));
+  const unsolvedNouns=nouns.filter(n=>!solvedVerbs.some(v=>matchKey[v]===n));
+  const verbOrder=solvedVerbs.concat(unsolvedVerbs);
+  const nounOrder=solvedVerbs.map(v=>matchKey[v]).concat(unsolvedNouns);
+  return `
+  <div class="eyebrow">Vocabulary Power-Up · Collocation Match-Up ⚡</div>
+  <h2 class="title">Match the Pairs</h2>
+  <p class="deck">Click a verb, then click the phrase it goes with. Everything starts jumbled — correct pairs lock in and line up across from each other. ${sc}/${verbs.length} matched so far.</p>
+  <div class="match-wrap">
+    <div class="match-col"><h4>Verbs</h4>
+      ${verbOrder.map((v,i)=>`<div class="match-item ${state.matchSolved.has(v)?'correct locked':''} ${state.matchSel.verb===v?'selected':''}" data-side="verb" data-val="${v}"><span class="tag">${i+1}</span>${v}</div>`).join('')}
+    </div>
+    <div class="match-col"><h4>Phrases</h4>
+      ${nounOrder.map((n,i)=>`<div class="match-item ${solvedVerbs.some(v=>matchKey[v]===n)?'correct locked':''} ${state.matchSel.noun===n?'selected':''}" data-side="noun" data-val="${n}"><span class="tag">${String.fromCharCode(65+i)}</span>${n}</div>`).join('')}
+    </div>
+  </div>`; }
+
+function renderIdioms(){ return `
+  <div class="eyebrow">Idioms & Phrases · 25–40 min</div>
+  <h2 class="title">Leadership Talk: 8 Expressions 💡</h2>
+  <p class="deck">Click each phrase to expand its meaning and an example sentence. Use these to make your Part 2 answers sound natural and fluent.</p>
+  <div class="idiom-list">
+    ${idioms.map((it,i)=>`<div class="idiom" data-i="${i}"><div class="idiom-head"><span class="phrase">${it.p}</span><span class="chev">▸</span></div><div class="idiom-body"><div class="idiom-mean">— ${it.m}</div><div class="idiom-ex">${it.ex}</div></div></div>`).join('')}
+  </div>`; }
+
+function renderGapfill(){
+  return `
+  <div class="eyebrow">Idioms & Expressions · Gap Fill ✏️</div>
+  <h2 class="title">Use the Right Expression</h2>
+  <p class="deck">Click a blank, then click the matching phrase from the word bank below. No typing — just click!</p>
+  <div class="gapfill-list">
+    ${gapfills.map((g,i)=>{
+      const parts=g.text.split('___');
+      const filled=state.gapFilled[i];
+      return `<div class="gap-item"><p>${i+1}. ${parts[0]}<span class="gap-blank ${state.gapSelected===i?'selected':''} ${filled?'filled':''}" data-i="${i}">${filled?filled:'click blank'}</span>${parts[1]}</p></div>`;
+    }).join('')}
+  </div>
+  <div class="wordbank" style="margin-top:20px;">
+    ${wordbank.map(w=>`<span class="wb-chip ${Object.values(state.gapFilled).includes(w)?'used':''}" data-word="${w}">${w}</span>`).join('')}
+  </div>
+  <div class="quiz-feedback" id="gapFeedback">${Object.keys(state.gapFilled).length} / ${gapfills.length} filled</div>`; }
+
+function renderStar(){
+  const answeredCount=Object.keys(state.starAnswered).length;
+  return `
+  <div class="eyebrow">CORE Organisation · Core Skill 🎯</div>
+  <h2 class="title">Situation, Task, Action or Result?</h2>
+  <p class="deck">The S.T.A.R. model turns a list of facts into a coherent story. Skim the quick guide below, then sort each sentence into the stage it belongs to.</p>
+  <div class="sort-intro">
+    ${starIntro.map(c=>`<div class="sort-intro-item" data-k="${c.k}"><span class="k">${c.k} — ${c.label}</span><p>${c.d}</p></div>`).join('')}
+  </div>
+  <p style="font-size:19px;color:var(--text-dim);margin:0 0 16px;">Read each sentence and click the correct stage. ${answeredCount}/${starQs.length} sorted.</p>
+  <div class="focus-list">
+    ${starQs.map((f,i)=>{
+      const a=state.starAnswered[i];
+      return `<div class="focus-item">
+        <p>${i+1}. ${f.q}</p>
+        <div class="focus-btns">
+          ${f.order.map(cat=>{
+            let cls='focus-btn';
+            if(a){ if(cat===f.cat) cls+=' correct locked'; else if(cat===a.picked && !a.correct) cls+=' wrong'; else cls+=' locked'; }
+            return `<button class="${cls}" data-i="${i}" data-cat="${cat}">${starLabels[cat]}</button>`;
+          }).join('')}
+        </div>
+        <div class="focus-result ${a&&a.correct?'good':''}">${a?(a.correct?'✓ Correct — '+starLabels[f.cat]:'Try another stage'):''}</div>
+      </div>`;
+    }).join('')}
+  </div>`; }
+
+function renderQuiz(){
+  const round=quizRounds[state.quizRound];
+  const q=round.qs[state.quizIdx];
+  const key=`${state.quizRound}-${state.quizIdx}`;
+  const answered=state.quizAnswered[key];
+  return `
+  <div class="eyebrow">Quiz Challenge · Test Yourself 🧠</div>
+  <h2 class="title">${round.title}</h2>
+  <p class="deck">Click an answer. If it\'s wrong, try again — you can keep guessing until you find the right one.</p>
+  <div class="roundtab">
+    <button data-r="1" class="${state.quizRound===1?'on':''}">Round 1 · Vocabulary</button>
+    <button data-r="2" class="${state.quizRound===2?'on':''}">Round 2 · Idioms</button>
+  </div>
+  <div class="quiz-progress">
+    ${round.qs.map((_,i)=>{const k=`${state.quizRound}-${i}`;return `<div class="quiz-dot ${i===state.quizIdx?'active':''} ${state.quizAnswered[k]?'answered':''}"></div>`;}).join('')}
+  </div>
+  <div class="quiz-card">
+    <p class="quiz-q">${state.quizIdx+1}. ${q.q}</p>
+    <div class="quiz-opts">
+      ${q.opts.map((o,i)=>{let cls='quiz-opt';if(answered&&i===q.ans){cls+=' correct locked';}return `<div class="${cls}" data-i="${i}"><span class="letter">${String.fromCharCode(65+i)}</span>${o}</div>`;}).join('')}
+    </div>
+    <div class="quiz-foot">
+      <span class="quiz-feedback ${answered?'good':''}" id="quizFeedbackMsg">${answered?'✓ Correct! +1 point':'Select an answer'}</span>
+      <div style="display:flex;gap:8px;">
+        <button class="btn" id="quizPrev" ${state.quizIdx===0?'disabled style="opacity:.4"':''}>← Prev</button>
+        <button class="btn" id="quizNext" ${state.quizIdx===round.qs.length-1?'disabled style="opacity:.4"':''}>Next →</button>
+      </div>
+    </div>
+  </div>`; }
+
+function renderModel(){ return `
+  <div class="eyebrow">Model Answer</div>
+  <h2 class="title">Analyse a Band 7+ Answer 🔍</h2>
+  <p class="deck">Click a stage chip to highlight that part of the answer. See how Situation → Task → Action → Result turns a list of facts into a full, structured response.</p>
+  <div class="ade-key">
+    ${starModel.map(a=>`<div class="ade-chip ${state.adeActive===a.k?'active':''}" data-k="${a.k}">${a.k} — ${a.label.split('—')[0].trim()}</div>`).join('')}
+  </div>
+  <div class="card">
+    ${starModel.map(a=>`<div class="ade-block ${state.adeActive&&state.adeActive!==a.k?'dim':''} ${state.adeActive===a.k?'highlight':''}" data-k="${a.k}"><span class="tag2">${a.label}</span>${a.text}</div>`).join('')}
+  </div>`; }
+
+function renderToolkit(){ return `
+  <div class="eyebrow">Language Toolkit</div>
+  <h2 class="title">Upgrade Your Leadership Talk 🔗</h2>
+  <p class="deck">Click any phrase to drop it into your scratchpad — then build a sentence using that starter.</p>
+  <div class="grid-2">
+    ${toolkit.map(t=>`<div class="tool-card"><h4>${t.h}</h4>${t.items.map(i=>`<span class="phrase-btn" data-phrase="${i}">${i}</span>`).join('')}</div>`).join('')}
+  </div>
+  <div class="scratch">
+    <p style="font-size:19px;color:var(--text-dim);margin-bottom:8px;">Scratchpad — practise a sentence using the phrases above:</p>
+    <textarea id="scratchArea" placeholder="e.g. One leadership experience I had was coordinating a charity fundraiser during my final year of university…"></textarea>
+  </div>`; }
+
+function renderConnectives(){ return `
+  <div class="eyebrow">Advanced Connectives · Level Up 🔗</div>
+  <h2 class="title">Link Your Ideas Like a Band 7+</h2>
+  <p class="deck">Higher-band answers use a range of complex grammar to link cause and effect. Click any phrase to drop it into your scratchpad, then build a sentence around it.</p>
+  <div class="grid-2">
+    ${connectives.map(t=>`<div class="tool-card"><h4>${t.h}</h4>${t.items.map(i=>`<span class="phrase-btn" data-phrase="${i}">${i}</span>`).join('')}</div>`).join('')}
+  </div>
+  <div class="scratch">
+    <p style="font-size:19px;color:var(--text-dim);margin-bottom:8px;">Scratchpad — practise linking two ideas using a structure above:</p>
+    <textarea id="scratchArea" placeholder="e.g. I didn't assign roles clearly at first. Because of that, two people ended up doing the same task…"></textarea>
+  </div>`; }
+
+function renderPeer(){
+  const total=peerCriteria.reduce((s,c)=>s+(state.peerScores[c.t]||0),0);
+  const maxTotal=peerCriteria.length*3;
+  return `
+  <div class="eyebrow">Peer Performance · 75–90 min</div>
+  <h2 class="title">You Speak, We Listen 🌟</h2>
+  <p class="deck">Use your notes. Aim for a clear, well-organised 1.5–2 minute response to the cue card. Your partner scores your performance below.</p>
+  <div class="scorecard">
+    ${peerCriteria.map(c=>`<div class="score-row"><div class="letter2">${c.k}</div><div class="si-main"><div class="si-title">${c.t}</div><div class="si-sub">${c.s}</div></div><div class="pips">${[1,2,3].map(n=>`<div class="pip ${state.peerScores[c.t]===n?'on':''}" data-crit="${c.t}" data-n="${n}">${n}</div>`).join('')}</div></div>`).join('')}
+  </div>
+  <div class="score-total">
+    <span style="font-size:19px;color:var(--text-dim);">Total score (1=needs work · 2=ok · 3=great)</span>
+    <span class="tot-num">${total}/${maxTotal}</span>
+  </div>
+  <div class="feedback-fields">
+    <input type="text" id="fbStrength" placeholder="📝 One strength — something they did really well…">
+    <input type="text" id="fbTip" placeholder="🎯 One tip — one specific thing to improve next time…">
+  </div>`; }
+
+function renderPractice(){
+  const c=examCards[state.cueTab];
+  return `
+  <div class="eyebrow">Exam Practice</div>
+  <h2 class="title">14 Part 2 Cue Cards 🃏</h2>
+  <p class="deck">Every student gets a different cue card — no two answers should sound the same! Use 1 minute to plan with S.T.A.R., then speak for 1.5–2 minutes.</p>
+  <p class="assign-note">💡 Teacher tip: assign one cue card per student, or let each student click their own tab.</p>
+  <div class="cue-tabs">
+    ${examCards.map((e,i)=>`<div class="cue-tab ${state.cueTab===i?'on':''}" data-i="${i}"><span class="emo">${e.emo}</span>${e.title}<span class="foc">${e.foc}</span></div>`).join('')}
+  </div>
+  <div class="cuecard">
+    <div class="label">${c.title} · ${c.foc}</div>
+    <h3>${c.prompt}</h3>
+    <div style="font-family:'JetBrains Mono',monospace;font-size:15px;color:var(--text-faint);letter-spacing:.08em;text-transform:uppercase;margin-bottom:8px;">You should say:</div>
+    <ul>${c.bullets.map(b=>`<li>${b}</li>`).join('')}</ul>
+  </div>
+  ${timerHTML(60,'Prep time — 60 seconds')}
+  <textarea class="notepad" placeholder="Keyword notes only — S / T / A / R…"></textarea>`; }
+
+function renderWrapup(){ return `
+  <div class="eyebrow">Lesson Wrap-Up</div>
+  <h2 class="title">Today\'s Key Takeaways ⭐</h2>
+  <p class="deck">Excellent work. Here is everything you covered today — take it with you!</p>
+  <div class="takeaway-grid">
+    <div class="tk"><span class="tk-icon">📚</span><h4>10 Advanced Words</h4><p>delegate · initiate · conflict resolution · composed · motivate · coordinate · accountability · communication · decision-making · adaptability</p></div>
+    <div class="tk"><span class="tk-icon">💡</span><h4>8 Idioms & Phrases</h4><p>step up to the plate · lead by example · call the shots · keep a level head · think on your feet · rally the troops · hit the ground running…</p></div>
+    <div class="tk"><span class="tk-icon">🎯</span><h4>The S.T.A.R. Model</h4><p>Situation → Task → Action → Result: the simple structure behind every strong Part 2 answer about a leadership or management experience.</p></div>
+    <div class="tk"><span class="tk-icon">🔗</span><h4>Part 2 Starters</h4><p>One leadership experience I had was… · As a result… · It taught me that… · Looking back…</p></div>
+  </div>
+  <div class="final-score">
+    <div class="fs-num">${state.score}</div>
+    <div class="fs-label">points earned across today\'s exercises</div>
+  </div>
+  <p style="margin-top:28px;font-size:20px;color:var(--text-dim);">🎙 <strong>Homework:</strong> Record yourself responding to this cue card: "Describe a time when you helped resolve a conflict as a leader." Say what the conflict was, who was involved, what you did to help solve it, and what this experience taught you about leadership. Listen back and check: did you use the S.T.A.R. model, at least 3 topic-specific vocabulary items, 2 different grammar structures, and at least 3 cohesive linking phrases?</p>`; }
+
+/* ===== HANDLERS ===== */
+function attachHandlers(){
+  const start=document.getElementById('timerStart');
+  const reset=document.getElementById('timerReset');
+  if(start){
+    const initSeconds = state.current==='practice' ? 60 : 30;
+    setupTimer(initSeconds);
+    updateRing();
+    start.onclick=()=>startTimer();
+    reset.onclick=()=>{ setupTimer(initSeconds); };
+  }
+
+  document.querySelectorAll('.warmup-tab').forEach(el=>el.addEventListener('click',()=>{ state.warmupTab=+el.dataset.i; markDone('warmup'); renderMain(); startTimer(); }));
+
+  document.querySelectorAll('#main .match-item2').forEach(el=>{
+    if(el.classList.contains('locked')) return;
+    el.addEventListener('click',()=>{
+      const side=el.dataset.side; const val=el.dataset.val;
+      state.cueSel[side]=(state.cueSel[side]===val)?null:val;
+      if(state.cueSel.a&&state.cueSel.b){
+        if(cueMatchKey[state.cueSel.a]===state.cueSel.b){
+          state.cueSolved.add(state.cueSel.a); addScore(1);
+          if(state.cueSolved.size===cuePrompts.length) markDone('cuematch');
+          state.cueSel={a:null,b:null}; renderMain();
+        } else {
+          renderMain();
+          setTimeout(()=>{ document.querySelectorAll('#main .match-item2.selected').forEach(x=>x.classList.add('wrong')); setTimeout(()=>{ state.cueSel={a:null,b:null}; renderMain(); },500); },30);
+        }
+      } else renderMain();
+    });
+  });
+
+  document.querySelectorAll('.flip').forEach(el=>el.addEventListener('click',()=>{ el.classList.toggle('flipped'); markDone('vocab'); }));
+
+  document.querySelectorAll('#main .match-item').forEach(el=>{
+    if(el.classList.contains('locked')) return;
+    el.addEventListener('click',()=>{
+      const side=el.dataset.side; const val=el.dataset.val;
+      state.matchSel[side]=(state.matchSel[side]===val)?null:val;
+      if(state.matchSel.verb&&state.matchSel.noun){
+        if(matchKey[state.matchSel.verb]===state.matchSel.noun){
+          state.matchSolved.add(state.matchSel.verb); addScore(1);
+          if(state.matchSolved.size===verbs.length) markDone('collocation');
+          state.matchSel={verb:null,noun:null}; renderMain();
+        } else {
+          renderMain();
+          setTimeout(()=>{ document.querySelectorAll('#main .match-item.selected').forEach(x=>x.classList.add('wrong')); setTimeout(()=>{ state.matchSel={verb:null,noun:null}; renderMain(); },500); },30);
+        }
+      } else renderMain();
+    });
+  });
+
+  document.querySelectorAll('.idiom').forEach(el=>el.addEventListener('click',()=>{ el.classList.toggle('open'); markDone('idioms'); }));
+
+  document.querySelectorAll('.gap-blank').forEach(el=>{
+    el.addEventListener('click',()=>{
+      const i=+el.dataset.i;
+      state.gapSelected=(state.gapSelected===i)?null:i;
+      renderMain();
+    });
+  });
+  document.querySelectorAll('.wb-chip').forEach(chip=>{
+    chip.addEventListener('click',()=>{
+      if(state.gapSelected===null) return;
+      const i=state.gapSelected;
+      const word=chip.dataset.word;
+      const correctAns=gapfills[i].ans;
+      const fb=document.getElementById('gapFeedback');
+      if(word===correctAns){
+        state.gapFilled[i]=word;
+        state.gapSelected=null;
+        if(!state.gapScored[i]){ addScore(1); state.gapScored[i]=true; }
+        const doneCount=Object.keys(state.gapFilled).length;
+        if(doneCount===gapfills.length) markDone('gapfill');
+        renderMain();
+        setTimeout(()=>{ const f=document.getElementById('gapFeedback'); if(f){ f.textContent=doneCount+' / '+gapfills.length+' correct!'; f.className='quiz-feedback good'; } },10);
+      } else {
+        if(fb){ fb.textContent='That doesn\'t fit this blank — try another phrase.'; fb.className='quiz-feedback bad'; }
+        chip.style.animation='shake .3s'; setTimeout(()=>chip.style.animation='',300);
+      }
+    });
+  });
+
+  document.querySelectorAll('.roundtab button').forEach(b=>b.addEventListener('click',()=>{ state.quizRound=+b.dataset.r; state.quizIdx=0; renderMain(); }));
+
+  document.querySelectorAll('.quiz-opt').forEach(el=>el.addEventListener('click',()=>{
+    if(el.classList.contains('locked')) return;
+    const key=`${state.quizRound}-${state.quizIdx}`;
+    if(state.quizAnswered[key]) return;
+    const picked=+el.dataset.i; const q=quizRounds[state.quizRound].qs[state.quizIdx]; const correct=picked===q.ans;
+    const totalQs=Object.values(quizRounds).reduce((s,r)=>s+r.qs.length,0);
+    if(correct){
+      state.quizAnswered[key]={picked,correct:true}; addScore(1);
+      if(Object.keys(state.quizAnswered).length===totalQs) markDone('quiz');
+      renderMain();
+    } else {
+      el.classList.add('wrong');
+      const fb=document.getElementById('quizFeedbackMsg');
+      if(fb){ fb.textContent='✗ Not quite — click another option to try again'; fb.className='quiz-feedback bad'; }
+      setTimeout(()=>{
+        el.classList.remove('wrong');
+        const fb2=document.getElementById('quizFeedbackMsg');
+        if(fb2 && !state.quizAnswered[key]){ fb2.textContent='Select an answer'; fb2.className='quiz-feedback'; }
+      },700);
+    }
+  }));
+
+  const qPrev=document.getElementById('quizPrev'); const qNext=document.getElementById('quizNext');
+  if(qPrev) qPrev.onclick=()=>{ if(state.quizIdx>0){ state.quizIdx--; renderMain(); } };
+  if(qNext) qNext.onclick=()=>{ const r=quizRounds[state.quizRound]; if(state.quizIdx<r.qs.length-1){ state.quizIdx++; renderMain(); } };
+
+  document.querySelectorAll('.focus-btn').forEach(el=>{
+    if(el.classList.contains('locked')) return;
+    el.addEventListener('click',()=>{
+      const i=+el.dataset.i; const cat=el.dataset.cat;
+      if(state.starAnswered[i]) return;
+      const correct=cat===starQs[i].cat;
+      if(correct){
+        state.starAnswered[i]={picked:cat,correct:true}; addScore(1);
+        if(Object.keys(state.starAnswered).length===starQs.length) markDone('star');
+        renderMain();
+      } else {
+        el.classList.add('wrong');
+        setTimeout(()=>el.classList.remove('wrong'),500);
+      }
+    });
+  });
+
+  document.querySelectorAll('.ade-chip').forEach(el=>el.addEventListener('click',()=>{ const k=el.dataset.k; state.adeActive=(state.adeActive===k)?null:k; markDone('model'); renderMain(); }));
+
+  document.querySelectorAll('.phrase-btn').forEach(el=>el.addEventListener('click',()=>{ const area=document.getElementById('scratchArea'); area.value=(area.value?area.value+' ':'')+el.dataset.phrase+' '; area.focus(); markDone(state.current); }));
+
+  document.querySelectorAll('.pip').forEach(el=>el.addEventListener('click',()=>{ const crit=el.dataset.crit; const n=+el.dataset.n; state.peerScores[crit]=(state.peerScores[crit]===n)?null:n; if(Object.keys(state.peerScores).filter(k=>state.peerScores[k]).length===peerCriteria.length) markDone('peer'); renderMain(); }));
+
+  document.querySelectorAll('.cue-tab').forEach(el=>el.addEventListener('click',()=>{ state.cueTab=+el.dataset.i; markDone('practice'); renderMain(); }));
+}
+
+/* ===== INIT ===== */
+renderNav();
+renderMain();
+</script>
+</body>
+</html>

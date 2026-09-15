@@ -1,0 +1,982 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>IELTS 7.0 Speaking · Historical Places &amp; Events</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;0,9..144,900;1,9..144,500&family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#171412;
+    --panel:#241F1A;
+    --panel-2:#2E2721;
+    --paper:#F5F0E6;
+    --paper-dim:#E2D9C8;
+    --coral:#B5563C;
+    --coral-dim:#96432D;
+    --mint:#7C9473;
+    --gold:#7C9473;
+    --third:#C97B84;
+    --line:rgba(245,240,230,0.12);
+    --text-dim:rgba(245,240,230,0.62);
+    --text-faint:rgba(245,240,230,0.38);
+    --radius:14px;
+  }
+  *{box-sizing:border-box;}
+  html,body{margin:0;padding:0;}
+  body{background:var(--ink);color:var(--paper);font-family:'Inter',sans-serif;-webkit-font-smoothing:antialiased;min-height:100vh;}
+  ::selection{background:var(--coral);color:var(--ink);}
+  a{color:inherit;}
+  button{font-family:inherit;}
+  .app{display:grid;grid-template-columns:340px 1fr;min-height:100vh;}
+
+  /* RAIL */
+  .rail{background:var(--panel);border-right:1px solid var(--line);padding:24px 18px 18px;display:flex;flex-direction:column;gap:18px;position:sticky;top:0;height:100vh;overflow-y:auto;}
+  .brand{display:flex;flex-direction:column;gap:2px;padding:0 6px 14px;border-bottom:1px solid var(--line);}
+  .brand .tag{font-family:'JetBrains Mono',monospace;font-size:14.5px;letter-spacing:.14em;color:var(--coral);text-transform:uppercase;font-weight:700;}
+  .brand h1{font-family:'Fraunces',serif;font-size:26px;font-weight:700;margin:4px 0 0;line-height:1.15;}
+  .brand .sub{font-size:16px;color:var(--text-dim);margin-top:4px;}
+  .onair{display:flex;align-items:center;gap:8px;background:var(--panel-2);border:1px solid var(--line);border-radius:10px;padding:10px 12px;}
+  .onair .dot{width:8px;height:8px;border-radius:50%;background:var(--coral);box-shadow:0 0 0 0 rgba(181,86,60,.6);animation:pulse 1.8s infinite;}
+  @keyframes pulse{0%{box-shadow:0 0 0 0 rgba(181,86,60,.55);}70%{box-shadow:0 0 0 6px rgba(181,86,60,0);}100%{box-shadow:0 0 0 0 rgba(181,86,60,0);}}
+  .onair .label{font-family:'JetBrains Mono',monospace;font-size:14.5px;letter-spacing:.1em;color:var(--text-dim);text-transform:uppercase;}
+  .onair .score{margin-left:auto;font-family:'JetBrains Mono',monospace;font-weight:700;font-size:20.5px;color:var(--gold);}
+  nav{display:flex;flex-direction:column;gap:2px;flex:1;}
+  .nav-item{display:flex;align-items:center;gap:10px;padding:9px 10px;border-radius:9px;cursor:pointer;font-size:18px;color:var(--text-dim);border:1px solid transparent;transition:background .15s,color .15s;user-select:none;}
+  .nav-item .n{font-family:'JetBrains Mono',monospace;font-size:15px;width:20px;color:var(--text-faint);flex-shrink:0;}
+  .nav-item:hover{background:rgba(245,240,230,0.05);color:var(--paper);}
+  .nav-item.active{background:rgba(181,86,60,0.16);border-color:rgba(181,86,60,0.38);color:var(--paper);}
+  .nav-item.active .n{color:var(--coral);}
+  .nav-item .done-mark{margin-left:auto;color:var(--mint);font-size:17.5px;opacity:0;}
+  .nav-item.done .done-mark{opacity:1;}
+  .rail-foot{font-size:15px;color:var(--text-faint);border-top:1px solid var(--line);padding-top:12px;line-height:1.5;}
+
+  /* MAIN */
+  main{padding:48px 64px 100px;max-width:1180px;width:100%;}
+  .eyebrow{font-family:'JetBrains Mono',monospace;font-size:16px;letter-spacing:.16em;text-transform:uppercase;color:var(--coral);font-weight:700;margin-bottom:10px;}
+  h2.title{font-family:'Fraunces',serif;font-size:52px;font-weight:700;line-height:1.05;margin:0 0 10px;}
+  .deck{font-size:22px;color:var(--text-dim);margin:0 0 36px;max-width:680px;}
+  .card{background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);padding:22px 24px;}
+
+  /* TIMER */
+  .timer-wrap{display:flex;align-items:center;gap:22px;background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);padding:18px 22px;margin-bottom:28px;}
+  .ring{position:relative;width:92px;height:92px;flex-shrink:0;}
+  .ring svg{transform:rotate(-90deg);}
+  .ring circle{fill:none;stroke-width:6;}
+  .ring .bg{stroke:var(--line);}
+  .ring .fg{stroke:var(--coral);stroke-linecap:round;transition:stroke-dashoffset .25s linear;}
+  .ring .num{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-family:'JetBrains Mono',monospace;font-weight:700;font-size:20px;}
+  .timer-meta{flex:1;}
+  .timer-meta .t-label{font-size:19px;color:var(--text-dim);margin-bottom:4px;}
+  .timer-btns{display:flex;gap:8px;flex-wrap:wrap;}
+  .btn{font-family:'Inter',sans-serif;font-size:18px;font-weight:600;padding:8px 14px;border-radius:8px;border:1px solid var(--line);background:var(--panel-2);color:var(--paper);cursor:pointer;transition:background .15s,border-color .15s,transform .1s;}
+  .btn:hover{background:rgba(245,240,230,0.08);}
+  .btn:active{transform:scale(.97);}
+  .btn.primary{background:var(--coral);border-color:var(--coral);color:var(--ink);}
+  .btn.primary:hover{background:#CE7053;}
+  .btn.ghost{background:transparent;}
+
+  /* PROMPTS */
+  .prompt-current{display:flex;gap:16px;align-items:flex-start;background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);padding:22px 24px;}
+  .prompt-current .pn{font-family:'JetBrains Mono',monospace;font-weight:700;font-size:19px;color:var(--coral);flex-shrink:0;padding-top:1px;}
+  .prompt-current p{margin:0;font-size:24px;line-height:1.5;}
+
+  /* FLIP CARDS */
+  .grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;}
+  .flip{perspective:1000px;height:220px;cursor:pointer;}
+  .flip-inner{position:relative;width:100%;height:100%;transition:transform .5s cubic-bezier(.4,.2,.2,1);transform-style:preserve-3d;}
+  .flip.flipped .flip-inner{transform:rotateY(180deg);}
+  .flip-face{position:absolute;inset:0;backface-visibility:hidden;border-radius:var(--radius);border:1px solid var(--line);padding:18px;display:flex;flex-direction:column;justify-content:center;}
+  .flip-front{background:var(--panel);}
+  .flip-front .def-prompt{font-family:'Inter',sans-serif;font-weight:600;font-size:19px;line-height:1.35;}
+  .flip-front .hint{font-size:16px;color:var(--text-faint);margin-top:10px;}
+  .flip-back{background:var(--coral);color:var(--ink);transform:rotateY(180deg);}
+  .flip-back .word-reveal{font-family:'Fraunces',serif;font-weight:700;font-style:italic;font-size:24px;margin-bottom:8px;}
+  .flip-back .ex{font-size:16.5px;font-style:italic;line-height:1.4;opacity:.85;}
+
+  /* MATCHING */
+  .match-wrap{display:grid;grid-template-columns:1fr 1fr;gap:30px;}
+  .match-col h4{font-family:'JetBrains Mono',monospace;font-size:16px;letter-spacing:.1em;color:var(--text-faint);text-transform:uppercase;margin:0 0 12px;}
+  .match-item,.match-item2{display:flex;align-items:center;gap:10px;background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:11px 14px;margin-bottom:8px;cursor:pointer;font-size:19px;transition:border-color .15s,background .15s;}
+  .match-item .tag,.match-item2 .tag{font-family:'JetBrains Mono',monospace;font-size:16px;color:var(--text-faint);width:18px;flex-shrink:0;}
+  .match-item.selected,.match-item2.selected{border-color:var(--gold);background:rgba(124,148,115,0.14);}
+  .match-item.correct,.match-item2.correct{border-color:var(--coral);background:rgba(181,86,60,0.14);}
+  .match-item.wrong,.match-item2.wrong{border-color:#E67E5B;background:rgba(230,126,91,0.12);}
+  .match-item.locked,.match-item2.locked{cursor:default;opacity:.85;}
+
+  /* IDIOMS */
+  .idiom-list{display:flex;flex-direction:column;gap:10px;}
+  .idiom{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:16px 18px;cursor:pointer;transition:border-color .15s;}
+  .idiom:hover{border-color:rgba(181,86,60,.35);}
+  .idiom-head{display:flex;align-items:center;justify-content:space-between;}
+  .idiom-head .phrase{font-family:'Fraunces',serif;font-weight:600;font-size:23px;}
+  .idiom-head .chev{color:var(--text-faint);transition:transform .2s;font-size:19px;}
+  .idiom.open .chev{transform:rotate(90deg);}
+  .idiom-body{max-height:0;overflow:hidden;transition:max-height .3s ease;}
+  .idiom.open .idiom-body{max-height:110px;}
+  .idiom-mean{font-size:19px;color:var(--text-dim);margin-top:8px;}
+  .idiom-ex{font-size:17px;font-style:italic;color:var(--text-faint);margin-top:4px;padding-bottom:4px;}
+
+  /* GAP FILL */
+  .gapfill-list{display:flex;flex-direction:column;gap:16px;}
+  .gap-item{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:16px 18px;}
+  .gap-item p{margin:0 0 10px;font-size:20px;line-height:1.6;}
+  .gap-blank{font-family:'JetBrains Mono',monospace;display:inline-block;min-width:230px;text-align:center;background:var(--panel-2);border:1px solid var(--line);border-radius:7px;color:var(--gold);padding:6px 12px;font-weight:700;cursor:pointer;}
+  .gap-blank.selected{border-color:var(--gold);box-shadow:0 0 0 2px rgba(124,148,115,.28);}
+  .gap-blank.filled{color:var(--coral);border-color:var(--coral);}
+  .wordbank{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:18px;}
+  .wb-chip{font-family:'JetBrains Mono',monospace;font-size:16.5px;background:var(--panel-2);border:1px solid var(--line);border-radius:20px;padding:8px 15px;color:var(--text-dim);cursor:pointer;transition:border-color .15s,color .15s,opacity .15s;}
+  .wb-chip:hover{border-color:var(--coral);color:var(--paper);}
+  .wb-chip.used{opacity:.3;pointer-events:none;text-decoration:line-through;}
+  .quiz-feedback{font-size:19px;color:var(--text-dim);min-height:18px;}
+  .quiz-feedback.good{color:var(--coral);}
+  .quiz-feedback.bad{color:#E67E5B;}
+
+  /* QUIZ */
+  .quiz-progress{display:flex;gap:6px;margin-bottom:24px;}
+  .quiz-dot{flex:1;height:4px;border-radius:3px;background:var(--line);}
+  .quiz-dot.active{background:var(--coral);}
+  .quiz-dot.answered{background:var(--gold);}
+  .quiz-card{background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);padding:28px;}
+  .quiz-q{font-size:26px;font-weight:600;margin:0 0 20px;line-height:1.4;}
+  .quiz-opts{display:flex;flex-direction:column;gap:10px;}
+  .quiz-opt{display:flex;gap:12px;align-items:center;background:var(--panel-2);border:1px solid var(--line);border-radius:10px;padding:13px 16px;cursor:pointer;font-size:20px;transition:border-color .15s,background .15s;}
+  .quiz-opt:hover{border-color:rgba(181,86,60,.4);}
+  .quiz-opt .letter{font-family:'JetBrains Mono',monospace;font-weight:700;font-size:18px;width:32px;height:32px;border-radius:50%;background:var(--ink);display:flex;align-items:center;justify-content:center;flex-shrink:0;color:var(--text-dim);}
+  .quiz-opt.correct{border-color:var(--coral);background:rgba(181,86,60,0.16);}
+  .quiz-opt.correct .letter{background:var(--coral);color:var(--ink);}
+  .quiz-opt.wrong{border-color:#E67E5B;background:rgba(230,126,91,0.14);animation:shake .3s;}
+  .quiz-opt.locked{cursor:default;}
+  @keyframes shake{0%,100%{transform:translateX(0);}25%{transform:translateX(-5px);}75%{transform:translateX(5px);}}
+  .quiz-foot{display:flex;justify-content:space-between;align-items:center;margin-top:22px;}
+  .roundtab{display:flex;gap:8px;margin-bottom:22px;}
+  .roundtab button{font-family:'JetBrains Mono',monospace;font-size:16px;padding:7px 13px;border-radius:8px;border:1px solid var(--line);background:transparent;color:var(--text-dim);cursor:pointer;}
+  .roundtab button.on{background:var(--coral);color:var(--ink);border-color:var(--coral);}
+
+  /* WARM-UP TABS */
+  .warmup-tabs{display:flex;gap:8px;margin-bottom:20px;flex-wrap:wrap;}
+  .warmup-tab{font-family:'JetBrains Mono',monospace;font-size:18px;font-weight:700;width:42px;height:42px;border-radius:10px;border:1px solid var(--line);background:var(--panel);color:var(--text-dim);cursor:pointer;display:flex;align-items:center;justify-content:center;transition:border-color .15s,background .15s,color .15s;}
+  .warmup-tab:hover{border-color:rgba(181,86,60,.4);color:var(--paper);}
+  .warmup-tab.on{border-color:var(--coral);background:rgba(181,86,60,.18);color:var(--paper);}
+
+  /* A.D.E SORTER */
+  .sort-intro{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-bottom:22px;}
+  .sort-intro-item{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:16px 18px;}
+  .sort-intro-item .k{font-family:'JetBrains Mono',monospace;font-weight:700;font-size:16px;margin-bottom:6px;display:block;}
+  .sort-intro-item[data-k="A"] .k{color:var(--coral);}
+  .sort-intro-item[data-k="D"] .k{color:var(--gold);}
+  .sort-intro-item[data-k="E"] .k{color:var(--third);}
+  .sort-intro-item p{margin:0;font-size:16.5px;color:var(--text-dim);line-height:1.4;}
+  .focus-list{display:flex;flex-direction:column;gap:14px;}
+  .focus-item{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:18px 20px;}
+  .focus-item p{margin:0 0 14px;font-size:21px;line-height:1.5;}
+  .focus-btns{display:flex;gap:10px;flex-wrap:wrap;}
+  .focus-btn{font-family:'Inter',sans-serif;font-size:17px;font-weight:600;padding:10px 16px;border-radius:9px;border:1px solid var(--line);background:var(--panel-2);color:var(--text-dim);cursor:pointer;transition:border-color .15s,background .15s;}
+  .focus-btn:hover{border-color:rgba(181,86,60,.4);color:var(--paper);}
+  .focus-btn.correct{border-color:var(--coral);background:rgba(181,86,60,0.18);color:var(--paper);}
+  .focus-btn.wrong{border-color:#E67E5B;background:rgba(230,126,91,0.16);animation:shake .3s;}
+  .focus-btn.locked{cursor:default;}
+  .focus-result{font-size:17px;color:var(--text-faint);margin-top:10px;min-height:16px;}
+  .focus-result.good{color:var(--coral);}
+
+  /* CUE CARD */
+  .cuecard{background:linear-gradient(155deg,var(--panel-2),var(--panel));border:1px solid var(--line);border-radius:18px;padding:30px 32px;margin-bottom:24px;}
+  .cuecard .label{font-family:'JetBrains Mono',monospace;font-size:16px;color:var(--coral);letter-spacing:.1em;text-transform:uppercase;margin-bottom:10px;}
+  .cuecard h3{font-family:'Fraunces',serif;font-size:29px;margin:0 0 16px;line-height:1.3;}
+  .cuecard ul{margin:0;padding-left:20px;line-height:1.8;font-size:20px;color:var(--text-dim);}
+  .notepad{width:100%;min-height:130px;background:var(--ink);border:1px solid var(--line);border-radius:10px;color:var(--paper);font-family:'Inter',sans-serif;font-size:20px;padding:14px;resize:vertical;margin-top:6px;}
+  .notepad:focus{outline:none;border-color:var(--coral);}
+
+  /* A.D.E MODEL ANSWER */
+  .ade-key{display:flex;gap:10px;margin-bottom:18px;flex-wrap:wrap;}
+  .ade-chip{font-family:'JetBrains Mono',monospace;font-size:16px;padding:6px 12px;border-radius:7px;border:1px solid var(--line);cursor:pointer;transition:transform .12s;}
+  .ade-chip[data-k="A"]{color:var(--coral);}
+  .ade-chip[data-k="D"]{color:var(--gold);}
+  .ade-chip[data-k="E"]{color:var(--third);}
+  .ade-chip.active{transform:scale(1.05);border-color:currentColor;}
+  .ade-block{padding:16px 18px;border-radius:11px;margin-bottom:10px;border:1px solid var(--line);background:var(--panel);transition:opacity .2s,border-color .2s;line-height:1.65;font-size:20px;}
+  .ade-block .tag2{font-family:'JetBrains Mono',monospace;font-size:15px;font-weight:700;margin-bottom:8px;display:block;}
+  .ade-block.dim{opacity:.3;}
+  .ade-block[data-k="A"] .tag2{color:var(--coral);}
+  .ade-block[data-k="D"] .tag2{color:var(--gold);}
+  .ade-block[data-k="E"] .tag2{color:var(--third);}
+  .ade-block.highlight[data-k="A"]{border-color:var(--coral);}
+  .ade-block.highlight[data-k="D"]{border-color:var(--gold);}
+  .ade-block.highlight[data-k="E"]{border-color:var(--third);}
+
+  /* TOOLKIT */
+  .grid-2{display:grid;grid-template-columns:1fr 1fr;gap:16px;}
+  .tool-card{background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);padding:18px 20px;}
+  .tool-card h4{margin:0 0 12px;font-size:19px;font-family:'Fraunces',serif;font-weight:600;}
+  .tool-card .phrase-btn{display:inline-block;font-size:17.5px;background:var(--panel-2);border:1px solid var(--line);border-radius:7px;padding:6px 11px;margin:0 6px 6px 0;cursor:pointer;color:var(--text-dim);transition:color .15s,border-color .15s;}
+  .tool-card .phrase-btn:hover{color:var(--paper);border-color:var(--gold);}
+  .scratch{margin-top:24px;}
+  .scratch textarea{width:100%;min-height:90px;background:var(--panel);border:1px solid var(--line);border-radius:10px;color:var(--paper);font-family:'Inter',sans-serif;font-size:20px;padding:14px;}
+  .scratch textarea:focus{outline:none;border-color:var(--coral);}
+
+  /* PEER SCORE */
+  .scorecard{display:flex;flex-direction:column;gap:10px;}
+  .score-row{display:flex;align-items:center;gap:14px;background:var(--panel);border:1px solid var(--line);border-radius:11px;padding:13px 16px;}
+  .score-row .letter2{font-family:'JetBrains Mono',monospace;font-weight:700;font-size:16px;width:36px;height:36px;border-radius:50%;background:var(--panel-2);display:flex;align-items:center;justify-content:center;flex-shrink:0;color:var(--coral);}
+  .score-row .si-main{flex:1;min-width:0;}
+  .score-row .si-title{font-weight:600;font-size:19px;}
+  .score-row .si-sub{font-size:16px;color:var(--text-faint);}
+  .pips{display:flex;gap:5px;}
+  .pip{width:36px;height:36px;border-radius:7px;border:1px solid var(--line);background:var(--panel-2);cursor:pointer;color:var(--text-dim);font-size:17px;font-family:'JetBrains Mono',monospace;display:flex;align-items:center;justify-content:center;}
+  .pip.on{background:var(--gold);border-color:var(--gold);color:var(--ink);}
+  .score-total{margin-top:8px;display:flex;align-items:center;justify-content:space-between;background:var(--panel-2);border:1px solid var(--line);border-radius:11px;padding:16px 18px;}
+  .score-total .tot-num{font-family:'JetBrains Mono',monospace;font-weight:700;font-size:37px;color:var(--gold);}
+  .feedback-fields{display:flex;flex-direction:column;gap:10px;margin-top:18px;}
+  .feedback-fields input{background:var(--panel);border:1px solid var(--line);border-radius:9px;color:var(--paper);padding:11px 14px;font-size:19px;font-family:'Inter',sans-serif;}
+  .feedback-fields input:focus{outline:none;border-color:var(--coral);}
+
+  /* EXAM PRACTICE */
+  .cue-tabs{display:grid;grid-template-columns:repeat(6,1fr);gap:10px;margin-bottom:20px;}
+  .cue-tab{text-align:center;padding:12px 6px;border-radius:11px;border:1px solid var(--line);background:var(--panel);cursor:pointer;font-size:15px;font-weight:600;}
+  .cue-tab.on{border-color:var(--coral);background:rgba(181,86,60,.16);}
+  .cue-tab .emo{font-size:23px;display:block;margin-bottom:4px;}
+  .cue-tab .foc{display:block;font-family:'JetBrains Mono',monospace;font-size:11.5px;letter-spacing:.06em;text-transform:uppercase;color:var(--text-faint);margin-top:2px;}
+  .assign-note{font-size:17px;color:var(--text-faint);margin:-12px 0 20px;}
+
+  /* WRAP UP */
+  .takeaway-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;}
+  .tk{background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);padding:20px 22px;}
+  .tk .tk-icon{font-size:32px;margin-bottom:10px;display:block;}
+  .tk h4{margin:0 0 8px;font-family:'Fraunces',serif;font-size:22px;}
+  .tk p{margin:0;font-size:18.5px;color:var(--text-dim);line-height:1.55;}
+  .final-score{margin-top:32px;text-align:center;padding:36px;border-radius:18px;background:linear-gradient(155deg,var(--panel-2),var(--panel));border:1px solid var(--line);}
+  .final-score .fs-num{font-family:'JetBrains Mono',monospace;font-weight:700;font-size:70px;color:var(--gold);}
+  .final-score .fs-label{font-size:19px;color:var(--text-dim);margin-top:4px;}
+
+  .nav-arrows{display:flex;justify-content:space-between;margin-top:44px;padding-top:24px;border-top:1px solid var(--line);}
+  .mobile-progress,.mobile-jump{display:none;}
+
+  @media(max-width:880px){
+    .app{grid-template-columns:1fr;}
+    .rail{position:relative;height:auto;flex-direction:row;align-items:center;gap:12px;padding:14px 16px;}
+    .brand{border-bottom:none;padding:0;flex-shrink:0;}
+    .brand h1{font-size:19px;}
+    .brand .sub{display:none;}
+    .onair{flex-shrink:0;padding:8px 12px;}
+    .onair .label{display:none;}
+    nav{display:none;}
+    .rail-foot{display:none;}
+    main{padding:18px 18px 70px;}
+    .grid-3{grid-template-columns:1fr 1fr;}
+    .match-wrap,.grid-2,.takeaway-grid{grid-template-columns:1fr;}
+    .sort-intro{grid-template-columns:1fr;}
+    .warmup-tab{width:38px;height:38px;font-size:16px;}
+    .cue-tabs{grid-template-columns:repeat(3,1fr);}
+    h2.title{font-size:38px;}
+    .mobile-progress,.mobile-jump{display:flex;}
+    .mobile-progress{gap:4px;margin-bottom:18px;}
+    .mobile-progress .seg{flex:1;height:3px;border-radius:2px;background:var(--line);}
+    .mobile-progress .seg.done{background:var(--coral);}
+    .mobile-progress .seg.now{background:#E67E5B;}
+    .mobile-jump{align-items:center;margin-bottom:4px;}
+    .mobile-jump select{background:var(--panel);color:var(--paper);border:1px solid var(--line);border-radius:8px;padding:7px 10px;font-size:17px;font-family:'JetBrains Mono',monospace;width:100%;}
+  }
+  @media(prefers-reduced-motion:reduce){*{animation-duration:.001s!important;transition-duration:.001s!important;}}
+</style>
+</head>
+<body>
+<div class="app">
+  <aside class="rail">
+    <div class="brand">
+      <span class="tag">IELTS 7.0 · Speaking</span>
+      <h1>Historical Places &amp; Events</h1>
+      <div class="sub">Part 2 Masterclass · 60 min</div>
+    </div>
+    <div class="onair">
+      <div class="dot"></div>
+      <div class="label">On Air</div>
+      <div class="score" id="railScore">0 pts</div>
+    </div>
+    <nav id="navList"></nav>
+    <div class="rail-foot">Click any item to jump. Progress is tracked as you complete each exercise.</div>
+  </aside>
+  <main id="main"></main>
+</div>
+
+<script>
+/* ===== DATA ===== */
+const sections = [
+  {id:'objectives', n:'00', label:'Lesson Objectives'},
+  {id:'warmup',   n:'01', label:'Warm-Up'},
+  {id:'cuematch', n:'02', label:'Cue Card Comprehension'},
+  {id:'vocab',    n:'03', label:'Vocabulary'},
+  {id:'collocation', n:'04', label:'Collocations'},
+  {id:'idioms',   n:'05', label:'Idioms & Phrases'},
+  {id:'gapfill',  n:'06', label:'Gap Fill'},
+  {id:'ade',      n:'07', label:'Answer, Details or Extension?'},
+  {id:'quiz',     n:'08', label:'Quiz Challenge'},
+  {id:'model',    n:'09', label:'Model Answer'},
+  {id:'toolkit',  n:'10', label:'Language Toolkit'},
+  {id:'connectives', n:'11', label:'Advanced Connectives'},
+  {id:'peer',     n:'12', label:'Peer Score Card'},
+  {id:'practice', n:'13', label:'Exam Practice'},
+  {id:'wrapup',   n:'14', label:'Wrap-Up'}
+];
+
+const objectives = [
+  {icon:'🧭', h:'Interpret the Cue Card\'s Purpose',        d:'Look beyond a simple description and identify what a Part 2 cue card about history is really asking you to reflect on.'},
+  {icon:'🏛️', h:'Apply the A.D.E. Model',                   d:'Use Answer → Details → Extension to give each prompt clarity, development and coherence.'},
+  {icon:'📚', h:'Upgrade with Topic Vocabulary',             d:'Use precise, high-level, topic-specific vocabulary and collocations to reach Band 7+.'}
+];
+
+function shuffleArr(arr){
+  const a = arr.slice();
+  for(let i=a.length-1;i>0;i--){
+    const j = Math.floor(Math.random()*(i+1));
+    [a[i],a[j]]=[a[j],a[i]];
+  }
+  return a;
+}
+
+const warmupQs = [
+  'Have you ever visited a place that taught you something about history?',
+  'Do you enjoy visiting museums or historical sites?',
+  'Is there a historical period you find fascinating?',
+  'Do you think it\'s important for people to learn about history?',
+  'Have you ever read a book or watched a documentary about a historical event?',
+  'Is there a historical figure you admire?',
+  'Do you prefer modern cities or places with a long history?',
+  'How do you usually learn about history — books, films, or visiting places yourself?'
+];
+
+/* cue card comprehension matching */
+const cuePrompts = shuffleArr(['where it is','when you went there','what you saw or did there','what you learned']);
+const cueMeanings = shuffleArr([
+  'a location and a brief introduction to the place',
+  'a past time marker that sets the context',
+  'specific details, events, objects or experiences',
+  'personal reflections or insights related to history'
+]);
+const cueMatchKey = {
+  'where it is':                 'a location and a brief introduction to the place',
+  'when you went there':         'a past time marker that sets the context',
+  'what you saw or did there':   'specific details, events, objects or experiences',
+  'what you learned':            'personal reflections or insights related to history'
+};
+const cueCard1 = {
+  title:'Describe a place you visited that taught you about history.',
+  bullets:['where it is','when you went there','what you saw or did there','and explain what you learned from the experience.']
+};
+
+const vocab = [
+  {w:'iconic historical building',    d:'a famous, widely recognised building that played an important part in past events',                    ex:'"The Independence Palace is an iconic historical building in Ho Chi Minh City."'},
+  {w:'a witness to history',           d:'something or someone that was present when significant historical events took place',                   ex:'"This old bridge has been a witness to history for over two centuries."'},
+  {w:'hold significant meaning',       d:'to be deeply symbolic or emotionally important, especially in relation to the past',                    ex:'"For many locals, the statue holds significant meaning as a symbol of resistance."'},
+  {w:'architectural grandeur',         d:'the impressive, majestic quality of a building\'s design',                                               ex:'"Visitors are often struck by the architectural grandeur of the old palace."'},
+  {w:'house (verb)',                   d:'to contain something, or to be the location where something important is kept or based',                ex:'"The museum houses thousands of artifacts from the war."'},
+  {w:'mark the reunification',         d:'to represent or symbolise the joining together of two previously separated groups or regions',           ex:'"The palace\'s fall in 1975 marked the reunification of North and South Vietnam."'},
+  {w:'act as a reminder of',           d:'to cause people to recall or reflect on a past event',                                                   ex:'"The monument acts as a reminder of the soldiers who never returned."'},
+  {w:'sacrifice',                      d:'to give something up, especially for a greater cause',                                                   ex:'"Every exhibit reflects the sacrifice ordinary people made during the war."'},
+  {w:'relive that historic atmosphere', d:'to feel as though you are experiencing a moment from the past all over again',                          ex:'"Walking through the old gates, I could almost relive that historic atmosphere."'}
+];
+
+const verbs   = shuffleArr(['delve into','explore','uncover','preserve','walk through','reflect on','gain','leave']);
+const nouns   = shuffleArr(['the past','an ancient site','hidden stories','cultural heritage','the ruins','historical events','a deeper insight','a lasting impression']);
+const matchKey = {
+  'delve into':    'the past',
+  'explore':       'an ancient site',
+  'uncover':       'hidden stories',
+  'preserve':      'cultural heritage',
+  'walk through':  'the ruins',
+  'reflect on':    'historical events',
+  'gain':          'a deeper insight',
+  'leave':         'a lasting impression'
+};
+
+const idioms = [
+  {p:'frozen in time',                       m:'seeming completely unchanged, as if time has stopped there',                                      ex:'"Walking through the old town felt like stepping into a place frozen in time."'},
+  {p:'turn back the clock',                  m:'to return to an earlier period or condition',                                                      ex:'"Visiting the ruins made me wish I could turn back the clock and see the city in its prime."'},
+  {p:'bear witness to',                      m:'to be present and see something significant happen',                                               ex:'"These walls have borne witness to centuries of political upheaval."'},
+  {p:'etched into history',                  m:'permanently and deeply remembered as an important part of history',                                 ex:'"That battle is etched into history as a turning point for the country."'},
+  {p:'come face to face with history',       m:'to directly encounter or experience something historically significant',                            ex:'"Standing inside the old command room, I felt like I\'d come face to face with history."'},
+  {p:'a living museum',                      m:'a place that preserves the past so vividly that it feels real and alive',                           ex:'"The old quarter is like a living museum, with traditions that haven\'t changed in generations."'},
+  {p:'the sands of time',                    m:'the slow, unstoppable passing of time, often linked to how the past fades or is preserved',          ex:'"Some traditions have survived the sands of time, while others were lost."'},
+  {p:'walk in someone\'s footsteps',         m:'to follow the same path or have a similar experience to someone from the past',                     ex:'"Touring the old fortress, I felt like I was walking in the footsteps of the soldiers who once defended it."'}
+];
+
+const gapfills = [
+  {text:'Walking through the old town felt like stepping into a place ___.',                                     ans:'frozen in time'},
+  {text:'These walls have ___ centuries of political upheaval.',                                                 ans:'borne witness to'},
+  {text:'That battle is ___ as a turning point for the country.',                                                ans:'etched into history'},
+  {text:'Standing inside the old command room, I felt like I\'d ___.',                                           ans:'come face to face with history'},
+  {text:'The old quarter is like ___, with traditions that haven\'t changed in generations.',                    ans:'a living museum'},
+  {text:'Touring the old fortress, I felt like I was ___ of the soldiers who once defended it.',                 ans:'walking in the footsteps'}
+];
+const wordbank = shuffleArr(['frozen in time','borne witness to','etched into history','come face to face with history','a living museum','walking in the footsteps','turn back the clock','the sands of time']);
+
+const adeIntro = [
+  {k:'A', label:'Answer',    d:'respond directly to the cue card prompt'},
+  {k:'D', label:'Details',   d:'add a specific example, description or action'},
+  {k:'E', label:'Extension', d:'add insights, feelings, comparisons or reflections'}
+];
+
+const adeQs = shuffleArr([
+  {q:'"A historical place I visited is the War Remnants Museum, located in Ho Chi Minh City."',                                                     cat:'A'},
+  {q:'"I visited the Independence Palace in Ho Chi Minh City last summer."',                                                                         cat:'A'},
+  {q:'"One historical period I\'d love to know more about is Ancient Egypt."',                                                                       cat:'A'},
+  {q:'"It\'s known for its exhibitions on the Vietnam War and is packed with historical artifacts, documents, and photographs."',                     cat:'D'},
+  {q:'"It\'s located in District 1 and is surrounded by gardens and historic buildings."',                                                            cat:'D'},
+  {q:'"I joined a guided tour that took us through the war command room and the president\'s office."',                                               cat:'D'},
+  {q:'"I had always heard about the museum, but actually being there helped me connect with history in a much more personal way."',                   cat:'E'},
+  {q:'"That experience changed how I view the sacrifices people made during that era."',                                                              cat:'E'},
+  {q:'"It helped me understand how architecture can hold significant meaning beyond its walls."',                                                     cat:'E'}
+]);
+adeQs.forEach(q=>{ q.order = shuffleArr(['A','D','E']); });
+const adeLabels = {A:'Answer', D:'Details', E:'Extension'};
+
+const quizRounds = {
+  1:{title:'Vocabulary Rapid Fire', qs:[
+    {q:"What does it mean to say a building 'holds significant meaning'?",                            opts:['it is very large','it is deeply symbolic or emotionally important','it is difficult to find','it is newly built'], ans:1},
+    {q:"What does 'architectural grandeur' describe?",                                                 opts:['a small, simple design','the impressive, majestic quality of a building\'s design','a ruined building','a modern glass structure'], ans:1},
+    {q:"If a museum 'houses' something, what does that mean?",                                         opts:['it sells that item','it contains or is the location for it','it was built by that item','it destroyed that item'], ans:1},
+    {q:"What does 'a witness to history' mean?",                                                       opts:['someone who studies history at school','something or someone that was present during significant past events','a person who writes history books','a fictional character'], ans:1}
+  ]},
+  2:{title:'Idiom Challenge', qs:[
+    {q:'"The old town felt frozen in time."',                                                          opts:['completely modern and busy','seeming unchanged, as if time had stopped','freezing cold','recently renovated'], ans:1},
+    {q:'"These walls have borne witness to centuries of upheaval."',                                    opts:['they were destroyed long ago','they were present during major historical events','they are made of stone','they were built recently'], ans:1},
+    {q:'"That battle is etched into history."',                                                        opts:['completely forgotten','permanently and deeply remembered as important','recorded only in one book','disputed by historians'], ans:1},
+    {q:'"The old quarter is like a living museum."',                                                    opts:['it is closed to visitors','it preserves the past so vividly it feels real and alive','it has no historical value','it was built as a museum'], ans:1}
+  ]}
+};
+
+const adeModel = [
+  {k:'A', label:'Answer — Direct response',        text:'A historical place that really taught me something was the Imperial Citadel of Thang Long, a UNESCO World Heritage Site right in the heart of Hanoi, which I visited last spring.'},
+  {k:'D', label:'Details — What exactly happened', text:'It\'s an ancient complex where Vietnamese kings once ruled for centuries, and walking through the old gates and excavated ruins, you can still see fragments of the original stonework and foundations. I joined a guided tour that explained how each section of the citadel was used, from royal ceremonies to military defence.'},
+  {k:'E', label:'Extension — Emotions and insight', text:'What struck me most was realising how royal architecture was deliberately used as a symbol of power — every gate and courtyard seemed designed to remind visitors of the king\'s authority. That experience changed how I view old buildings in general; I don\'t just see stone and ruins anymore, I see the stories behind them.'}
+];
+
+const toolkit = [
+  {h:'🏛️ Describing the Place',        items:['iconic historical building','located in the heart of the city','architectural grandeur','surrounded by gardens']},
+  {h:'📋 Giving Details',               items:['house (v)…','mark the reunification of…','hold significant meaning for…','a witness to history']},
+  {h:'🔍 Expressing Insight',           items:['get a deeper insight into…','act as a reminder of…','relive that historic atmosphere']},
+  {h:'💭 Emotion Expressions',          items:['What struck me most was…','That experience changed how I view…','Looking back, I think…','…helped me connect with…']},
+  {h:'🔀 Transitions',                  items:['One thing I remember clearly is…','For example, …','While I was there, …','As I walked through…']}
+];
+
+const connectives = [
+  {h:'⏳ Time & Sequence',              items:['Having visited before, …','By the time I arrived, …','Not long after that, …']},
+  {h:'🔁 Contrast',                     items:['Although the building looked ordinary from outside, …','Despite its age, …','Even though I\'d read about it, …']},
+  {h:'🎯 Cause & Effect',               items:['This is largely because…','As a result of seeing this, …','Which is why…']},
+  {h:'💭 Emphasis & Reflection',        items:['What I didn\'t expect was…','It wasn\'t until later that I realised…','Above all, …']}
+];
+
+const peerCriteria = [
+  {k:'📝', t:'Covered all cue card prompts?',        s:'Every bullet point was addressed'},
+  {k:'A',  t:'Used A.D.E. model for each prompt?',   s:'Answer, then Details, then Extension'},
+  {k:'D',  t:'Details specific and vivid?',          s:'Concrete facts, not vague statements'},
+  {k:'E',  t:'Genuine reflection included?',         s:'Real feelings, insight or comparison'},
+  {k:'📚', t:'3+ topic vocab or collocations used?', s:'From today\'s word list, used naturally'},
+  {k:'🔀', t:'Transition/reflection phrases used?',  s:'e.g. while I was there, what struck me most'},
+  {k:'🎯', t:'Answer flowed logically & stayed on topic?', s:'No unrelated tangents'},
+  {k:'🗣️', t:'Spoke fluently for 1.5–2 minutes?',    s:'Not too short, not too long, few hesitations'}
+];
+
+const examCards = [
+  {emo:'🏛️', foc:'Historic Place', title:'Q1',  prompt:'Describe a place you visited that taught you about history.',                       bullets:['where it is','when you went there','what you saw or did there','and explain what you learned from the experience.']},
+  {emo:'📅', foc:'Period',         title:'Q2',  prompt:'Describe a historical period you would like to know more about.',                    bullets:['when it was','what you are interested in','what you have already known','and explain why you would like to know more about this period.']},
+  {emo:'💥', foc:'Event',          title:'Q3',  prompt:'Describe a historical event that you found interesting.',                            bullets:['what the event was','when and where it happened','how you learned about it','and explain why you found this event interesting and what impact it had on you.']},
+  {emo:'🧑‍🎓', foc:'Figure',        title:'Q4',  prompt:'Describe a historical figure you admire.',                                            bullets:['who the person is','what this person is known for','what you know about their life or achievements','and explain why you admire this person and what you\'ve learned from them.']},
+  {emo:'🏺', foc:'Museum',         title:'Q5',  prompt:'Describe a museum you have visited.',                                                 bullets:['where the museum is','when you went there','what you saw there','and explain what you learned from the visit.']},
+  {emo:'🏰', foc:'Old Building',   title:'Q6',  prompt:'Describe an old building you find interesting.',                                      bullets:['where it is','what it looks like','what you know about its history','and explain why you find it interesting.']},
+  {emo:'📖', foc:'Documentary',    title:'Q7',  prompt:'Describe a book or documentary about history that you found interesting.',            bullets:['what it was about','when you read or watched it','what you learned from it','and explain why you found it interesting.']},
+  {emo:'🗺️', foc:'Historic City',  title:'Q8',  prompt:'Describe a historic city or town you have visited or would like to visit.',           bullets:['where it is','what makes it historically important','what you did or would like to do there','and explain why it interests you.']},
+  {emo:'🎨', foc:'Artifact',       title:'Q9',  prompt:'Describe a historical object or artifact you found interesting.',                     bullets:['what it is','where you saw it','what you know about its history','and explain why it interested you.']},
+  {emo:'👵', foc:'Family History', title:'Q10', prompt:'Describe something you learned about your family\'s history.',                        bullets:['what you learned','how you found out about it','who told you or how you discovered it','and explain how it made you feel.']},
+  {emo:'🏟️', foc:'Ancient Site',   title:'Q11', prompt:'Describe an ancient site or ruin you have visited or heard about.',                   bullets:['where it is','what it looks like now','what you know about its past','and explain what impressed you most about it.']},
+  {emo:'🕰️', foc:'Change',         title:'Q12', prompt:'Describe a place that has changed a lot over time.',                                  bullets:['where it is','what it used to be like','what it is like now','and explain how you feel about the change.']},
+  {emo:'📜', foc:'Story',          title:'Q13', prompt:'Describe a historical story someone told you.',                                       bullets:['who told you the story','what the story was about','when you heard it','and explain what you learned from it.']},
+  {emo:'🌍', foc:'Heritage Site',  title:'Q14', prompt:'Describe a UNESCO World Heritage Site you know about.',                                bullets:['what it is','where it is located','why it is important','and explain what you find special about it.']}
+];
+
+/* ===== STATE ===== */
+let state = {
+  current:'objectives', score:0, done:new Set(),
+  cueSel:{a:null,b:null}, cueSolved:new Set(),
+  matchSel:{verb:null,noun:null}, matchSolved:new Set(),
+  quizRound:1, quizIdx:0, quizAnswered:{},
+  adeAnswered:{},
+  adeActive:null, cueTab:0, peerScores:{},
+  gapSelected:null, gapFilled:{}, gapScored:{},
+  warmupTab:0,
+  timerInterval:null, timerRunning:false,
+  timerRemaining:60, timerTotal:60
+};
+
+function addScore(pts){ state.score+=pts; document.getElementById('railScore').textContent=state.score+' pts'; }
+function markDone(id){ state.done.add(id); renderNav(); }
+
+/* ===== NAV ===== */
+function renderNav(){
+  const nav=document.getElementById('navList');
+  nav.innerHTML=sections.map(s=>`
+    <div class="nav-item ${s.id===state.current?'active':''} ${state.done.has(s.id)?'done':''}" data-id="${s.id}">
+      <span class="n">${s.n}</span><span>${s.label}</span><span class="done-mark">✓</span>
+    </div>`).join('');
+  nav.querySelectorAll('.nav-item').forEach(el=>el.addEventListener('click',()=>goTo(el.dataset.id)));
+}
+
+function goTo(id){ state.current=id; renderNav(); renderMain(); window.scrollTo({top:0,behavior:'smooth'}); }
+
+/* ===== RENDER MAIN ===== */
+function renderMain(){
+  const main=document.getElementById('main');
+  const idx=sections.findIndex(s=>s.id===state.current);
+  const prev=sections[idx-1]; const next=sections[idx+1];
+  let body='';
+  switch(state.current){
+    case 'objectives':  body=renderObjectives(); break;
+    case 'warmup':      body=renderWarmup(); break;
+    case 'cuematch':    body=renderCueMatch(); break;
+    case 'vocab':       body=renderVocab(); break;
+    case 'collocation': body=renderCollocation(); break;
+    case 'idioms':      body=renderIdioms(); break;
+    case 'gapfill':     body=renderGapfill(); break;
+    case 'ade':         body=renderAde(); break;
+    case 'quiz':        body=renderQuiz(); break;
+    case 'model':       body=renderModel(); break;
+    case 'toolkit':     body=renderToolkit(); break;
+    case 'connectives': body=renderConnectives(); break;
+    case 'peer':        body=renderPeer(); break;
+    case 'practice':    body=renderPractice(); break;
+    case 'wrapup':      body=renderWrapup(); break;
+  }
+  main.innerHTML=`
+    <div class="mobile-jump">
+      <select id="mobileSelect">
+        ${sections.map(s=>`<option value="${s.id}" ${s.id===state.current?'selected':''}>${s.n} · ${s.label}${state.done.has(s.id)?' ✓':''}</option>`).join('')}
+      </select>
+    </div>
+    <div class="mobile-progress">
+      ${sections.map(s=>`<div class="seg ${state.done.has(s.id)?'done':''} ${s.id===state.current?'now':''}"></div>`).join('')}
+    </div>`+body+`
+    <div class="nav-arrows">
+      ${prev?`<button class="btn" id="prevBtn">← ${prev.label}</button>`:'<span></span>'}
+      ${next?`<button class="btn primary" id="nextBtn">${next.label} →</button>`:'<span></span>'}
+    </div>`;
+  if(prev) document.getElementById('prevBtn').onclick=()=>goTo(prev.id);
+  if(next) document.getElementById('nextBtn').onclick=()=>goTo(next.id);
+  const ms=document.getElementById('mobileSelect');
+  if(ms) ms.onchange=e=>goTo(e.target.value);
+  attachHandlers();
+}
+
+/* ===== TIMER ===== */
+function setupTimer(s){ clearInterval(state.timerInterval); state.timerRunning=false; state.timerTotal=s; state.timerRemaining=s; updateRing(); }
+function updateRing(){
+  const fg=document.getElementById('ringFg'); const num=document.getElementById('ringNum');
+  if(!fg) return;
+  fg.style.strokeDashoffset=238.8*(1-state.timerRemaining/state.timerTotal);
+  num.textContent=state.timerRemaining;
+  if(state.timerRemaining<=10&&state.timerRemaining>0) fg.style.stroke='var(--gold)'; else fg.style.stroke='var(--coral)';
+}
+function startTimer(){
+  if(state.timerRunning) return;
+  state.timerRunning=true;
+  state.timerInterval=setInterval(()=>{
+    state.timerRemaining--;
+    updateRing();
+    if(state.timerRemaining<=0){ clearInterval(state.timerInterval); state.timerRunning=false; }
+  },1000);
+}
+function timerHTML(seconds, label){
+  seconds=seconds||60; label=label||('Prep time — '+seconds+' seconds');
+  return `<div class="timer-wrap"><div class="ring"><svg width="92" height="92"><circle class="bg" cx="46" cy="46" r="38"/><circle class="fg" id="ringFg" cx="46" cy="46" r="38" stroke-dasharray="238.8" stroke-dashoffset="0"/></svg><div class="num" id="ringNum">${seconds}</div></div><div class="timer-meta"><div class="t-label" id="timerLabel">${label}</div><div class="timer-btns"><button class="btn primary" id="timerStart">Start</button><button class="btn ghost" id="timerReset">Reset</button></div></div></div>`;
+}
+
+/* ===== SECTIONS ===== */
+function renderObjectives(){ return `
+  <div class="eyebrow">Lesson Objectives</div>
+  <h2 class="title">What You\'ll Learn Today 🎯</h2>
+  <p class="deck">By the end of this lesson, you will be able to:</p>
+  <div class="takeaway-grid">
+    ${objectives.map(o=>`<div class="tk"><span class="tk-icon">${o.icon}</span><h4>${o.h}</h4><p>${o.d}</p></div>`).join('')}
+  </div>
+  <p style="font-size:19px;color:var(--text-faint);margin-top:24px;">Let\'s get started — click "Warm-Up" below to begin.</p>`; }
+
+function renderWarmup(){
+  const i=state.warmupTab;
+  return `
+  <div class="eyebrow">Warm-Up · 0–10 min</div>
+  <h2 class="title">History Talk 🏛️</h2>
+  <p class="deck">Discuss each question with a partner. Click a number to move to that question and start the timer.</p>
+  <div class="warmup-tabs">
+    ${warmupQs.map((_,idx)=>`<div class="warmup-tab ${state.warmupTab===idx?'on':''}" data-i="${idx}">${idx+1}</div>`).join('')}
+  </div>
+  ${timerHTML(30,'Discussion time — 30 seconds')}
+  <div class="prompt-current"><div class="pn">${i+1}</div><p>${warmupQs[i]}</p></div>
+  <p style="font-size:19px;color:var(--text-faint);margin-top:18px;">Tip: Try opening with "Honestly, I\'d say…" or "That\'s an interesting question — I think…" to buy yourself a second to think.</p>`; }
+
+function renderCueMatch(){
+  const sc=state.cueSolved.size;
+  const solvedA=cuePrompts.filter(p=>state.cueSolved.has(p));
+  const unsolvedA=cuePrompts.filter(p=>!state.cueSolved.has(p));
+  const unsolvedB=cueMeanings.filter(m=>!solvedA.some(p=>cueMatchKey[p]===m));
+  const aOrder=solvedA.concat(unsolvedA);
+  const bOrder=solvedA.map(p=>cueMatchKey[p]).concat(unsolvedB);
+  return `
+  <div class="eyebrow">CORE Comprehension · Reading the Cue Card</div>
+  <h2 class="title">What Is Each Bullet Point Asking?</h2>
+  <p class="deck">Here is the cue card you\'ll be working with today. Click a bullet point on the left, then click the meaning it matches on the right.</p>
+  <div class="cuecard">
+    <div class="label">Part 2 · Cue Card</div>
+    <h3>${cueCard1.title}</h3>
+    <ul>${cueCard1.bullets.map(b=>`<li>${b}</li>`).join('')}</ul>
+  </div>
+  <p style="font-size:19px;color:var(--text-dim);margin-bottom:16px;">${sc}/${cuePrompts.length} matched so far.</p>
+  <div class="match-wrap">
+    <div class="match-col"><h4>Bullet Point</h4>
+      ${aOrder.map((p,i)=>`<div class="match-item2 ${state.cueSolved.has(p)?'correct locked':''} ${state.cueSel.a===p?'selected':''}" data-side="a" data-val="${p}"><span class="tag">${i+1}</span>${p}</div>`).join('')}
+    </div>
+    <div class="match-col"><h4>Meaning</h4>
+      ${bOrder.map((m,i)=>`<div class="match-item2 ${solvedA.some(p=>cueMatchKey[p]===m)?'correct locked':''} ${state.cueSel.b===m?'selected':''}" data-side="b" data-val="${m}"><span class="tag">${String.fromCharCode(65+i)}</span>${m}</div>`).join('')}
+    </div>
+  </div>`; }
+
+function renderVocab(){ return `
+  <div class="eyebrow">Vocabulary Power-Up · 10–22 min</div>
+  <h2 class="title">9 Words for History Talk</h2>
+  <p class="deck">Read the meaning, guess the word or phrase, then click to reveal the answer and example sentence.</p>
+  <div class="grid-3">
+    ${vocab.map((v,i)=>`<div class="flip" data-i="${i}"><div class="flip-inner"><div class="flip-face flip-front"><div class="def-prompt">${v.d}</div><div class="hint">Tap to reveal →</div></div><div class="flip-face flip-back"><div class="word-reveal">${v.w}</div><div class="ex">${v.ex}</div></div></div></div>`).join('')}
+  </div>`; }
+
+function renderCollocation(){
+  const sc=state.matchSolved.size;
+  const solvedVerbs=verbs.filter(v=>state.matchSolved.has(v));
+  const unsolvedVerbs=verbs.filter(v=>!state.matchSolved.has(v));
+  const unsolvedNouns=nouns.filter(n=>!solvedVerbs.some(v=>matchKey[v]===n));
+  const verbOrder=solvedVerbs.concat(unsolvedVerbs);
+  const nounOrder=solvedVerbs.map(v=>matchKey[v]).concat(unsolvedNouns);
+  return `
+  <div class="eyebrow">Vocabulary Power-Up · Collocation Match-Up ⚡</div>
+  <h2 class="title">Match the Pairs</h2>
+  <p class="deck">Click a verb, then click the phrase it goes with. Everything starts jumbled — correct pairs lock in and line up across from each other. ${sc}/${verbs.length} matched so far.</p>
+  <div class="match-wrap">
+    <div class="match-col"><h4>Verbs</h4>
+      ${verbOrder.map((v,i)=>`<div class="match-item ${state.matchSolved.has(v)?'correct locked':''} ${state.matchSel.verb===v?'selected':''}" data-side="verb" data-val="${v}"><span class="tag">${i+1}</span>${v}</div>`).join('')}
+    </div>
+    <div class="match-col"><h4>Phrases</h4>
+      ${nounOrder.map((n,i)=>`<div class="match-item ${solvedVerbs.some(v=>matchKey[v]===n)?'correct locked':''} ${state.matchSel.noun===n?'selected':''}" data-side="noun" data-val="${n}"><span class="tag">${String.fromCharCode(65+i)}</span>${n}</div>`).join('')}
+    </div>
+  </div>`; }
+
+function renderIdioms(){ return `
+  <div class="eyebrow">Idioms & Phrases · 25–40 min</div>
+  <h2 class="title">History Talk: 8 Expressions 💡</h2>
+  <p class="deck">Click each phrase to expand its meaning and an example sentence. Use these to make your Part 2 answers sound natural and fluent.</p>
+  <div class="idiom-list">
+    ${idioms.map((it,i)=>`<div class="idiom" data-i="${i}"><div class="idiom-head"><span class="phrase">${it.p}</span><span class="chev">▸</span></div><div class="idiom-body"><div class="idiom-mean">— ${it.m}</div><div class="idiom-ex">${it.ex}</div></div></div>`).join('')}
+  </div>`; }
+
+function renderGapfill(){
+  return `
+  <div class="eyebrow">Idioms & Expressions · Gap Fill ✏️</div>
+  <h2 class="title">Use the Right Expression</h2>
+  <p class="deck">Click a blank, then click the matching phrase from the word bank below. No typing — just click!</p>
+  <div class="gapfill-list">
+    ${gapfills.map((g,i)=>{
+      const parts=g.text.split('___');
+      const filled=state.gapFilled[i];
+      return `<div class="gap-item"><p>${i+1}. ${parts[0]}<span class="gap-blank ${state.gapSelected===i?'selected':''} ${filled?'filled':''}" data-i="${i}">${filled?filled:'click blank'}</span>${parts[1]}</p></div>`;
+    }).join('')}
+  </div>
+  <div class="wordbank" style="margin-top:20px;">
+    ${wordbank.map(w=>`<span class="wb-chip ${Object.values(state.gapFilled).includes(w)?'used':''}" data-word="${w}">${w}</span>`).join('')}
+  </div>
+  <div class="quiz-feedback" id="gapFeedback">${Object.keys(state.gapFilled).length} / ${gapfills.length} filled</div>`; }
+
+function renderAde(){
+  const answeredCount=Object.keys(state.adeAnswered).length;
+  return `
+  <div class="eyebrow">CORE Organisation · Core Skill 🎯</div>
+  <h2 class="title">Answer, Details or Extension?</h2>
+  <p class="deck">The A.D.E. model turns a bare fact into a full, coherent answer. Skim the quick guide below, then sort each sentence into the stage it belongs to.</p>
+  <div class="sort-intro">
+    ${adeIntro.map(c=>`<div class="sort-intro-item" data-k="${c.k}"><span class="k">${c.k} — ${c.label}</span><p>${c.d}</p></div>`).join('')}
+  </div>
+  <p style="font-size:19px;color:var(--text-dim);margin:0 0 16px;">Read each sentence and click the correct stage. ${answeredCount}/${adeQs.length} sorted.</p>
+  <div class="focus-list">
+    ${adeQs.map((f,i)=>{
+      const a=state.adeAnswered[i];
+      return `<div class="focus-item">
+        <p>${i+1}. ${f.q}</p>
+        <div class="focus-btns">
+          ${f.order.map(cat=>{
+            let cls='focus-btn';
+            if(a){ if(cat===f.cat) cls+=' correct locked'; else if(cat===a.picked && !a.correct) cls+=' wrong'; else cls+=' locked'; }
+            return `<button class="${cls}" data-i="${i}" data-cat="${cat}">${adeLabels[cat]}</button>`;
+          }).join('')}
+        </div>
+        <div class="focus-result ${a&&a.correct?'good':''}">${a?(a.correct?'✓ Correct — '+adeLabels[f.cat]:'Try another stage'):''}</div>
+      </div>`;
+    }).join('')}
+  </div>`; }
+
+function renderQuiz(){
+  const round=quizRounds[state.quizRound];
+  const q=round.qs[state.quizIdx];
+  const key=`${state.quizRound}-${state.quizIdx}`;
+  const answered=state.quizAnswered[key];
+  return `
+  <div class="eyebrow">Quiz Challenge · Test Yourself 🧠</div>
+  <h2 class="title">${round.title}</h2>
+  <p class="deck">Click an answer. If it\'s wrong, try again — you can keep guessing until you find the right one.</p>
+  <div class="roundtab">
+    <button data-r="1" class="${state.quizRound===1?'on':''}">Round 1 · Vocabulary</button>
+    <button data-r="2" class="${state.quizRound===2?'on':''}">Round 2 · Idioms</button>
+  </div>
+  <div class="quiz-progress">
+    ${round.qs.map((_,i)=>{const k=`${state.quizRound}-${i}`;return `<div class="quiz-dot ${i===state.quizIdx?'active':''} ${state.quizAnswered[k]?'answered':''}"></div>`;}).join('')}
+  </div>
+  <div class="quiz-card">
+    <p class="quiz-q">${state.quizIdx+1}. ${q.q}</p>
+    <div class="quiz-opts">
+      ${q.opts.map((o,i)=>{let cls='quiz-opt';if(answered&&i===q.ans){cls+=' correct locked';}return `<div class="${cls}" data-i="${i}"><span class="letter">${String.fromCharCode(65+i)}</span>${o}</div>`;}).join('')}
+    </div>
+    <div class="quiz-foot">
+      <span class="quiz-feedback ${answered?'good':''}" id="quizFeedbackMsg">${answered?'✓ Correct! +1 point':'Select an answer'}</span>
+      <div style="display:flex;gap:8px;">
+        <button class="btn" id="quizPrev" ${state.quizIdx===0?'disabled style="opacity:.4"':''}>← Prev</button>
+        <button class="btn" id="quizNext" ${state.quizIdx===round.qs.length-1?'disabled style="opacity:.4"':''}>Next →</button>
+      </div>
+    </div>
+  </div>`; }
+
+function renderModel(){ return `
+  <div class="eyebrow">Model Answer</div>
+  <h2 class="title">Analyse a Band 7+ Answer 🔍</h2>
+  <p class="deck">Click a stage chip to highlight that part of the answer. See how Answer → Details → Extension turns a bare fact into a full, structured response.</p>
+  <div class="ade-key">
+    ${adeModel.map(a=>`<div class="ade-chip ${state.adeActive===a.k?'active':''}" data-k="${a.k}">${a.k} — ${a.label.split('—')[0].trim()}</div>`).join('')}
+  </div>
+  <div class="card">
+    ${adeModel.map(a=>`<div class="ade-block ${state.adeActive&&state.adeActive!==a.k?'dim':''} ${state.adeActive===a.k?'highlight':''}" data-k="${a.k}"><span class="tag2">${a.label}</span>${a.text}</div>`).join('')}
+  </div>`; }
+
+function renderToolkit(){ return `
+  <div class="eyebrow">Language Toolkit</div>
+  <h2 class="title">Upgrade Your History Talk 🔗</h2>
+  <p class="deck">Click any phrase to drop it into your scratchpad — then build a sentence using that starter.</p>
+  <div class="grid-2">
+    ${toolkit.map(t=>`<div class="tool-card"><h4>${t.h}</h4>${t.items.map(i=>`<span class="phrase-btn" data-phrase="${i}">${i}</span>`).join('')}</div>`).join('')}
+  </div>
+  <div class="scratch">
+    <p style="font-size:19px;color:var(--text-dim);margin-bottom:8px;">Scratchpad — practise a sentence using the phrases above:</p>
+    <textarea id="scratchArea" placeholder="e.g. One thing I remember clearly is walking through the old gates of the citadel…"></textarea>
+  </div>`; }
+
+function renderConnectives(){ return `
+  <div class="eyebrow">Advanced Connectives · Level Up 🔗</div>
+  <h2 class="title">Link Your Ideas Like a Band 7+</h2>
+  <p class="deck">Higher-band answers connect ideas smoothly across time, contrast and cause. Click any phrase to drop it into your scratchpad, then build a sentence around it.</p>
+  <div class="grid-2">
+    ${connectives.map(t=>`<div class="tool-card"><h4>${t.h}</h4>${t.items.map(i=>`<span class="phrase-btn" data-phrase="${i}">${i}</span>`).join('')}</div>`).join('')}
+  </div>
+  <div class="scratch">
+    <p style="font-size:19px;color:var(--text-dim);margin-bottom:8px;">Scratchpad — practise linking two ideas using a structure above:</p>
+    <textarea id="scratchArea" placeholder="e.g. Despite its age, the building still looks remarkably well preserved…"></textarea>
+  </div>`; }
+
+function renderPeer(){
+  const total=peerCriteria.reduce((s,c)=>s+(state.peerScores[c.t]||0),0);
+  const maxTotal=peerCriteria.length*3;
+  return `
+  <div class="eyebrow">Peer Performance · 75–90 min</div>
+  <h2 class="title">You Speak, We Listen 🌟</h2>
+  <p class="deck">Use your notes. Aim for a clear, well-organised 1.5–2 minute response to the cue card. Your partner scores your performance below.</p>
+  <div class="scorecard">
+    ${peerCriteria.map(c=>`<div class="score-row"><div class="letter2">${c.k}</div><div class="si-main"><div class="si-title">${c.t}</div><div class="si-sub">${c.s}</div></div><div class="pips">${[1,2,3].map(n=>`<div class="pip ${state.peerScores[c.t]===n?'on':''}" data-crit="${c.t}" data-n="${n}">${n}</div>`).join('')}</div></div>`).join('')}
+  </div>
+  <div class="score-total">
+    <span style="font-size:19px;color:var(--text-dim);">Total score (1=needs work · 2=ok · 3=great)</span>
+    <span class="tot-num">${total}/${maxTotal}</span>
+  </div>
+  <div class="feedback-fields">
+    <input type="text" id="fbStrength" placeholder="📝 One strength — something they did really well…">
+    <input type="text" id="fbTip" placeholder="🎯 One tip — one specific thing to improve next time…">
+  </div>`; }
+
+function renderPractice(){
+  const c=examCards[state.cueTab];
+  return `
+  <div class="eyebrow">Exam Practice</div>
+  <h2 class="title">14 Part 2 Cue Cards 🃏</h2>
+  <p class="deck">Every student gets a different cue card — no two answers should sound the same! Use 1 minute to plan with A.D.E., then speak for 1.5–2 minutes.</p>
+  <p class="assign-note">💡 Teacher tip: assign one cue card per student, or let each student click their own tab.</p>
+  <div class="cue-tabs">
+    ${examCards.map((e,i)=>`<div class="cue-tab ${state.cueTab===i?'on':''}" data-i="${i}"><span class="emo">${e.emo}</span>${e.title}<span class="foc">${e.foc}</span></div>`).join('')}
+  </div>
+  <div class="cuecard">
+    <div class="label">${c.title} · ${c.foc}</div>
+    <h3>${c.prompt}</h3>
+    <div style="font-family:'JetBrains Mono',monospace;font-size:15px;color:var(--text-faint);letter-spacing:.08em;text-transform:uppercase;margin-bottom:8px;">You should say:</div>
+    <ul>${c.bullets.map(b=>`<li>${b}</li>`).join('')}</ul>
+  </div>
+  ${timerHTML(60,'Prep time — 60 seconds')}
+  <textarea class="notepad" placeholder="Keyword notes only — A / D / E…"></textarea>`; }
+
+function renderWrapup(){ return `
+  <div class="eyebrow">Lesson Wrap-Up</div>
+  <h2 class="title">Today\'s Key Takeaways ⭐</h2>
+  <p class="deck">Excellent work. Here is everything you covered today — take it with you!</p>
+  <div class="takeaway-grid">
+    <div class="tk"><span class="tk-icon">📚</span><h4>9 Advanced Words</h4><p>iconic historical building · a witness to history · hold significant meaning · architectural grandeur · house (v) · mark the reunification · act as a reminder of · sacrifice · relive that historic atmosphere</p></div>
+    <div class="tk"><span class="tk-icon">💡</span><h4>8 Idioms & Phrases</h4><p>frozen in time · turn back the clock · bear witness to · etched into history · come face to face with history · a living museum · the sands of time…</p></div>
+    <div class="tk"><span class="tk-icon">🎯</span><h4>The A.D.E. Model</h4><p>Answer → Details → Extension: the simple structure behind every strong Part 2 answer about a historical place or event.</p></div>
+    <div class="tk"><span class="tk-icon">🔗</span><h4>Part 2 Starters</h4><p>One thing I remember clearly is… · What struck me most was… · That experience changed how I view… · Looking back, I think…</p></div>
+  </div>
+  <div class="final-score">
+    <div class="fs-num">${state.score}</div>
+    <div class="fs-label">points earned across today\'s exercises</div>
+  </div>
+  <p style="margin-top:28px;font-size:20px;color:var(--text-dim);">🎙 <strong>Homework:</strong> Record yourself responding to this cue card: "Describe a historical figure you admire." Say who the person is, what they are known for, what you know about their life or achievements, and why you admire them. Listen back and check: did you use the A.D.E. model, 3 useful expressions from today\'s Toolkit, and at least one sentence of personal reflection?</p>`; }
+
+/* ===== HANDLERS ===== */
+function attachHandlers(){
+  const start=document.getElementById('timerStart');
+  const reset=document.getElementById('timerReset');
+  if(start){
+    const initSeconds = state.current==='practice' ? 60 : 30;
+    setupTimer(initSeconds);
+    updateRing();
+    start.onclick=()=>startTimer();
+    reset.onclick=()=>{ setupTimer(initSeconds); };
+  }
+
+  document.querySelectorAll('.warmup-tab').forEach(el=>el.addEventListener('click',()=>{ state.warmupTab=+el.dataset.i; markDone('warmup'); renderMain(); startTimer(); }));
+
+  document.querySelectorAll('#main .match-item2').forEach(el=>{
+    if(el.classList.contains('locked')) return;
+    el.addEventListener('click',()=>{
+      const side=el.dataset.side; const val=el.dataset.val;
+      state.cueSel[side]=(state.cueSel[side]===val)?null:val;
+      if(state.cueSel.a&&state.cueSel.b){
+        if(cueMatchKey[state.cueSel.a]===state.cueSel.b){
+          state.cueSolved.add(state.cueSel.a); addScore(1);
+          if(state.cueSolved.size===cuePrompts.length) markDone('cuematch');
+          state.cueSel={a:null,b:null}; renderMain();
+        } else {
+          renderMain();
+          setTimeout(()=>{ document.querySelectorAll('#main .match-item2.selected').forEach(x=>x.classList.add('wrong')); setTimeout(()=>{ state.cueSel={a:null,b:null}; renderMain(); },500); },30);
+        }
+      } else renderMain();
+    });
+  });
+
+  document.querySelectorAll('.flip').forEach(el=>el.addEventListener('click',()=>{ el.classList.toggle('flipped'); markDone('vocab'); }));
+
+  document.querySelectorAll('#main .match-item').forEach(el=>{
+    if(el.classList.contains('locked')) return;
+    el.addEventListener('click',()=>{
+      const side=el.dataset.side; const val=el.dataset.val;
+      state.matchSel[side]=(state.matchSel[side]===val)?null:val;
+      if(state.matchSel.verb&&state.matchSel.noun){
+        if(matchKey[state.matchSel.verb]===state.matchSel.noun){
+          state.matchSolved.add(state.matchSel.verb); addScore(1);
+          if(state.matchSolved.size===verbs.length) markDone('collocation');
+          state.matchSel={verb:null,noun:null}; renderMain();
+        } else {
+          renderMain();
+          setTimeout(()=>{ document.querySelectorAll('#main .match-item.selected').forEach(x=>x.classList.add('wrong')); setTimeout(()=>{ state.matchSel={verb:null,noun:null}; renderMain(); },500); },30);
+        }
+      } else renderMain();
+    });
+  });
+
+  document.querySelectorAll('.idiom').forEach(el=>el.addEventListener('click',()=>{ el.classList.toggle('open'); markDone('idioms'); }));
+
+  document.querySelectorAll('.gap-blank').forEach(el=>{
+    el.addEventListener('click',()=>{
+      const i=+el.dataset.i;
+      state.gapSelected=(state.gapSelected===i)?null:i;
+      renderMain();
+    });
+  });
+  document.querySelectorAll('.wb-chip').forEach(chip=>{
+    chip.addEventListener('click',()=>{
+      if(state.gapSelected===null) return;
+      const i=state.gapSelected;
+      const word=chip.dataset.word;
+      const correctAns=gapfills[i].ans;
+      const fb=document.getElementById('gapFeedback');
+      if(word===correctAns){
+        state.gapFilled[i]=word;
+        state.gapSelected=null;
+        if(!state.gapScored[i]){ addScore(1); state.gapScored[i]=true; }
+        const doneCount=Object.keys(state.gapFilled).length;
+        if(doneCount===gapfills.length) markDone('gapfill');
+        renderMain();
+        setTimeout(()=>{ const f=document.getElementById('gapFeedback'); if(f){ f.textContent=doneCount+' / '+gapfills.length+' correct!'; f.className='quiz-feedback good'; } },10);
+      } else {
+        if(fb){ fb.textContent='That doesn\'t fit this blank — try another phrase.'; fb.className='quiz-feedback bad'; }
+        chip.style.animation='shake .3s'; setTimeout(()=>chip.style.animation='',300);
+      }
+    });
+  });
+
+  document.querySelectorAll('.roundtab button').forEach(b=>b.addEventListener('click',()=>{ state.quizRound=+b.dataset.r; state.quizIdx=0; renderMain(); }));
+
+  document.querySelectorAll('.quiz-opt').forEach(el=>el.addEventListener('click',()=>{
+    if(el.classList.contains('locked')) return;
+    const key=`${state.quizRound}-${state.quizIdx}`;
+    if(state.quizAnswered[key]) return;
+    const picked=+el.dataset.i; const q=quizRounds[state.quizRound].qs[state.quizIdx]; const correct=picked===q.ans;
+    const totalQs=Object.values(quizRounds).reduce((s,r)=>s+r.qs.length,0);
+    if(correct){
+      state.quizAnswered[key]={picked,correct:true}; addScore(1);
+      if(Object.keys(state.quizAnswered).length===totalQs) markDone('quiz');
+      renderMain();
+    } else {
+      el.classList.add('wrong');
+      const fb=document.getElementById('quizFeedbackMsg');
+      if(fb){ fb.textContent='✗ Not quite — click another option to try again'; fb.className='quiz-feedback bad'; }
+      setTimeout(()=>{
+        el.classList.remove('wrong');
+        const fb2=document.getElementById('quizFeedbackMsg');
+        if(fb2 && !state.quizAnswered[key]){ fb2.textContent='Select an answer'; fb2.className='quiz-feedback'; }
+      },700);
+    }
+  }));
+
+  const qPrev=document.getElementById('quizPrev'); const qNext=document.getElementById('quizNext');
+  if(qPrev) qPrev.onclick=()=>{ if(state.quizIdx>0){ state.quizIdx--; renderMain(); } };
+  if(qNext) qNext.onclick=()=>{ const r=quizRounds[state.quizRound]; if(state.quizIdx<r.qs.length-1){ state.quizIdx++; renderMain(); } };
+
+  document.querySelectorAll('.focus-btn').forEach(el=>{
+    if(el.classList.contains('locked')) return;
+    el.addEventListener('click',()=>{
+      const i=+el.dataset.i; const cat=el.dataset.cat;
+      if(state.adeAnswered[i]) return;
+      const correct=cat===adeQs[i].cat;
+      if(correct){
+        state.adeAnswered[i]={picked:cat,correct:true}; addScore(1);
+        if(Object.keys(state.adeAnswered).length===adeQs.length) markDone('ade');
+        renderMain();
+      } else {
+        el.classList.add('wrong');
+        setTimeout(()=>el.classList.remove('wrong'),500);
+      }
+    });
+  });
+
+  document.querySelectorAll('.ade-chip').forEach(el=>el.addEventListener('click',()=>{ const k=el.dataset.k; state.adeActive=(state.adeActive===k)?null:k; markDone('model'); renderMain(); }));
+
+  document.querySelectorAll('.phrase-btn').forEach(el=>el.addEventListener('click',()=>{ const area=document.getElementById('scratchArea'); area.value=(area.value?area.value+' ':'')+el.dataset.phrase+' '; area.focus(); markDone(state.current); }));
+
+  document.querySelectorAll('.pip').forEach(el=>el.addEventListener('click',()=>{ const crit=el.dataset.crit; const n=+el.dataset.n; state.peerScores[crit]=(state.peerScores[crit]===n)?null:n; if(Object.keys(state.peerScores).filter(k=>state.peerScores[k]).length===peerCriteria.length) markDone('peer'); renderMain(); }));
+
+  document.querySelectorAll('.cue-tab').forEach(el=>el.addEventListener('click',()=>{ state.cueTab=+el.dataset.i; markDone('practice'); renderMain(); }));
+}
+
+/* ===== INIT ===== */
+renderNav();
+renderMain();
+</script>
+</body>
+</html>

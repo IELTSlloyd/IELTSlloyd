@@ -1,0 +1,917 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>IELTS 7.0 Speaking · Urban &amp; Rural Life</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;0,9..144,900;1,9..144,500&family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#0B1520;
+    --panel:#132133;
+    --panel-2:#1B2C42;
+    --paper:#F1F6FA;
+    --paper-dim:#DCE6ED;
+    --coral:#3FAE7A;
+    --coral-dim:#2E8A5F;
+    --mint:#5B8DEF;
+    --gold:#5B8DEF;
+    --line:rgba(241,246,250,0.12);
+    --text-dim:rgba(241,246,250,0.62);
+    --text-faint:rgba(241,246,250,0.38);
+    --radius:14px;
+  }
+  *{box-sizing:border-box;}
+  html,body{margin:0;padding:0;}
+  body{background:var(--ink);color:var(--paper);font-family:'Inter',sans-serif;-webkit-font-smoothing:antialiased;min-height:100vh;}
+  ::selection{background:var(--coral);color:var(--ink);}
+  a{color:inherit;}
+  button{font-family:inherit;}
+  .app{display:grid;grid-template-columns:340px 1fr;min-height:100vh;}
+
+  /* RAIL */
+  .rail{background:var(--panel);border-right:1px solid var(--line);padding:24px 18px 18px;display:flex;flex-direction:column;gap:18px;position:sticky;top:0;height:100vh;overflow-y:auto;}
+  .brand{display:flex;flex-direction:column;gap:2px;padding:0 6px 14px;border-bottom:1px solid var(--line);}
+  .brand .tag{font-family:'JetBrains Mono',monospace;font-size:14.5px;letter-spacing:.14em;color:var(--coral);text-transform:uppercase;font-weight:700;}
+  .brand h1{font-family:'Fraunces',serif;font-size:28px;font-weight:700;margin:4px 0 0;line-height:1.15;}
+  .brand .sub{font-size:16px;color:var(--text-dim);margin-top:4px;}
+  .onair{display:flex;align-items:center;gap:8px;background:var(--panel-2);border:1px solid var(--line);border-radius:10px;padding:10px 12px;}
+  .onair .dot{width:8px;height:8px;border-radius:50%;background:var(--coral);box-shadow:0 0 0 0 rgba(63,174,122,.6);animation:pulse 1.8s infinite;}
+  @keyframes pulse{0%{box-shadow:0 0 0 0 rgba(63,174,122,.55);}70%{box-shadow:0 0 0 6px rgba(63,174,122,0);}100%{box-shadow:0 0 0 0 rgba(63,174,122,0);}}
+  .onair .label{font-family:'JetBrains Mono',monospace;font-size:14.5px;letter-spacing:.1em;color:var(--text-dim);text-transform:uppercase;}
+  .onair .score{margin-left:auto;font-family:'JetBrains Mono',monospace;font-weight:700;font-size:20.5px;color:var(--gold);}
+  nav{display:flex;flex-direction:column;gap:2px;flex:1;}
+  .nav-item{display:flex;align-items:center;gap:10px;padding:9px 10px;border-radius:9px;cursor:pointer;font-size:19px;color:var(--text-dim);border:1px solid transparent;transition:background .15s,color .15s;user-select:none;}
+  .nav-item .n{font-family:'JetBrains Mono',monospace;font-size:15px;width:20px;color:var(--text-faint);flex-shrink:0;}
+  .nav-item:hover{background:rgba(241,246,250,0.05);color:var(--paper);}
+  .nav-item.active{background:rgba(63,174,122,0.14);border-color:rgba(63,174,122,0.35);color:var(--paper);}
+  .nav-item.active .n{color:var(--coral);}
+  .nav-item .done-mark{margin-left:auto;color:var(--mint);font-size:17.5px;opacity:0;}
+  .nav-item.done .done-mark{opacity:1;}
+  .rail-foot{font-size:15px;color:var(--text-faint);border-top:1px solid var(--line);padding-top:12px;line-height:1.5;}
+
+  /* MAIN */
+  main{padding:48px 64px 100px;max-width:1180px;width:100%;}
+  .eyebrow{font-family:'JetBrains Mono',monospace;font-size:16px;letter-spacing:.16em;text-transform:uppercase;color:var(--coral);font-weight:700;margin-bottom:10px;}
+  h2.title{font-family:'Fraunces',serif;font-size:56px;font-weight:700;line-height:1.05;margin:0 0 10px;}
+  .deck{font-size:22px;color:var(--text-dim);margin:0 0 36px;max-width:660px;}
+  .card{background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);padding:22px 24px;}
+
+  /* TIMER */
+  .timer-wrap{display:flex;align-items:center;gap:22px;background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);padding:18px 22px;margin-bottom:28px;}
+  .ring{position:relative;width:92px;height:92px;flex-shrink:0;}
+  .ring svg{transform:rotate(-90deg);}
+  .ring circle{fill:none;stroke-width:6;}
+  .ring .bg{stroke:var(--line);}
+  .ring .fg{stroke:var(--coral);stroke-linecap:round;transition:stroke-dashoffset .25s linear;}
+  .ring .num{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-family:'JetBrains Mono',monospace;font-weight:700;font-size:22px;}
+  .timer-meta{flex:1;}
+  .timer-meta .t-label{font-size:19px;color:var(--text-dim);margin-bottom:4px;}
+  .timer-btns{display:flex;gap:8px;flex-wrap:wrap;}
+  .btn{font-family:'Inter',sans-serif;font-size:18px;font-weight:600;padding:8px 14px;border-radius:8px;border:1px solid var(--line);background:var(--panel-2);color:var(--paper);cursor:pointer;transition:background .15s,border-color .15s,transform .1s;}
+  .btn:hover{background:rgba(241,246,250,0.08);}
+  .btn:active{transform:scale(.97);}
+  .btn.primary{background:var(--coral);border-color:var(--coral);color:var(--ink);}
+  .btn.primary:hover{background:#e97a97;}
+  .btn.ghost{background:transparent;}
+
+  /* PROMPTS */
+  .prompt-list{display:flex;flex-direction:column;gap:12px;}
+  .prompt{display:flex;gap:16px;align-items:flex-start;background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);padding:18px 20px;cursor:pointer;}
+  .prompt .pn{font-family:'JetBrains Mono',monospace;font-weight:700;font-size:19px;color:var(--coral);flex-shrink:0;padding-top:1px;}
+  .prompt p{margin:0;font-size:22px;line-height:1.5;}
+  .prompt:hover{border-color:rgba(63,174,122,.35);}
+
+  /* FLIP CARDS */
+  .grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;}
+  .flip{perspective:1000px;height:220px;cursor:pointer;}
+  .flip-inner{position:relative;width:100%;height:100%;transition:transform .5s cubic-bezier(.4,.2,.2,1);transform-style:preserve-3d;}
+  .flip.flipped .flip-inner{transform:rotateY(180deg);}
+  .flip-face{position:absolute;inset:0;backface-visibility:hidden;border-radius:var(--radius);border:1px solid var(--line);padding:18px;display:flex;flex-direction:column;justify-content:center;}
+  .flip-front{background:var(--panel);}
+  .flip-front .def-prompt{font-family:'Inter',sans-serif;font-weight:600;font-size:21px;line-height:1.35;}
+  .flip-front .hint{font-size:16px;color:var(--text-faint);margin-top:10px;}
+  .flip-back{background:var(--coral);color:var(--ink);transform:rotateY(180deg);}
+  .flip-back .word-reveal{font-family:'Fraunces',serif;font-weight:700;font-style:italic;font-size:29px;margin-bottom:8px;}
+  .flip-back .ex{font-size:18px;font-style:italic;line-height:1.4;opacity:.85;}
+
+  /* MATCHING */
+  .match-wrap{display:grid;grid-template-columns:1fr 1fr;gap:30px;}
+  .match-col h4{font-family:'JetBrains Mono',monospace;font-size:16px;letter-spacing:.1em;color:var(--text-faint);text-transform:uppercase;margin:0 0 12px;}
+  .match-item{display:flex;align-items:center;gap:10px;background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:11px 14px;margin-bottom:8px;cursor:pointer;font-size:20px;transition:border-color .15s,background .15s;}
+  .match-item .tag{font-family:'JetBrains Mono',monospace;font-size:16px;color:var(--text-faint);width:16px;}
+  .match-item.selected{border-color:var(--gold);background:rgba(91,141,239,0.1);}
+  .match-item.correct{border-color:var(--coral);background:rgba(63,174,122,0.12);}
+  .match-item.wrong{border-color:#E67E5B;background:rgba(230,126,91,0.12);}
+  .match-item.locked{cursor:default;opacity:.85;}
+
+  /* IDIOMS */
+  .idiom-list{display:flex;flex-direction:column;gap:10px;}
+  .idiom{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:16px 18px;cursor:pointer;transition:border-color .15s;}
+  .idiom:hover{border-color:rgba(63,174,122,.3);}
+  .idiom-head{display:flex;align-items:center;justify-content:space-between;}
+  .idiom-head .phrase{font-family:'Fraunces',serif;font-weight:600;font-size:24.5px;}
+  .idiom-head .chev{color:var(--text-faint);transition:transform .2s;font-size:19px;}
+  .idiom.open .chev{transform:rotate(90deg);}
+  .idiom-body{max-height:0;overflow:hidden;transition:max-height .3s ease;}
+  .idiom.open .idiom-body{max-height:100px;}
+  .idiom-mean{font-size:19px;color:var(--text-dim);margin-top:8px;}
+  .idiom-ex{font-size:17px;font-style:italic;color:var(--text-faint);margin-top:4px;padding-bottom:4px;}
+
+  /* GAP FILL */
+  .gapfill-list{display:flex;flex-direction:column;gap:16px;}
+  .gap-item{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:16px 18px;}
+  .gap-item p{margin:0 0 10px;font-size:21px;line-height:1.6;}
+  .gap-blank{font-family:'JetBrains Mono',monospace;display:inline-block;min-width:230px;text-align:center;background:var(--panel-2);border:1px solid var(--line);border-radius:7px;color:var(--gold);padding:6px 12px;font-weight:700;cursor:pointer;}
+  .gap-blank.selected{border-color:var(--gold);box-shadow:0 0 0 2px rgba(91,141,239,.25);}
+  .gap-blank.filled{color:var(--coral);border-color:var(--coral);}
+  .wordbank{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:18px;}
+  .wb-chip{font-family:'JetBrains Mono',monospace;font-size:17px;background:var(--panel-2);border:1px solid var(--line);border-radius:20px;padding:8px 15px;color:var(--text-dim);cursor:pointer;transition:border-color .15s,color .15s,opacity .15s;}
+  .wb-chip:hover{border-color:var(--coral);color:var(--paper);}
+  .wb-chip.used{opacity:.3;pointer-events:none;text-decoration:line-through;}
+  .quiz-feedback{font-size:19px;color:var(--text-dim);min-height:18px;}
+  .quiz-feedback.good{color:var(--coral);}
+  .quiz-feedback.bad{color:#E67E5B;}
+
+  /* QUIZ */
+  .quiz-progress{display:flex;gap:6px;margin-bottom:24px;}
+  .quiz-dot{flex:1;height:4px;border-radius:3px;background:var(--line);}
+  .quiz-dot.active{background:var(--coral);}
+  .quiz-dot.answered{background:var(--gold);}
+  .quiz-card{background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);padding:28px;}
+  .quiz-q{font-size:27px;font-weight:600;margin:0 0 20px;line-height:1.4;}
+  .quiz-opts{display:flex;flex-direction:column;gap:10px;}
+  .quiz-opt{display:flex;gap:12px;align-items:center;background:var(--panel-2);border:1px solid var(--line);border-radius:10px;padding:13px 16px;cursor:pointer;font-size:21px;transition:border-color .15s,background .15s;}
+  .quiz-opt:hover{border-color:rgba(63,174,122,.4);}
+  .quiz-opt .letter{font-family:'JetBrains Mono',monospace;font-weight:700;font-size:18px;width:32px;height:32px;border-radius:50%;background:var(--ink);display:flex;align-items:center;justify-content:center;flex-shrink:0;color:var(--text-dim);}
+  .quiz-opt.correct{border-color:var(--coral);background:rgba(63,174,122,0.14);}
+  .quiz-opt.correct .letter{background:var(--coral);color:var(--ink);}
+  .quiz-opt.wrong{border-color:#E67E5B;background:rgba(230,126,91,0.14);animation:shake .3s;}
+  .quiz-opt.locked{cursor:default;}
+  @keyframes shake{0%,100%{transform:translateX(0);}25%{transform:translateX(-5px);}75%{transform:translateX(5px);}}
+  .quiz-foot{display:flex;justify-content:space-between;align-items:center;margin-top:22px;}
+  .roundtab{display:flex;gap:8px;margin-bottom:22px;}
+  .roundtab button{font-family:'JetBrains Mono',monospace;font-size:16px;padding:7px 13px;border-radius:8px;border:1px solid var(--line);background:transparent;color:var(--text-dim);cursor:pointer;}
+  .roundtab button.on{background:var(--coral);color:var(--ink);border-color:var(--coral);}
+
+  /* WARM-UP TABS */
+  .warmup-tabs{display:flex;gap:8px;margin-bottom:20px;flex-wrap:wrap;}
+  .warmup-tab{font-family:'JetBrains Mono',monospace;font-size:18px;font-weight:700;width:42px;height:42px;border-radius:10px;border:1px solid var(--line);background:var(--panel);color:var(--text-dim);cursor:pointer;display:flex;align-items:center;justify-content:center;transition:border-color .15s,background .15s,color .15s;}
+  .warmup-tab:hover{border-color:rgba(63,174,122,.4);color:var(--paper);}
+  .warmup-tab.on{border-color:var(--coral);background:rgba(63,174,122,.16);color:var(--paper);}
+  .prompt-current{display:flex;gap:16px;align-items:flex-start;background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);padding:22px 24px;}
+  .prompt-current .pn{font-family:'JetBrains Mono',monospace;font-weight:700;font-size:19px;color:var(--coral);flex-shrink:0;padding-top:1px;}
+  .prompt-current p{margin:0;font-size:24px;line-height:1.5;}
+
+  /* FACT OR OPINION SORTER */
+  .sort-intro{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin-bottom:22px;}
+  .sort-intro-item{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:16px 18px;}
+  .sort-intro-item .k{font-family:'JetBrains Mono',monospace;font-weight:700;font-size:16px;margin-bottom:6px;display:block;}
+  .sort-intro-item[data-k="fact"] .k{color:#5B8DEF;}
+  .sort-intro-item[data-k="opinion"] .k{color:#3FAE7A;}
+  .sort-intro-item p{margin:0;font-size:16.5px;color:var(--text-dim);line-height:1.4;}
+  .focus-list{display:flex;flex-direction:column;gap:14px;}
+  .focus-item{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:18px 20px;}
+  .focus-item p{margin:0 0 14px;font-size:22px;line-height:1.5;}
+  .focus-btns{display:flex;gap:10px;flex-wrap:wrap;}
+  .focus-btn{font-family:'Inter',sans-serif;font-size:17px;font-weight:600;padding:10px 16px;border-radius:9px;border:1px solid var(--line);background:var(--panel-2);color:var(--text-dim);cursor:pointer;transition:border-color .15s,background .15s;}
+  .focus-btn:hover{border-color:rgba(63,174,122,.4);color:var(--paper);}
+  .focus-btn.correct{border-color:var(--coral);background:rgba(63,174,122,0.16);color:var(--paper);}
+  .focus-btn.wrong{border-color:#E67E5B;background:rgba(230,126,91,0.16);animation:shake .3s;}
+  .focus-btn.locked{cursor:default;}
+  .focus-result{font-size:17px;color:var(--text-faint);margin-top:10px;min-height:16px;}
+  .focus-result.good{color:var(--coral);}
+
+  /* CUE CARD */
+  .cuecard{background:linear-gradient(155deg,var(--panel-2),var(--panel));border:1px solid var(--line);border-radius:18px;padding:30px 32px;margin-bottom:24px;}
+  .cuecard .label{font-family:'JetBrains Mono',monospace;font-size:16px;color:var(--coral);letter-spacing:.1em;text-transform:uppercase;margin-bottom:10px;}
+  .cuecard h3{font-family:'Fraunces',serif;font-size:31px;margin:0 0 16px;line-height:1.3;}
+  .cuecard ul{margin:0;padding-left:20px;line-height:1.8;font-size:21px;color:var(--text-dim);}
+  .notepad{width:100%;min-height:130px;background:var(--ink);border:1px solid var(--line);border-radius:10px;color:var(--paper);font-family:'Inter',sans-serif;font-size:20px;padding:14px;resize:vertical;margin-top:6px;}
+  .notepad:focus{outline:none;border-color:var(--coral);}
+
+  /* C.D.I.R. MODEL */
+  .ade-key{display:flex;gap:10px;margin-bottom:18px;flex-wrap:wrap;}
+  .ade-chip{font-family:'JetBrains Mono',monospace;font-size:16px;padding:6px 12px;border-radius:7px;border:1px solid var(--line);cursor:pointer;transition:transform .12s;}
+  .ade-chip[data-k="C"]{color:#85C1E9;}
+  .ade-chip[data-k="D"]{color:var(--gold);}
+  .ade-chip[data-k="I"]{color:var(--coral);}
+  .ade-chip[data-k="R"]{color:#F0B27A;}
+  .ade-chip.active{transform:scale(1.05);border-color:currentColor;}
+  .ade-block{padding:16px 18px;border-radius:11px;margin-bottom:10px;border:1px solid var(--line);background:var(--panel);transition:opacity .2s,border-color .2s;line-height:1.65;font-size:21px;}
+  .ade-block .tag2{font-family:'JetBrains Mono',monospace;font-size:15px;font-weight:700;margin-bottom:8px;display:block;}
+  .ade-block.dim{opacity:.3;}
+  .ade-block[data-k="C"] .tag2{color:#85C1E9;}
+  .ade-block[data-k="D"] .tag2{color:var(--gold);}
+  .ade-block[data-k="I"] .tag2{color:var(--coral);}
+  .ade-block[data-k="R"] .tag2{color:#F0B27A;}
+  .ade-block.highlight[data-k="C"]{border-color:#85C1E9;}
+  .ade-block.highlight[data-k="D"]{border-color:var(--gold);}
+  .ade-block.highlight[data-k="I"]{border-color:var(--coral);}
+  .ade-block.highlight[data-k="R"]{border-color:#F0B27A;}
+
+  /* TOOLKIT */
+  .grid-2{display:grid;grid-template-columns:1fr 1fr;gap:16px;}
+  .tool-card{background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);padding:18px 20px;}
+  .tool-card h4{margin:0 0 12px;font-size:20px;font-family:'Fraunces',serif;font-weight:600;}
+  .tool-card .phrase-btn{display:inline-block;font-size:18px;background:var(--panel-2);border:1px solid var(--line);border-radius:7px;padding:6px 11px;margin:0 6px 6px 0;cursor:pointer;color:var(--text-dim);transition:color .15s,border-color .15s;}
+  .tool-card .phrase-btn:hover{color:var(--paper);border-color:var(--gold);}
+  .scratch{margin-top:24px;}
+  .scratch textarea{width:100%;min-height:90px;background:var(--panel);border:1px solid var(--line);border-radius:10px;color:var(--paper);font-family:'Inter',sans-serif;font-size:20px;padding:14px;}
+  .scratch textarea:focus{outline:none;border-color:var(--coral);}
+
+  /* PEER SCORE */
+  .scorecard{display:flex;flex-direction:column;gap:10px;}
+  .score-row{display:flex;align-items:center;gap:14px;background:var(--panel);border:1px solid var(--line);border-radius:11px;padding:13px 16px;}
+  .score-row .letter2{font-family:'JetBrains Mono',monospace;font-weight:700;font-size:19px;width:36px;height:36px;border-radius:50%;background:var(--panel-2);display:flex;align-items:center;justify-content:center;flex-shrink:0;color:var(--coral);}
+  .score-row .si-main{flex:1;min-width:0;}
+  .score-row .si-title{font-weight:600;font-size:20px;}
+  .score-row .si-sub{font-size:16px;color:var(--text-faint);}
+  .pips{display:flex;gap:5px;}
+  .pip{width:36px;height:36px;border-radius:7px;border:1px solid var(--line);background:var(--panel-2);cursor:pointer;color:var(--text-dim);font-size:17px;font-family:'JetBrains Mono',monospace;display:flex;align-items:center;justify-content:center;}
+  .pip.on{background:var(--gold);border-color:var(--gold);color:var(--ink);}
+  .score-total{margin-top:8px;display:flex;align-items:center;justify-content:space-between;background:var(--panel-2);border:1px solid var(--line);border-radius:11px;padding:16px 18px;}
+  .score-total .tot-num{font-family:'JetBrains Mono',monospace;font-weight:700;font-size:37px;color:var(--gold);}
+  .feedback-fields{display:flex;flex-direction:column;gap:10px;margin-top:18px;}
+  .feedback-fields input{background:var(--panel);border:1px solid var(--line);border-radius:9px;color:var(--paper);padding:11px 14px;font-size:19px;font-family:'Inter',sans-serif;}
+  .feedback-fields input:focus{outline:none;border-color:var(--coral);}
+
+  /* EXAM PRACTICE */
+  .cue-tabs{display:grid;grid-template-columns:repeat(6,1fr);gap:10px;margin-bottom:20px;}
+  .cue-tab{text-align:center;padding:12px 6px;border-radius:11px;border:1px solid var(--line);background:var(--panel);cursor:pointer;font-size:16px;font-weight:600;}
+  .cue-tab.on{border-color:var(--coral);background:rgba(63,174,122,.14);}
+  .cue-tab .emo{font-size:24px;display:block;margin-bottom:4px;}
+  .cue-tab .foc{display:block;font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--text-faint);margin-top:2px;}
+  .assign-note{font-size:17px;color:var(--text-faint);margin:-12px 0 20px;}
+
+  /* WRAP UP */
+  .takeaway-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;}
+  .tk{background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);padding:20px 22px;}
+  .tk .tk-icon{font-size:32px;margin-bottom:10px;display:block;}
+  .tk h4{margin:0 0 8px;font-family:'Fraunces',serif;font-size:23px;}
+  .tk p{margin:0;font-size:19px;color:var(--text-dim);line-height:1.55;}
+  .final-score{margin-top:32px;text-align:center;padding:36px;border-radius:18px;background:linear-gradient(155deg,var(--panel-2),var(--panel));border:1px solid var(--line);}
+  .final-score .fs-num{font-family:'JetBrains Mono',monospace;font-weight:700;font-size:70px;color:var(--gold);}
+  .final-score .fs-label{font-size:19px;color:var(--text-dim);margin-top:4px;}
+
+  .nav-arrows{display:flex;justify-content:space-between;margin-top:44px;padding-top:24px;border-top:1px solid var(--line);}
+  .mobile-progress,.mobile-jump{display:none;}
+
+  @media(max-width:880px){
+    .app{grid-template-columns:1fr;}
+    .rail{position:relative;height:auto;flex-direction:row;align-items:center;gap:12px;padding:14px 16px;}
+    .brand{border-bottom:none;padding:0;flex-shrink:0;}
+    .brand h1{font-size:20px;}
+    .brand .sub{display:none;}
+    .onair{flex-shrink:0;padding:8px 12px;}
+    .onair .label{display:none;}
+    nav{display:none;}
+    .rail-foot{display:none;}
+    main{padding:18px 18px 70px;}
+    .grid-3{grid-template-columns:1fr 1fr;}
+    .match-wrap,.grid-2,.takeaway-grid{grid-template-columns:1fr;}
+    .sort-intro{grid-template-columns:1fr;}
+    .warmup-tab{width:38px;height:38px;font-size:16px;}
+    .cue-tabs{grid-template-columns:repeat(3,1fr);}
+    h2.title{font-size:40px;}
+    .mobile-progress,.mobile-jump{display:flex;}
+    .mobile-progress{gap:4px;margin-bottom:18px;}
+    .mobile-progress .seg{flex:1;height:3px;border-radius:2px;background:var(--line);}
+    .mobile-progress .seg.done{background:var(--coral);}
+    .mobile-progress .seg.now{background:#E67E5B;}
+    .mobile-jump{align-items:center;margin-bottom:4px;}
+    .mobile-jump select{background:var(--panel);color:var(--paper);border:1px solid var(--line);border-radius:8px;padding:7px 10px;font-size:17px;font-family:'JetBrains Mono',monospace;width:100%;}
+  }
+  @media(prefers-reduced-motion:reduce){*{animation-duration:.001s!important;transition-duration:.001s!important;}}
+</style>
+</head>
+<body>
+<div class="app">
+  <aside class="rail">
+    <div class="brand">
+      <span class="tag">IELTS 7.0 · Speaking</span>
+      <h1>Urban &amp; Rural Life</h1>
+      <div class="sub">Part 1 Masterclass · 60 min</div>
+    </div>
+    <div class="onair">
+      <div class="dot"></div>
+      <div class="label">On Air</div>
+      <div class="score" id="railScore">0 pts</div>
+    </div>
+    <nav id="navList"></nav>
+    <div class="rail-foot">Click any item to jump. Progress is tracked as you complete each exercise.</div>
+  </aside>
+  <main id="main"></main>
+</div>
+
+<script>
+/* ===== DATA ===== */
+const sections = [
+  {id:'objectives', n:'00', label:'Lesson Objectives'},
+  {id:'warmup',   n:'01', label:'Warm-Up'},
+  {id:'vocab',    n:'02', label:'Vocabulary'},
+  {id:'collocation', n:'03', label:'Collocations'},
+  {id:'idioms',   n:'04', label:'Idioms & Phrases'},
+  {id:'gapfill',  n:'05', label:'Gap Fill'},
+  {id:'quiz',     n:'06', label:'Quiz Challenge'},
+  {id:'sorter',   n:'07', label:'Fact or Opinion?'},
+  {id:'model',    n:'08', label:'Model Answer'},
+  {id:'toolkit',  n:'09', label:'Language Toolkit'},
+  {id:'connectives', n:'10', label:'Advanced Connectives'},
+  {id:'peer',     n:'11', label:'Peer Score Card'},
+  {id:'practice', n:'12', label:'Exam Practice'},
+  {id:'wrapup',   n:'13', label:'Wrap-Up'}
+];
+
+const vocab = [
+  {w:'cosmopolitan',     d:'containing people and influences from many different countries; worldly',        ex:'"I love how cosmopolitan the city feels, with so many different cultures living side by side."'},
+  {w:'tranquil',         d:'calm and peaceful, without noise or disturbance',                                  ex:'"The countryside has such a tranquil atmosphere compared to the city centre."'},
+  {w:'congested',        d:'extremely crowded, especially with traffic',                                       ex:'"The roads get so congested during rush hour that my commute takes twice as long."'},
+  {w:'close-knit',       d:'describing a community where people know and support each other well',             ex:'"Everyone in my village is part of a close-knit community — people really look out for one another."'},
+  {w:'self-sufficient',  d:'able to provide for yourself without relying on others',                           ex:'"Some rural families are almost self-sufficient, growing their own food and generating their own power."'},
+  {w:'commute',          d:'to travel regularly between home and work or school',                              ex:'"Most people I know commute at least forty minutes each way into the city centre."'},
+  {w:'sprawling',        d:'spreading out over a large, often untidy area',                                    ex:'"The sprawling suburbs have grown so much that they now stretch almost to the next town."'},
+  {w:'idyllic',          d:'extremely pleasant, peaceful and picturesque',                                     ex:'"My grandparents\' farmhouse is set in such an idyllic location, surrounded by fields and hills."'}
+];
+
+function shuffleArr(arr){
+  const a = arr.slice();
+  for(let i=a.length-1;i>0;i--){
+    const j = Math.floor(Math.random()*(i+1));
+    [a[i],a[j]]=[a[j],a[i]];
+  }
+  return a;
+}
+
+const verbs   = shuffleArr(['relocate to','settle into','commute to','escape from','adapt to','thrive in','put down roots in','drift away from']);
+const nouns   = shuffleArr(['a new neighbourhood','a quiet routine','the city centre','the daily grind','a slower pace of life','a competitive environment','a small town','rural traditions']);
+const matchKey = {
+  'relocate to':       'a new neighbourhood',
+  'settle into':       'a quiet routine',
+  'commute to':        'the city centre',
+  'escape from':       'the daily grind',
+  'adapt to':          'a slower pace of life',
+  'thrive in':         'a competitive environment',
+  'put down roots in': 'a small town',
+  'drift away from':   'rural traditions'
+};
+
+const idioms = [
+  {p:'the rat race',                          m:'the exhausting, competitive struggle of city or working life',                                ex:'"After years in finance, she decided to leave the rat race and move to the coast."'},
+  {p:'a breath of fresh air',                 m:'something refreshingly different and pleasant, especially after something tiring',              ex:'"Moving to the countryside was a real breath of fresh air after years of city living."'},
+  {p:'in the middle of nowhere',              m:'in a very remote location, far from towns or cities',                                          ex:'"Their cottage is right in the middle of nowhere — the nearest shop is 20 minutes away."'},
+  {p:'the hustle and bustle',                 m:'the busy, energetic activity typical of a city',                                                ex:'"I actually enjoy the hustle and bustle of downtown — it makes me feel alive."'},
+  {p:'live off the land',                     m:'to survive by growing your own food and using natural resources',                               ex:'"Some rural families still largely live off the land, growing vegetables and keeping animals."'},
+  {p:'a stone\'s throw away',                 m:'a very short distance away',                                                                    ex:'"My office is just a stone\'s throw away from my flat, so I never have to commute."'},
+  {p:'urban sprawl',                          m:'the uncontrolled spread of a city into surrounding countryside',                                 ex:'"Urban sprawl has eaten up most of the farmland that used to surround the town."'},
+  {p:'set in your ways',                      m:'unwilling or unable to change your habits or lifestyle',                                        ex:'"My grandfather is quite set in his ways — he\'s lived in the same village his whole life."'}
+];
+
+const gapfills = [
+  {text:'After years in finance, she decided to leave ___ and move to the coast.',                         ans:'the rat race'},
+  {text:'Moving to the countryside was a real ___ after years of city living.',                             ans:'a breath of fresh air'},
+  {text:'Their cottage is right ___ — the nearest shop is 20 minutes away.',                                 ans:'in the middle of nowhere'},
+  {text:'I actually enjoy ___ of downtown — it makes me feel alive.',                                        ans:'the hustle and bustle'},
+  {text:'___ has eaten up most of the farmland that used to surround the town.',                              ans:'Urban sprawl'},
+  {text:'My grandfather is quite ___ — he\'s lived in the same village his whole life.',                     ans:'set in his ways'}
+];
+const wordbank = shuffleArr(['the rat race','a breath of fresh air','in the middle of nowhere','the hustle and bustle','Urban sprawl','set in his ways','live off the land','a stone\'s throw away']);
+
+const quizRounds = {
+  1:{title:'Vocabulary Rapid Fire', qs:[
+    {q:"What does 'cosmopolitan' mean?",                                                       opts:['boring and repetitive','containing people and influences from many countries','extremely expensive','far from any city'], ans:1},
+    {q:"What does 'tranquil' mean?",                                                            opts:['loud and chaotic','calm and peaceful','densely populated','fast-moving'], ans:1},
+    {q:"What does 'congested' mean, as in 'congested roads'?",                                   opts:['newly built','completely empty','extremely crowded','well maintained'], ans:2},
+    {q:"What does 'self-sufficient' mean?",                                                      opts:['dependent on others for everything','unable to make decisions','able to provide for yourself without relying on others','always in a hurry'], ans:2}
+  ]},
+  2:{title:'Idiom Challenge', qs:[
+    {q:'"She decided to leave the rat race and move to the coast."',                              opts:['a type of pet','the exhausting, competitive struggle of city life','a race between friends','a farming competition'], ans:1},
+    {q:'"Moving to the countryside was a real breath of fresh air."',                              opts:['a health problem','something refreshingly different and pleasant','a type of exercise','a weather forecast'], ans:1},
+    {q:'"Their cottage is in the middle of nowhere."',                                             opts:['in a very remote, far-off location','right in the city centre','next to a train station','on a busy street'], ans:0},
+    {q:'"My grandfather is quite set in his ways."',                                               opts:['very flexible and open-minded','always travelling somewhere new','unwilling or unable to change his habits','extremely wealthy'], ans:2}
+  ]}
+};
+
+const foQs = shuffleArr([
+  {q:'Where do you live now?',                                                         cat:'fact'},
+  {q:'How long have you lived in your current area?',                                  cat:'fact'},
+  {q:'What do most people in your country live in — houses or apartments?',            cat:'fact'},
+  {q:'How often do you visit the countryside?',                                        cat:'fact'},
+  {q:'Would you prefer to live in a city or the countryside?',                         cat:'opinion'},
+  {q:'What do you like most about your hometown?',                                     cat:'opinion'},
+  {q:'Do you think your area will change much in the future?',                         cat:'opinion'},
+  {q:'Which do you find more relaxing, the city or the countryside?',                  cat:'opinion'}
+]);
+foQs.forEach(q=>{ q.order = shuffleArr(['fact','opinion']); });
+const foLabels = {fact:'Fact', opinion:'Opinion'};
+const foIntro = [
+  {k:'fact',    label:'Fact',    d:'objective information — where, what, how long, how often'},
+  {k:'opinion', label:'Opinion', d:'a personal preference, feeling or belief — would you, do you like'}
+];
+
+const oreModel = [
+  {k:'O', label:'Opinion — Say it',                text:'I think I\'d rather live in a city than in the countryside.'},
+  {k:'R', label:'Reason — Support it',             text:'There are usually more things to do and a much wider range of job opportunities, whereas rural areas tend to be quieter and offer fewer chances to explore or develop.'},
+  {k:'E', label:'Example — Show it',               text:'For example, I can go to concerts, try new restaurants, or visit a museum whenever I want, and I also enjoy meeting people from lots of different backgrounds.'}
+];
+
+const toolkit = [
+  {h:'💬 Expressing Opinions',   items:['I would argue that…','From my perspective,…','It seems to me that…','Personally, I feel that…']},
+  {h:'🔎 Giving Reasons',        items:['This is mainly because…','As a result of…','The main reason for this is…','Largely due to…']},
+  {h:'⚖️ Making Comparisons',    items:['…whereas…','…while…','In contrast,…','Compared to…']},
+  {h:'📈 Describing Changes',    items:['…used to…','…has become…','…is getting…','Over the past few decades,…']},
+  {h:'📝 Giving Examples',       items:['For instance,…','One example that comes to mind is…','…such as…','A good example of this is…']}
+];
+
+const connectives = [
+  {h:'➕ Addition',        items:['Not only that, but…','What\'s more,…','In addition to this,…','On top of that,…']},
+  {h:'⚖️ Contrast',         items:['Despite the fact that…','Having said that,…','On the other hand,…','Even so,…']},
+  {h:'🔀 Cause & Effect',   items:['As a result of this,…','This is largely because…','Given that…','Which is why…']},
+  {h:'🎯 Emphasis',         items:['What really matters to me is…','The main reason for this is…','It\'s worth noting that…','Above all,…']}
+];
+
+const peerCriteria = [
+  {k:'O',  t:'Clear opinion given?',            s:'A direct answer stated early on'},
+  {k:'R',  t:'Reason included?',                s:'Why they feel that way'},
+  {k:'E',  t:'Example given?',                  s:'A specific, real example to support it'},
+  {k:'⚖️', t:'Comparison made (if relevant)?',   s:'City vs countryside, whereas / in contrast'},
+  {k:'🔗', t:'Linking words used?',              s:'e.g. because, whereas, for instance'},
+  {k:'📚', t:'Advanced vocab used?',             s:'From today\'s word list'},
+  {k:'💡', t:'Idiom or phrase used?',            s:'Naturally, not forced'},
+  {k:'🗣️', t:'Answered concisely & fluently?',   s:'Part 1 length — not too short, not too long'}
+];
+
+const examCards = [
+  {emo:'🏙️', foc:'Home',        title:'Q1',  desc:'Where do you live now?'},
+  {emo:'🌆', foc:'Preference',  title:'Q2',  desc:'Would you prefer to live in a city or the countryside?'},
+  {emo:'❤️', foc:'Hometown',    title:'Q3',  desc:'What do you like about your hometown?'},
+  {emo:'⏳', foc:'Duration',    title:'Q4',  desc:'How long have you lived in your current area?'},
+  {emo:'👍', foc:'Evaluation',  title:'Q5',  desc:'Would you describe your area as a good place to live? Why?'},
+  {emo:'🔮', foc:'Future',      title:'Q6',  desc:'Do you think your area will change in the future?'},
+  {emo:'🌳', foc:'Countryside', title:'Q7',  desc:'How often do you visit the countryside?'},
+  {emo:'😌', foc:'Relaxation',  title:'Q8',  desc:'Which do you find more relaxing, the city or the countryside? Why?'},
+  {emo:'🏘️', foc:'Housing',     title:'Q9',  desc:'Would you prefer to live in a modern apartment or a traditional house?'},
+  {emo:'📈', foc:'Change',      title:'Q10', desc:'How has your hometown changed in the last ten years?'},
+  {emo:'🚌', foc:'Small Town',  title:'Q11', desc:'Do you prefer living in a big city or a small town?'},
+  {emo:'🌾', foc:'Experience',  title:'Q12', desc:'Have you ever spent time in the countryside? What did you like about it?'},
+  {emo:'🏡', foc:'Neighbours',  title:'Q13', desc:'Do you know your neighbours well?'},
+  {emo:'🚗', foc:'Commute',     title:'Q14', desc:'How do most people travel to work or school in your area?'},
+  {emo:'🌍', foc:'Migration',   title:'Q15', desc:'Do you think more people will move to cities in the future?'}
+];
+
+const objectives = [
+  {icon:'🧭', h:'Understand Part 1 Questions',            d:'Recognise whether a question about city and countryside living is asking for a fact or an opinion, so you answer it appropriately.'},
+  {icon:'🗺️', h:'Use the CORE Organisation Strategy',      d:'Structure your responses with clear progression using Opinion → Reason → Example — say it, support it, show it.'},
+  {icon:'🔗', h:'Use Linking Phrases',                     d:'Compare, contrast and express opinions about urban and rural life using natural, Band 7-level linking language.'},
+  {icon:'🗣️', h:'Answer Fluently and Confidently',         d:'Give clear, well-organised Part 1 answers without long pauses, adding comparisons where relevant.'}
+];
+
+/* ===== STATE ===== */
+let state = {
+  current:'objectives', score:0, done:new Set(),
+  matchSel:{verb:null,noun:null}, matchSolved:new Set(),
+  quizRound:1, quizIdx:0, quizAnswered:{},
+  foAnswered:{},
+  adeActive:null, cueTab:0, peerScores:{},
+  gapSelected:null, gapFilled:{}, gapScored:{},
+  warmupTab:0,
+  timerInterval:null, timerRunning:false,
+  timerRemaining:30, timerTotal:30
+};
+
+function addScore(pts){ state.score+=pts; document.getElementById('railScore').textContent=state.score+' pts'; }
+function markDone(id){ state.done.add(id); renderNav(); }
+
+/* ===== NAV ===== */
+function renderNav(){
+  const nav=document.getElementById('navList');
+  nav.innerHTML=sections.map(s=>`
+    <div class="nav-item ${s.id===state.current?'active':''} ${state.done.has(s.id)?'done':''}" data-id="${s.id}">
+      <span class="n">${s.n}</span><span>${s.label}</span><span class="done-mark">✓</span>
+    </div>`).join('');
+  nav.querySelectorAll('.nav-item').forEach(el=>el.addEventListener('click',()=>goTo(el.dataset.id)));
+}
+
+function goTo(id){ state.current=id; renderNav(); renderMain(); window.scrollTo({top:0,behavior:'smooth'}); }
+
+/* ===== RENDER MAIN ===== */
+function renderMain(){
+  const main=document.getElementById('main');
+  const idx=sections.findIndex(s=>s.id===state.current);
+  const prev=sections[idx-1]; const next=sections[idx+1];
+  let body='';
+  switch(state.current){
+    case 'objectives':  body=renderObjectives(); break;
+    case 'warmup':      body=renderWarmup(); break;
+    case 'vocab':       body=renderVocab(); break;
+    case 'collocation': body=renderCollocation(); break;
+    case 'idioms':      body=renderIdioms(); break;
+    case 'gapfill':     body=renderGapfill(); break;
+    case 'quiz':        body=renderQuiz(); break;
+    case 'sorter':      body=renderSorter(); break;
+    case 'model':       body=renderModel(); break;
+    case 'toolkit':     body=renderToolkit(); break;
+    case 'connectives': body=renderConnectives(); break;
+    case 'peer':        body=renderPeer(); break;
+    case 'practice':    body=renderPractice(); break;
+    case 'wrapup':      body=renderWrapup(); break;
+  }
+  main.innerHTML=`
+    <div class="mobile-jump">
+      <select id="mobileSelect">
+        ${sections.map(s=>`<option value="${s.id}" ${s.id===state.current?'selected':''}>${s.n} · ${s.label}${state.done.has(s.id)?' ✓':''}</option>`).join('')}
+      </select>
+    </div>
+    <div class="mobile-progress">
+      ${sections.map(s=>`<div class="seg ${state.done.has(s.id)?'done':''} ${s.id===state.current?'now':''}"></div>`).join('')}
+    </div>`+body+`
+    <div class="nav-arrows">
+      ${prev?`<button class="btn" id="prevBtn">← ${prev.label}</button>`:'<span></span>'}
+      ${next?`<button class="btn primary" id="nextBtn">${next.label} →</button>`:'<span></span>'}
+    </div>`;
+  if(prev) document.getElementById('prevBtn').onclick=()=>goTo(prev.id);
+  if(next) document.getElementById('nextBtn').onclick=()=>goTo(next.id);
+  const ms=document.getElementById('mobileSelect');
+  if(ms) ms.onchange=e=>goTo(e.target.value);
+  attachHandlers();
+}
+
+/* ===== TIMER ===== */
+function setupTimer(s){ clearInterval(state.timerInterval); state.timerRunning=false; state.timerTotal=s; state.timerRemaining=s; updateRing(); }
+function updateRing(){
+  const fg=document.getElementById('ringFg'); const num=document.getElementById('ringNum');
+  if(!fg) return;
+  fg.style.strokeDashoffset=238.8*(1-state.timerRemaining/state.timerTotal);
+  num.textContent=state.timerRemaining;
+  if(state.timerRemaining<=5&&state.timerRemaining>0) fg.style.stroke='var(--gold)'; else fg.style.stroke='var(--coral)';
+}
+function startTimer(){
+  if(state.timerRunning) return;
+  state.timerRunning=true;
+  state.timerInterval=setInterval(()=>{
+    state.timerRemaining--;
+    updateRing();
+    if(state.timerRemaining<=0){ clearInterval(state.timerInterval); state.timerRunning=false; }
+  },1000);
+}
+function timerHTML(seconds, label){
+  seconds=seconds||30; label=label||('Prep time — '+seconds+' seconds');
+  return `<div class="timer-wrap"><div class="ring"><svg width="92" height="92"><circle class="bg" cx="46" cy="46" r="38"/><circle class="fg" id="ringFg" cx="46" cy="46" r="38" stroke-dasharray="238.8" stroke-dashoffset="0"/></svg><div class="num" id="ringNum">${seconds}</div></div><div class="timer-meta"><div class="t-label" id="timerLabel">${label}</div><div class="timer-btns"><button class="btn primary" id="timerStart">Start</button><button class="btn ghost" id="timerReset">Reset</button></div></div></div>`;
+}
+
+/* ===== SECTIONS ===== */
+const warmupQs = [
+  'Do you live in a city, a town or a village?',
+  'What do you like most about where you live?',
+  'Would you rather live somewhere busy or somewhere quiet?',
+  'Have you ever lived somewhere very different from where you live now?',
+  'Do you think it\'s better to grow up in a city or in the countryside?',
+  'What do you think your hometown will be like in ten years?',
+  'Do you know your neighbours well?',
+  'If you could live anywhere in the world, where would you choose?'
+];
+function renderObjectives(){ return `
+  <div class="eyebrow">Lesson Objectives</div>
+  <h2 class="title">What You\'ll Learn Today 🎯</h2>
+  <p class="deck">By the end of this lesson, you will be able to:</p>
+  <div class="takeaway-grid">
+    ${objectives.map(o=>`<div class="tk"><span class="tk-icon">${o.icon}</span><h4>${o.h}</h4><p>${o.d}</p></div>`).join('')}
+  </div>
+  <p style="font-size:19px;color:var(--text-faint);margin-top:24px;">Let\'s get started — click "Warm-Up" below to begin.</p>`; }
+
+function renderWarmup(){
+  const i=state.warmupTab;
+  return `
+  <div class="eyebrow">Warm-Up · 0–10 min</div>
+  <h2 class="title">City or Countryside? 🏙️🌾</h2>
+  <p class="deck">Discuss each question with a partner. Click a number to move to that question and start the timer.</p>
+  <div class="warmup-tabs">
+    ${warmupQs.map((_,idx)=>`<div class="warmup-tab ${state.warmupTab===idx?'on':''}" data-i="${idx}">${idx+1}</div>`).join('')}
+  </div>
+  ${timerHTML(30,'Discussion time — 30 seconds')}
+  <div class="prompt-current"><div class="pn">${i+1}</div><p>${warmupQs[i]}</p></div>
+  <p style="font-size:19px;color:var(--text-faint);margin-top:18px;">Tip: Try opening with "Honestly, I\'d say…" or "That\'s an interesting question — I think…" to buy yourself a second to think.</p>`; }
+
+function renderVocab(){ return `
+  <div class="eyebrow">Vocabulary Power-Up · 10–22 min</div>
+  <h2 class="title">8 Words for City & Country Talk</h2>
+  <p class="deck">Read the meaning, guess the word, then click to reveal the answer and example sentence.</p>
+  <div class="grid-3">
+    ${vocab.map((v,i)=>`<div class="flip" data-i="${i}"><div class="flip-inner"><div class="flip-face flip-front"><div class="def-prompt">${v.d}</div><div class="hint">Tap to reveal →</div></div><div class="flip-face flip-back"><div class="word-reveal">${v.w}</div><div class="ex">${v.ex}</div></div></div></div>`).join('')}
+  </div>`; }
+
+function renderCollocation(){
+  const sc=state.matchSolved.size;
+  const solvedVerbs=verbs.filter(v=>state.matchSolved.has(v));
+  const unsolvedVerbs=verbs.filter(v=>!state.matchSolved.has(v));
+  const unsolvedNouns=nouns.filter(n=>!solvedVerbs.some(v=>matchKey[v]===n));
+  const verbOrder=solvedVerbs.concat(unsolvedVerbs);
+  const nounOrder=solvedVerbs.map(v=>matchKey[v]).concat(unsolvedNouns);
+  return `
+  <div class="eyebrow">Vocabulary Power-Up · Collocation Match-Up ⚡</div>
+  <h2 class="title">Match the Pairs</h2>
+  <p class="deck">Click a verb, then click the phrase it goes with. Everything starts jumbled — correct pairs lock in and line up across from each other. ${sc}/${verbs.length} matched so far.</p>
+  <div class="match-wrap">
+    <div class="match-col"><h4>Verbs</h4>
+      ${verbOrder.map((v,i)=>`<div class="match-item ${state.matchSolved.has(v)?'correct locked':''} ${state.matchSel.verb===v?'selected':''}" data-side="verb" data-val="${v}"><span class="tag">${i+1}</span>${v}</div>`).join('')}
+    </div>
+    <div class="match-col"><h4>Phrases</h4>
+      ${nounOrder.map((n,i)=>`<div class="match-item ${solvedVerbs.some(v=>matchKey[v]===n)?'correct locked':''} ${state.matchSel.noun===n?'selected':''}" data-side="noun" data-val="${n}"><span class="tag">${String.fromCharCode(65+i)}</span>${n}</div>`).join('')}
+    </div>
+  </div>`; }
+
+function renderIdioms(){ return `
+  <div class="eyebrow">Idioms & Phrases · 25–40 min</div>
+  <h2 class="title">City & Country Talk: 8 Expressions 💡</h2>
+  <p class="deck">Click each phrase to expand its meaning and an example sentence. Use these to make your Part 1 answers sound natural and fluent.</p>
+  <div class="idiom-list">
+    ${idioms.map((it,i)=>`<div class="idiom" data-i="${i}"><div class="idiom-head"><span class="phrase">${it.p}</span><span class="chev">▸</span></div><div class="idiom-body"><div class="idiom-mean">— ${it.m}</div><div class="idiom-ex">${it.ex}</div></div></div>`).join('')}
+  </div>`; }
+
+function renderGapfill(){
+  return `
+  <div class="eyebrow">Idioms & Collocations · Gap Fill ✏️</div>
+  <h2 class="title">Use the Right Expression</h2>
+  <p class="deck">Click a blank, then click the matching phrase from the word bank below. No typing — just click!</p>
+  <div class="gapfill-list">
+    ${gapfills.map((g,i)=>{
+      const parts=g.text.split('___');
+      const filled=state.gapFilled[i];
+      return `<div class="gap-item"><p>${i+1}. ${parts[0]}<span class="gap-blank ${state.gapSelected===i?'selected':''} ${filled?'filled':''}" data-i="${i}">${filled?filled:'click blank'}</span>${parts[1]}</p></div>`;
+    }).join('')}
+  </div>
+  <div class="wordbank" style="margin-top:20px;">
+    ${wordbank.map(w=>`<span class="wb-chip ${Object.values(state.gapFilled).includes(w)?'used':''}" data-word="${w}">${w}</span>`).join('')}
+  </div>
+  <div class="quiz-feedback" id="gapFeedback">${Object.keys(state.gapFilled).length} / ${gapfills.length} filled</div>`; }
+
+function renderQuiz(){
+  const round=quizRounds[state.quizRound];
+  const q=round.qs[state.quizIdx];
+  const key=`${state.quizRound}-${state.quizIdx}`;
+  const answered=state.quizAnswered[key];
+  return `
+  <div class="eyebrow">Quiz Challenge · Test Yourself 🧠</div>
+  <h2 class="title">${round.title}</h2>
+  <p class="deck">Click an answer. If it\'s wrong, try again — you can keep guessing until you find the right one.</p>
+  <div class="roundtab">
+    <button data-r="1" class="${state.quizRound===1?'on':''}">Round 1 · Vocabulary</button>
+    <button data-r="2" class="${state.quizRound===2?'on':''}">Round 2 · Idioms</button>
+  </div>
+  <div class="quiz-progress">
+    ${round.qs.map((_,i)=>{const k=`${state.quizRound}-${i}`;return `<div class="quiz-dot ${i===state.quizIdx?'active':''} ${state.quizAnswered[k]?'answered':''}"></div>`;}).join('')}
+  </div>
+  <div class="quiz-card">
+    <p class="quiz-q">${state.quizIdx+1}. ${q.q}</p>
+    <div class="quiz-opts">
+      ${q.opts.map((o,i)=>{let cls='quiz-opt';if(answered&&i===q.ans){cls+=' correct locked';}return `<div class="${cls}" data-i="${i}"><span class="letter">${String.fromCharCode(65+i)}</span>${o}</div>`;}).join('')}
+    </div>
+    <div class="quiz-foot">
+      <span class="quiz-feedback ${answered?'good':''}" id="quizFeedbackMsg">${answered?'✓ Correct! +1 point':'Select an answer'}</span>
+      <div style="display:flex;gap:8px;">
+        <button class="btn" id="quizPrev" ${state.quizIdx===0?'disabled style="opacity:.4"':''}>← Prev</button>
+        <button class="btn" id="quizNext" ${state.quizIdx===round.qs.length-1?'disabled style="opacity:.4"':''}>Next →</button>
+      </div>
+    </div>
+  </div>`; }
+
+function renderSorter(){
+  const answeredCount=Object.keys(state.foAnswered).length;
+  return `
+  <div class="eyebrow">Question Recognition · Core Skill 🎯</div>
+  <h2 class="title">Fact or Opinion?</h2>
+  <p class="deck">Every Part 1 question expects a certain kind of answer. Skim the quick guide below, then sort each question into the category it matches.</p>
+  <div class="sort-intro">
+    ${foIntro.map(c=>`<div class="sort-intro-item" data-k="${c.k}"><span class="k">${c.label}</span><p>${c.d}</p></div>`).join('')}
+  </div>
+  <p style="font-size:19px;color:var(--text-dim);margin:0 0 16px;">Read each question and click the correct category. ${answeredCount}/${foQs.length} sorted.</p>
+  <div class="focus-list">
+    ${foQs.map((f,i)=>{
+      const a=state.foAnswered[i];
+      return `<div class="focus-item">
+        <p>${i+1}. ${f.q}</p>
+        <div class="focus-btns">
+          ${f.order.map(cat=>{
+            let cls='focus-btn';
+            if(a){ if(cat===f.cat) cls+=' correct locked'; else if(cat===a.picked && !a.correct) cls+=' wrong'; else cls+=' locked'; }
+            return `<button class="${cls}" data-i="${i}" data-cat="${cat}">${foLabels[cat]}</button>`;
+          }).join('')}
+        </div>
+        <div class="focus-result ${a&&a.correct?'good':''}">${a?(a.correct?'✓ Correct — '+foLabels[f.cat]:'Try another category'):''}</div>
+      </div>`;
+    }).join('')}
+  </div>`; }
+
+function renderModel(){ return `
+  <div class="eyebrow">Model Answer</div>
+  <h2 class="title">Analyse a Band 7+ Answer 🔍</h2>
+  <p class="deck">Click a stage chip to highlight that part of the answer. See how Opinion → Reason → Example turns a one-word answer into a full, structured response.</p>
+  <div class="ade-key">
+    ${oreModel.map(a=>`<div class="ade-chip ${state.adeActive===a.k?'active':''}" data-k="${a.k}">${a.k} — ${a.label.split('—')[0].trim()}</div>`).join('')}
+  </div>
+  <div class="card">
+    ${oreModel.map(a=>`<div class="ade-block ${state.adeActive&&state.adeActive!==a.k?'dim':''} ${state.adeActive===a.k?'highlight':''}" data-k="${a.k}"><span class="tag2">${a.label}</span>${a.text}</div>`).join('')}
+  </div>`; }
+
+function renderToolkit(){ return `
+  <div class="eyebrow">Language Toolkit</div>
+  <h2 class="title">Upgrade Your Part 1 Answers 🔗</h2>
+  <p class="deck">Click any phrase to drop it into your scratchpad — then build a sentence using that starter.</p>
+  <div class="grid-2">
+    ${toolkit.map(t=>`<div class="tool-card"><h4>${t.h}</h4>${t.items.map(i=>`<span class="phrase-btn" data-phrase="${i}">${i}</span>`).join('')}</div>`).join('')}
+  </div>
+  <div class="scratch">
+    <p style="font-size:19px;color:var(--text-dim);margin-bottom:8px;">Scratchpad — practise a sentence using the phrases above:</p>
+    <textarea id="scratchArea" placeholder="e.g. I would argue that city life suits me better, mainly because there's always something new to do…"></textarea>
+  </div>`; }
+
+function renderConnectives(){ return `
+  <div class="eyebrow">Advanced Connectives · Level Up 🔗</div>
+  <h2 class="title">Link Your Ideas Like a Band 7+</h2>
+  <p class="deck">Higher-band answers don\'t just list ideas — they connect them. Click any phrase to drop it into your scratchpad, then build a sentence around it.</p>
+  <div class="grid-2">
+    ${connectives.map(t=>`<div class="tool-card"><h4>${t.h}</h4>${t.items.map(i=>`<span class="phrase-btn" data-phrase="${i}">${i}</span>`).join('')}</div>`).join('')}
+  </div>
+  <div class="scratch">
+    <p style="font-size:19px;color:var(--text-dim);margin-bottom:8px;">Scratchpad — practise linking two ideas using a connective above:</p>
+    <textarea id="scratchArea" placeholder="e.g. City life is exciting. Despite the fact that it's busier, I still find it more enjoyable than rural life…"></textarea>
+  </div>`; }
+
+function renderPeer(){
+  const total=peerCriteria.reduce((s,c)=>s+(state.peerScores[c.t]||0),0);
+  const maxTotal=peerCriteria.length*3;
+  return `
+  <div class="eyebrow">Peer Performance · 75–90 min</div>
+  <h2 class="title">You Speak, We Listen 🌟</h2>
+  <p class="deck">Use your notes. Aim for a clear, well-organised 20–30 second answer. Your partner scores your performance below.</p>
+  <div class="scorecard">
+    ${peerCriteria.map(c=>`<div class="score-row"><div class="letter2">${c.k}</div><div class="si-main"><div class="si-title">${c.t}</div><div class="si-sub">${c.s}</div></div><div class="pips">${[1,2,3].map(n=>`<div class="pip ${state.peerScores[c.t]===n?'on':''}" data-crit="${c.t}" data-n="${n}">${n}</div>`).join('')}</div></div>`).join('')}
+  </div>
+  <div class="score-total">
+    <span style="font-size:19px;color:var(--text-dim);">Total score (1=needs work · 2=ok · 3=great)</span>
+    <span class="tot-num">${total}/${maxTotal}</span>
+  </div>
+  <div class="feedback-fields">
+    <input type="text" id="fbStrength" placeholder="📝 One strength — something they did really well…">
+    <input type="text" id="fbTip" placeholder="🎯 One tip — one specific thing to improve next time…">
+  </div>`; }
+
+function renderPractice(){
+  const c=examCards[state.cueTab];
+  return `
+  <div class="eyebrow">Exam Practice</div>
+  <h2 class="title">15 Part 1 Questions 🃏</h2>
+  <p class="deck">Every student gets a different question — no two answers should sound the same! Give a direct answer using Opinion → Reason → Example (add a comparison if it fits), then move on quickly — this is Part 1.</p>
+  <p class="assign-note">💡 Teacher tip: assign one question per student, or let each student click their own tab.</p>
+  <div class="cue-tabs">
+    ${examCards.map((e,i)=>`<div class="cue-tab ${state.cueTab===i?'on':''}" data-i="${i}"><span class="emo">${e.emo}</span>${e.title}<span class="foc">${e.foc}</span></div>`).join('')}
+  </div>
+  <div class="cuecard">
+    <div class="label">${c.title} · ${c.foc}</div>
+    <h3>${c.desc}</h3>
+  </div>
+  ${timerHTML(30,'Answer time — 30 seconds')}
+  <textarea class="notepad" placeholder="Keyword notes only — O / R / E…"></textarea>`; }
+
+function renderWrapup(){ return `
+  <div class="eyebrow">Lesson Wrap-Up</div>
+  <h2 class="title">Today\'s Key Takeaways ⭐</h2>
+  <p class="deck">Excellent work. Here is everything you covered today — take it with you!</p>
+  <div class="takeaway-grid">
+    <div class="tk"><span class="tk-icon">📚</span><h4>8 Advanced Words</h4><p>cosmopolitan · tranquil · congested · close-knit · self-sufficient · commute · sprawling · idyllic</p></div>
+    <div class="tk"><span class="tk-icon">💡</span><h4>8 Idioms & Phrases</h4><p>the rat race · a breath of fresh air · in the middle of nowhere · the hustle and bustle · urban sprawl · set in your ways…</p></div>
+    <div class="tk"><span class="tk-icon">🎯</span><h4>The O.R.E. Model</h4><p>Opinion → Reason → Example: say it, support it, show it — the simple structure behind every strong Part 1 answer.</p></div>
+    <div class="tk"><span class="tk-icon">🔗</span><h4>Part 1 Starters</h4><p>I would argue that… · This is mainly because… · …whereas… · For instance,…</p></div>
+  </div>
+  <div class="final-score">
+    <div class="fs-num">${state.score}</div>
+    <div class="fs-label">points earned across today\'s exercises</div>
+  </div>
+  <p style="margin-top:28px;font-size:20px;color:var(--text-dim);">🎙 <strong>Homework:</strong> Choose 5 questions from today you didn\'t get in class. Record yourself answering each one in 20–30 seconds using Opinion → Reason → Example. Listen back and check: did you use at least 1 vocab word, 1 idiom, and a linking phrase in each answer?</p>`; }
+
+/* ===== HANDLERS ===== */
+function attachHandlers(){
+  const start=document.getElementById('timerStart');
+  const reset=document.getElementById('timerReset');
+  if(start){
+    const initSeconds = 30;
+    setupTimer(initSeconds);
+    updateRing();
+    start.onclick=()=>startTimer();
+    reset.onclick=()=>{ setupTimer(initSeconds); };
+  }
+
+  document.querySelectorAll('.warmup-tab').forEach(el=>el.addEventListener('click',()=>{ state.warmupTab=+el.dataset.i; markDone('warmup'); renderMain(); startTimer(); }));
+
+  document.querySelectorAll('.flip').forEach(el=>el.addEventListener('click',()=>{ el.classList.toggle('flipped'); markDone('vocab'); }));
+
+  document.querySelectorAll('#main .match-item').forEach(el=>{
+    if(el.classList.contains('locked')) return;
+    el.addEventListener('click',()=>{
+      const side=el.dataset.side; const val=el.dataset.val;
+      state.matchSel[side]=(state.matchSel[side]===val)?null:val;
+      if(state.matchSel.verb&&state.matchSel.noun){
+        if(matchKey[state.matchSel.verb]===state.matchSel.noun){
+          state.matchSolved.add(state.matchSel.verb); addScore(1);
+          if(state.matchSolved.size===verbs.length) markDone('collocation');
+          state.matchSel={verb:null,noun:null}; renderMain();
+        } else {
+          renderMain();
+          setTimeout(()=>{ document.querySelectorAll('#main .match-item.selected').forEach(x=>x.classList.add('wrong')); setTimeout(()=>{ state.matchSel={verb:null,noun:null}; renderMain(); },500); },30);
+        }
+      } else renderMain();
+    });
+  });
+
+  document.querySelectorAll('.idiom').forEach(el=>el.addEventListener('click',()=>{ el.classList.toggle('open'); markDone('idioms'); }));
+
+  document.querySelectorAll('.gap-blank').forEach(el=>{
+    el.addEventListener('click',()=>{
+      const i=+el.dataset.i;
+      state.gapSelected=(state.gapSelected===i)?null:i;
+      renderMain();
+    });
+  });
+  document.querySelectorAll('.wb-chip').forEach(chip=>{
+    chip.addEventListener('click',()=>{
+      if(state.gapSelected===null) return;
+      const i=state.gapSelected;
+      const word=chip.dataset.word;
+      const correctAns=gapfills[i].ans;
+      const fb=document.getElementById('gapFeedback');
+      if(word===correctAns){
+        state.gapFilled[i]=word;
+        state.gapSelected=null;
+        if(!state.gapScored[i]){ addScore(1); state.gapScored[i]=true; }
+        const doneCount=Object.keys(state.gapFilled).length;
+        if(doneCount===gapfills.length) markDone('gapfill');
+        renderMain();
+        setTimeout(()=>{ const f=document.getElementById('gapFeedback'); if(f){ f.textContent=doneCount+' / '+gapfills.length+' correct!'; f.className='quiz-feedback good'; } },10);
+      } else {
+        if(fb){ fb.textContent='That doesn\'t fit this blank — try another phrase.'; fb.className='quiz-feedback bad'; }
+        chip.style.animation='shake .3s'; setTimeout(()=>chip.style.animation='',300);
+      }
+    });
+  });
+
+  document.querySelectorAll('.roundtab button').forEach(b=>b.addEventListener('click',()=>{ state.quizRound=+b.dataset.r; state.quizIdx=0; renderMain(); }));
+
+  document.querySelectorAll('.quiz-opt').forEach(el=>el.addEventListener('click',()=>{
+    if(el.classList.contains('locked')) return;
+    const key=`${state.quizRound}-${state.quizIdx}`;
+    if(state.quizAnswered[key]) return;
+    const picked=+el.dataset.i; const q=quizRounds[state.quizRound].qs[state.quizIdx]; const correct=picked===q.ans;
+    const totalQs=Object.values(quizRounds).reduce((s,r)=>s+r.qs.length,0);
+    if(correct){
+      state.quizAnswered[key]={picked,correct:true}; addScore(1);
+      if(Object.keys(state.quizAnswered).length===totalQs) markDone('quiz');
+      renderMain();
+    } else {
+      el.classList.add('wrong');
+      const fb=document.getElementById('quizFeedbackMsg');
+      if(fb){ fb.textContent='✗ Not quite — click another option to try again'; fb.className='quiz-feedback bad'; }
+      setTimeout(()=>{
+        el.classList.remove('wrong');
+        const fb2=document.getElementById('quizFeedbackMsg');
+        if(fb2 && !state.quizAnswered[key]){ fb2.textContent='Select an answer'; fb2.className='quiz-feedback'; }
+      },700);
+    }
+  }));
+
+  const qPrev=document.getElementById('quizPrev'); const qNext=document.getElementById('quizNext');
+  if(qPrev) qPrev.onclick=()=>{ if(state.quizIdx>0){ state.quizIdx--; renderMain(); } };
+  if(qNext) qNext.onclick=()=>{ const r=quizRounds[state.quizRound]; if(state.quizIdx<r.qs.length-1){ state.quizIdx++; renderMain(); } };
+
+  document.querySelectorAll('.focus-btn').forEach(el=>{
+    if(el.classList.contains('locked')) return;
+    el.addEventListener('click',()=>{
+      const i=+el.dataset.i; const cat=el.dataset.cat;
+      if(state.foAnswered[i]) return;
+      const correct=cat===foQs[i].cat;
+      if(correct){
+        state.foAnswered[i]={picked:cat,correct:true}; addScore(1);
+        if(Object.keys(state.foAnswered).length===foQs.length) markDone('sorter');
+        renderMain();
+      } else {
+        el.classList.add('wrong');
+        setTimeout(()=>el.classList.remove('wrong'),500);
+      }
+    });
+  });
+
+  document.querySelectorAll('.ade-chip').forEach(el=>el.addEventListener('click',()=>{ const k=el.dataset.k; state.adeActive=(state.adeActive===k)?null:k; markDone('model'); renderMain(); }));
+
+  document.querySelectorAll('.phrase-btn').forEach(el=>el.addEventListener('click',()=>{ const area=document.getElementById('scratchArea'); area.value=(area.value?area.value+' ':'')+el.dataset.phrase+' '; area.focus(); markDone(state.current); }));
+
+  document.querySelectorAll('.pip').forEach(el=>el.addEventListener('click',()=>{ const crit=el.dataset.crit; const n=+el.dataset.n; state.peerScores[crit]=(state.peerScores[crit]===n)?null:n; if(Object.keys(state.peerScores).filter(k=>state.peerScores[k]).length===peerCriteria.length) markDone('peer'); renderMain(); }));
+
+  document.querySelectorAll('.cue-tab').forEach(el=>el.addEventListener('click',()=>{ state.cueTab=+el.dataset.i; markDone('practice'); renderMain(); }));
+}
+
+/* ===== INIT ===== */
+renderNav();
+renderMain();
+</script>
+</body>
+</html>

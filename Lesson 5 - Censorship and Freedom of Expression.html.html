@@ -1,0 +1,1031 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>IELTS 7.0 Speaking · Censorship &amp; Freedom of Expression</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;0,9..144,900;1,9..144,500&family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#131417;
+    --panel:#1D1F24;
+    --panel-2:#262930;
+    --paper:#F0F1EF;
+    --paper-dim:#DADCDB;
+    --coral:#C43D3D;
+    --coral-dim:#9F2F2F;
+    --mint:#5B7A99;
+    --gold:#5B7A99;
+    --third:#D9A441;
+    --fourth:#6FA98A;
+    --fifth:#9B7EBD;
+    --line:rgba(240,241,239,0.12);
+    --text-dim:rgba(240,241,239,0.62);
+    --text-faint:rgba(240,241,239,0.38);
+    --radius:14px;
+  }
+  *{box-sizing:border-box;}
+  html,body{margin:0;padding:0;}
+  body{background:var(--ink);color:var(--paper);font-family:'Inter',sans-serif;-webkit-font-smoothing:antialiased;min-height:100vh;}
+  ::selection{background:var(--coral);color:var(--paper);}
+  a{color:inherit;}
+  button{font-family:inherit;}
+  .app{display:grid;grid-template-columns:340px 1fr;min-height:100vh;}
+
+  /* RAIL */
+  .rail{background:var(--panel);border-right:1px solid var(--line);padding:24px 18px 18px;display:flex;flex-direction:column;gap:18px;position:sticky;top:0;height:100vh;overflow-y:auto;}
+  .brand{display:flex;flex-direction:column;gap:2px;padding:0 6px 14px;border-bottom:1px solid var(--line);}
+  .brand .tag{font-family:'JetBrains Mono',monospace;font-size:14.5px;letter-spacing:.14em;color:var(--coral);text-transform:uppercase;font-weight:700;}
+  .brand h1{font-family:'Fraunces',serif;font-size:24px;font-weight:700;margin:4px 0 0;line-height:1.15;}
+  .brand .sub{font-size:16px;color:var(--text-dim);margin-top:4px;}
+  .onair{display:flex;align-items:center;gap:8px;background:var(--panel-2);border:1px solid var(--line);border-radius:10px;padding:10px 12px;}
+  .onair .dot{width:8px;height:8px;border-radius:50%;background:var(--coral);box-shadow:0 0 0 0 rgba(196,61,61,.6);animation:pulse 1.8s infinite;}
+  @keyframes pulse{0%{box-shadow:0 0 0 0 rgba(196,61,61,.55);}70%{box-shadow:0 0 0 6px rgba(196,61,61,0);}100%{box-shadow:0 0 0 0 rgba(196,61,61,0);}}
+  .onair .label{font-family:'JetBrains Mono',monospace;font-size:14.5px;letter-spacing:.1em;color:var(--text-dim);text-transform:uppercase;}
+  .onair .score{margin-left:auto;font-family:'JetBrains Mono',monospace;font-weight:700;font-size:20.5px;color:var(--fourth);}
+  nav{display:flex;flex-direction:column;gap:2px;flex:1;}
+  .nav-item{display:flex;align-items:center;gap:10px;padding:9px 10px;border-radius:9px;cursor:pointer;font-size:17.5px;color:var(--text-dim);border:1px solid transparent;transition:background .15s,color .15s;user-select:none;}
+  .nav-item .n{font-family:'JetBrains Mono',monospace;font-size:15px;width:20px;color:var(--text-faint);flex-shrink:0;}
+  .nav-item:hover{background:rgba(240,241,239,0.05);color:var(--paper);}
+  .nav-item.active{background:rgba(196,61,61,0.16);border-color:rgba(196,61,61,0.38);color:var(--paper);}
+  .nav-item.active .n{color:var(--coral);}
+  .nav-item .done-mark{margin-left:auto;color:var(--fourth);font-size:17.5px;opacity:0;}
+  .nav-item.done .done-mark{opacity:1;}
+  .rail-foot{font-size:15px;color:var(--text-faint);border-top:1px solid var(--line);padding-top:12px;line-height:1.5;}
+
+  /* MAIN */
+  main{padding:48px 64px 100px;max-width:1180px;width:100%;}
+  .eyebrow{font-family:'JetBrains Mono',monospace;font-size:16px;letter-spacing:.16em;text-transform:uppercase;color:var(--coral);font-weight:700;margin-bottom:10px;}
+  h2.title{font-family:'Fraunces',serif;font-size:50px;font-weight:700;line-height:1.05;margin:0 0 10px;}
+  .deck{font-size:22px;color:var(--text-dim);margin:0 0 36px;max-width:700px;}
+  .card{background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);padding:22px 24px;}
+
+  /* TIMER */
+  .timer-wrap{display:flex;align-items:center;gap:22px;background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);padding:18px 22px;margin-bottom:28px;}
+  .ring{position:relative;width:92px;height:92px;flex-shrink:0;}
+  .ring svg{transform:rotate(-90deg);}
+  .ring circle{fill:none;stroke-width:6;}
+  .ring .bg{stroke:var(--line);}
+  .ring .fg{stroke:var(--coral);stroke-linecap:round;transition:stroke-dashoffset .25s linear;}
+  .ring .num{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-family:'JetBrains Mono',monospace;font-weight:700;font-size:20px;}
+  .timer-meta{flex:1;}
+  .timer-meta .t-label{font-size:19px;color:var(--text-dim);margin-bottom:4px;}
+  .timer-btns{display:flex;gap:8px;flex-wrap:wrap;}
+  .btn{font-family:'Inter',sans-serif;font-size:18px;font-weight:600;padding:8px 14px;border-radius:8px;border:1px solid var(--line);background:var(--panel-2);color:var(--paper);cursor:pointer;transition:background .15s,border-color .15s,transform .1s;}
+  .btn:hover{background:rgba(240,241,239,0.08);}
+  .btn:active{transform:scale(.97);}
+  .btn.primary{background:var(--coral);border-color:var(--coral);color:var(--paper);}
+  .btn.primary:hover{background:#D65050;}
+  .btn.ghost{background:transparent;}
+
+  /* PROMPTS */
+  .prompt-current{display:flex;gap:16px;align-items:flex-start;background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);padding:22px 24px;}
+  .prompt-current .pn{font-family:'JetBrains Mono',monospace;font-weight:700;font-size:19px;color:var(--coral);flex-shrink:0;padding-top:1px;}
+  .prompt-current p{margin:0;font-size:24px;line-height:1.5;}
+
+  /* FLIP CARDS */
+  .grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;}
+  .flip{perspective:1000px;height:220px;cursor:pointer;}
+  .flip-inner{position:relative;width:100%;height:100%;transition:transform .5s cubic-bezier(.4,.2,.2,1);transform-style:preserve-3d;}
+  .flip.flipped .flip-inner{transform:rotateY(180deg);}
+  .flip-face{position:absolute;inset:0;backface-visibility:hidden;border-radius:var(--radius);border:1px solid var(--line);padding:18px;display:flex;flex-direction:column;justify-content:center;}
+  .flip-front{background:var(--panel);}
+  .flip-front .def-prompt{font-family:'Inter',sans-serif;font-weight:600;font-size:19px;line-height:1.35;}
+  .flip-front .hint{font-size:16px;color:var(--text-faint);margin-top:10px;}
+  .flip-back{background:var(--coral);color:var(--paper);transform:rotateY(180deg);}
+  .flip-back .word-reveal{font-family:'Fraunces',serif;font-weight:700;font-style:italic;font-size:24px;margin-bottom:8px;}
+  .flip-back .ex{font-size:16.5px;font-style:italic;line-height:1.4;opacity:.88;}
+
+  /* MATCHING */
+  .match-wrap{display:grid;grid-template-columns:1fr 1fr;gap:30px;}
+  .match-col h4{font-family:'JetBrains Mono',monospace;font-size:16px;letter-spacing:.1em;color:var(--text-faint);text-transform:uppercase;margin:0 0 12px;}
+  .match-item,.match-item2{display:flex;align-items:center;gap:10px;background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:11px 14px;margin-bottom:8px;cursor:pointer;font-size:18.5px;transition:border-color .15s,background .15s;}
+  .match-item .tag,.match-item2 .tag{font-family:'JetBrains Mono',monospace;font-size:16px;color:var(--text-faint);width:18px;flex-shrink:0;}
+  .match-item.selected,.match-item2.selected{border-color:var(--gold);background:rgba(91,122,153,0.16);}
+  .match-item.correct,.match-item2.correct{border-color:var(--coral);background:rgba(196,61,61,0.14);}
+  .match-item.wrong,.match-item2.wrong{border-color:#E67E5B;background:rgba(230,126,91,0.12);}
+  .match-item.locked,.match-item2.locked{cursor:default;opacity:.85;}
+
+  /* IDIOMS */
+  .idiom-list{display:flex;flex-direction:column;gap:10px;}
+  .idiom{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:16px 18px;cursor:pointer;transition:border-color .15s;}
+  .idiom:hover{border-color:rgba(196,61,61,.35);}
+  .idiom-head{display:flex;align-items:center;justify-content:space-between;}
+  .idiom-head .phrase{font-family:'Fraunces',serif;font-weight:600;font-size:22px;}
+  .idiom-head .chev{color:var(--text-faint);transition:transform .2s;font-size:19px;}
+  .idiom.open .chev{transform:rotate(90deg);}
+  .idiom-body{max-height:0;overflow:hidden;transition:max-height .3s ease;}
+  .idiom.open .idiom-body{max-height:110px;}
+  .idiom-mean{font-size:19px;color:var(--text-dim);margin-top:8px;}
+  .idiom-ex{font-size:17px;font-style:italic;color:var(--text-faint);margin-top:4px;padding-bottom:4px;}
+
+  /* GAP FILL */
+  .gapfill-list{display:flex;flex-direction:column;gap:16px;}
+  .gap-item{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:16px 18px;}
+  .gap-item p{margin:0 0 10px;font-size:20px;line-height:1.6;}
+  .gap-blank{font-family:'JetBrains Mono',monospace;display:inline-block;min-width:230px;text-align:center;background:var(--panel-2);border:1px solid var(--line);border-radius:7px;color:var(--gold);padding:6px 12px;font-weight:700;cursor:pointer;}
+  .gap-blank.selected{border-color:var(--gold);box-shadow:0 0 0 2px rgba(91,122,153,.3);}
+  .gap-blank.filled{color:var(--coral);border-color:var(--coral);}
+  .wordbank{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:18px;}
+  .wb-chip{font-family:'JetBrains Mono',monospace;font-size:16.5px;background:var(--panel-2);border:1px solid var(--line);border-radius:20px;padding:8px 15px;color:var(--text-dim);cursor:pointer;transition:border-color .15s,color .15s,opacity .15s;}
+  .wb-chip:hover{border-color:var(--coral);color:var(--paper);}
+  .wb-chip.used{opacity:.3;pointer-events:none;text-decoration:line-through;}
+  .quiz-feedback{font-size:19px;color:var(--text-dim);min-height:18px;}
+  .quiz-feedback.good{color:var(--coral);}
+  .quiz-feedback.bad{color:#E67E5B;}
+
+  /* QUIZ */
+  .quiz-progress{display:flex;gap:6px;margin-bottom:24px;}
+  .quiz-dot{flex:1;height:4px;border-radius:3px;background:var(--line);}
+  .quiz-dot.active{background:var(--coral);}
+  .quiz-dot.answered{background:var(--fourth);}
+  .quiz-card{background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);padding:28px;}
+  .quiz-q{font-size:25px;font-weight:600;margin:0 0 20px;line-height:1.4;}
+  .quiz-opts{display:flex;flex-direction:column;gap:10px;}
+  .quiz-opt{display:flex;gap:12px;align-items:center;background:var(--panel-2);border:1px solid var(--line);border-radius:10px;padding:13px 16px;cursor:pointer;font-size:19.5px;transition:border-color .15s,background .15s;}
+  .quiz-opt:hover{border-color:rgba(196,61,61,.4);}
+  .quiz-opt .letter{font-family:'JetBrains Mono',monospace;font-weight:700;font-size:18px;width:32px;height:32px;border-radius:50%;background:var(--ink);display:flex;align-items:center;justify-content:center;flex-shrink:0;color:var(--text-dim);}
+  .quiz-opt.correct{border-color:var(--coral);background:rgba(196,61,61,0.16);}
+  .quiz-opt.correct .letter{background:var(--coral);color:var(--paper);}
+  .quiz-opt.wrong{border-color:#E67E5B;background:rgba(230,126,91,0.14);animation:shake .3s;}
+  .quiz-opt.locked{cursor:default;}
+  @keyframes shake{0%,100%{transform:translateX(0);}25%{transform:translateX(-5px);}75%{transform:translateX(5px);}}
+  .quiz-foot{display:flex;justify-content:space-between;align-items:center;margin-top:22px;}
+  .roundtab{display:flex;gap:8px;margin-bottom:22px;}
+  .roundtab button{font-family:'JetBrains Mono',monospace;font-size:16px;padding:7px 13px;border-radius:8px;border:1px solid var(--line);background:transparent;color:var(--text-dim);cursor:pointer;}
+  .roundtab button.on{background:var(--coral);color:var(--paper);border-color:var(--coral);}
+
+  /* WARM-UP TABS */
+  .warmup-tabs{display:flex;gap:8px;margin-bottom:20px;flex-wrap:wrap;}
+  .warmup-tab{font-family:'JetBrains Mono',monospace;font-size:18px;font-weight:700;width:42px;height:42px;border-radius:10px;border:1px solid var(--line);background:var(--panel);color:var(--text-dim);cursor:pointer;display:flex;align-items:center;justify-content:center;transition:border-color .15s,background .15s,color .15s;}
+  .warmup-tab:hover{border-color:rgba(196,61,61,.4);color:var(--paper);}
+  .warmup-tab.on{border-color:var(--coral);background:rgba(196,61,61,.18);color:var(--paper);}
+
+  /* SORTERS */
+  .sort-intro{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:14px;margin-bottom:22px;}
+  .sort-intro-item{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:16px 18px;}
+  .sort-intro-item .k{font-family:'JetBrains Mono',monospace;font-weight:700;font-size:15.5px;margin-bottom:6px;display:block;}
+  .sort-intro-item[data-k="A"] .k{color:var(--gold);}
+  .sort-intro-item[data-k="B"] .k{color:var(--coral);}
+  .sort-intro-item[data-k="C"] .k{color:var(--third);}
+  .sort-intro-item[data-k="D"] .k{color:var(--fourth);}
+  .sort-intro-item[data-k="O1"] .k{color:var(--coral);}
+  .sort-intro-item[data-k="R"] .k{color:var(--gold);}
+  .sort-intro-item[data-k="E"] .k{color:var(--third);}
+  .sort-intro-item[data-k="O2"] .k{color:var(--fourth);}
+  .sort-intro-item[data-k="P"] .k{color:var(--fifth);}
+  .sort-intro-item p{margin:0;font-size:15.5px;color:var(--text-dim);line-height:1.4;}
+  .focus-list{display:flex;flex-direction:column;gap:14px;}
+  .focus-item{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:18px 20px;}
+  .focus-item p{margin:0 0 14px;font-size:20.5px;line-height:1.5;}
+  .focus-btns{display:flex;gap:10px;flex-wrap:wrap;}
+  .focus-btn{font-family:'Inter',sans-serif;font-size:16.5px;font-weight:600;padding:10px 16px;border-radius:9px;border:1px solid var(--line);background:var(--panel-2);color:var(--text-dim);cursor:pointer;transition:border-color .15s,background .15s;}
+  .focus-btn:hover{border-color:rgba(196,61,61,.4);color:var(--paper);}
+  .focus-btn.correct{border-color:var(--coral);background:rgba(196,61,61,0.18);color:var(--paper);}
+  .focus-btn.wrong{border-color:#E67E5B;background:rgba(230,126,91,0.16);animation:shake .3s;}
+  .focus-btn.locked{cursor:default;}
+  .focus-result{font-size:17px;color:var(--text-faint);margin-top:10px;min-height:16px;}
+  .focus-result.good{color:var(--coral);}
+
+  /* DISCUSSION CARD */
+  .cuecard{background:linear-gradient(155deg,var(--panel-2),var(--panel));border:1px solid var(--line);border-radius:18px;padding:30px 32px;margin-bottom:24px;}
+  .cuecard .label{font-family:'JetBrains Mono',monospace;font-size:16px;color:var(--coral);letter-spacing:.1em;text-transform:uppercase;margin-bottom:10px;}
+  .cuecard h3{font-family:'Fraunces',serif;font-size:28px;margin:0 0 14px;line-height:1.3;}
+  .cuecard .followup{margin:0;font-size:18.5px;color:var(--text-dim);border-top:1px solid var(--line);padding-top:14px;}
+  .cuecard .followup b{color:var(--paper);}
+  .notepad{width:100%;min-height:130px;background:var(--ink);border:1px solid var(--line);border-radius:10px;color:var(--paper);font-family:'Inter',sans-serif;font-size:20px;padding:14px;resize:vertical;margin-top:6px;}
+  .notepad:focus{outline:none;border-color:var(--coral);}
+
+  /* MODEL ANSWER */
+  .ade-key{display:flex;gap:10px;margin-bottom:18px;flex-wrap:wrap;}
+  .ade-chip{font-family:'JetBrains Mono',monospace;font-size:15.5px;padding:6px 12px;border-radius:7px;border:1px solid var(--line);cursor:pointer;transition:transform .12s;}
+  .ade-chip[data-k="O1"]{color:var(--coral);}
+  .ade-chip[data-k="R"]{color:var(--gold);}
+  .ade-chip[data-k="E"]{color:var(--third);}
+  .ade-chip[data-k="O2"]{color:var(--fourth);}
+  .ade-chip[data-k="P"]{color:var(--fifth);}
+  .ade-chip.active{transform:scale(1.05);border-color:currentColor;}
+  .ade-block{padding:16px 18px;border-radius:11px;margin-bottom:10px;border:1px solid var(--line);background:var(--panel);transition:opacity .2s,border-color .2s;line-height:1.65;font-size:19.5px;}
+  .ade-block .tag2{font-family:'JetBrains Mono',monospace;font-size:15px;font-weight:700;margin-bottom:8px;display:block;}
+  .ade-block.dim{opacity:.3;}
+  .ade-block[data-k="O1"] .tag2{color:var(--coral);}
+  .ade-block[data-k="R"] .tag2{color:var(--gold);}
+  .ade-block[data-k="E"] .tag2{color:var(--third);}
+  .ade-block[data-k="O2"] .tag2{color:var(--fourth);}
+  .ade-block[data-k="P"] .tag2{color:var(--fifth);}
+  .ade-block.highlight[data-k="O1"]{border-color:var(--coral);}
+  .ade-block.highlight[data-k="R"]{border-color:var(--gold);}
+  .ade-block.highlight[data-k="E"]{border-color:var(--third);}
+  .ade-block.highlight[data-k="O2"]{border-color:var(--fourth);}
+  .ade-block.highlight[data-k="P"]{border-color:var(--fifth);}
+
+  /* TOOLKIT */
+  .grid-2{display:grid;grid-template-columns:1fr 1fr;gap:16px;}
+  .tool-card{background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);padding:18px 20px;}
+  .tool-card h4{margin:0 0 12px;font-size:18.5px;font-family:'Fraunces',serif;font-weight:600;}
+  .tool-card .phrase-btn{display:inline-block;font-size:16.5px;background:var(--panel-2);border:1px solid var(--line);border-radius:7px;padding:6px 11px;margin:0 6px 6px 0;cursor:pointer;color:var(--text-dim);transition:color .15s,border-color .15s;}
+  .tool-card .phrase-btn:hover{color:var(--paper);border-color:var(--gold);}
+  .scratch{margin-top:24px;}
+  .scratch textarea{width:100%;min-height:90px;background:var(--panel);border:1px solid var(--line);border-radius:10px;color:var(--paper);font-family:'Inter',sans-serif;font-size:20px;padding:14px;}
+  .scratch textarea:focus{outline:none;border-color:var(--coral);}
+
+  /* PEER SCORE */
+  .scorecard{display:flex;flex-direction:column;gap:10px;}
+  .score-row{display:flex;align-items:center;gap:14px;background:var(--panel);border:1px solid var(--line);border-radius:11px;padding:13px 16px;}
+  .score-row .letter2{font-family:'JetBrains Mono',monospace;font-weight:700;font-size:16px;width:36px;height:36px;border-radius:50%;background:var(--panel-2);display:flex;align-items:center;justify-content:center;flex-shrink:0;color:var(--coral);}
+  .score-row .si-main{flex:1;min-width:0;}
+  .score-row .si-title{font-weight:600;font-size:18.5px;}
+  .score-row .si-sub{font-size:15.5px;color:var(--text-faint);}
+  .pips{display:flex;gap:5px;}
+  .pip{width:36px;height:36px;border-radius:7px;border:1px solid var(--line);background:var(--panel-2);cursor:pointer;color:var(--text-dim);font-size:17px;font-family:'JetBrains Mono',monospace;display:flex;align-items:center;justify-content:center;}
+  .pip.on{background:var(--fourth);border-color:var(--fourth);color:var(--ink);}
+  .score-total{margin-top:8px;display:flex;align-items:center;justify-content:space-between;background:var(--panel-2);border:1px solid var(--line);border-radius:11px;padding:16px 18px;}
+  .score-total .tot-num{font-family:'JetBrains Mono',monospace;font-weight:700;font-size:37px;color:var(--fourth);}
+  .feedback-fields{display:flex;flex-direction:column;gap:10px;margin-top:18px;}
+  .feedback-fields input{background:var(--panel);border:1px solid var(--line);border-radius:9px;color:var(--paper);padding:11px 14px;font-size:19px;font-family:'Inter',sans-serif;}
+  .feedback-fields input:focus{outline:none;border-color:var(--coral);}
+
+  /* EXAM PRACTICE */
+  .cue-tabs{display:grid;grid-template-columns:repeat(6,1fr);gap:10px;margin-bottom:20px;}
+  .cue-tab{text-align:center;padding:12px 6px;border-radius:11px;border:1px solid var(--line);background:var(--panel);cursor:pointer;font-size:14.5px;font-weight:600;}
+  .cue-tab.on{border-color:var(--coral);background:rgba(196,61,61,.16);}
+  .cue-tab .emo{font-size:22px;display:block;margin-bottom:4px;}
+  .cue-tab .foc{display:block;font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--text-faint);margin-top:2px;}
+  .assign-note{font-size:17px;color:var(--text-faint);margin:-12px 0 20px;}
+
+  /* WRAP UP */
+  .takeaway-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;}
+  .tk{background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);padding:20px 22px;}
+  .tk .tk-icon{font-size:32px;margin-bottom:10px;display:block;}
+  .tk h4{margin:0 0 8px;font-family:'Fraunces',serif;font-size:21px;}
+  .tk p{margin:0;font-size:18px;color:var(--text-dim);line-height:1.55;}
+  .final-score{margin-top:32px;text-align:center;padding:36px;border-radius:18px;background:linear-gradient(155deg,var(--panel-2),var(--panel));border:1px solid var(--line);}
+  .final-score .fs-num{font-family:'JetBrains Mono',monospace;font-weight:700;font-size:70px;color:var(--fourth);}
+  .final-score .fs-label{font-size:19px;color:var(--text-dim);margin-top:4px;}
+
+  .nav-arrows{display:flex;justify-content:space-between;margin-top:44px;padding-top:24px;border-top:1px solid var(--line);}
+  .mobile-progress,.mobile-jump{display:none;}
+
+  @media(max-width:880px){
+    .app{grid-template-columns:1fr;}
+    .rail{position:relative;height:auto;flex-direction:row;align-items:center;gap:12px;padding:14px 16px;}
+    .brand{border-bottom:none;padding:0;flex-shrink:0;}
+    .brand h1{font-size:18px;}
+    .brand .sub{display:none;}
+    .onair{flex-shrink:0;padding:8px 12px;}
+    .onair .label{display:none;}
+    nav{display:none;}
+    .rail-foot{display:none;}
+    main{padding:18px 18px 70px;}
+    .grid-3{grid-template-columns:1fr 1fr;}
+    .match-wrap,.grid-2,.takeaway-grid{grid-template-columns:1fr;}
+    .sort-intro{grid-template-columns:1fr;}
+    .warmup-tab{width:38px;height:38px;font-size:16px;}
+    .cue-tabs{grid-template-columns:repeat(3,1fr);}
+    h2.title{font-size:36px;}
+    .mobile-progress,.mobile-jump{display:flex;}
+    .mobile-progress{gap:4px;margin-bottom:18px;}
+    .mobile-progress .seg{flex:1;height:3px;border-radius:2px;background:var(--line);}
+    .mobile-progress .seg.done{background:var(--coral);}
+    .mobile-progress .seg.now{background:#E67E5B;}
+    .mobile-jump{align-items:center;margin-bottom:4px;}
+    .mobile-jump select{background:var(--panel);color:var(--paper);border:1px solid var(--line);border-radius:8px;padding:7px 10px;font-size:17px;font-family:'JetBrains Mono',monospace;width:100%;}
+  }
+  @media(prefers-reduced-motion:reduce){*{animation-duration:.001s!important;transition-duration:.001s!important;}}
+</style>
+</head>
+<body>
+<div class="app">
+  <aside class="rail">
+    <div class="brand">
+      <span class="tag">IELTS 7.0 · Speaking</span>
+      <h1>Censorship &amp; Freedom of Expression</h1>
+      <div class="sub">Part 3 Masterclass · 60 min</div>
+    </div>
+    <div class="onair">
+      <div class="dot"></div>
+      <div class="label">On Air</div>
+      <div class="score" id="railScore">0 pts</div>
+    </div>
+    <nav id="navList"></nav>
+    <div class="rail-foot">Click any item to jump. Progress is tracked as you complete each exercise.</div>
+  </aside>
+  <main id="main"></main>
+</div>
+
+<script>
+/* ===== DATA ===== */
+const sections = [
+  {id:'objectives', n:'00', label:'Lesson Objectives'},
+  {id:'warmup',   n:'01', label:'Warm-Up'},
+  {id:'cuematch', n:'02', label:'Key Terms in Action'},
+  {id:'vocab',    n:'03', label:'Vocabulary'},
+  {id:'qtype',    n:'04', label:'What Kind of Answer?'},
+  {id:'idioms',   n:'05', label:'Idioms & Phrases'},
+  {id:'gapfill',  n:'06', label:'Gap Fill'},
+  {id:'oreo',     n:'07', label:'Opinion, Reason, Example or Plus?'},
+  {id:'quiz',     n:'08', label:'Quiz Challenge'},
+  {id:'model',    n:'09', label:'Model Answer'},
+  {id:'toolkit',  n:'10', label:'Language Toolkit'},
+  {id:'connectives', n:'11', label:'Balanced Argument Phrases'},
+  {id:'peer',     n:'12', label:'Peer Score Card'},
+  {id:'practice', n:'13', label:'Exam Practice'},
+  {id:'wrapup',   n:'14', label:'Wrap-Up'}
+];
+
+const objectives = [
+  {icon:'🧩', h:'Structure a Balanced Response',       d:'Use the CORE Organisation strategy to build clear, well-organised Part 3 answers.'},
+  {icon:'⚖️', h:'Present Both Sides of an Issue',       d:'Sequence your ideas and use structured reasoning to compare different views.'},
+  {icon:'🔗', h:'Weigh Pros, Cons and Examples',        d:'Use cohesive devices to connect ideas and support your points with examples.'}
+];
+
+function shuffleArr(arr){
+  const a = arr.slice();
+  for(let i=a.length-1;i>0;i--){
+    const j = Math.floor(Math.random()*(i+1));
+    [a[i],a[j]]=[a[j],a[i]];
+  }
+  return a;
+}
+
+const warmupQs = [
+  'Do you follow the news? How do you usually get your news?',
+  'Do you trust everything you read online?',
+  'Have you ever shared a news story that turned out to be false?',
+  'Do you think social media has changed how people get information?',
+  'Should famous people be allowed to say whatever they want online?',
+  'Do you think all opinions deserve to be heard?',
+  'Have you ever changed your mind about something after reading an article?',
+  'Do you think the news today is more or less trustworthy than in the past?'
+];
+
+/* Key terms matching */
+const cuePrompts = shuffleArr(['A journalist expresses a controversial view without being punished.','Media coverage that helps people stay safe during a natural disaster.','A news article was removed for criticising the government.','A country bans all foreign news websites.','A video falsely claiming garlic cures COVID-19 spreads online.']);
+const cueMeanings = shuffleArr(['freedom of speech','public interest','censorship','government control','misinformation']);
+const cueMatchKey = {
+  'A journalist expresses a controversial view without being punished.':   'freedom of speech',
+  'Media coverage that helps people stay safe during a natural disaster.': 'public interest',
+  'A news article was removed for criticising the government.':           'censorship',
+  'A country bans all foreign news websites.':                            'government control',
+  'A video falsely claiming garlic cures COVID-19 spreads online.':       'misinformation'
+};
+const cueCard1 = {
+  title:'Match each real-world example to the term it illustrates.',
+};
+
+const vocab = [
+  {w:'algorithm',                d:'a system used to filter, rank and display content online',                                             ex:'"Social media algorithms decide which stories appear in your feed first."'},
+  {w:'echo chamber',              d:'a situation where people mainly see or hear opinions that already match their own',                     ex:'"Being in an echo chamber can make people\'s views more extreme over time."'},
+  {w:'media bias',                d:'when news coverage favours a particular viewpoint instead of reporting fairly',                         ex:'"Some viewers switch channels because they feel there\'s clear media bias."'},
+  {w:'fact-checking',             d:'the process of verifying that information is accurate before it is published or shared',                ex:'"Good journalists always do careful fact-checking before running a story."'},
+  {w:'platform accountability',   d:'holding tech companies responsible for the content that appears on their sites',                        ex:'"There have been growing calls for platform accountability after harmful content went viral."'},
+  {w:'digital footprint',         d:'the trail of information a person leaves behind through their online activity',                          ex:'"Everything you post online adds to your digital footprint."'},
+  {w:'clickbait',                 d:'a sensational headline or image designed mainly to attract clicks rather than to inform',                ex:'"The article\'s clickbait title promised a shocking secret that never actually appeared."'},
+  {w:'editorial standards',       d:'the ethical guidelines that decide what a news organisation will and won\'t publish',                     ex:'"Reputable newspapers follow strict editorial standards before printing a story."'}
+];
+
+const verbs   = shuffleArr(['weigh up','strike','spark','come under','raise','draw','set','shape']);
+const nouns   = shuffleArr(['the pros and cons','a balance','a debate','fire for','concerns','the line','a precedent','public opinion']);
+const matchKey = {
+  'weigh up':    'the pros and cons',
+  'strike':      'a balance',
+  'spark':       'a debate',
+  'come under':  'fire for',
+  'raise':       'concerns',
+  'draw':        'the line',
+  'set':         'a precedent',
+  'shape':       'public opinion'
+};
+
+const idioms = [
+  {p:'read between the lines',                m:'to understand a hidden or implied meaning, not just what is said directly',                    ex:'"You have to read between the lines to see what the report isn\'t saying."'},
+  {p:'take something with a grain of salt',   m:'to not fully believe something, and remain a little sceptical',                                 ex:'"I take most celebrity gossip with a grain of salt."'},
+  {p:'the tip of the iceberg',                m:'a small, visible part of a much larger issue',                                                  ex:'"These leaked messages are just the tip of the iceberg."'},
+  {p:'sugarcoat',                             m:'to make something sound better or less unpleasant than it really is',                          ex:'"The report didn\'t sugarcoat the risks of unregulated platforms."'},
+  {p:'a double-edged sword',                  m:'something that has both positive and negative effects',                                        ex:'"Social media is a double-edged sword — it connects people but also spreads misinformation."'},
+  {p:'draw a line in the sand',               m:'to set a firm limit that shouldn\'t be crossed',                                                ex:'"Regulators are trying to draw a line in the sand on harmful content."'},
+  {p:'open a can of worms',                   m:'to create a complicated situation with many problems once you start dealing with it',           ex:'"Regulating online speech can open a can of worms."'},
+  {p:'set the record straight',               m:'to correct false information and state the truth clearly',                                     ex:'"The organisation issued a statement to set the record straight."'}
+];
+
+const gapfills = [
+  {text:'You have to ___ to see what the report isn\'t saying.',                                                 ans:'read between the lines'},
+  {text:'I ___ most celebrity gossip.',                                                                          ans:'take with a grain of salt'},
+  {text:'These leaked messages are just ___.',                                                                   ans:'the tip of the iceberg'},
+  {text:'Social media is ___ — it connects people but also spreads misinformation.',                             ans:'a double-edged sword'},
+  {text:'Regulators are trying to ___ on harmful content.',                                                      ans:'draw a line in the sand'},
+  {text:'Regulating online speech can ___.',                                                                     ans:'open a can of worms'}
+];
+const wordbank = shuffleArr(['read between the lines','take with a grain of salt','the tip of the iceberg','a double-edged sword','draw a line in the sand','open a can of worms','sugarcoat','set the record straight']);
+
+const qtypeIntro = [
+  {k:'A', label:'Change + Evaluation',   d:'how something has changed over time, plus your judgement of it'},
+  {k:'B', label:'Drawbacks + Examples',  d:'the downsides of something, backed with an example'},
+  {k:'C', label:'Advantages + Examples', d:'the benefits of something, backed with an example'},
+  {k:'D', label:'Opinion + Reason + Example', d:'your personal view, why you think it, and an example'}
+];
+
+const qtypeQs = shuffleArr([
+  {q:'"What are the benefits of media regulation?"',                                    cat:'C'},
+  {q:'"Do you think the government should control the media?"',                         cat:'D'},
+  {q:'"Should children be protected from certain media content?"',                      cat:'D'},
+  {q:'"Are there any risks when governments control the media?"',                       cat:'B'},
+  {q:'"How has the internet changed media control?"',                                   cat:'A'}
+]);
+qtypeQs.forEach(q=>{ q.order = ['A','B','C','D']; });
+const qtypeLabels = {A:'Change + Evaluation', B:'Drawbacks + Examples', C:'Advantages + Examples', D:'Opinion + Reason + Example'};
+
+const oreoIntro = [
+  {k:'O1', label:'Opinion',          d:'answer the question directly with a personal view'},
+  {k:'R',  label:'Reason',           d:'explain why you think so'},
+  {k:'E',  label:'Example',          d:'support it with a real or imagined situation'},
+  {k:'O2', label:'Refined Opinion',  d:'add nuance or clarify your stance'},
+  {k:'P',  label:'Plus',             d:'show deeper thinking — a prediction or reflection'}
+];
+
+const oreoQs = shuffleArr([
+  {q:'"I believe children should be protected from overly violent content."',                                                                 cat:'O1'},
+  {q:'"One reason is that young people are easily influenced by what they watch."',                                                            cat:'R'},
+  {q:'"For instance, studies show kids exposed to media violence are more likely to act aggressively."',                                       cat:'E'},
+  {q:'"Still, I think parents, not just governments, should play a leading role in monitoring content."',                                      cat:'O2'},
+  {q:'"If no action is taken, it could seriously impact children\'s development."',                                                            cat:'P'},
+  {q:'"In my opinion, some level of regulation on social media is necessary."',                                                                 cat:'O1'},
+  {q:'"One reason is that misinformation spreads quickly and can harm public safety."',                                                         cat:'R'},
+  {q:'"For example, during health emergencies, fake news can lead to panic."',                                                                  cat:'E'},
+  {q:'"That said, full control could limit freedom of expression."',                                                                            cat:'O2'},
+  {q:'"If we don\'t act soon, people may stop trusting anything they see online."',                                                             cat:'P'}
+]);
+oreoQs.forEach(q=>{ q.order = shuffleArr(['O1','R','E','O2','P']); });
+const oreoLabels = {O1:'Opinion', R:'Reason', E:'Example', O2:'Refined Opinion', P:'Plus'};
+
+const quizRounds = {
+  1:{title:'Vocabulary Rapid Fire', qs:[
+    {q:"What is an 'echo chamber'?",                                                                   opts:['a place to record podcasts','a situation where people mainly hear opinions they already agree with','a type of loudspeaker','a fact-checking website'], ans:1},
+    {q:"What does 'clickbait' mean?",                                                                   opts:['a verified news source','a sensational headline designed mainly to attract clicks','a type of algorithm','a legal term for censorship'], ans:1},
+    {q:"What is a 'digital footprint'?",                                                                 opts:['a computer virus','the trail of information a person leaves behind online','a type of firewall','a government regulation'], ans:1},
+    {q:"What does 'platform accountability' mean?",                                                      opts:['banning all social media','holding tech companies responsible for content on their sites','deleting your own account','a type of algorithm'], ans:1}
+  ]},
+  2:{title:'Idiom Challenge', qs:[
+    {q:'"These leaked messages are just the tip of the iceberg."',                                       opts:['the whole story has now been told','a small, visible part of a much bigger issue','a completely unrelated topic','something that happened in winter'], ans:1},
+    {q:'"Social media is a double-edged sword."',                                                        opts:['it is dangerous to use','it has both positive and negative effects','it is only used by two people','it cuts off internet access'], ans:1},
+    {q:'"I take celebrity news with a grain of salt."',                                                  opts:['I believe it completely','I don\'t fully believe it and stay a little sceptical','I only read it while eating','I refuse to read it at all'], ans:1},
+    {q:'"Regulating online speech can open a can of worms."',                                            opts:['it solves every problem instantly','it can create a complicated situation with many new problems','it is related to fishing','it is a simple, quick process'], ans:1}
+  ]}
+};
+
+const oreoModel = [
+  {k:'O1', label:'Opinion — Direct answer',        text:'In my opinion, I do believe that some regulation is necessary, especially for dangerous or misleading content.'},
+  {k:'R',  label:'Reason — Why you think so',       text:'This is mainly because online platforms are flooded with unverified information that can spread rapidly before anyone has a chance to check it.'},
+  {k:'E',  label:'Example — Real situation',        text:'A good example is the early stages of the pandemic, when false claims about home remedies spread online and led to real harm.'},
+  {k:'O2', label:'Refined Opinion — Add nuance',    text:'That said, giving the government too much power over digital content could easily tip into censorship or political manipulation.'},
+  {k:'P',  label:'Plus — Deeper thinking',          text:'If platforms aren\'t held accountable soon, public trust in online information could break down completely.'}
+];
+
+const toolkit = [
+  {h:'💬 Stating Opinions',        items:['In my opinion, …','I believe that…','To me, …','I would say that…','From my perspective, …']},
+  {h:'🧠 Giving Reasons',           items:['One reason is that…','This is mainly because…','That\'s due to the fact that…']},
+  {h:'📌 Giving Examples',          items:['For example, …','Take (…) as an example, …','A good example is…','I once saw…']},
+  {h:'🔄 Refining Opinions',        items:['However, …','That said, …','At the same time, …','Still, …']},
+  {h:'🔮 Adding Depth',             items:['If this continues, …','In the future, …','This reminds me that…','As a result, …','If we don\'t do something soon, …']},
+  {h:'🎭 Using Hedges',             items:['Media regulation is a sensitive topic…','The question of who controls content depends on…','That\'s a difficult question, but I\'d say…']}
+];
+
+const connectives = [
+  {h:'🔀 Comparing Views',                items:['While some support…, others argue…','Some people argue that… while others believe…']},
+  {h:'⚖️ Weighing Pros & Cons',           items:['On the one hand, …','On the other hand, …','There are valid concerns on both sides…']},
+  {h:'🏁 Concluding',                     items:['So, all things considered, I\'d say that…','Overall, it seems to me that…','Taking everything into account, I believe…']},
+  {h:'🎯 Acknowledging Counterarguments', items:['Admittedly, …','It\'s true that… however…','Critics would argue that…']}
+];
+
+const peerCriteria = [
+  {k:'🧩', t:'Used the O.R.E.O. Plus model?',           s:'Opinion → Reason → Example → Refined Opinion → Plus'},
+  {k:'⚖️', t:'Stated the issue and balanced views?',    s:'Showed more than one side of the argument'},
+  {k:'📚', t:'3+ topic vocab or collocations used?',    s:'From today\'s word list, used naturally'},
+  {k:'🔗', t:'Functional phrases used?',                s:'To compare views, weigh pros/cons, give examples'},
+  {k:'🎭', t:'Used a hedge to open a hard question?',   s:'e.g. "That\'s a difficult question, but…"'},
+  {k:'🎯', t:'Considered a counterargument?',           s:'Acknowledged the other side before concluding'},
+  {k:'🧭', t:'Answer flowed logically & stayed on topic?', s:'No unrelated tangents'},
+  {k:'🗣️', t:'Spoke fluently and confidently?',         s:'Few hesitations, natural pace'}
+];
+
+const examCards = [
+  {emo:'⚖️', foc:'Balance',       title:'Q1',  prompt:'Is it possible to have both complete freedom and safety in the media?',                   followUp:'What might a country lose if it focused only on safety?'},
+  {emo:'🚫', foc:'Misinformation', title:'Q2',  prompt:'Should people be punished for spreading misinformation online?',                          followUp:'Should intent matter — spreading it by accident vs. on purpose?'},
+  {emo:'🗳️', foc:'Influence',     title:'Q3',  prompt:'Can media influence how people think and vote?',                                           followUp:'Can you think of a real example of this happening?'},
+  {emo:'🏫', foc:'Education',      title:'Q4',  prompt:'Should schools teach students how to recognise fake news?',                                followUp:'At what age should this kind of education start?'},
+  {emo:'📱', foc:'Platforms',      title:'Q5',  prompt:'Do you think social media companies should be punished for spreading harmful content?',    followUp:'Who should decide what counts as "harmful"?'},
+  {emo:'🎤', foc:'Influencers',    title:'Q6',  prompt:'Why do some people trust influencers more than traditional journalists?',                  followUp:'Is that level of trust a good thing or a risk?'},
+  {emo:'🛡️', foc:'Self-Protection', title:'Q7', prompt:'How can people protect themselves from media bias?',                                       followUp:'Do you think most people actually do this?'},
+  {emo:'🌐', foc:'Free Speech',    title:'Q8',  prompt:'Do you think complete freedom of speech is possible online?',                              followUp:'What would a platform with zero rules actually look like?'},
+  {emo:'🏛️', foc:'Regulation',    title:'Q9',  prompt:'Should governments regulate social media platforms?',                                      followUp:'Who else, besides government, could take on that role?'},
+  {emo:'🤝', foc:'Public Trust',   title:'Q10', prompt:'Do you think people still trust the media today?',                                         followUp:'Has that trust changed in the last ten years?'},
+  {emo:'📰', foc:'Neutrality',     title:'Q11', prompt:'Do you think journalists have a responsibility to remain neutral?',                        followUp:'Is true neutrality actually possible?'},
+  {emo:'🔞', foc:'Age Limits',     title:'Q12', prompt:'Should there be an age limit for using social media?',                                     followUp:'How could a platform realistically enforce that limit?'},
+  {emo:'🎬', foc:'Art & Film',     title:'Q13', prompt:'How might censorship affect creativity in art and film?',                                  followUp:'Can you think of an example where censorship changed a creative work?'},
+  {emo:'💻', foc:'Big Tech',       title:'Q14', prompt:'Do you think technology companies have too much power over information?',                  followUp:'What could be done to balance that power?'}
+];
+
+/* ===== STATE ===== */
+let state = {
+  current:'objectives', score:0, done:new Set(),
+  cueSel:{a:null,b:null}, cueSolved:new Set(),
+  matchSel:{verb:null,noun:null}, matchSolved:new Set(),
+  quizRound:1, quizIdx:0, quizAnswered:{},
+  qtypeAnswered:{}, oreoAnswered:{},
+  adeActive:null, cueTab:0, peerScores:{},
+  gapSelected:null, gapFilled:{}, gapScored:{},
+  warmupTab:0,
+  timerInterval:null, timerRunning:false,
+  timerRemaining:20, timerTotal:20
+};
+
+function addScore(pts){ state.score+=pts; document.getElementById('railScore').textContent=state.score+' pts'; }
+function markDone(id){ state.done.add(id); renderNav(); }
+
+/* ===== NAV ===== */
+function renderNav(){
+  const nav=document.getElementById('navList');
+  nav.innerHTML=sections.map(s=>`
+    <div class="nav-item ${s.id===state.current?'active':''} ${state.done.has(s.id)?'done':''}" data-id="${s.id}">
+      <span class="n">${s.n}</span><span>${s.label}</span><span class="done-mark">✓</span>
+    </div>`).join('');
+  nav.querySelectorAll('.nav-item').forEach(el=>el.addEventListener('click',()=>goTo(el.dataset.id)));
+}
+
+function goTo(id){ state.current=id; renderNav(); renderMain(); window.scrollTo({top:0,behavior:'smooth'}); }
+
+/* ===== RENDER MAIN ===== */
+function renderMain(){
+  const main=document.getElementById('main');
+  const idx=sections.findIndex(s=>s.id===state.current);
+  const prev=sections[idx-1]; const next=sections[idx+1];
+  let body='';
+  switch(state.current){
+    case 'objectives':  body=renderObjectives(); break;
+    case 'warmup':      body=renderWarmup(); break;
+    case 'cuematch':    body=renderCueMatch(); break;
+    case 'vocab':       body=renderVocab(); break;
+    case 'qtype':       body=renderQtype(); break;
+    case 'idioms':      body=renderIdioms(); break;
+    case 'gapfill':     body=renderGapfill(); break;
+    case 'oreo':        body=renderOreo(); break;
+    case 'quiz':        body=renderQuiz(); break;
+    case 'model':       body=renderModel(); break;
+    case 'toolkit':     body=renderToolkit(); break;
+    case 'connectives': body=renderConnectives(); break;
+    case 'peer':        body=renderPeer(); break;
+    case 'practice':    body=renderPractice(); break;
+    case 'wrapup':      body=renderWrapup(); break;
+  }
+  main.innerHTML=`
+    <div class="mobile-jump">
+      <select id="mobileSelect">
+        ${sections.map(s=>`<option value="${s.id}" ${s.id===state.current?'selected':''}>${s.n} · ${s.label}${state.done.has(s.id)?' ✓':''}</option>`).join('')}
+      </select>
+    </div>
+    <div class="mobile-progress">
+      ${sections.map(s=>`<div class="seg ${state.done.has(s.id)?'done':''} ${s.id===state.current?'now':''}"></div>`).join('')}
+    </div>`+body+`
+    <div class="nav-arrows">
+      ${prev?`<button class="btn" id="prevBtn">← ${prev.label}</button>`:'<span></span>'}
+      ${next?`<button class="btn primary" id="nextBtn">${next.label} →</button>`:'<span></span>'}
+    </div>`;
+  if(prev) document.getElementById('prevBtn').onclick=()=>goTo(prev.id);
+  if(next) document.getElementById('nextBtn').onclick=()=>goTo(next.id);
+  const ms=document.getElementById('mobileSelect');
+  if(ms) ms.onchange=e=>goTo(e.target.value);
+  attachHandlers();
+}
+
+/* ===== TIMER ===== */
+function setupTimer(s){ clearInterval(state.timerInterval); state.timerRunning=false; state.timerTotal=s; state.timerRemaining=s; updateRing(); }
+function updateRing(){
+  const fg=document.getElementById('ringFg'); const num=document.getElementById('ringNum');
+  if(!fg) return;
+  fg.style.strokeDashoffset=238.8*(1-state.timerRemaining/state.timerTotal);
+  num.textContent=state.timerRemaining;
+  if(state.timerRemaining<=6&&state.timerRemaining>0) fg.style.stroke='var(--fourth)'; else fg.style.stroke='var(--coral)';
+}
+function startTimer(){
+  if(state.timerRunning) return;
+  state.timerRunning=true;
+  state.timerInterval=setInterval(()=>{
+    state.timerRemaining--;
+    updateRing();
+    if(state.timerRemaining<=0){ clearInterval(state.timerInterval); state.timerRunning=false; }
+  },1000);
+}
+function timerHTML(seconds, label){
+  seconds=seconds||20; label=label||('Thinking time — '+seconds+' seconds');
+  return `<div class="timer-wrap"><div class="ring"><svg width="92" height="92"><circle class="bg" cx="46" cy="46" r="38"/><circle class="fg" id="ringFg" cx="46" cy="46" r="38" stroke-dasharray="238.8" stroke-dashoffset="0"/></svg><div class="num" id="ringNum">${seconds}</div></div><div class="timer-meta"><div class="t-label" id="timerLabel">${label}</div><div class="timer-btns"><button class="btn primary" id="timerStart">Start</button><button class="btn ghost" id="timerReset">Reset</button></div></div></div>`;
+}
+
+/* ===== SECTIONS ===== */
+function renderObjectives(){ return `
+  <div class="eyebrow">Lesson Objectives</div>
+  <h2 class="title">What You\'ll Learn Today 🎯</h2>
+  <p class="deck">By the end of this lesson, you will be able to:</p>
+  <div class="takeaway-grid">
+    ${objectives.map(o=>`<div class="tk"><span class="tk-icon">${o.icon}</span><h4>${o.h}</h4><p>${o.d}</p></div>`).join('')}
+  </div>
+  <p style="font-size:19px;color:var(--text-faint);margin-top:24px;">Let\'s get started — click "Warm-Up" below to begin.</p>`; }
+
+function renderWarmup(){
+  const i=state.warmupTab;
+  return `
+  <div class="eyebrow">Warm-Up · 0–10 min</div>
+  <h2 class="title">Media Talk 📰</h2>
+  <p class="deck">Discuss each question with a partner. Click a number to move to that question and start the timer.</p>
+  <div class="warmup-tabs">
+    ${warmupQs.map((_,idx)=>`<div class="warmup-tab ${state.warmupTab===idx?'on':''}" data-i="${idx}">${idx+1}</div>`).join('')}
+  </div>
+  ${timerHTML(20,'Discussion time — 20 seconds')}
+  <div class="prompt-current"><div class="pn">${i+1}</div><p>${warmupQs[i]}</p></div>
+  <p style="font-size:19px;color:var(--text-faint);margin-top:18px;">Tip: Part 3 rewards spontaneity — try opening with "Honestly, I\'d say…" or "That\'s an interesting question…" to buy yourself a second to think.</p>`; }
+
+function renderCueMatch(){
+  const sc=state.cueSolved.size;
+  const solvedA=cuePrompts.filter(p=>state.cueSolved.has(p));
+  const unsolvedA=cuePrompts.filter(p=>!state.cueSolved.has(p));
+  const unsolvedB=cueMeanings.filter(m=>!solvedA.some(p=>cueMatchKey[p]===m));
+  const aOrder=solvedA.concat(unsolvedA);
+  const bOrder=solvedA.map(p=>cueMatchKey[p]).concat(unsolvedB);
+  return `
+  <div class="eyebrow">CORE Comprehension · Key Terms</div>
+  <h2 class="title">${cueCard1.title}</h2>
+  <p class="deck">Click a real-world example on the left, then click the term it illustrates on the right. ${sc}/${cuePrompts.length} matched so far.</p>
+  <div class="match-wrap">
+    <div class="match-col"><h4>Real-World Example</h4>
+      ${aOrder.map((p,i)=>`<div class="match-item2 ${state.cueSolved.has(p)?'correct locked':''} ${state.cueSel.a===p?'selected':''}" data-side="a" data-val="${p}"><span class="tag">${i+1}</span>${p}</div>`).join('')}
+    </div>
+    <div class="match-col"><h4>Term</h4>
+      ${bOrder.map((m,i)=>`<div class="match-item2 ${solvedA.some(p=>cueMatchKey[p]===m)?'correct locked':''} ${state.cueSel.b===m?'selected':''}" data-side="b" data-val="${m}"><span class="tag">${String.fromCharCode(65+i)}</span>${m}</div>`).join('')}
+    </div>
+  </div>`; }
+
+function renderVocab(){ return `
+  <div class="eyebrow">Vocabulary Power-Up · 10–22 min</div>
+  <h2 class="title">8 Words for Media Talk</h2>
+  <p class="deck">Read the meaning, guess the word or phrase, then click to reveal the answer and example sentence.</p>
+  <div class="grid-3">
+    ${vocab.map((v,i)=>`<div class="flip" data-i="${i}"><div class="flip-inner"><div class="flip-face flip-front"><div class="def-prompt">${v.d}</div><div class="hint">Tap to reveal →</div></div><div class="flip-face flip-back"><div class="word-reveal">${v.w}</div><div class="ex">${v.ex}</div></div></div></div>`).join('')}
+  </div>`; }
+
+function renderQtype(){
+  const answeredCount=Object.keys(state.qtypeAnswered).length;
+  return `
+  <div class="eyebrow">CORE Comprehension · Reading the Question</div>
+  <h2 class="title">What Kind of Answer Does It Expect?</h2>
+  <p class="deck">In Part 3, spotting what a question is really asking for helps you answer more clearly. Skim the quick guide, then sort each question into the type of answer it needs.</p>
+  <div class="sort-intro">
+    ${qtypeIntro.map(c=>`<div class="sort-intro-item" data-k="${c.k}"><span class="k">${c.k} — ${c.label}</span><p>${c.d}</p></div>`).join('')}
+  </div>
+  <p style="font-size:19px;color:var(--text-dim);margin:0 0 16px;">Read each question and click the type of answer it needs. ${answeredCount}/${qtypeQs.length} sorted.</p>
+  <div class="focus-list">
+    ${qtypeQs.map((f,i)=>{
+      const a=state.qtypeAnswered[i];
+      return `<div class="focus-item">
+        <p>${i+1}. ${f.q}</p>
+        <div class="focus-btns">
+          ${f.order.map(cat=>{
+            let cls='focus-btn';
+            if(a){ if(cat===f.cat) cls+=' correct locked'; else if(cat===a.picked && !a.correct) cls+=' wrong'; else cls+=' locked'; }
+            return `<button class="${cls}" data-i="${i}" data-cat="${cat}" data-group="qtype">${qtypeLabels[cat]}</button>`;
+          }).join('')}
+        </div>
+        <div class="focus-result ${a&&a.correct?'good':''}">${a?(a.correct?'✓ Correct — '+qtypeLabels[f.cat]:'Try another type'):''}</div>
+      </div>`;
+    }).join('')}
+  </div>`; }
+
+function renderIdioms(){ return `
+  <div class="eyebrow">Idioms & Phrases · 25–40 min</div>
+  <h2 class="title">Media Talk: 8 Expressions 💡</h2>
+  <p class="deck">Click each phrase to expand its meaning and an example sentence. Use these to make your Part 3 answers sound natural and fluent.</p>
+  <div class="idiom-list">
+    ${idioms.map((it,i)=>`<div class="idiom" data-i="${i}"><div class="idiom-head"><span class="phrase">${it.p}</span><span class="chev">▸</span></div><div class="idiom-body"><div class="idiom-mean">— ${it.m}</div><div class="idiom-ex">${it.ex}</div></div></div>`).join('')}
+  </div>`; }
+
+function renderGapfill(){
+  return `
+  <div class="eyebrow">Idioms & Expressions · Gap Fill ✏️</div>
+  <h2 class="title">Use the Right Expression</h2>
+  <p class="deck">Click a blank, then click the matching phrase from the word bank below. No typing — just click!</p>
+  <div class="gapfill-list">
+    ${gapfills.map((g,i)=>{
+      const parts=g.text.split('___');
+      const filled=state.gapFilled[i];
+      return `<div class="gap-item"><p>${i+1}. ${parts[0]}<span class="gap-blank ${state.gapSelected===i?'selected':''} ${filled?'filled':''}" data-i="${i}">${filled?filled:'click blank'}</span>${parts[1]}</p></div>`;
+    }).join('')}
+  </div>
+  <div class="wordbank" style="margin-top:20px;">
+    ${wordbank.map(w=>`<span class="wb-chip ${Object.values(state.gapFilled).includes(w)?'used':''}" data-word="${w}">${w}</span>`).join('')}
+  </div>
+  <div class="quiz-feedback" id="gapFeedback">${Object.keys(state.gapFilled).length} / ${gapfills.length} filled</div>`; }
+
+function renderOreo(){
+  const answeredCount=Object.keys(state.oreoAnswered).length;
+  return `
+  <div class="eyebrow">CORE Organisation · Core Skill 🎯</div>
+  <h2 class="title">Opinion, Reason, Example or Plus?</h2>
+  <p class="deck">The O.R.E.O. Plus model turns a bare opinion into a full, coherent answer. Skim the quick guide below, then sort each sentence into the stage it belongs to.</p>
+  <div class="sort-intro">
+    ${oreoIntro.map(c=>`<div class="sort-intro-item" data-k="${c.k}"><span class="k">${c.k} — ${c.label}</span><p>${c.d}</p></div>`).join('')}
+  </div>
+  <p style="font-size:19px;color:var(--text-dim);margin:0 0 16px;">Read each sentence and click the correct stage. ${answeredCount}/${oreoQs.length} sorted.</p>
+  <div class="focus-list">
+    ${oreoQs.map((f,i)=>{
+      const a=state.oreoAnswered[i];
+      return `<div class="focus-item">
+        <p>${i+1}. ${f.q}</p>
+        <div class="focus-btns">
+          ${f.order.map(cat=>{
+            let cls='focus-btn';
+            if(a){ if(cat===f.cat) cls+=' correct locked'; else if(cat===a.picked && !a.correct) cls+=' wrong'; else cls+=' locked'; }
+            return `<button class="${cls}" data-i="${i}" data-cat="${cat}" data-group="oreo">${oreoLabels[cat]}</button>`;
+          }).join('')}
+        </div>
+        <div class="focus-result ${a&&a.correct?'good':''}">${a?(a.correct?'✓ Correct — '+oreoLabels[f.cat]:'Try another stage'):''}</div>
+      </div>`;
+    }).join('')}
+  </div>`; }
+
+function renderQuiz(){
+  const round=quizRounds[state.quizRound];
+  const q=round.qs[state.quizIdx];
+  const key=`${state.quizRound}-${state.quizIdx}`;
+  const answered=state.quizAnswered[key];
+  return `
+  <div class="eyebrow">Quiz Challenge · Test Yourself 🧠</div>
+  <h2 class="title">${round.title}</h2>
+  <p class="deck">Click an answer. If it\'s wrong, try again — you can keep guessing until you find the right one.</p>
+  <div class="roundtab">
+    <button data-r="1" class="${state.quizRound===1?'on':''}">Round 1 · Vocabulary</button>
+    <button data-r="2" class="${state.quizRound===2?'on':''}">Round 2 · Idioms</button>
+  </div>
+  <div class="quiz-progress">
+    ${round.qs.map((_,i)=>{const k=`${state.quizRound}-${i}`;return `<div class="quiz-dot ${i===state.quizIdx?'active':''} ${state.quizAnswered[k]?'answered':''}"></div>`;}).join('')}
+  </div>
+  <div class="quiz-card">
+    <p class="quiz-q">${state.quizIdx+1}. ${q.q}</p>
+    <div class="quiz-opts">
+      ${q.opts.map((o,i)=>{let cls='quiz-opt';if(answered&&i===q.ans){cls+=' correct locked';}return `<div class="${cls}" data-i="${i}"><span class="letter">${String.fromCharCode(65+i)}</span>${o}</div>`;}).join('')}
+    </div>
+    <div class="quiz-foot">
+      <span class="quiz-feedback ${answered?'good':''}" id="quizFeedbackMsg">${answered?'✓ Correct! +1 point':'Select an answer'}</span>
+      <div style="display:flex;gap:8px;">
+        <button class="btn" id="quizPrev" ${state.quizIdx===0?'disabled style="opacity:.4"':''}>← Prev</button>
+        <button class="btn" id="quizNext" ${state.quizIdx===round.qs.length-1?'disabled style="opacity:.4"':''}>Next →</button>
+      </div>
+    </div>
+  </div>`; }
+
+function renderModel(){ return `
+  <div class="eyebrow">Model Answer</div>
+  <h2 class="title">Analyse a Band 7+ Answer 🔍</h2>
+  <p class="deck">Question: "Should governments regulate what people post on social media?" Click a stage chip to highlight that part of the answer. See how Opinion → Reason → Example → Refined Opinion → Plus builds a full, structured response.</p>
+  <div class="ade-key">
+    ${oreoModel.map(a=>`<div class="ade-chip ${state.adeActive===a.k?'active':''}" data-k="${a.k}">${a.k} — ${a.label.split('—')[0].trim()}</div>`).join('')}
+  </div>
+  <div class="card">
+    ${oreoModel.map(a=>`<div class="ade-block ${state.adeActive&&state.adeActive!==a.k?'dim':''} ${state.adeActive===a.k?'highlight':''}" data-k="${a.k}"><span class="tag2">${a.label}</span>${a.text}</div>`).join('')}
+  </div>`; }
+
+function renderToolkit(){ return `
+  <div class="eyebrow">Language Toolkit</div>
+  <h2 class="title">Upgrade Your Media Talk 🔗</h2>
+  <p class="deck">Click any phrase to drop it into your scratchpad — then build a sentence using that starter.</p>
+  <div class="grid-2">
+    ${toolkit.map(t=>`<div class="tool-card"><h4>${t.h}</h4>${t.items.map(i=>`<span class="phrase-btn" data-phrase="${i}">${i}</span>`).join('')}</div>`).join('')}
+  </div>
+  <div class="scratch">
+    <p style="font-size:19px;color:var(--text-dim);margin-bottom:8px;">Scratchpad — practise a sentence using the phrases above:</p>
+    <textarea id="scratchArea" placeholder="e.g. In my opinion, some level of regulation is necessary…"></textarea>
+  </div>`; }
+
+function renderConnectives(){ return `
+  <div class="eyebrow">Balanced Argument Phrases · Level Up 🔗</div>
+  <h2 class="title">Compare, Weigh and Conclude Like a Band 7+</h2>
+  <p class="deck">Higher-band answers move smoothly between viewpoints before landing on a clear conclusion. Click any phrase to drop it into your scratchpad, then build a sentence around it.</p>
+  <div class="grid-2">
+    ${connectives.map(t=>`<div class="tool-card"><h4>${t.h}</h4>${t.items.map(i=>`<span class="phrase-btn" data-phrase="${i}">${i}</span>`).join('')}</div>`).join('')}
+  </div>
+  <div class="scratch">
+    <p style="font-size:19px;color:var(--text-dim);margin-bottom:8px;">Scratchpad — practise comparing two views using a structure above:</p>
+    <textarea id="scratchArea" placeholder="e.g. On the one hand, regulation protects the public. On the other hand, it can limit free expression…"></textarea>
+  </div>`; }
+
+function renderPeer(){
+  const total=peerCriteria.reduce((s,c)=>s+(state.peerScores[c.t]||0),0);
+  const maxTotal=peerCriteria.length*3;
+  return `
+  <div class="eyebrow">Peer Performance · 75–90 min</div>
+  <h2 class="title">You Speak, We Listen 🌟</h2>
+  <p class="deck">Answer spontaneously — Part 3 has no prep time. Aim for a clear, well-organised, balanced answer. Your partner scores your performance below.</p>
+  <div class="scorecard">
+    ${peerCriteria.map(c=>`<div class="score-row"><div class="letter2">${c.k}</div><div class="si-main"><div class="si-title">${c.t}</div><div class="si-sub">${c.s}</div></div><div class="pips">${[1,2,3].map(n=>`<div class="pip ${state.peerScores[c.t]===n?'on':''}" data-crit="${c.t}" data-n="${n}">${n}</div>`).join('')}</div></div>`).join('')}
+  </div>
+  <div class="score-total">
+    <span style="font-size:19px;color:var(--text-dim);">Total score (1=needs work · 2=ok · 3=great)</span>
+    <span class="tot-num">${total}/${maxTotal}</span>
+  </div>
+  <div class="feedback-fields">
+    <input type="text" id="fbStrength" placeholder="📝 One strength — something they did really well…">
+    <input type="text" id="fbTip" placeholder="🎯 One tip — one specific thing to improve next time…">
+  </div>`; }
+
+function renderPractice(){
+  const c=examCards[state.cueTab];
+  return `
+  <div class="eyebrow">Exam Practice</div>
+  <h2 class="title">14 Part 3 Discussion Questions 🃏</h2>
+  <p class="deck">Part 3 has no prep time in the real exam, but take a quick moment to think in O.R.E.O. Plus order before you answer. Create 1–2 follow-up questions of your own once you hear your partner\'s answer.</p>
+  <p class="assign-note">💡 Teacher tip: assign one question per student, or let each student click their own tab.</p>
+  <div class="cue-tabs">
+    ${examCards.map((e,i)=>`<div class="cue-tab ${state.cueTab===i?'on':''}" data-i="${i}"><span class="emo">${e.emo}</span>${e.title}<span class="foc">${e.foc}</span></div>`).join('')}
+  </div>
+  <div class="cuecard">
+    <div class="label">${c.title} · ${c.foc}</div>
+    <h3>${c.prompt}</h3>
+    <p class="followup"><b>Possible follow-up:</b> ${c.followUp}</p>
+  </div>
+  ${timerHTML(20,'Thinking time — 20 seconds')}
+  <textarea class="notepad" placeholder="Keyword notes only — O / R / E / O / Plus…"></textarea>`; }
+
+function renderWrapup(){ return `
+  <div class="eyebrow">Lesson Wrap-Up</div>
+  <h2 class="title">Today\'s Key Takeaways ⭐</h2>
+  <p class="deck">Excellent work. Here is everything you covered today — take it with you!</p>
+  <div class="takeaway-grid">
+    <div class="tk"><span class="tk-icon">📚</span><h4>8 Advanced Words</h4><p>algorithm · echo chamber · media bias · fact-checking · platform accountability · digital footprint · clickbait · editorial standards</p></div>
+    <div class="tk"><span class="tk-icon">💡</span><h4>8 Idioms & Phrases</h4><p>read between the lines · take with a grain of salt · the tip of the iceberg · a double-edged sword · draw a line in the sand · open a can of worms…</p></div>
+    <div class="tk"><span class="tk-icon">🎯</span><h4>The O.R.E.O. Plus Model</h4><p>Opinion → Reason → Example → Refined Opinion → Plus: the structure behind every strong, balanced Part 3 answer.</p></div>
+    <div class="tk"><span class="tk-icon">🔗</span><h4>Part 3 Starters</h4><p>In my opinion… · One reason is that… · On the one hand… on the other hand… · So, all things considered, I\'d say…</p></div>
+  </div>
+  <div class="final-score">
+    <div class="fs-num">${state.score}</div>
+    <div class="fs-label">points earned across today\'s exercises</div>
+  </div>
+  <p style="margin-top:28px;font-size:20px;color:var(--text-dim);">🎙 <strong>Homework:</strong> Record yourself responding to these questions: "Should schools teach students how to recognise fake news?", "Do you think social media companies should be punished for spreading harmful content?", "Why do some people trust influencers more than traditional journalists?", "How can people protect themselves from media bias?", and "Do you think complete freedom of speech is possible online?" Listen back and check: did you use the O.R.E.O. Plus model, at least 3 functional phrases, and 3 topic-specific vocabulary items?</p>`; }
+
+/* ===== HANDLERS ===== */
+function attachHandlers(){
+  const start=document.getElementById('timerStart');
+  const reset=document.getElementById('timerReset');
+  if(start){
+    const initSeconds = 20;
+    setupTimer(initSeconds);
+    updateRing();
+    start.onclick=()=>startTimer();
+    reset.onclick=()=>{ setupTimer(initSeconds); };
+  }
+
+  document.querySelectorAll('.warmup-tab').forEach(el=>el.addEventListener('click',()=>{ state.warmupTab=+el.dataset.i; markDone('warmup'); renderMain(); startTimer(); }));
+
+  document.querySelectorAll('#main .match-item2').forEach(el=>{
+    if(el.classList.contains('locked')) return;
+    el.addEventListener('click',()=>{
+      const side=el.dataset.side; const val=el.dataset.val;
+      state.cueSel[side]=(state.cueSel[side]===val)?null:val;
+      if(state.cueSel.a&&state.cueSel.b){
+        if(cueMatchKey[state.cueSel.a]===state.cueSel.b){
+          state.cueSolved.add(state.cueSel.a); addScore(1);
+          if(state.cueSolved.size===cuePrompts.length) markDone('cuematch');
+          state.cueSel={a:null,b:null}; renderMain();
+        } else {
+          renderMain();
+          setTimeout(()=>{ document.querySelectorAll('#main .match-item2.selected').forEach(x=>x.classList.add('wrong')); setTimeout(()=>{ state.cueSel={a:null,b:null}; renderMain(); },500); },30);
+        }
+      } else renderMain();
+    });
+  });
+
+  document.querySelectorAll('.flip').forEach(el=>el.addEventListener('click',()=>{ el.classList.toggle('flipped'); markDone('vocab'); }));
+
+  document.querySelectorAll('#main .match-item').forEach(el=>{
+    if(el.classList.contains('locked')) return;
+    el.addEventListener('click',()=>{
+      const side=el.dataset.side; const val=el.dataset.val;
+      state.matchSel[side]=(state.matchSel[side]===val)?null:val;
+      if(state.matchSel.verb&&state.matchSel.noun){
+        if(matchKey[state.matchSel.verb]===state.matchSel.noun){
+          state.matchSolved.add(state.matchSel.verb); addScore(1);
+          if(state.matchSolved.size===verbs.length) markDone('collocation');
+          state.matchSel={verb:null,noun:null}; renderMain();
+        } else {
+          renderMain();
+          setTimeout(()=>{ document.querySelectorAll('#main .match-item.selected').forEach(x=>x.classList.add('wrong')); setTimeout(()=>{ state.matchSel={verb:null,noun:null}; renderMain(); },500); },30);
+        }
+      } else renderMain();
+    });
+  });
+
+  document.querySelectorAll('.idiom').forEach(el=>el.addEventListener('click',()=>{ el.classList.toggle('open'); markDone('idioms'); }));
+
+  document.querySelectorAll('.gap-blank').forEach(el=>{
+    el.addEventListener('click',()=>{
+      const i=+el.dataset.i;
+      state.gapSelected=(state.gapSelected===i)?null:i;
+      renderMain();
+    });
+  });
+  document.querySelectorAll('.wb-chip').forEach(chip=>{
+    chip.addEventListener('click',()=>{
+      if(state.gapSelected===null) return;
+      const i=state.gapSelected;
+      const word=chip.dataset.word;
+      const correctAns=gapfills[i].ans;
+      const fb=document.getElementById('gapFeedback');
+      if(word===correctAns){
+        state.gapFilled[i]=word;
+        state.gapSelected=null;
+        if(!state.gapScored[i]){ addScore(1); state.gapScored[i]=true; }
+        const doneCount=Object.keys(state.gapFilled).length;
+        if(doneCount===gapfills.length) markDone('gapfill');
+        renderMain();
+        setTimeout(()=>{ const f=document.getElementById('gapFeedback'); if(f){ f.textContent=doneCount+' / '+gapfills.length+' correct!'; f.className='quiz-feedback good'; } },10);
+      } else {
+        if(fb){ fb.textContent='That doesn\'t fit this blank — try another phrase.'; fb.className='quiz-feedback bad'; }
+        chip.style.animation='shake .3s'; setTimeout(()=>chip.style.animation='',300);
+      }
+    });
+  });
+
+  document.querySelectorAll('.roundtab button').forEach(b=>b.addEventListener('click',()=>{ state.quizRound=+b.dataset.r; state.quizIdx=0; renderMain(); }));
+
+  document.querySelectorAll('.quiz-opt').forEach(el=>el.addEventListener('click',()=>{
+    if(el.classList.contains('locked')) return;
+    const key=`${state.quizRound}-${state.quizIdx}`;
+    if(state.quizAnswered[key]) return;
+    const picked=+el.dataset.i; const q=quizRounds[state.quizRound].qs[state.quizIdx]; const correct=picked===q.ans;
+    const totalQs=Object.values(quizRounds).reduce((s,r)=>s+r.qs.length,0);
+    if(correct){
+      state.quizAnswered[key]={picked,correct:true}; addScore(1);
+      if(Object.keys(state.quizAnswered).length===totalQs) markDone('quiz');
+      renderMain();
+    } else {
+      el.classList.add('wrong');
+      const fb=document.getElementById('quizFeedbackMsg');
+      if(fb){ fb.textContent='✗ Not quite — click another option to try again'; fb.className='quiz-feedback bad'; }
+      setTimeout(()=>{
+        el.classList.remove('wrong');
+        const fb2=document.getElementById('quizFeedbackMsg');
+        if(fb2 && !state.quizAnswered[key]){ fb2.textContent='Select an answer'; fb2.className='quiz-feedback'; }
+      },700);
+    }
+  }));
+
+  const qPrev=document.getElementById('quizPrev'); const qNext=document.getElementById('quizNext');
+  if(qPrev) qPrev.onclick=()=>{ if(state.quizIdx>0){ state.quizIdx--; renderMain(); } };
+  if(qNext) qNext.onclick=()=>{ const r=quizRounds[state.quizRound]; if(state.quizIdx<r.qs.length-1){ state.quizIdx++; renderMain(); } };
+
+  document.querySelectorAll('.focus-btn[data-group="qtype"]').forEach(el=>{
+    if(el.classList.contains('locked')) return;
+    el.addEventListener('click',()=>{
+      const i=+el.dataset.i; const cat=el.dataset.cat;
+      if(state.qtypeAnswered[i]) return;
+      const correct=cat===qtypeQs[i].cat;
+      if(correct){
+        state.qtypeAnswered[i]={picked:cat,correct:true}; addScore(1);
+        if(Object.keys(state.qtypeAnswered).length===qtypeQs.length) markDone('qtype');
+        renderMain();
+      } else {
+        el.classList.add('wrong');
+        setTimeout(()=>el.classList.remove('wrong'),500);
+      }
+    });
+  });
+
+  document.querySelectorAll('.focus-btn[data-group="oreo"]').forEach(el=>{
+    if(el.classList.contains('locked')) return;
+    el.addEventListener('click',()=>{
+      const i=+el.dataset.i; const cat=el.dataset.cat;
+      if(state.oreoAnswered[i]) return;
+      const correct=cat===oreoQs[i].cat;
+      if(correct){
+        state.oreoAnswered[i]={picked:cat,correct:true}; addScore(1);
+        if(Object.keys(state.oreoAnswered).length===oreoQs.length) markDone('oreo');
+        renderMain();
+      } else {
+        el.classList.add('wrong');
+        setTimeout(()=>el.classList.remove('wrong'),500);
+      }
+    });
+  });
+
+  document.querySelectorAll('.ade-chip').forEach(el=>el.addEventListener('click',()=>{ const k=el.dataset.k; state.adeActive=(state.adeActive===k)?null:k; markDone('model'); renderMain(); }));
+
+  document.querySelectorAll('.phrase-btn').forEach(el=>el.addEventListener('click',()=>{ const area=document.getElementById('scratchArea'); area.value=(area.value?area.value+' ':'')+el.dataset.phrase+' '; area.focus(); markDone(state.current); }));
+
+  document.querySelectorAll('.pip').forEach(el=>el.addEventListener('click',()=>{ const crit=el.dataset.crit; const n=+el.dataset.n; state.peerScores[crit]=(state.peerScores[crit]===n)?null:n; if(Object.keys(state.peerScores).filter(k=>state.peerScores[k]).length===peerCriteria.length) markDone('peer'); renderMain(); }));
+
+  document.querySelectorAll('.cue-tab').forEach(el=>el.addEventListener('click',()=>{ state.cueTab=+el.dataset.i; markDone('practice'); renderMain(); }));
+}
+
+/* ===== INIT ===== */
+renderNav();
+renderMain();
+</script>
+</body>
+</html>
